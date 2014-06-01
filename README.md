@@ -40,3 +40,23 @@ C'est ainsi qu'est néé le design de Blueflap 3 :
 - Une interface reprenant les codes de Windows 8 dans les paramètres et les infos de la page par exemple.
 
 Faire cohabiter ces deux interfaces opposées était un petit défi, et nous espérons l'avoir réussi... :smile:
+
+-----------------
+![Alt text](Images/Texte2.png "Interface")
+
+Coming soon...
+
+-----------------
+![Alt text](Images/Texte3.png "Moteur Web")
+
+Coming soon...
+
+-----------------
+![Alt text](Images/Texte4.png "Fonctions sup")
+
+Coming soon...
+
+-----------------
+![Alt text](Images/Texte6.png "Le nom")
+
+Coming soon...

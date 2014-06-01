@@ -4,7 +4,8 @@ Blueflap
 ![Alt text](Images/Bluewindow.png "logo_main")
 
 Blueflap est un navigateur internet en VB.NET.
-Blueflap est un projet français, il est actuellement uniquement Francophone. Je vous invite à forker ce projet dans pluieurs langues.
+Blueflap est un projet français, il est actuellement uniquement Francophone.
+Des traductions en Anglais et en Allemand sont néanmoins prêtes et seront publiées quand Blueflap 3.0 sera finalisé.
 
 Pourquoi contribuer au projet :
 Je ne parviens pas à résoudre plusieurs problèmes, ainsi, grâce à votre aide j'espère arriver à sortir une V3 sans Bugs.

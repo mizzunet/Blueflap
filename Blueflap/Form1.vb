@@ -445,11 +445,7 @@
     End Sub
 
     Private Sub ToolStripMenuItem9_Click(sender As Object, e As EventArgs) Handles Menu_Favos.Click
-        If Panel1.Visible = True Then
-            Panel1.Visible = False
-        Else
-            Panel1.Visible = True
-        End If
+        Panel1.Visible = Not Panel1.Visible
     End Sub
 
     Private Sub Notif_add_Click(sender As Object, e As EventArgs) Handles Notif_add.Click
@@ -620,11 +616,7 @@
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles BS_Settings.Click
-        If Pop.Visible = True Then
-            Pop.Visible = False
-        Else
-            Pop.Visible = True
-        End If
+        Pop.Visible = Not Pop.Visible
     End Sub
 
     Private Sub TextBox6_TextChanged(sender As Object, e As EventArgs) Handles Bs_Searchbox.TextChanged

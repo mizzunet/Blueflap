@@ -45,47 +45,14 @@
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Settings_Back.Click
         ABlueflap_Navigateur.BringToFront()
 
-        If Home_checkbox.Checked = True Then
-            Menu_Home.Visible = True
-        Else
-            Menu_Home.Visible = False
-        End If
-        If Sfight_Checkbox.Checked = True Then
-            Menu_Fight.Visible = True
-        Else
-            Menu_Fight.Visible = False
-        End If
-        If favo_checkbox.Checked = True Then
-            Menu_Favos.Visible = True
-        Else
-            Menu_Favos.Visible = False
-        End If
-        If infos_checkbox.Checked = True Then
-            Menu_Share.Visible = True
-        Else
-            Menu_Share.Visible = False
-        End If
-        If lock_checkbox.Checked = True Then
-            Menu_Lock.Visible = True
-        Else
-            Menu_Lock.Visible = False
-        End If
-        If fullscreen_checkbox.Checked = True Then
-            Menu_FullScr.Visible = True
-        Else
-            Menu_FullScr.Visible = False
-        End If
-        If memo_checkbox.Checked = True Then
-            Menu_Memo.Visible = True
-        Else
-            Menu_Memo.Visible = False
-        End If
-
-        If Share_checkbox.Checked = True Then
-            menu_partage.Visible = True
-        Else
-            menu_partage.Visible = False
-        End If
+        Menu_Home.Visible = Home_checkbox.Checked
+        Menu_Fight.Visible = Sfight_Checkbox.Checked
+        Menu_Favos.Visible = favo_checkbox.Checked
+        Menu_Share.Visible = infos_checkbox.Checked
+        menu_partage.Visible = Share_checkbox.Checked
+        Menu_Lock.Visible = lock_checkbox.Checked
+        Menu_FullScr.Visible = fullscreen_checkbox.Checked
+        Menu_Memo.Visible = memo_checkbox.Checked
 
         If Stng_Volet_Mousehover_agrandir.Visible = False Then
             Stng_Volet_Mousehover_agrandir.Checked = False
@@ -121,9 +88,7 @@
         End If
     End Sub
     Private Sub ActualiserToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Menu_Refresh.Click
-        Dim ignoreCache As Boolean
-        ignoreCache = ignoreCache
-        Web.Reload(ignoreCache = True)
+        Web.Reload(True)
     End Sub
 
     Private Sub ArrêterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Menu_Stop.Click
@@ -371,11 +336,7 @@
 
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Infos_CodeShowHide.Click
         Infos_Share.Visible = False
-        If Infos_code_source.Visible = False Then
-            Infos_code_source.Visible = True
-        Else
-            Infos_code_source.Visible = False
-        End If
+        Infos_code_source.Visible = Not Infos_code_source.Visible
     End Sub
 
     Private Sub WebBrowser1_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles Infos_Trident_Browser_Recup_Infos.DocumentCompleted
@@ -573,9 +534,7 @@
     Private Sub CheckBox2_CheckedChanged_1(sender As Object, e As EventArgs) Handles Stng_MaximizedWindow.CheckedChanged
         If Stng_MaximizedWindow.Checked Then
             Me.WindowState = FormWindowState.Maximized
-        Else
         End If
-
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Stng_SupprCacheCookies.Click
@@ -666,11 +625,7 @@
     End Sub
 
     Private Sub Button18_Click(sender As Object, e As EventArgs) Handles BS_Fav.Click
-        If Bs_Favbulle.Visible = False Then
-            Bs_Favbulle.Visible = True
-        Else
-            Bs_Favbulle.Visible = False
-        End If
+        Bs_Favbulle.Visible = Not Bs_Favbulle.Visible
     End Sub
     Private Sub Button20_Click(sender As Object, e As EventArgs)
         Me.Close()

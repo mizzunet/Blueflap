@@ -2,11 +2,37 @@
     Dim drag As Boolean
     Dim mousex As Integer
     Dim mousey As Integer
+    Private Class Bluerend : Inherits ToolStripProfessionalRenderer
+        Protected Overrides Sub OnRenderMenuItemBackground(ByVal e As System.Windows.Forms.ToolStripItemRenderEventArgs)
+            If e.Item.Selected Then
+                If e.Item.Width > 140 Then
+                    Dim rc As New Rectangle(Point.Empty, e.Item.Size)
+                    'Element du menu Blueflap au passage de la souris
+                    e.Graphics.FillRectangle(Brushes.Transparent, rc)
+                    e.Graphics.DrawRectangle(Pens.WhiteSmoke, 1, 0, rc.Width + 1, rc.Height - 1)
+                    e.Item.ForeColor = Color.SteelBlue
+                Else
+                    Dim rc As New Rectangle(New System.Drawing.Point(19, 0), New System.Drawing.Size(2, 25))
+                    'Element du menu Blueflap au passage de la souris
+                    e.Graphics.FillRectangle(Brushes.DeepSkyBlue, rc)
+                    e.Graphics.DrawRectangle(Pens.Transparent, 1, 0, rc.Width - 1, rc.Height - 1)
+                    e.Item.ForeColor = Color.SteelBlue
+                End If
+            Else
+                Dim rc As New Rectangle(Point.Empty, e.Item.Size)
+                'Element du menu Blueflap au repos
+                e.Graphics.FillRectangle(Brushes.Transparent, rc)
+                e.Item.ForeColor = Color.DeepSkyBlue
+            End If
+        End Sub
+    End Class
     Private Sub MenuBoutton_Click(sender As Object, e As EventArgs) Handles Menu_ShowHide_Button.Click
         If voletlateral.Width = 27 Then
             voletlateral.Width = 160
             voletlateral.BackColor = Color.White
+            voletlateral.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow
         Else
+            voletlateral.LayoutStyle = ToolStripLayoutStyle.Table
             voletlateral.Width = 27
             voletlateral.BackColor = Color.Black
         End If
@@ -126,6 +152,7 @@
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        voletlateral.Renderer = New Bluerend
         If Stng_MPActiv.Checked Then
             ABlueflap_Verrouillage.BringToFront()
         Else
@@ -187,7 +214,7 @@
                 Dim fileeName As String = System.IO.Path.GetFullPath(BackgroundChemin.Text)
                 ABlueflap_Bluestart.BackgroundImage = Image.FromFile(BackgroundChemin.Text)
                 ABlueflap_Verrouillage.BackgroundImage = Image.FromFile(BackgroundChemin.Text)
-                stng_picdemo.Image = Image.FromFile(BackgroundChemin.Text)
+                stng_picdemo.BackgroundImage = Image.FromFile(BackgroundChemin.Text)
             End If
         End If
     End Sub
@@ -603,7 +630,7 @@
             Dim fileName As String = System.IO.Path.GetFullPath(open.FileName)
             ABlueflap_Bluestart.BackgroundImage = New Bitmap(open.FileName)
             BackgroundChemin.Text = fileName
-            stng_picdemo.Image = New Bitmap(open.FileName)
+            stng_picdemo.BackgroundImage = New Bitmap(open.FileName)
         End If
     End Sub
 
@@ -782,7 +809,7 @@
             Dim fileName As String = System.IO.Path.GetFullPath(open.FileName)
             BackgroundChemin.Text = fileName
             ABlueflap_Bluestart.BackgroundImage = New Bitmap(open.FileName)
-            stng_picdemo.Image = New Bitmap(open.FileName)
+            stng_picdemo.BackgroundImage = New Bitmap(open.FileName)
         End If
     End Sub
 

@@ -175,9 +175,11 @@
         If Stng_Volet_reduire.Checked Then
             voletlateral.Width = 27
             voletlateral.BackColor = Color.Black
+            voletlateral.LayoutStyle = ToolStripLayoutStyle.Table
         Else
             voletlateral.Width = 160
             voletlateral.BackColor = Color.White
+            voletlateral.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow
         End If
 
         Notif_internet.Visible = Not My.Computer.Network.IsAvailable
@@ -246,10 +248,12 @@
             voletlateral.Width = 27
             voletlateral.BackColor = Color.Black
             Stng_Volet_Mousehover_agrandir.Visible = True
+            voletlateral.LayoutStyle = ToolStripLayoutStyle.Table
         Else
             voletlateral.Width = 160
             voletlateral.BackColor = Color.White
             voletlateral.SendToBack()
+            voletlateral.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow
             Stng_Volet_Mousehover_agrandir.Visible = False
         End If
     End Sub
@@ -573,14 +577,15 @@
         If Stng_Volet_reduire.Checked AndAlso Stng_Volet_Mousehover_agrandir.Checked Then
             voletlateral.BackColor = Color.White
             voletlateral.Width = 160
+            voletlateral.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow
         End If
-
     End Sub
 
     Private Sub volet_MouseLeave(sender As Object, e As EventArgs) Handles voletlateral.MouseLeave
         If Stng_Volet_reduire.Checked AndAlso Stng_Volet_Mousehover_agrandir.Checked Then
             voletlateral.Width = 27
             voletlateral.BackColor = Color.Black
+            voletlateral.LayoutStyle = ToolStripLayoutStyle.Table
         End If
     End Sub
 

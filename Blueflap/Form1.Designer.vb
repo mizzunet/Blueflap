@@ -325,10 +325,10 @@ Partial Class Fenetre_Principale
         Me.Fav_Historique_List.FormattingEnabled = True
         Me.Fav_Historique_List.HorizontalScrollbar = True
         Me.Fav_Historique_List.ItemHeight = 15
-        Me.Fav_Historique_List.Location = New System.Drawing.Point(0, 56)
+        Me.Fav_Historique_List.Location = New System.Drawing.Point(0, 131)
         Me.Fav_Historique_List.Name = "Fav_Historique_List"
         Me.Fav_Historique_List.ScrollAlwaysVisible = True
-        Me.Fav_Historique_List.Size = New System.Drawing.Size(232, 510)
+        Me.Fav_Historique_List.Size = New System.Drawing.Size(232, 435)
         Me.Fav_Historique_List.TabIndex = 5
         Me.Fav_Historique_List.Visible = False
         '
@@ -596,7 +596,7 @@ Partial Class Fenetre_Principale
         Me.Menu_Home.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Menu_Home.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Menu_Home.Name = "Menu_Home"
-        Me.Menu_Home.Size = New System.Drawing.Size(81, 24)
+        Me.Menu_Home.Size = New System.Drawing.Size(153, 24)
         Me.Menu_Home.Text = "Accueil"
         '
         'Menu_Back
@@ -608,7 +608,7 @@ Partial Class Fenetre_Principale
         Me.Menu_Back.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Menu_Back.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Menu_Back.Name = "Menu_Back"
-        Me.Menu_Back.Size = New System.Drawing.Size(100, 24)
+        Me.Menu_Back.Size = New System.Drawing.Size(153, 24)
         Me.Menu_Back.Text = "Précédent"
         '
         'Menu_Forward
@@ -620,7 +620,7 @@ Partial Class Fenetre_Principale
         Me.Menu_Forward.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Menu_Forward.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Menu_Forward.Name = "Menu_Forward"
-        Me.Menu_Forward.Size = New System.Drawing.Size(80, 24)
+        Me.Menu_Forward.Size = New System.Drawing.Size(153, 24)
         Me.Menu_Forward.Text = "Suivant"
         '
         'Menu_Stop
@@ -631,7 +631,7 @@ Partial Class Fenetre_Principale
         Me.Menu_Stop.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Menu_Stop.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Menu_Stop.Name = "Menu_Stop"
-        Me.Menu_Stop.Size = New System.Drawing.Size(80, 24)
+        Me.Menu_Stop.Size = New System.Drawing.Size(153, 24)
         Me.Menu_Stop.Text = "Arrêter"
         Me.Menu_Stop.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Menu_Stop.Visible = False
@@ -646,7 +646,7 @@ Partial Class Fenetre_Principale
         Me.Menu_Refresh.Name = "Menu_Refresh"
         Me.Menu_Refresh.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.R), System.Windows.Forms.Keys)
-        Me.Menu_Refresh.Size = New System.Drawing.Size(96, 24)
+        Me.Menu_Refresh.Size = New System.Drawing.Size(153, 24)
         Me.Menu_Refresh.Text = "Actualiser"
         '
         'Menu_Fight
@@ -659,7 +659,7 @@ Partial Class Fenetre_Principale
         Me.Menu_Fight.Name = "Menu_Fight"
         Me.Menu_Fight.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.F), System.Windows.Forms.Keys)
-        Me.Menu_Fight.Size = New System.Drawing.Size(112, 24)
+        Me.Menu_Fight.Size = New System.Drawing.Size(153, 24)
         Me.Menu_Fight.Text = "Search Fight"
         '
         'Menu_Favos
@@ -670,7 +670,7 @@ Partial Class Fenetre_Principale
         Me.Menu_Favos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Menu_Favos.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Menu_Favos.Name = "Menu_Favos"
-        Me.Menu_Favos.Size = New System.Drawing.Size(78, 24)
+        Me.Menu_Favos.Size = New System.Drawing.Size(153, 24)
         Me.Menu_Favos.Text = "Favoris"
         '
         'Menu_Share
@@ -683,7 +683,7 @@ Partial Class Fenetre_Principale
         Me.Menu_Share.Name = "Menu_Share"
         Me.Menu_Share.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.I), System.Windows.Forms.Keys)
-        Me.Menu_Share.Size = New System.Drawing.Size(112, 24)
+        Me.Menu_Share.Size = New System.Drawing.Size(153, 24)
         Me.Menu_Share.Text = "Informations"
         '
         'menu_partage
@@ -695,7 +695,7 @@ Partial Class Fenetre_Principale
         Me.menu_partage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.menu_partage.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menu_partage.Name = "menu_partage"
-        Me.menu_partage.Size = New System.Drawing.Size(88, 24)
+        Me.menu_partage.Size = New System.Drawing.Size(153, 24)
         Me.menu_partage.Text = "Partager"
         '
         'FacebookToolStripMenuItem
@@ -723,7 +723,7 @@ Partial Class Fenetre_Principale
         Me.Menu_Settings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Menu_Settings.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Menu_Settings.Name = "Menu_Settings"
-        Me.Menu_Settings.Size = New System.Drawing.Size(105, 24)
+        Me.Menu_Settings.Size = New System.Drawing.Size(153, 24)
         Me.Menu_Settings.Text = "Paramètres"
         '
         'Menu_Lock
@@ -734,7 +734,7 @@ Partial Class Fenetre_Principale
         Me.Menu_Lock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Menu_Lock.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Menu_Lock.Name = "Menu_Lock"
-        Me.Menu_Lock.Size = New System.Drawing.Size(100, 24)
+        Me.Menu_Lock.Size = New System.Drawing.Size(153, 24)
         Me.Menu_Lock.Text = "Verrouiller"
         '
         'Menu_FullScr
@@ -746,7 +746,7 @@ Partial Class Fenetre_Principale
         Me.Menu_FullScr.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Menu_FullScr.Name = "Menu_FullScr"
         Me.Menu_FullScr.ShortcutKeys = System.Windows.Forms.Keys.F11
-        Me.Menu_FullScr.Size = New System.Drawing.Size(105, 24)
+        Me.Menu_FullScr.Size = New System.Drawing.Size(153, 24)
         Me.Menu_FullScr.Text = "Plein écran"
         '
         'Menu_Memo
@@ -757,7 +757,7 @@ Partial Class Fenetre_Principale
         Me.Menu_Memo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Menu_Memo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Menu_Memo.Name = "Menu_Memo"
-        Me.Menu_Memo.Size = New System.Drawing.Size(73, 24)
+        Me.Menu_Memo.Size = New System.Drawing.Size(153, 24)
         Me.Menu_Memo.Text = "Post-It"
         Me.Menu_Memo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -1960,6 +1960,7 @@ Partial Class Fenetre_Principale
         Me.Infos_code_source.CharWidth = 8
         Me.Infos_code_source.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Infos_code_source.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.Infos_code_source.Font = New System.Drawing.Font("Courier New", 9.75!)
         Me.Infos_code_source.IndentBackColor = System.Drawing.SystemColors.Control
         Me.Infos_code_source.IsReplaceMode = False
         Me.Infos_code_source.Location = New System.Drawing.Point(74, 194)

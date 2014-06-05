@@ -5,7 +5,7 @@
     Private Class Bluerend : Inherits ToolStripProfessionalRenderer
         Protected Overrides Sub OnRenderMenuItemBackground(ByVal e As System.Windows.Forms.ToolStripItemRenderEventArgs)
             If e.Item.Selected Then
-                If e.Item.Width > 140 Then
+                If e.Item.Width > 140 OrElse e.Item.Text = "Facebook" OrElse e.Item.Text = "Twitter" Then
                     Dim rc As New Rectangle(Point.Empty, e.Item.Size)
                     'Element du menu Blueflap au passage de la souris
                     e.Graphics.FillRectangle(Brushes.Transparent, rc)

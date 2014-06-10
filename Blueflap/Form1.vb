@@ -355,14 +355,14 @@
         Me.AcceptButton = SrchF_Fightbutton
     End Sub
     Private Sub TextBox5_Leave(sender As Object, e As EventArgs) Handles SrchF_Searchbox.Leave
-        Me.AcceptButton = GoButton
+        Me.AcceptButton = Nothing
     End Sub
     Private Sub TextBox4_TextChanged(sender As Object, e As EventArgs) Handles Verr_Textbox.TextChanged
         Me.AcceptButton = Verr_AcceptButt
         Verr_WrongMp.Visible = False
     End Sub
     Private Sub TextBox4_Leave(sender As Object, e As EventArgs) Handles Verr_Textbox.Leave
-        Me.AcceptButton = GoButton
+        Me.AcceptButton = Nothing
     End Sub
 
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Infos_CodeShowHide.Click
@@ -625,7 +625,7 @@
     End Sub
 
     Private Sub TextBox6_Leave(sender As Object, e As EventArgs) Handles Bs_Searchbox.Leave
-        Me.AcceptButton = GoButton
+        Me.AcceptButton = Nothing
     End Sub
 
     Private Sub Button16_Click(sender As Object, e As EventArgs) Handles BS_ImgChoose.Click
@@ -698,6 +698,7 @@
     End Sub
 
     Private Sub SmartAdressbox_TextChanged(sender As Object, e As EventArgs) Handles SmartAdressbox.TextChanged
+        Me.AcceptButton = GoButton
         If Web.IsLoading = True Then
             SmartAdressbox.ForeColor = Color.Black
         Else
@@ -844,5 +845,8 @@
 
     Private Sub Button5_Click_1(sender As Object, e As EventArgs) Handles Button5.Click
         Process.Start("https://github.com/Bat41")
+    End Sub
+    Private Sub SmartAdressbox_Leave(sender As Object, e As EventArgs) Handles SmartAdressbox.Leave
+        Me.AcceptButton = Nothing
     End Sub
 End Class

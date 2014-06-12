@@ -326,10 +326,10 @@ Partial Class Fenetre_Principale
         Me.Fav_Historique_List.FormattingEnabled = True
         Me.Fav_Historique_List.HorizontalScrollbar = True
         Me.Fav_Historique_List.ItemHeight = 15
-        Me.Fav_Historique_List.Location = New System.Drawing.Point(0, 131)
+        Me.Fav_Historique_List.Location = New System.Drawing.Point(0, 56)
         Me.Fav_Historique_List.Name = "Fav_Historique_List"
         Me.Fav_Historique_List.ScrollAlwaysVisible = True
-        Me.Fav_Historique_List.Size = New System.Drawing.Size(232, 435)
+        Me.Fav_Historique_List.Size = New System.Drawing.Size(232, 510)
         Me.Fav_Historique_List.TabIndex = 5
         Me.Fav_Historique_List.Visible = False
         '
@@ -1449,7 +1449,7 @@ Partial Class Fenetre_Principale
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label13.Location = New System.Drawing.Point(381, 184)
+        Me.Label13.Location = New System.Drawing.Point(319, 77)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(183, 15)
         Me.Label13.TabIndex = 36
@@ -1459,7 +1459,7 @@ Partial Class Fenetre_Principale
         '
         Me.Label12.AutoSize = True
         Me.Label12.ForeColor = System.Drawing.Color.Black
-        Me.Label12.Location = New System.Drawing.Point(381, 171)
+        Me.Label12.Location = New System.Drawing.Point(319, 64)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(371, 13)
         Me.Label12.TabIndex = 35
@@ -1977,7 +1977,6 @@ Partial Class Fenetre_Principale
         Me.Infos_code_source.CharWidth = 8
         Me.Infos_code_source.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Infos_code_source.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.Infos_code_source.Font = New System.Drawing.Font("Courier New", 9.75!)
         Me.Infos_code_source.IndentBackColor = System.Drawing.SystemColors.Control
         Me.Infos_code_source.IsReplaceMode = False
         Me.Infos_code_source.Location = New System.Drawing.Point(74, 194)
@@ -2354,10 +2353,10 @@ Partial Class Fenetre_Principale
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1117, 607)
+        Me.Controls.Add(Me.ABlueflap_Settings)
+        Me.Controls.Add(Me.ABlueflap_Navigateur)
         Me.Controls.Add(Me.ABlueflap_Fight)
         Me.Controls.Add(Me.ABlueflap_Bluestart)
-        Me.Controls.Add(Me.ABlueflap_Navigateur)
-        Me.Controls.Add(Me.ABlueflap_Settings)
         Me.Controls.Add(Me.ABlueflap_Infos)
         Me.Controls.Add(Me.ABlueflap_Verrouillage)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)

@@ -104,5 +104,14 @@
     <Setting Name="Cheminback" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="Fightavdvanced" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="SFAdvanceA" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://www.google.fr/#hl=fr&amp;sclient=psy-ab&amp;q=</Value>
+    </Setting>
+    <Setting Name="SFAdvanceB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://www.bing.com/search?q=</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

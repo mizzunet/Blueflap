@@ -440,6 +440,42 @@ Namespace My
                 Me("Cheminback") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Fightavdvanced() As Boolean
+            Get
+                Return CType(Me("Fightavdvanced"),Boolean)
+            End Get
+            Set
+                Me("Fightavdvanced") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("http://www.google.fr/#hl=fr&sclient=psy-ab&q=")>  _
+        Public Property SFAdvanceA() As String
+            Get
+                Return CType(Me("SFAdvanceA"),String)
+            End Get
+            Set
+                Me("SFAdvanceA") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("http://www.bing.com/search?q=")>  _
+        Public Property SFAdvanceB() As String
+            Get
+                Return CType(Me("SFAdvanceB"),String)
+            End Get
+            Set
+                Me("SFAdvanceB") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

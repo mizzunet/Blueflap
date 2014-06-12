@@ -322,32 +322,36 @@
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles SrchF_Fightbutton.Click
-        If SrchF_ChoixA.Text = "Google" Then
-            SrchF_fighter_1.Source = New Uri("http://www.google.fr/#hl=fr&sclient=psy-ab&q=" + SrchF_Searchbox.Text)
+        If CheckBox1.Checked = False Then
+            If SrchF_ChoixA.Text = "Google" Then
+                SrchF_fighter_1.Source = New Uri("http://www.google.fr/#hl=fr&sclient=psy-ab&q=" + SrchF_Searchbox.Text)
 
-        ElseIf SrchF_ChoixA.Text = "Bing" Then
-            SrchF_fighter_1.Source = New Uri("http://www.bing.com/search?q=" + SrchF_Searchbox.Text)
+            ElseIf SrchF_ChoixA.Text = "Bing" Then
+                SrchF_fighter_1.Source = New Uri("http://www.bing.com/search?q=" + SrchF_Searchbox.Text)
 
-        ElseIf SrchF_ChoixA.Text = "Yahoo" Then
-            SrchF_fighter_1.Source = New Uri("http://fr.search.yahoo.com/search;_ylt=Ai38ykBDWJSAxF25NrTnjXxNhJp4?p=" + SrchF_Searchbox.Text)
+            ElseIf SrchF_ChoixA.Text = "Yahoo" Then
+                SrchF_fighter_1.Source = New Uri("http://fr.search.yahoo.com/search;_ylt=Ai38ykBDWJSAxF25NrTnjXxNhJp4?p=" + SrchF_Searchbox.Text)
 
-        ElseIf SrchF_ChoixA.Text = "DuckDuckGo" Then
-            SrchF_fighter_1.Source = New Uri("http://duckduckgo.com/?q=" + SrchF_Searchbox.Text)
-        End If
+            ElseIf SrchF_ChoixA.Text = "DuckDuckGo" Then
+                SrchF_fighter_1.Source = New Uri("http://duckduckgo.com/?q=" + SrchF_Searchbox.Text)
+            End If
 
 
-        If SrchF_ChoixB.Text = "Google" Then
-            SrchF_fighter_2.Source = New Uri("http://www.google.fr/#hl=fr&sclient=psy-ab&q=" + SrchF_Searchbox.Text)
+            If SrchF_ChoixB.Text = "Google" Then
+                SrchF_fighter_2.Source = New Uri("http://www.google.fr/#hl=fr&sclient=psy-ab&q=" + SrchF_Searchbox.Text)
 
-        ElseIf SrchF_ChoixB.Text = "Bing" Then
-            SrchF_fighter_2.Source = New Uri("http://www.bing.com/search?q=" + SrchF_Searchbox.Text)
+            ElseIf SrchF_ChoixB.Text = "Bing" Then
+                SrchF_fighter_2.Source = New Uri("http://www.bing.com/search?q=" + SrchF_Searchbox.Text)
 
-        ElseIf SrchF_ChoixB.Text = "Yahoo" Then
-            SrchF_fighter_2.Source = New Uri("http://fr.search.yahoo.com/search;_ylt=Ai38ykBDWJSAxF25NrTnjXxNhJp4?p=" + SrchF_Searchbox.Text)
+            ElseIf SrchF_ChoixB.Text = "Yahoo" Then
+                SrchF_fighter_2.Source = New Uri("http://fr.search.yahoo.com/search;_ylt=Ai38ykBDWJSAxF25NrTnjXxNhJp4?p=" + SrchF_Searchbox.Text)
 
-        ElseIf SrchF_ChoixB.Text = "DuckDuckGo" Then
-            SrchF_fighter_2.Source = New Uri("http://duckduckgo.com/?q=" + SrchF_Searchbox.Text)
-
+            ElseIf SrchF_ChoixB.Text = "DuckDuckGo" Then
+                SrchF_fighter_2.Source = New Uri("http://duckduckgo.com/?q=" + SrchF_Searchbox.Text)
+            End If
+        Else
+            SrchF_fighter_1.Source = New Uri(SrchFight_AdvanceLeft.Text + SrchF_Searchbox.Text)
+            SrchF_fighter_2.Source = New Uri(SrchFight_AdvanceRight.Text + SrchF_Searchbox.Text)
         End If
     End Sub
 
@@ -868,6 +872,20 @@
         ElseIf Fight_Actions.Text = "Ouvrir gauche" Then
             ABlueflap_Navigateur.BringToFront()
             Web.Source = New Uri(SrchF_fighter_1.Source.ToString)
+        End If
+    End Sub
+
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
+        If CheckBox1.Checked = True Then
+            SrchFight_AdvanceLeft.Visible = True
+            SrchFight_AdvanceRight.Visible = True
+            SrchF_ChoixA.Enabled = False
+            SrchF_ChoixB.Enabled = False
+        Else
+            SrchFight_AdvanceLeft.Visible = False
+            SrchFight_AdvanceRight.Visible = False
+            SrchF_ChoixA.Enabled = True
+            SrchF_ChoixB.Enabled = True
         End If
     End Sub
 End Class

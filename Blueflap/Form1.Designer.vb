@@ -144,6 +144,7 @@ Partial Class Fenetre_Principale
         Me.Settings_Back = New System.Windows.Forms.Button()
         Me.Settings_title = New System.Windows.Forms.Label()
         Me.ABlueflap_Fight = New System.Windows.Forms.Panel()
+        Me.Fight_Actions = New System.Windows.Forms.ComboBox()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.SrchF_fighter_1 = New Awesomium.Windows.Forms.WebControl(Me.components)
         Me.SrchF_fighter_2 = New Awesomium.Windows.Forms.WebControl(Me.components)
@@ -543,6 +544,7 @@ Partial Class Fenetre_Principale
         '
         'Menu_ShowHide_Button
         '
+        Me.Menu_ShowHide_Button.AccessibleRole = System.Windows.Forms.AccessibleRole.None
         Me.Menu_ShowHide_Button.BackColor = System.Drawing.Color.Transparent
         Me.Menu_ShowHide_Button.FlatAppearance.BorderSize = 0
         Me.Menu_ShowHide_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -552,6 +554,7 @@ Partial Class Fenetre_Principale
         Me.Menu_ShowHide_Button.Name = "Menu_ShowHide_Button"
         Me.Menu_ShowHide_Button.Size = New System.Drawing.Size(28, 28)
         Me.Menu_ShowHide_Button.TabIndex = 0
+        Me.Menu_ShowHide_Button.TabStop = False
         Me.Menu_ShowHide_Button.Text = " "
         Me.Menu_ShowHide_Button.UseVisualStyleBackColor = False
         '
@@ -1683,6 +1686,7 @@ Partial Class Fenetre_Principale
         '
         'ABlueflap_Fight
         '
+        Me.ABlueflap_Fight.Controls.Add(Me.Fight_Actions)
         Me.ABlueflap_Fight.Controls.Add(Me.SplitContainer1)
         Me.ABlueflap_Fight.Controls.Add(Me.SrchF_Fightbutton)
         Me.ABlueflap_Fight.Controls.Add(Me.SrchF_ChoixB)
@@ -1695,6 +1699,19 @@ Partial Class Fenetre_Principale
         Me.ABlueflap_Fight.Name = "ABlueflap_Fight"
         Me.ABlueflap_Fight.Size = New System.Drawing.Size(1117, 607)
         Me.ABlueflap_Fight.TabIndex = 2
+        '
+        'Fight_Actions
+        '
+        Me.Fight_Actions.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Fight_Actions.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Fight_Actions.ForeColor = System.Drawing.Color.DarkCyan
+        Me.Fight_Actions.FormattingEnabled = True
+        Me.Fight_Actions.Items.AddRange(New Object() {"Vue double", "Masquer droite", "Masquer gauche", "Ouvrir droite", "Ouvrir gauche"})
+        Me.Fight_Actions.Location = New System.Drawing.Point(984, 18)
+        Me.Fight_Actions.Name = "Fight_Actions"
+        Me.Fight_Actions.Size = New System.Drawing.Size(121, 21)
+        Me.Fight_Actions.TabIndex = 9
+        Me.Fight_Actions.Text = "Actions"
         '
         'SplitContainer1
         '
@@ -2338,10 +2355,10 @@ Partial Class Fenetre_Principale
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1117, 607)
         Me.Controls.Add(Me.ABlueflap_Fight)
+        Me.Controls.Add(Me.ABlueflap_Bluestart)
         Me.Controls.Add(Me.ABlueflap_Navigateur)
         Me.Controls.Add(Me.ABlueflap_Settings)
         Me.Controls.Add(Me.ABlueflap_Infos)
-        Me.Controls.Add(Me.ABlueflap_Bluestart)
         Me.Controls.Add(Me.ABlueflap_Verrouillage)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimumSize = New System.Drawing.Size(240, 39)
@@ -2577,5 +2594,6 @@ Partial Class Fenetre_Principale
     Friend WithEvents Button4 As System.Windows.Forms.Button
     Friend WithEvents Button5 As System.Windows.Forms.Button
     Friend WithEvents Label20 As System.Windows.Forms.Label
+    Friend WithEvents Fight_Actions As System.Windows.Forms.ComboBox
 
 End Class

@@ -2,16 +2,6 @@
     Dim drag As Boolean
     Dim mousex As Integer
     Dim mousey As Integer
-
-    Protected Overrides ReadOnly Property CreateParams() As System.Windows.Forms.CreateParams
-        Get
-            Const DROPSHADOW = &H20000
-            Dim cParam As CreateParams = MyBase.CreateParams
-            cParam.ClassStyle = cParam.ClassStyle Or DROPSHADOW
-            Return cParam
-        End Get
-    End Property
-
     Private Sub AMouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseDown
         drag = True 'Sets the variable drag to true.
         mousex = Windows.Forms.Cursor.Position.X - Me.Left 'Sets variable mousex
@@ -28,9 +18,5 @@
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Close()
-    End Sub
-
-    Private Sub Form4_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
     End Sub
 End Class

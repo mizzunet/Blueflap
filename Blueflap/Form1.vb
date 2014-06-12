@@ -849,4 +849,25 @@
     Private Sub SmartAdressbox_Leave(sender As Object, e As EventArgs) Handles SmartAdressbox.Leave
         Me.AcceptButton = Nothing
     End Sub
+    Private Sub Fight_Actions_TextChanged(sender As Object, e As EventArgs) Handles Fight_Actions.TextChanged
+        If Fight_Actions.Text = "Vue double" Then
+            SplitContainer1.Panel1Collapsed = False
+            SplitContainer1.Panel2Collapsed = False
+
+        ElseIf Fight_Actions.Text = "Masquer droite" Then
+            SplitContainer1.Panel1Collapsed = False
+            SplitContainer1.Panel2Collapsed = True
+
+        ElseIf Fight_Actions.Text = "Masquer gauche" Then
+            SplitContainer1.Panel1Collapsed = True
+            SplitContainer1.Panel2Collapsed = False
+
+        ElseIf Fight_Actions.Text = "Ouvrir droite" Then
+            ABlueflap_Navigateur.BringToFront()
+            Web.Source = New Uri(SrchF_fighter_2.Source.ToString)
+        ElseIf Fight_Actions.Text = "Ouvrir gauche" Then
+            ABlueflap_Navigateur.BringToFront()
+            Web.Source = New Uri(SrchF_fighter_1.Source.ToString)
+        End If
+    End Sub
 End Class

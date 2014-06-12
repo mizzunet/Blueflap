@@ -46,6 +46,9 @@ Partial Class Form4
         '
         'Content
         '
+        Me.Content.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Content.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Content.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.Content.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Blueflap.My.MySettings.Default, "MemoContent", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
@@ -61,6 +64,8 @@ Partial Class Form4
         '
         'Title
         '
+        Me.Title.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Title.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Title.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.Title.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Blueflap.My.MySettings.Default, "MemoTitle", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
@@ -78,14 +83,13 @@ Partial Class Form4
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.WhiteSmoke
         Me.ClientSize = New System.Drawing.Size(368, 381)
+        Me.ControlBox = False
         Me.Controls.Add(Me.Content)
         Me.Controls.Add(Me.Title)
         Me.Controls.Add(Me.Button1)
         Me.Cursor = System.Windows.Forms.Cursors.SizeAll
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form4"
-        Me.Text = "Form4"
         Me.TopMost = True
         Me.ResumeLayout(False)
         Me.PerformLayout()

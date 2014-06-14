@@ -39,6 +39,12 @@ Partial Class Form5
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.MetroControlBox1 = New MetroControls.MetroControlBox()
+        Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.TabPage6 = New System.Windows.Forms.TabPage()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.MetroTabControl1.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -46,6 +52,8 @@ Partial Class Form5
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         Me.TabPage4.SuspendLayout()
+        Me.TabPage5.SuspendLayout()
+        Me.TabPage6.SuspendLayout()
         Me.SuspendLayout()
         '
         'MetroTabControl1
@@ -56,6 +64,8 @@ Partial Class Form5
         Me.MetroTabControl1.Controls.Add(Me.TabPage1)
         Me.MetroTabControl1.Controls.Add(Me.TabPage2)
         Me.MetroTabControl1.Controls.Add(Me.TabPage4)
+        Me.MetroTabControl1.Controls.Add(Me.TabPage5)
+        Me.MetroTabControl1.Controls.Add(Me.TabPage6)
         Me.MetroTabControl1.DoAnimation = False
         Me.MetroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.MetroTabControl1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
@@ -257,6 +267,75 @@ Partial Class Form5
         Me.MetroControlBox1.Text = "MetroControlBox1"
         Me.MetroControlBox1.UseMetroForm = True
         '
+        'TabPage5
+        '
+        Me.TabPage5.BackColor = System.Drawing.Color.White
+        Me.TabPage5.Controls.Add(Me.Label5)
+        Me.TabPage5.Controls.Add(Me.TextBox5)
+        Me.TabPage5.Location = New System.Drawing.Point(124, 4)
+        Me.TabPage5.Name = "TabPage5"
+        Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage5.Size = New System.Drawing.Size(632, 417)
+        Me.TabPage5.TabIndex = 4
+        Me.TabPage5.Text = "Bluestart"
+        '
+        'TabPage6
+        '
+        Me.TabPage6.BackColor = System.Drawing.Color.White
+        Me.TabPage6.Controls.Add(Me.Label6)
+        Me.TabPage6.Controls.Add(Me.TextBox6)
+        Me.TabPage6.Location = New System.Drawing.Point(124, 4)
+        Me.TabPage6.Name = "TabPage6"
+        Me.TabPage6.Size = New System.Drawing.Size(632, 417)
+        Me.TabPage6.TabIndex = 5
+        Me.TabPage6.Text = "SmartSuggest"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 11.0!)
+        Me.Label5.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.Label5.Location = New System.Drawing.Point(10, 5)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(173, 20)
+        Me.Label5.TabIndex = 8
+        Me.Label5.Text = "Qu'est-ce que Bluestart ?"
+        '
+        'TextBox5
+        '
+        Me.TextBox5.BackColor = System.Drawing.Color.White
+        Me.TextBox5.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox5.Location = New System.Drawing.Point(14, 47)
+        Me.TextBox5.Multiline = True
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.ReadOnly = True
+        Me.TextBox5.Size = New System.Drawing.Size(608, 364)
+        Me.TextBox5.TabIndex = 7
+        Me.TextBox5.Text = resources.GetString("TextBox5.Text")
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Segoe UI", 11.0!)
+        Me.Label6.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.Label6.Location = New System.Drawing.Point(10, 5)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(207, 20)
+        Me.Label6.TabIndex = 8
+        Me.Label6.Text = "Qu'est-ce que SmartSuggest ?"
+        '
+        'TextBox6
+        '
+        Me.TextBox6.BackColor = System.Drawing.Color.White
+        Me.TextBox6.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox6.Location = New System.Drawing.Point(14, 47)
+        Me.TextBox6.Multiline = True
+        Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.ReadOnly = True
+        Me.TextBox6.Size = New System.Drawing.Size(608, 364)
+        Me.TextBox6.TabIndex = 7
+        Me.TextBox6.Text = resources.GetString("TextBox6.Text")
+        '
         'Form5
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -279,6 +358,10 @@ Partial Class Form5
         Me.TabPage2.PerformLayout()
         Me.TabPage4.ResumeLayout(False)
         Me.TabPage4.PerformLayout()
+        Me.TabPage5.ResumeLayout(False)
+        Me.TabPage5.PerformLayout()
+        Me.TabPage6.ResumeLayout(False)
+        Me.TabPage6.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -298,4 +381,10 @@ Partial Class Form5
     Friend WithEvents TabPage4 As System.Windows.Forms.TabPage
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
+    Friend WithEvents TabPage5 As System.Windows.Forms.TabPage
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
+    Friend WithEvents TabPage6 As System.Windows.Forms.TabPage
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
 End Class

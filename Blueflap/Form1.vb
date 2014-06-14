@@ -39,6 +39,14 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles GoButton.Click
+        If Smartsuggestactif.Checked Then
+            My.Settings.Smartcoll.Add(SmartAdressbox.Text)
+            SmartAdressbox.AutoCompleteCustomSource.Clear()
+            For Each Item As String In My.Settings.Smartcoll
+                SmartAdressbox.AutoCompleteCustomSource.Add(Item)
+            Next
+        End If
+
         Dim textArray = SmartAdressbox.Text.Split(" ")
         If (SmartAdressbox.Text.Contains(".") = True And SmartAdressbox.Text.Contains(" ") = False And SmartAdressbox.Text.Contains(" .") = False And SmartAdressbox.Text.Contains(". ") = False) Or textArray(0).Contains(":/") = True Or textArray(0).Contains(":\") Then
             If SmartAdressbox.Text.Contains("http://") OrElse SmartAdressbox.Text.Contains("https://") Then
@@ -165,6 +173,28 @@
             End If
         End If
 
+        For Each item As String In My.Settings.Bookmarks
+            Fav_fav_List.Items.Add(item)
+            BS_Favlist.Items.Add(item)
+            If Smartsuggestactif.Checked Then
+                If Not SmartAdressbox.AutoCompleteCustomSource.Contains(item) Then
+                    My.Settings.Smartcoll.Add(item)
+                    SmartAdressbox.AutoCompleteCustomSource.Clear()
+                    SmartAdressbox.AutoCompleteCustomSource.Add(item)
+                End If
+            End If
+        Next
+
+        If Smartsuggestactif.Checked Then
+            For Each item As String In My.Settings.Smartcoll
+                SmartAdressbox.AutoCompleteCustomSource.Add(item)
+            Next
+        End If
+
+        For Each item As String In My.Settings.Historique
+            Fav_Historique_List.Items.Add(item)
+        Next
+
         If Stng_HomePage_Url.Text.Contains("http://") OrElse Stng_HomePage_Url.Text.Contains("https://") Then
             Web.Source = New Uri(Stng_HomePage_Url.Text)
         Else
@@ -184,17 +214,6 @@
 
         Notif_internet.Visible = Not My.Computer.Network.IsAvailable
 
-        For Each item As String In My.Settings.Bookmarks
-            Fav_fav_List.Items.Add(item)
-        Next
-        For Each item As String In My.Settings.Bookmarks
-            BS_Favlist.Items.Add(item)
-        Next
-
-        For Each item As String In My.Settings.Historique
-            Fav_Historique_List.Items.Add(item)
-        Next
-
         Menu_Home.Visible = Home_checkbox.Checked
         Menu_Fight.Visible = Sfight_Checkbox.Checked
         Menu_Favos.Visible = favo_checkbox.Checked
@@ -204,7 +223,7 @@
         Menu_FullScr.Visible = fullscreen_checkbox.Checked
         Menu_Memo.Visible = memo_checkbox.Checked
 
- 
+
         Label14.Left = (Me.Width - Label14.Width) / 2
         BS_Date.Text = System.DateTime.Now.ToString("dddd dd MMMM yyyy")
         BS_Date.Left = (Me.Width - BS_Date.Width) / 2
@@ -410,6 +429,16 @@
             Next
             AddFavo_Button.BackColor = Color.Azure
             Textenotif.Text = "Page ajoutée aux favoris"
+        End If
+
+        If Smartsuggestactif.Checked Then
+            If Not SmartAdressbox.AutoCompleteCustomSource.Contains(Web.Source.ToString) Then
+                My.Settings.Smartcoll.Add(Web.Source.ToString)
+                SmartAdressbox.AutoCompleteCustomSource.Clear()
+                For Each Item As String In My.Settings.Smartcoll
+                    SmartAdressbox.AutoCompleteCustomSource.Add(Item)
+                Next
+            End If
         End If
     End Sub
     Private Sub Favoris_Norif(sender As Object, e As EventArgs) Handles Fav_fav_List.DoubleClick
@@ -886,6 +915,18 @@
             SrchFight_AdvanceRight.Visible = False
             SrchF_ChoixA.Enabled = True
             SrchF_ChoixB.Enabled = True
+        End If
+    End Sub
+
+    Private Sub Button6_Click_1(sender As Object, e As EventArgs) Handles Button6.Click
+        My.Settings.Smartcoll.Clear()
+        SmartAdressbox.AutoCompleteCustomSource.Clear()
+    End Sub
+
+    Private Sub Smartsuggestactif_CheckedChanged(sender As Object, e As EventArgs) Handles Smartsuggestactif.CheckedChanged
+        If Not Smartsuggestactif.Checked Then
+            My.Settings.Smartcoll.Clear()
+            SmartAdressbox.AutoCompleteCustomSource.Clear()
         End If
     End Sub
 End Class

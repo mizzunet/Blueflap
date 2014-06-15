@@ -38,13 +38,14 @@ Partial Class Form5
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.MetroControlBox1 = New MetroControls.MetroControlBox()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
-        Me.TabPage6 = New System.Windows.Forms.TabPage()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.TabPage6 = New System.Windows.Forms.TabPage()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.MetroControlBox1 = New MetroControls.MetroControlBox()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.MetroTabControl1.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -252,21 +253,6 @@ Partial Class Form5
         Me.TextBox4.TabIndex = 5
         Me.TextBox4.Text = resources.GetString("TextBox4.Text")
         '
-        'MetroControlBox1
-        '
-        Me.MetroControlBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MetroControlBox1.BoxClose = True
-        Me.MetroControlBox1.BoxMaximize = True
-        Me.MetroControlBox1.BoxMinimize = True
-        Me.MetroControlBox1.FormHeight = Nothing
-        Me.MetroControlBox1.FormWidth = Nothing
-        Me.MetroControlBox1.Location = New System.Drawing.Point(671, 0)
-        Me.MetroControlBox1.Name = "MetroControlBox1"
-        Me.MetroControlBox1.Size = New System.Drawing.Size(88, 26)
-        Me.MetroControlBox1.TabIndex = 1
-        Me.MetroControlBox1.Text = "MetroControlBox1"
-        Me.MetroControlBox1.UseMetroForm = True
-        '
         'TabPage5
         '
         Me.TabPage5.BackColor = System.Drawing.Color.White
@@ -278,17 +264,6 @@ Partial Class Form5
         Me.TabPage5.Size = New System.Drawing.Size(632, 417)
         Me.TabPage5.TabIndex = 4
         Me.TabPage5.Text = "Bluestart"
-        '
-        'TabPage6
-        '
-        Me.TabPage6.BackColor = System.Drawing.Color.White
-        Me.TabPage6.Controls.Add(Me.Label6)
-        Me.TabPage6.Controls.Add(Me.TextBox6)
-        Me.TabPage6.Location = New System.Drawing.Point(124, 4)
-        Me.TabPage6.Name = "TabPage6"
-        Me.TabPage6.Size = New System.Drawing.Size(632, 417)
-        Me.TabPage6.TabIndex = 5
-        Me.TabPage6.Text = "SmartSuggest"
         '
         'Label5
         '
@@ -313,6 +288,18 @@ Partial Class Form5
         Me.TextBox5.TabIndex = 7
         Me.TextBox5.Text = resources.GetString("TextBox5.Text")
         '
+        'TabPage6
+        '
+        Me.TabPage6.BackColor = System.Drawing.Color.White
+        Me.TabPage6.Controls.Add(Me.Label7)
+        Me.TabPage6.Controls.Add(Me.Label6)
+        Me.TabPage6.Controls.Add(Me.TextBox6)
+        Me.TabPage6.Location = New System.Drawing.Point(124, 4)
+        Me.TabPage6.Name = "TabPage6"
+        Me.TabPage6.Size = New System.Drawing.Size(632, 417)
+        Me.TabPage6.TabIndex = 5
+        Me.TabPage6.Text = "SmartSuggest"
+        '
         'Label6
         '
         Me.Label6.AutoSize = True
@@ -335,6 +322,31 @@ Partial Class Form5
         Me.TextBox6.Size = New System.Drawing.Size(608, 364)
         Me.TextBox6.TabIndex = 7
         Me.TextBox6.Text = resources.GetString("TextBox6.Text")
+        '
+        'MetroControlBox1
+        '
+        Me.MetroControlBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MetroControlBox1.BoxClose = True
+        Me.MetroControlBox1.BoxMaximize = True
+        Me.MetroControlBox1.BoxMinimize = True
+        Me.MetroControlBox1.FormHeight = Nothing
+        Me.MetroControlBox1.FormWidth = Nothing
+        Me.MetroControlBox1.Location = New System.Drawing.Point(671, 0)
+        Me.MetroControlBox1.Name = "MetroControlBox1"
+        Me.MetroControlBox1.Size = New System.Drawing.Size(88, 26)
+        Me.MetroControlBox1.TabIndex = 1
+        Me.MetroControlBox1.Text = "MetroControlBox1"
+        Me.MetroControlBox1.UseMetroForm = True
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.ForeColor = System.Drawing.SystemColors.ControlDark
+        Me.Label7.Location = New System.Drawing.Point(223, 9)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(169, 15)
+        Me.Label7.TabIndex = 9
+        Me.Label7.Text = "Fonction désactivée par défaut"
         '
         'Form5
         '
@@ -387,4 +399,5 @@ Partial Class Form5
     Friend WithEvents TabPage6 As System.Windows.Forms.TabPage
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
+    Friend WithEvents Label7 As System.Windows.Forms.Label
 End Class

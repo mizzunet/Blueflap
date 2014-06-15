@@ -39,7 +39,7 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles GoButton.Click
-        If Smartsuggestactif.Checked Then
+        If stng_Smartsuggestactif.Checked Then
             My.Settings.Smartcoll.Add(SmartAdressbox.Text)
             SmartAdressbox.AutoCompleteCustomSource.Clear()
             For Each Item As String In My.Settings.Smartcoll
@@ -176,7 +176,7 @@
         For Each item As String In My.Settings.Bookmarks
             Fav_fav_List.Items.Add(item)
             BS_Favlist.Items.Add(item)
-            If Smartsuggestactif.Checked Then
+            If stng_Smartsuggestactif.Checked Then
                 If Not SmartAdressbox.AutoCompleteCustomSource.Contains(item) Then
                     My.Settings.Smartcoll.Add(item)
                     SmartAdressbox.AutoCompleteCustomSource.Clear()
@@ -185,7 +185,7 @@
             End If
         Next
 
-        If Smartsuggestactif.Checked Then
+        If stng_Smartsuggestactif.Checked Then
             For Each item As String In My.Settings.Smartcoll
                 SmartAdressbox.AutoCompleteCustomSource.Add(item)
             Next
@@ -224,7 +224,7 @@
         Menu_Memo.Visible = memo_checkbox.Checked
 
 
-        Label14.Left = (Me.Width - Label14.Width) / 2
+        BS_SearchBlackEffect.Left = (Me.Width - BS_SearchBlackEffect.Width) / 2
         BS_Date.Text = System.DateTime.Now.ToString("dddd dd MMMM yyyy")
         BS_Date.Left = (Me.Width - BS_Date.Width) / 2
         Verr_BlackEffect.Left = (Me.Width - Verr_BlackEffect.Width) / 2
@@ -241,7 +241,7 @@
     End Sub
 
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles Stng_HomePage_Url.TextChanged
-          If Stng_HomePage_Url.Text.Contains("http://") OrElse Stng_HomePage_Url.Text.Contains("https://") Then
+        If Stng_HomePage_Url.Text.Contains("http://") OrElse Stng_HomePage_Url.Text.Contains("https://") Then
             Stng_ErreurURLHomepage.Visible = False
         Else
             Stng_ErreurURLHomepage.Visible = True
@@ -341,7 +341,7 @@
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles SrchF_Fightbutton.Click
-        If CheckBox1.Checked = False Then
+        If SrchF_AdvanceChoice.Checked = False Then
             If SrchF_ChoixA.Text = "Google" Then
                 SrchF_fighter_1.Source = New Uri("http://www.google.fr/#hl=fr&sclient=psy-ab&q=" + SrchF_Searchbox.Text)
 
@@ -420,7 +420,7 @@
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles AddFavo_Button.Click
         Notif_add.Visible = True
         If Fav_fav_List.Items.Contains(Web.Source.ToString) Then
-            Textenotif.Text = "Page déjà dans vos favoris"
+            Notiff_add_Text.Text = "Page déjà dans vos favoris"
         Else
             My.Settings.Bookmarks.Add(Web.Source.ToString)
             Fav_fav_List.Items.Clear()
@@ -428,10 +428,10 @@
                 Fav_fav_List.Items.Add(Item)
             Next
             AddFavo_Button.BackColor = Color.Azure
-            Textenotif.Text = "Page ajoutée aux favoris"
+            Notiff_add_Text.Text = "Page ajoutée aux favoris"
         End If
 
-        If Smartsuggestactif.Checked Then
+        If stng_Smartsuggestactif.Checked Then
             If Not SmartAdressbox.AutoCompleteCustomSource.Contains(Web.Source.ToString) Then
                 My.Settings.Smartcoll.Add(Web.Source.ToString)
                 SmartAdressbox.AutoCompleteCustomSource.Clear()
@@ -470,11 +470,11 @@
     End Sub
 
     Private Sub ToolStripMenuItem9_Click(sender As Object, e As EventArgs) Handles Menu_Favos.Click
-        Panel1.Visible = Not Panel1.Visible
+        Fav_Panel.Visible = Not Fav_Panel.Visible
     End Sub
 
     Private Sub Notif_add_Click(sender As Object, e As EventArgs) Handles Notif_add.Click
-        Panel1.Visible = True
+        Fav_Panel.Visible = True
         Notif_add.Visible = False
     End Sub
 
@@ -483,7 +483,7 @@
     End Sub
 
     Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Fav_Close.Click
-        Panel1.Visible = False
+        Fav_Panel.Visible = False
     End Sub
     Private Sub Awesomium_Windows_Forms_WebControl_Navig(sender As Object, e As Awesomium.Core.UrlEventArgs) Handles Web.LoadingFrame
         Menu_Stop.Visible = True
@@ -503,6 +503,13 @@
                 Fav_Historique_List.Items.Clear()
                 For Each Item As String In My.Settings.Historique
                     Fav_Historique_List.Items.Add(Item)
+                Next
+            End If
+            If stng_Smartsuggestactif.Checked Then
+                My.Settings.Smartcoll.Add(Web.Source.ToString)
+                SmartAdressbox.AutoCompleteCustomSource.Clear()
+                For Each Item As String In My.Settings.Smartcoll
+                    SmartAdressbox.AutoCompleteCustomSource.Add(Item)
                 Next
             End If
         End If
@@ -542,7 +549,7 @@
             Menu_FullScr.Font = New Font("Segoe UI Light", 16)
             Menu_Memo.Font = New Font("Segoe UI Light", 16)
             SmartAdressbox.Font = New Font("Segoe UI Light", 13)
-            Barre.Height = 40
+            FP_AdressbarPanel.Height = 40
             AddFavo_Button.Height = 31
             GoButton.Height = 29
             Menu_ShowHide_Button.Height = 38
@@ -562,7 +569,7 @@
             Menu_FullScr.Font = New Font("Segoe UI Light", 11)
             Menu_Memo.Font = New Font("Segoe UI Light", 11)
             SmartAdressbox.Font = New Font("Microsoft Sans Serif", 8)
-            Barre.Height = 27
+            FP_AdressbarPanel.Height = 27
             AddFavo_Button.Height = 20
             GoButton.Height = 18
             Menu_ShowHide_Button.Height = 27
@@ -635,12 +642,12 @@
 
     Private Sub Form1_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
         BS_Date.Left = (Me.Width - BS_Date.Width) / 2
-        Label14.Left = (Me.Width - Label14.Width) / 2
+        BS_SearchBlackEffect.Left = (Me.Width - BS_SearchBlackEffect.Width) / 2
         Verr_BlackEffect.Left = (Me.Width - Verr_BlackEffect.Width) / 2
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles BS_Settings.Click
-        Pop.Visible = Not Pop.Visible
+        BS_Optionsbulle.Visible = Not BS_Optionsbulle.Visible
     End Sub
 
     Private Sub TextBox6_TextChanged(sender As Object, e As EventArgs) Handles Bs_Searchbox.TextChanged
@@ -706,8 +713,8 @@
         ABlueflap_Bluestart.Visible = False
     End Sub
 
-    Private Sub Textenotif_Click(sender As Object, e As EventArgs) Handles Textenotif.Click
-        Panel1.Visible = True
+    Private Sub Textenotif_Click(sender As Object, e As EventArgs) Handles Notiff_add_Text.Click
+        Fav_Panel.Visible = True
         Notif_add.Visible = False
     End Sub
 
@@ -802,43 +809,43 @@
         sett_tab3.ForeColor = Color.DeepSkyBlue
     End Sub
 
-    Private Sub MetroHeaderButton1_Click(sender As Object, e As EventArgs) Handles MetroHeaderButton1.MouseEnter
-        MetroHeaderButton1.ForeColor = Color.DeepSkyBlue
+    Private Sub MetroHeaderButton1_Click(sender As Object, e As EventArgs) Handles Stng_Helpcenter.MouseEnter
+        Stng_Helpcenter.ForeColor = Color.DeepSkyBlue
     End Sub
-    Private Sub MetroHeaderButton1_Sortie(sender As Object, e As EventArgs) Handles MetroHeaderButton1.MouseLeave
-        MetroHeaderButton1.ForeColor = Color.SkyBlue
+    Private Sub MetroHeaderButton1_Sortie(sender As Object, e As EventArgs) Handles Stng_Helpcenter.MouseLeave
+        Stng_Helpcenter.ForeColor = Color.SkyBlue
     End Sub
 
-    Private Sub MetroHeaderButton1_Click_1(sender As Object, e As EventArgs) Handles MetroHeaderButton1.Click
+    Private Sub MetroHeaderButton1_Click_1(sender As Object, e As EventArgs) Handles Stng_Helpcenter.Click
         Form5.Show()
     End Sub
 
-    Private Sub MetroHeaderButton2_Click(sender As Object, e As EventArgs) Handles MetroHeaderButton2.Click
+    Private Sub MetroHeaderButton2_Click(sender As Object, e As EventArgs) Handles Fav_Favtab.Click
         Fav_Historique_List.Visible = False
-        MetroHeaderButton2.LineColorChecked = Color.SteelBlue
-        MetroHeaderButton3.LineColorChecked = Color.DeepSkyBlue
-        MetroHeaderButton3.Refresh()
+        Fav_Favtab.LineColorChecked = Color.SteelBlue
+        Fav_Histotab.LineColorChecked = Color.DeepSkyBlue
+        Fav_Histotab.Refresh()
     End Sub
 
-    Private Sub MetroHeaderButton3_Click(sender As Object, e As EventArgs) Handles MetroHeaderButton3.Click
+    Private Sub MetroHeaderButton3_Click(sender As Object, e As EventArgs) Handles Fav_Histotab.Click
         Fav_Historique_List.Visible = True
-        MetroHeaderButton3.LineColorChecked = Color.SteelBlue
-        MetroHeaderButton2.LineColorChecked = Color.DeepSkyBlue
-        MetroHeaderButton2.Refresh()
+        Fav_Histotab.LineColorChecked = Color.SteelBlue
+        Fav_Favtab.LineColorChecked = Color.DeepSkyBlue
+        Fav_Favtab.Refresh()
     End Sub
 
-    Private Sub MetroHeaderButton2_MouseEnter(sender As Object, e As EventArgs) Handles MetroHeaderButton2.MouseEnter
-        MetroHeaderButton2.ForeColor = Color.SteelBlue
+    Private Sub MetroHeaderButton2_MouseEnter(sender As Object, e As EventArgs) Handles Fav_Favtab.MouseEnter
+        Fav_Favtab.ForeColor = Color.SteelBlue
     End Sub
-    Private Sub MetroHeaderButton2_MouseLeave(sender As Object, e As EventArgs) Handles MetroHeaderButton2.MouseLeave
-        MetroHeaderButton2.ForeColor = Color.DeepSkyBlue
+    Private Sub MetroHeaderButton2_MouseLeave(sender As Object, e As EventArgs) Handles Fav_Favtab.MouseLeave
+        Fav_Favtab.ForeColor = Color.DeepSkyBlue
     End Sub
 
-    Private Sub MetroHeaderButton3_MouseEnter(sender As Object, e As EventArgs) Handles MetroHeaderButton3.MouseEnter
-        MetroHeaderButton3.ForeColor = Color.SteelBlue
+    Private Sub MetroHeaderButton3_MouseEnter(sender As Object, e As EventArgs) Handles Fav_Histotab.MouseEnter
+        Fav_Histotab.ForeColor = Color.SteelBlue
     End Sub
-    Private Sub MetroHeaderButton3_MouseLeave(sender As Object, e As EventArgs) Handles MetroHeaderButton3.MouseLeave
-        MetroHeaderButton3.ForeColor = Color.DeepSkyBlue
+    Private Sub MetroHeaderButton3_MouseLeave(sender As Object, e As EventArgs) Handles Fav_Histotab.MouseLeave
+        Fav_Histotab.ForeColor = Color.DeepSkyBlue
     End Sub
 
     Private Sub Button2_Click_2(sender As Object, e As EventArgs) Handles Button2.Click
@@ -868,44 +875,44 @@
         Infos_Trident_Browser_Recup_Infos.Navigate(Web.Source)
     End Sub
 
-    Private Sub Button3_Click_2(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click_2(sender As Object, e As EventArgs) Handles Stng_Zyhou.Click
         Process.Start("https://github.com/zyhou")
     End Sub
 
-    Private Sub Button4_Click_1(sender As Object, e As EventArgs) Handles Button4.Click
+    Private Sub Button4_Click_1(sender As Object, e As EventArgs) Handles Stng_BaptGuil.Click
         Process.Start("https://github.com/baptisteguil")
     End Sub
 
-    Private Sub Button5_Click_1(sender As Object, e As EventArgs) Handles Button5.Click
+    Private Sub Button5_Click_1(sender As Object, e As EventArgs) Handles Stng_Bat41.Click
         Process.Start("https://github.com/Bat41")
     End Sub
     Private Sub SmartAdressbox_Leave(sender As Object, e As EventArgs) Handles SmartAdressbox.Leave
         Me.AcceptButton = Nothing
     End Sub
-    Private Sub Fight_Actions_TextChanged(sender As Object, e As EventArgs) Handles Fight_Actions.TextChanged
-        If Fight_Actions.Text = "Vue double" Then
-            SplitContainer1.Panel1Collapsed = False
-            SplitContainer1.Panel2Collapsed = False
+    Private Sub Fight_Actions_TextChanged(sender As Object, e As EventArgs) Handles SrchF_Actions.TextChanged
+        If SrchF_Actions.Text = "Vue double" Then
+            SrchF_Split.Panel1Collapsed = False
+            SrchF_Split.Panel2Collapsed = False
 
-        ElseIf Fight_Actions.Text = "Masquer droite" Then
-            SplitContainer1.Panel1Collapsed = False
-            SplitContainer1.Panel2Collapsed = True
+        ElseIf SrchF_Actions.Text = "Masquer droite" Then
+            SrchF_Split.Panel1Collapsed = False
+            SrchF_Split.Panel2Collapsed = True
 
-        ElseIf Fight_Actions.Text = "Masquer gauche" Then
-            SplitContainer1.Panel1Collapsed = True
-            SplitContainer1.Panel2Collapsed = False
+        ElseIf SrchF_Actions.Text = "Masquer gauche" Then
+            SrchF_Split.Panel1Collapsed = True
+            SrchF_Split.Panel2Collapsed = False
 
-        ElseIf Fight_Actions.Text = "Ouvrir droite" Then
+        ElseIf SrchF_Actions.Text = "Ouvrir droite" Then
             ABlueflap_Navigateur.BringToFront()
             Web.Source = New Uri(SrchF_fighter_2.Source.ToString)
-        ElseIf Fight_Actions.Text = "Ouvrir gauche" Then
+        ElseIf SrchF_Actions.Text = "Ouvrir gauche" Then
             ABlueflap_Navigateur.BringToFront()
             Web.Source = New Uri(SrchF_fighter_1.Source.ToString)
         End If
     End Sub
 
-    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
-        If CheckBox1.Checked = True Then
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles SrchF_AdvanceChoice.CheckedChanged
+        If SrchF_AdvanceChoice.Checked = True Then
             SrchFight_AdvanceLeft.Visible = True
             SrchFight_AdvanceRight.Visible = True
             SrchF_ChoixA.Enabled = False
@@ -918,13 +925,13 @@
         End If
     End Sub
 
-    Private Sub Button6_Click_1(sender As Object, e As EventArgs) Handles Button6.Click
+    Private Sub Button6_Click_1(sender As Object, e As EventArgs) Handles Stng_ResetSuggest.Click
         My.Settings.Smartcoll.Clear()
         SmartAdressbox.AutoCompleteCustomSource.Clear()
     End Sub
 
-    Private Sub Smartsuggestactif_CheckedChanged(sender As Object, e As EventArgs) Handles Smartsuggestactif.CheckedChanged
-        If Not Smartsuggestactif.Checked Then
+    Private Sub Smartsuggestactif_CheckedChanged(sender As Object, e As EventArgs) Handles stng_Smartsuggestactif.CheckedChanged
+        If Not stng_Smartsuggestactif.Checked Then
             My.Settings.Smartcoll.Clear()
             SmartAdressbox.AutoCompleteCustomSource.Clear()
         End If

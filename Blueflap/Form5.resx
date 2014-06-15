@@ -117,18 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="TextBox6.Text" xml:space="preserve">
-    <value>SmartSuggest est une fonction vous permettant de gagner en productivité lors de vos recherches.
-
-En fonction de ce que vous taperez dans la barre de recherche, SmartSuggest vous suggerera des adresses ou des mots-clés en se basant sur 3 éléments :
-
-   Vos favoris
-   Vos dernières recherches
-
-
-
-Vous pouvez réintialiser la liste de suggestions de SmartSuggest  ou même désactiver SmartSuggest dans Paramètres/Options avancées</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="PictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1183,6 +1171,19 @@ Pour changer l'image de fond, dans le menu, cliquer sur "paramètres" puis sur "
   <data name="TextBox5.Text" xml:space="preserve">
     <value>Bluestart est une page d'accueil personnalisable qui vous pouvez définir dans les paramètres de Blueflap. Bluestart est une alternative aux pages d'accueil traditionnelles.
 Bluestart reprend le design de Blueflap et utilise "l'image de fond" que vous avez défini dans les paramètres.</value>
+  </data>
+  <data name="TextBox6.Text" xml:space="preserve">
+    <value>SmartSuggest est une fonction vous permettant de gagner en productivité lors de vos recherches.
+
+En fonction de ce que vous taperez dans la barre de recherche, SmartSuggest vous suggerera des adresses ou des mots-clés en se basant sur 3 éléments :
+
+   Vos favoris
+   Vos dernières recherches
+   Les derniers sites visités
+
+
+
+Vous pouvez réintialiser la liste de suggestions de SmartSuggest  ou même désactiver SmartSuggest dans Paramètres/Options avancées</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

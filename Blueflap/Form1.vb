@@ -5,7 +5,7 @@
     Private Class Bluerend : Inherits ToolStripProfessionalRenderer
         Protected Overrides Sub OnRenderMenuItemBackground(ByVal e As System.Windows.Forms.ToolStripItemRenderEventArgs)
             If e.Item.Selected Then
-                If e.Item.Width > 140 OrElse e.Item.Text = "Facebook" OrElse e.Item.Text = "Twitter" Then
+                If e.Item.Width > 140 OrElse e.Item.Text = "Facebook" OrElse e.Item.Text = "Twitter" OrElse e.Item.Text = "AddThis" Then
                     Dim rc As New Rectangle(Point.Empty, e.Item.Size)
                     'Element du menu Blueflap au passage de la souris
                     e.Graphics.FillRectangle(Brushes.Transparent, rc)
@@ -947,5 +947,9 @@
 
     Private Sub Menu_Translate_Click(sender As Object, e As EventArgs) Handles Menu_Translate.Click
         Web.Source = New Uri("javascript:(function(){var s = document.createElement('script'); s.type = 'text/javascript'; s.src = 'http://labs.microsofttranslator.com/bookmarklet/default.aspx?f=js&to=fr'; document.body.insertBefore(s, document.body.firstChild);})()")
+    End Sub
+
+    Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
+        Web.Source = New Uri("javascript:void((function(svc) {var d=document,w=window,p=0,b=function(){if(!p){p=1;if(_atc.xol)_adr.onReady();if(w.addthis_sendto)addthis_sendto(svc||'bkmore',{product:'bmt-'+_atc.ver})}else{p=0;if(_atw)_atw.clb()}};if(!w._atc){var ol=w.addthis_onload||[],o=d.createElement('script');w.addthis_product = 'bmt-250';o.src='//s7.addthis.com/js/250/addthis_widget.js#domready=1&username=bookmarklet';ol.push(b);w.addthis_onload=ol;d.getElementsByTagName('body')[0].appendChild(o)}else b()})())")
     End Sub
 End Class

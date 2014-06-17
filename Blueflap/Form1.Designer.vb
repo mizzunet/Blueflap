@@ -71,6 +71,21 @@ Partial Class Fenetre_Principale
         Me.ABlueflap_Settings = New System.Windows.Forms.Panel()
         Me.Stng_Helpcenter = New MetroControls.MetroHeaderButton()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Sett_TabB = New System.Windows.Forms.Panel()
+        Me.AdblockFunction = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.StngLabel_Suggest = New System.Windows.Forms.Label()
+        Me.Stng_ResetSuggest = New System.Windows.Forms.Button()
+        Me.StngLabel_Network = New System.Windows.Forms.Label()
+        Me.StngLabel_Private = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Stng_OptionsInternet = New System.Windows.Forms.Button()
+        Me.StngLabel_Data = New System.Windows.Forms.Label()
+        Me.StngLabel_Extra = New System.Windows.Forms.Label()
+        Me.Stng_SupprHisto = New System.Windows.Forms.Button()
+        Me.Stng_SupprCacheCookies = New System.Windows.Forms.Button()
+        Me.StngLabel_NetworkInfo = New System.Windows.Forms.Label()
+        Me.StngLabel_Proxy = New System.Windows.Forms.Label()
         Me.Sett_TabA = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.stng_picdemo = New System.Windows.Forms.PictureBox()
@@ -109,19 +124,6 @@ Partial Class Fenetre_Principale
         Me.StngLabel_Contribute = New System.Windows.Forms.Label()
         Me.Stng_VersionSystem = New System.Windows.Forms.Label()
         Me.Stng_ShowLicense = New System.Windows.Forms.Button()
-        Me.Sett_TabB = New System.Windows.Forms.Panel()
-        Me.StngLabel_Suggest = New System.Windows.Forms.Label()
-        Me.Stng_ResetSuggest = New System.Windows.Forms.Button()
-        Me.StngLabel_Network = New System.Windows.Forms.Label()
-        Me.StngLabel_Private = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Stng_OptionsInternet = New System.Windows.Forms.Button()
-        Me.StngLabel_Data = New System.Windows.Forms.Label()
-        Me.StngLabel_Extra = New System.Windows.Forms.Label()
-        Me.Stng_SupprHisto = New System.Windows.Forms.Button()
-        Me.Stng_SupprCacheCookies = New System.Windows.Forms.Button()
-        Me.StngLabel_NetworkInfo = New System.Windows.Forms.Label()
-        Me.StngLabel_Proxy = New System.Windows.Forms.Label()
         Me.sett_tab3 = New MetroControls.MetroHeaderButton()
         Me.sett_tab2 = New MetroControls.MetroHeaderButton()
         Me.sett_tab1 = New MetroControls.MetroHeaderButton()
@@ -176,11 +178,6 @@ Partial Class Fenetre_Principale
         Me.BS_ImgChoose = New System.Windows.Forms.Button()
         Me.BS_Logo = New System.Windows.Forms.PictureBox()
         Me.TabItem1 = New DevComponents.DotNetBar.TabItem(Me.components)
-        Me.AdblockFunction = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.stng_Adblock = New System.Windows.Forms.CheckBox()
-        Me.stng_Smartsuggestactif = New System.Windows.Forms.CheckBox()
-        Me.stng_nevpriv = New System.Windows.Forms.CheckBox()
         Me.translate_checkbox = New System.Windows.Forms.CheckBox()
         Me.BackgroundChemin = New System.Windows.Forms.TextBox()
         Me.Share_checkbox = New System.Windows.Forms.CheckBox()
@@ -201,6 +198,9 @@ Partial Class Fenetre_Principale
         Me.infos_checkbox = New System.Windows.Forms.CheckBox()
         Me.lock_checkbox = New System.Windows.Forms.CheckBox()
         Me.fullscreen_checkbox = New System.Windows.Forms.CheckBox()
+        Me.stng_Adblock = New System.Windows.Forms.CheckBox()
+        Me.stng_Smartsuggestactif = New System.Windows.Forms.CheckBox()
+        Me.stng_nevpriv = New System.Windows.Forms.CheckBox()
         Me.SrchFight_AdvanceRight = New System.Windows.Forms.TextBox()
         Me.SrchFight_AdvanceLeft = New System.Windows.Forms.TextBox()
         Me.SrchF_AdvanceChoice = New System.Windows.Forms.CheckBox()
@@ -220,6 +220,7 @@ Partial Class Fenetre_Principale
         Me.Menua.SuspendLayout()
         Me.ABlueflap_Settings.SuspendLayout()
         Me.Panel3.SuspendLayout()
+        Me.Sett_TabB.SuspendLayout()
         Me.Sett_TabA.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.stng_picdemo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -232,7 +233,6 @@ Partial Class Fenetre_Principale
         CType(Me.StngmenuIcon6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StngmenuIcon4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Sett_TabC.SuspendLayout()
-        Me.Sett_TabB.SuspendLayout()
         Me.ABlueflap_Fight.SuspendLayout()
         CType(Me.SrchF_Split, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SrchF_Split.Panel1.SuspendLayout()
@@ -825,13 +825,190 @@ Partial Class Fenetre_Principale
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel3.AutoScroll = True
-        Me.Panel3.Controls.Add(Me.Sett_TabB)
-        Me.Panel3.Controls.Add(Me.Sett_TabA)
         Me.Panel3.Controls.Add(Me.Sett_TabC)
+        Me.Panel3.Controls.Add(Me.Sett_TabA)
+        Me.Panel3.Controls.Add(Me.Sett_TabB)
         Me.Panel3.Location = New System.Drawing.Point(0, 116)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(1117, 491)
         Me.Panel3.TabIndex = 60
+        '
+        'Sett_TabB
+        '
+        Me.Sett_TabB.Controls.Add(Me.stng_Adblock)
+        Me.Sett_TabB.Controls.Add(Me.AdblockFunction)
+        Me.Sett_TabB.Controls.Add(Me.Label1)
+        Me.Sett_TabB.Controls.Add(Me.stng_Smartsuggestactif)
+        Me.Sett_TabB.Controls.Add(Me.StngLabel_Suggest)
+        Me.Sett_TabB.Controls.Add(Me.Stng_ResetSuggest)
+        Me.Sett_TabB.Controls.Add(Me.StngLabel_Network)
+        Me.Sett_TabB.Controls.Add(Me.stng_nevpriv)
+        Me.Sett_TabB.Controls.Add(Me.StngLabel_Private)
+        Me.Sett_TabB.Controls.Add(Me.Button1)
+        Me.Sett_TabB.Controls.Add(Me.Stng_OptionsInternet)
+        Me.Sett_TabB.Controls.Add(Me.StngLabel_Data)
+        Me.Sett_TabB.Controls.Add(Me.StngLabel_Extra)
+        Me.Sett_TabB.Controls.Add(Me.Stng_SupprHisto)
+        Me.Sett_TabB.Controls.Add(Me.Stng_SupprCacheCookies)
+        Me.Sett_TabB.Controls.Add(Me.StngLabel_NetworkInfo)
+        Me.Sett_TabB.Controls.Add(Me.StngLabel_Proxy)
+        Me.Sett_TabB.Location = New System.Drawing.Point(87, 15)
+        Me.Sett_TabB.Name = "Sett_TabB"
+        Me.Sett_TabB.Size = New System.Drawing.Size(925, 349)
+        Me.Sett_TabB.TabIndex = 58
+        Me.Sett_TabB.Visible = False
+        '
+        'AdblockFunction
+        '
+        Me.AdblockFunction.Location = New System.Drawing.Point(237, 61)
+        Me.AdblockFunction.Name = "AdblockFunction"
+        Me.AdblockFunction.Size = New System.Drawing.Size(100, 20)
+        Me.AdblockFunction.TabIndex = 59
+        Me.AdblockFunction.Text = resources.GetString("AdblockFunction.Text")
+        Me.AdblockFunction.Visible = False
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
+        Me.Label1.Location = New System.Drawing.Point(14, 64)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(62, 20)
+        Me.Label1.TabIndex = 54
+        Me.Label1.Text = "AdBlock"
+        '
+        'StngLabel_Suggest
+        '
+        Me.StngLabel_Suggest.AutoSize = True
+        Me.StngLabel_Suggest.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
+        Me.StngLabel_Suggest.Location = New System.Drawing.Point(13, 114)
+        Me.StngLabel_Suggest.Name = "StngLabel_Suggest"
+        Me.StngLabel_Suggest.Size = New System.Drawing.Size(101, 20)
+        Me.StngLabel_Suggest.TabIndex = 52
+        Me.StngLabel_Suggest.Text = "SmartSuggest"
+        '
+        'Stng_ResetSuggest
+        '
+        Me.Stng_ResetSuggest.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Stng_ResetSuggest.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
+        Me.Stng_ResetSuggest.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.Stng_ResetSuggest.Location = New System.Drawing.Point(162, 107)
+        Me.Stng_ResetSuggest.Name = "Stng_ResetSuggest"
+        Me.Stng_ResetSuggest.Size = New System.Drawing.Size(104, 35)
+        Me.Stng_ResetSuggest.TabIndex = 51
+        Me.Stng_ResetSuggest.Text = "Réinitialiser"
+        Me.Stng_ResetSuggest.UseVisualStyleBackColor = True
+        '
+        'StngLabel_Network
+        '
+        Me.StngLabel_Network.AutoSize = True
+        Me.StngLabel_Network.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
+        Me.StngLabel_Network.Location = New System.Drawing.Point(14, 173)
+        Me.StngLabel_Network.Name = "StngLabel_Network"
+        Me.StngLabel_Network.Size = New System.Drawing.Size(56, 20)
+        Me.StngLabel_Network.TabIndex = 50
+        Me.StngLabel_Network.Text = "Réseau"
+        '
+        'StngLabel_Private
+        '
+        Me.StngLabel_Private.AutoSize = True
+        Me.StngLabel_Private.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
+        Me.StngLabel_Private.Location = New System.Drawing.Point(13, 18)
+        Me.StngLabel_Private.Name = "StngLabel_Private"
+        Me.StngLabel_Private.Size = New System.Drawing.Size(124, 20)
+        Me.StngLabel_Private.TabIndex = 34
+        Me.StngLabel_Private.Text = "Navigation privée"
+        '
+        'Button1
+        '
+        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Cyan
+        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Segoe UI Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.Button1.Location = New System.Drawing.Point(163, 284)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(94, 25)
+        Me.Button1.TabIndex = 48
+        Me.Button1.Text = "Signaler un bug"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Stng_OptionsInternet
+        '
+        Me.Stng_OptionsInternet.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Stng_OptionsInternet.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Stng_OptionsInternet.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.Stng_OptionsInternet.Location = New System.Drawing.Point(163, 166)
+        Me.Stng_OptionsInternet.Name = "Stng_OptionsInternet"
+        Me.Stng_OptionsInternet.Size = New System.Drawing.Size(154, 35)
+        Me.Stng_OptionsInternet.TabIndex = 33
+        Me.Stng_OptionsInternet.Text = "Options Internet"
+        Me.Stng_OptionsInternet.UseVisualStyleBackColor = True
+        '
+        'StngLabel_Data
+        '
+        Me.StngLabel_Data.AutoSize = True
+        Me.StngLabel_Data.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
+        Me.StngLabel_Data.Location = New System.Drawing.Point(14, 235)
+        Me.StngLabel_Data.Name = "StngLabel_Data"
+        Me.StngLabel_Data.Size = New System.Drawing.Size(66, 20)
+        Me.StngLabel_Data.TabIndex = 40
+        Me.StngLabel_Data.Text = "Données"
+        '
+        'StngLabel_Extra
+        '
+        Me.StngLabel_Extra.AutoSize = True
+        Me.StngLabel_Extra.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
+        Me.StngLabel_Extra.Location = New System.Drawing.Point(13, 285)
+        Me.StngLabel_Extra.Name = "StngLabel_Extra"
+        Me.StngLabel_Extra.Size = New System.Drawing.Size(48, 20)
+        Me.StngLabel_Extra.TabIndex = 46
+        Me.StngLabel_Extra.Text = "Extras"
+        '
+        'Stng_SupprHisto
+        '
+        Me.Stng_SupprHisto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Stng_SupprHisto.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
+        Me.Stng_SupprHisto.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.Stng_SupprHisto.Location = New System.Drawing.Point(164, 226)
+        Me.Stng_SupprHisto.Name = "Stng_SupprHisto"
+        Me.Stng_SupprHisto.Size = New System.Drawing.Size(154, 35)
+        Me.Stng_SupprHisto.TabIndex = 39
+        Me.Stng_SupprHisto.Text = "Effacer l'historique"
+        Me.Stng_SupprHisto.UseVisualStyleBackColor = True
+        '
+        'Stng_SupprCacheCookies
+        '
+        Me.Stng_SupprCacheCookies.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Stng_SupprCacheCookies.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
+        Me.Stng_SupprCacheCookies.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.Stng_SupprCacheCookies.Location = New System.Drawing.Point(323, 226)
+        Me.Stng_SupprCacheCookies.Name = "Stng_SupprCacheCookies"
+        Me.Stng_SupprCacheCookies.Size = New System.Drawing.Size(212, 35)
+        Me.Stng_SupprCacheCookies.TabIndex = 42
+        Me.Stng_SupprCacheCookies.Text = "Effacer les cookies et le cache"
+        Me.Stng_SupprCacheCookies.UseVisualStyleBackColor = True
+        '
+        'StngLabel_NetworkInfo
+        '
+        Me.StngLabel_NetworkInfo.AutoSize = True
+        Me.StngLabel_NetworkInfo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.StngLabel_NetworkInfo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.StngLabel_NetworkInfo.Location = New System.Drawing.Point(320, 182)
+        Me.StngLabel_NetworkInfo.Name = "StngLabel_NetworkInfo"
+        Me.StngLabel_NetworkInfo.Size = New System.Drawing.Size(183, 15)
+        Me.StngLabel_NetworkInfo.TabIndex = 36
+        Me.StngLabel_NetworkInfo.Text = "Cliquer sur l'onglet ""connexions"""
+        '
+        'StngLabel_Proxy
+        '
+        Me.StngLabel_Proxy.AutoSize = True
+        Me.StngLabel_Proxy.ForeColor = System.Drawing.Color.Black
+        Me.StngLabel_Proxy.Location = New System.Drawing.Point(320, 169)
+        Me.StngLabel_Proxy.Name = "StngLabel_Proxy"
+        Me.StngLabel_Proxy.Size = New System.Drawing.Size(371, 13)
+        Me.StngLabel_Proxy.TabIndex = 35
+        Me.StngLabel_Proxy.Text = "Blueflap utilise les paramètres proxy du système pour se connecter au réseau."
         '
         'Sett_TabA
         '
@@ -1259,9 +1436,9 @@ Partial Class Fenetre_Principale
         Me.Stng_VersionSystem.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.Stng_VersionSystem.Location = New System.Drawing.Point(160, 20)
         Me.Stng_VersionSystem.Name = "Stng_VersionSystem"
-        Me.Stng_VersionSystem.Size = New System.Drawing.Size(133, 13)
+        Me.Stng_VersionSystem.Size = New System.Drawing.Size(86, 13)
         Me.Stng_VersionSystem.TabIndex = 19
-        Me.Stng_VersionSystem.Text = "Blueflap 3.0 DevPreview 6"
+        Me.Stng_VersionSystem.Text = "Blueflap 3.0 - FR"
         '
         'Stng_ShowLicense
         '
@@ -1275,164 +1452,6 @@ Partial Class Fenetre_Principale
         Me.Stng_ShowLicense.TabIndex = 47
         Me.Stng_ShowLicense.Text = "Licence OpenSource"
         Me.Stng_ShowLicense.UseVisualStyleBackColor = True
-        '
-        'Sett_TabB
-        '
-        Me.Sett_TabB.Controls.Add(Me.stng_Adblock)
-        Me.Sett_TabB.Controls.Add(Me.AdblockFunction)
-        Me.Sett_TabB.Controls.Add(Me.Label1)
-        Me.Sett_TabB.Controls.Add(Me.stng_Smartsuggestactif)
-        Me.Sett_TabB.Controls.Add(Me.StngLabel_Suggest)
-        Me.Sett_TabB.Controls.Add(Me.Stng_ResetSuggest)
-        Me.Sett_TabB.Controls.Add(Me.StngLabel_Network)
-        Me.Sett_TabB.Controls.Add(Me.stng_nevpriv)
-        Me.Sett_TabB.Controls.Add(Me.StngLabel_Private)
-        Me.Sett_TabB.Controls.Add(Me.Button1)
-        Me.Sett_TabB.Controls.Add(Me.Stng_OptionsInternet)
-        Me.Sett_TabB.Controls.Add(Me.StngLabel_Data)
-        Me.Sett_TabB.Controls.Add(Me.StngLabel_Extra)
-        Me.Sett_TabB.Controls.Add(Me.Stng_SupprHisto)
-        Me.Sett_TabB.Controls.Add(Me.Stng_SupprCacheCookies)
-        Me.Sett_TabB.Controls.Add(Me.StngLabel_NetworkInfo)
-        Me.Sett_TabB.Controls.Add(Me.StngLabel_Proxy)
-        Me.Sett_TabB.Location = New System.Drawing.Point(87, 15)
-        Me.Sett_TabB.Name = "Sett_TabB"
-        Me.Sett_TabB.Size = New System.Drawing.Size(925, 349)
-        Me.Sett_TabB.TabIndex = 58
-        Me.Sett_TabB.Visible = False
-        '
-        'StngLabel_Suggest
-        '
-        Me.StngLabel_Suggest.AutoSize = True
-        Me.StngLabel_Suggest.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
-        Me.StngLabel_Suggest.Location = New System.Drawing.Point(13, 114)
-        Me.StngLabel_Suggest.Name = "StngLabel_Suggest"
-        Me.StngLabel_Suggest.Size = New System.Drawing.Size(101, 20)
-        Me.StngLabel_Suggest.TabIndex = 52
-        Me.StngLabel_Suggest.Text = "SmartSuggest"
-        '
-        'Stng_ResetSuggest
-        '
-        Me.Stng_ResetSuggest.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Stng_ResetSuggest.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
-        Me.Stng_ResetSuggest.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.Stng_ResetSuggest.Location = New System.Drawing.Point(162, 107)
-        Me.Stng_ResetSuggest.Name = "Stng_ResetSuggest"
-        Me.Stng_ResetSuggest.Size = New System.Drawing.Size(104, 35)
-        Me.Stng_ResetSuggest.TabIndex = 51
-        Me.Stng_ResetSuggest.Text = "Réinitialiser"
-        Me.Stng_ResetSuggest.UseVisualStyleBackColor = True
-        '
-        'StngLabel_Network
-        '
-        Me.StngLabel_Network.AutoSize = True
-        Me.StngLabel_Network.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
-        Me.StngLabel_Network.Location = New System.Drawing.Point(14, 173)
-        Me.StngLabel_Network.Name = "StngLabel_Network"
-        Me.StngLabel_Network.Size = New System.Drawing.Size(56, 20)
-        Me.StngLabel_Network.TabIndex = 50
-        Me.StngLabel_Network.Text = "Réseau"
-        '
-        'StngLabel_Private
-        '
-        Me.StngLabel_Private.AutoSize = True
-        Me.StngLabel_Private.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
-        Me.StngLabel_Private.Location = New System.Drawing.Point(13, 18)
-        Me.StngLabel_Private.Name = "StngLabel_Private"
-        Me.StngLabel_Private.Size = New System.Drawing.Size(124, 20)
-        Me.StngLabel_Private.TabIndex = 34
-        Me.StngLabel_Private.Text = "Navigation privée"
-        '
-        'Button1
-        '
-        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Cyan
-        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Segoe UI Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.Button1.Location = New System.Drawing.Point(163, 284)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(94, 25)
-        Me.Button1.TabIndex = 48
-        Me.Button1.Text = "Signaler un bug"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Stng_OptionsInternet
-        '
-        Me.Stng_OptionsInternet.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Stng_OptionsInternet.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Stng_OptionsInternet.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.Stng_OptionsInternet.Location = New System.Drawing.Point(163, 166)
-        Me.Stng_OptionsInternet.Name = "Stng_OptionsInternet"
-        Me.Stng_OptionsInternet.Size = New System.Drawing.Size(154, 35)
-        Me.Stng_OptionsInternet.TabIndex = 33
-        Me.Stng_OptionsInternet.Text = "Options Internet"
-        Me.Stng_OptionsInternet.UseVisualStyleBackColor = True
-        '
-        'StngLabel_Data
-        '
-        Me.StngLabel_Data.AutoSize = True
-        Me.StngLabel_Data.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
-        Me.StngLabel_Data.Location = New System.Drawing.Point(14, 235)
-        Me.StngLabel_Data.Name = "StngLabel_Data"
-        Me.StngLabel_Data.Size = New System.Drawing.Size(66, 20)
-        Me.StngLabel_Data.TabIndex = 40
-        Me.StngLabel_Data.Text = "Données"
-        '
-        'StngLabel_Extra
-        '
-        Me.StngLabel_Extra.AutoSize = True
-        Me.StngLabel_Extra.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
-        Me.StngLabel_Extra.Location = New System.Drawing.Point(13, 285)
-        Me.StngLabel_Extra.Name = "StngLabel_Extra"
-        Me.StngLabel_Extra.Size = New System.Drawing.Size(48, 20)
-        Me.StngLabel_Extra.TabIndex = 46
-        Me.StngLabel_Extra.Text = "Extras"
-        '
-        'Stng_SupprHisto
-        '
-        Me.Stng_SupprHisto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Stng_SupprHisto.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
-        Me.Stng_SupprHisto.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.Stng_SupprHisto.Location = New System.Drawing.Point(164, 226)
-        Me.Stng_SupprHisto.Name = "Stng_SupprHisto"
-        Me.Stng_SupprHisto.Size = New System.Drawing.Size(154, 35)
-        Me.Stng_SupprHisto.TabIndex = 39
-        Me.Stng_SupprHisto.Text = "Effacer l'historique"
-        Me.Stng_SupprHisto.UseVisualStyleBackColor = True
-        '
-        'Stng_SupprCacheCookies
-        '
-        Me.Stng_SupprCacheCookies.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Stng_SupprCacheCookies.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
-        Me.Stng_SupprCacheCookies.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.Stng_SupprCacheCookies.Location = New System.Drawing.Point(323, 226)
-        Me.Stng_SupprCacheCookies.Name = "Stng_SupprCacheCookies"
-        Me.Stng_SupprCacheCookies.Size = New System.Drawing.Size(212, 35)
-        Me.Stng_SupprCacheCookies.TabIndex = 42
-        Me.Stng_SupprCacheCookies.Text = "Effacer les cookies et le cache"
-        Me.Stng_SupprCacheCookies.UseVisualStyleBackColor = True
-        '
-        'StngLabel_NetworkInfo
-        '
-        Me.StngLabel_NetworkInfo.AutoSize = True
-        Me.StngLabel_NetworkInfo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.StngLabel_NetworkInfo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.StngLabel_NetworkInfo.Location = New System.Drawing.Point(320, 182)
-        Me.StngLabel_NetworkInfo.Name = "StngLabel_NetworkInfo"
-        Me.StngLabel_NetworkInfo.Size = New System.Drawing.Size(183, 15)
-        Me.StngLabel_NetworkInfo.TabIndex = 36
-        Me.StngLabel_NetworkInfo.Text = "Cliquer sur l'onglet ""connexions"""
-        '
-        'StngLabel_Proxy
-        '
-        Me.StngLabel_Proxy.AutoSize = True
-        Me.StngLabel_Proxy.ForeColor = System.Drawing.Color.Black
-        Me.StngLabel_Proxy.Location = New System.Drawing.Point(320, 169)
-        Me.StngLabel_Proxy.Name = "StngLabel_Proxy"
-        Me.StngLabel_Proxy.Size = New System.Drawing.Size(371, 13)
-        Me.StngLabel_Proxy.TabIndex = 35
-        Me.StngLabel_Proxy.Text = "Blueflap utilise les paramètres proxy du système pour se connecter au réseau."
         '
         'sett_tab3
         '
@@ -2110,64 +2129,6 @@ Partial Class Fenetre_Principale
         Me.TabItem1.Name = "TabItem1"
         Me.TabItem1.Text = ""
         '
-        'AdblockFunction
-        '
-        Me.AdblockFunction.Location = New System.Drawing.Point(237, 61)
-        Me.AdblockFunction.Name = "AdblockFunction"
-        Me.AdblockFunction.Size = New System.Drawing.Size(100, 20)
-        Me.AdblockFunction.TabIndex = 59
-        Me.AdblockFunction.Text = resources.GetString("AdblockFunction.Text")
-        Me.AdblockFunction.Visible = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
-        Me.Label1.Location = New System.Drawing.Point(14, 64)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(62, 20)
-        Me.Label1.TabIndex = 54
-        Me.Label1.Text = "AdBlock"
-        '
-        'stng_Adblock
-        '
-        Me.stng_Adblock.AutoSize = True
-        Me.stng_Adblock.Checked = Global.Blueflap.My.MySettings.Default.Adblock
-        Me.stng_Adblock.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Blueflap.My.MySettings.Default, "Adblock", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.stng_Adblock.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
-        Me.stng_Adblock.Location = New System.Drawing.Point(164, 60)
-        Me.stng_Adblock.Name = "stng_Adblock"
-        Me.stng_Adblock.Size = New System.Drawing.Size(61, 21)
-        Me.stng_Adblock.TabIndex = 60
-        Me.stng_Adblock.Text = "Activé"
-        Me.stng_Adblock.UseVisualStyleBackColor = True
-        '
-        'stng_Smartsuggestactif
-        '
-        Me.stng_Smartsuggestactif.AutoSize = True
-        Me.stng_Smartsuggestactif.Checked = Global.Blueflap.My.MySettings.Default.Smartsuggest
-        Me.stng_Smartsuggestactif.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Blueflap.My.MySettings.Default, "Smartsuggest", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.stng_Smartsuggestactif.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
-        Me.stng_Smartsuggestactif.Location = New System.Drawing.Point(276, 115)
-        Me.stng_Smartsuggestactif.Name = "stng_Smartsuggestactif"
-        Me.stng_Smartsuggestactif.Size = New System.Drawing.Size(61, 21)
-        Me.stng_Smartsuggestactif.TabIndex = 53
-        Me.stng_Smartsuggestactif.Text = "Activé"
-        Me.stng_Smartsuggestactif.UseVisualStyleBackColor = True
-        '
-        'stng_nevpriv
-        '
-        Me.stng_nevpriv.AutoSize = True
-        Me.stng_nevpriv.Checked = Global.Blueflap.My.MySettings.Default.navprivee
-        Me.stng_nevpriv.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Blueflap.My.MySettings.Default, "navprivee", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.stng_nevpriv.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
-        Me.stng_nevpriv.Location = New System.Drawing.Point(163, 19)
-        Me.stng_nevpriv.Name = "stng_nevpriv"
-        Me.stng_nevpriv.Size = New System.Drawing.Size(68, 21)
-        Me.stng_nevpriv.TabIndex = 49
-        Me.stng_nevpriv.Text = "Activée"
-        Me.stng_nevpriv.UseVisualStyleBackColor = True
-        '
         'translate_checkbox
         '
         Me.translate_checkbox.AutoSize = True
@@ -2416,6 +2377,45 @@ Partial Class Fenetre_Principale
         Me.fullscreen_checkbox.TabIndex = 26
         Me.fullscreen_checkbox.UseVisualStyleBackColor = True
         '
+        'stng_Adblock
+        '
+        Me.stng_Adblock.AutoSize = True
+        Me.stng_Adblock.Checked = Global.Blueflap.My.MySettings.Default.Adblock
+        Me.stng_Adblock.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Blueflap.My.MySettings.Default, "Adblock", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.stng_Adblock.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
+        Me.stng_Adblock.Location = New System.Drawing.Point(164, 60)
+        Me.stng_Adblock.Name = "stng_Adblock"
+        Me.stng_Adblock.Size = New System.Drawing.Size(61, 21)
+        Me.stng_Adblock.TabIndex = 60
+        Me.stng_Adblock.Text = "Activé"
+        Me.stng_Adblock.UseVisualStyleBackColor = True
+        '
+        'stng_Smartsuggestactif
+        '
+        Me.stng_Smartsuggestactif.AutoSize = True
+        Me.stng_Smartsuggestactif.Checked = Global.Blueflap.My.MySettings.Default.Smartsuggest
+        Me.stng_Smartsuggestactif.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Blueflap.My.MySettings.Default, "Smartsuggest", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.stng_Smartsuggestactif.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
+        Me.stng_Smartsuggestactif.Location = New System.Drawing.Point(276, 115)
+        Me.stng_Smartsuggestactif.Name = "stng_Smartsuggestactif"
+        Me.stng_Smartsuggestactif.Size = New System.Drawing.Size(61, 21)
+        Me.stng_Smartsuggestactif.TabIndex = 53
+        Me.stng_Smartsuggestactif.Text = "Activé"
+        Me.stng_Smartsuggestactif.UseVisualStyleBackColor = True
+        '
+        'stng_nevpriv
+        '
+        Me.stng_nevpriv.AutoSize = True
+        Me.stng_nevpriv.Checked = Global.Blueflap.My.MySettings.Default.navprivee
+        Me.stng_nevpriv.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Blueflap.My.MySettings.Default, "navprivee", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.stng_nevpriv.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
+        Me.stng_nevpriv.Location = New System.Drawing.Point(163, 19)
+        Me.stng_nevpriv.Name = "stng_nevpriv"
+        Me.stng_nevpriv.Size = New System.Drawing.Size(68, 21)
+        Me.stng_nevpriv.TabIndex = 49
+        Me.stng_nevpriv.Text = "Activée"
+        Me.stng_nevpriv.UseVisualStyleBackColor = True
+        '
         'SrchFight_AdvanceRight
         '
         Me.SrchFight_AdvanceRight.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -2542,6 +2542,8 @@ Partial Class Fenetre_Principale
         Me.ABlueflap_Settings.ResumeLayout(False)
         Me.ABlueflap_Settings.PerformLayout()
         Me.Panel3.ResumeLayout(False)
+        Me.Sett_TabB.ResumeLayout(False)
+        Me.Sett_TabB.PerformLayout()
         Me.Sett_TabA.ResumeLayout(False)
         Me.Sett_TabA.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2556,8 +2558,6 @@ Partial Class Fenetre_Principale
         CType(Me.StngmenuIcon4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Sett_TabC.ResumeLayout(False)
         Me.Sett_TabC.PerformLayout()
-        Me.Sett_TabB.ResumeLayout(False)
-        Me.Sett_TabB.PerformLayout()
         Me.ABlueflap_Fight.ResumeLayout(False)
         Me.ABlueflap_Fight.PerformLayout()
         Me.SrchF_Split.Panel1.ResumeLayout(False)

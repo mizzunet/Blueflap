@@ -9,7 +9,7 @@
       <Value Profile="(Default)">Google</Value>
     </Setting>
     <Setting Name="home" Type="System.String" Scope="User">
-      <Value Profile="(Default)">http://www.strikingly.com/blueflap</Value>
+      <Value Profile="(Default)">https://www.youtube.com/embed/ifOY1PV6Nyo?rel=0&amp;amp;vq=hd720;&amp;autoplay=1</Value>
     </Setting>
     <Setting Name="Réduit" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>

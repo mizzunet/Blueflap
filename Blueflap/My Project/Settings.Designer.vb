@@ -80,7 +80,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("http://www.strikingly.com/blueflap")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("https://www.youtube.com/embed/ifOY1PV6Nyo?rel=0&amp;vq=hd720;&autoplay=1")>  _
         Public Property home() As String
             Get
                 Return CType(Me("home"),String)

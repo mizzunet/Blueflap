@@ -503,6 +503,30 @@ Namespace My
                 Me("Smartsuggest") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property i() As Boolean
+            Get
+                Return CType(Me("i"),Boolean)
+            End Get
+            Set
+                Me("i") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Adblock() As Boolean
+            Get
+                Return CType(Me("Adblock"),Boolean)
+            End Get
+            Set
+                Me("Adblock") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

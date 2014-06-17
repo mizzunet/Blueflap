@@ -83,6 +83,7 @@
         Menu_Fight.Visible = Sfight_Checkbox.Checked
         Menu_Favos.Visible = favo_checkbox.Checked
         Menu_Share.Visible = infos_checkbox.Checked
+        Menu_Translate.Visible = translate_checkbox.Checked
         menu_partage.Visible = Share_checkbox.Checked
         Menu_Lock.Visible = lock_checkbox.Checked
         Menu_FullScr.Visible = fullscreen_checkbox.Checked
@@ -222,6 +223,7 @@
         Menu_Lock.Visible = lock_checkbox.Checked
         Menu_FullScr.Visible = fullscreen_checkbox.Checked
         Menu_Memo.Visible = memo_checkbox.Checked
+        Menu_Translate.Visible = translate_checkbox.Checked
 
 
         BS_SearchBlackEffect.Left = (Me.Width - BS_SearchBlackEffect.Width) / 2
@@ -519,6 +521,10 @@
         Else
             SmartAdressbox.ForeColor = Color.Black
         End If
+
+        If stng_Adblock.Checked Then
+            Web.Source = New Uri(AdblockFunction.Text)
+        End If
     End Sub
 
     Private Sub Awesomium_Windows_Forms_WebControl_Crashed(sender As Object, e As Awesomium.Core.CrashedEventArgs) Handles Web.Crashed
@@ -548,6 +554,7 @@
             Menu_Lock.Font = New Font("Segoe UI Light", 16)
             Menu_FullScr.Font = New Font("Segoe UI Light", 16)
             Menu_Memo.Font = New Font("Segoe UI Light", 16)
+            Menu_Translate.Font = New Font("Segoe UI Light", 16)
             SmartAdressbox.Font = New Font("Segoe UI Light", 13)
             FP_AdressbarPanel.Height = 40
             AddFavo_Button.Height = 31
@@ -568,6 +575,7 @@
             Menu_Lock.Font = New Font("Segoe UI Light", 11)
             Menu_FullScr.Font = New Font("Segoe UI Light", 11)
             Menu_Memo.Font = New Font("Segoe UI Light", 11)
+            Menu_Translate.Font = New Font("Segoe UI Light", 11)
             SmartAdressbox.Font = New Font("Microsoft Sans Serif", 8)
             FP_AdressbarPanel.Height = 27
             AddFavo_Button.Height = 20
@@ -935,5 +943,9 @@
             My.Settings.Smartcoll.Clear()
             SmartAdressbox.AutoCompleteCustomSource.Clear()
         End If
+    End Sub
+
+    Private Sub Menu_Translate_Click(sender As Object, e As EventArgs) Handles Menu_Translate.Click
+        Web.Source = New Uri("javascript:(function(){var s = document.createElement('script'); s.type = 'text/javascript'; s.src = 'http://labs.microsofttranslator.com/bookmarklet/default.aspx?f=js&to=fr'; document.body.insertBefore(s, document.body.firstChild);})()")
     End Sub
 End Class

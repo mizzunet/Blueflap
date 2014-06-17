@@ -63,6 +63,7 @@ Partial Class Fenetre_Principale
         Me.menu_partage = New System.Windows.Forms.ToolStripMenuItem()
         Me.FacebookToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TwitterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Menu_Translate = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menu_Settings = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menu_Lock = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menu_FullScr = New System.Windows.Forms.ToolStripMenuItem()
@@ -70,21 +71,31 @@ Partial Class Fenetre_Principale
         Me.ABlueflap_Settings = New System.Windows.Forms.Panel()
         Me.Stng_Helpcenter = New MetroControls.MetroHeaderButton()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Sett_TabB = New System.Windows.Forms.Panel()
-        Me.stng_Smartsuggestactif = New System.Windows.Forms.CheckBox()
-        Me.StngLabel_Suggest = New System.Windows.Forms.Label()
-        Me.Stng_ResetSuggest = New System.Windows.Forms.Button()
-        Me.StngLabel_Network = New System.Windows.Forms.Label()
-        Me.stng_nevpriv = New System.Windows.Forms.CheckBox()
-        Me.StngLabel_Private = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Stng_OptionsInternet = New System.Windows.Forms.Button()
-        Me.StngLabel_Data = New System.Windows.Forms.Label()
-        Me.StngLabel_Extra = New System.Windows.Forms.Label()
-        Me.Stng_SupprHisto = New System.Windows.Forms.Button()
-        Me.Stng_SupprCacheCookies = New System.Windows.Forms.Button()
-        Me.StngLabel_NetworkInfo = New System.Windows.Forms.Label()
-        Me.StngLabel_Proxy = New System.Windows.Forms.Label()
+        Me.Sett_TabA = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.stng_picdemo = New System.Windows.Forms.PictureBox()
+        Me.StngmenuIcon5 = New System.Windows.Forms.PictureBox()
+        Me.StngmenuIcon8 = New System.Windows.Forms.PictureBox()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.StngLabel_Background = New System.Windows.Forms.Label()
+        Me.StngLabel_Searchengine = New System.Windows.Forms.Label()
+        Me.StngLabel_Home = New System.Windows.Forms.Label()
+        Me.Stng_ErreurURLHomepage = New System.Windows.Forms.Label()
+        Me.StngLabel_Lock = New System.Windows.Forms.Label()
+        Me.Stng_MP_confirm = New System.Windows.Forms.TextBox()
+        Me.StngLabel_MPConfirm = New System.Windows.Forms.Label()
+        Me.StngLabel_MP = New System.Windows.Forms.Label()
+        Me.StngLabel_Interface = New System.Windows.Forms.Label()
+        Me.StngLabel_Icons = New System.Windows.Forms.Label()
+        Me.StngmenuIcon1 = New System.Windows.Forms.PictureBox()
+        Me.StngmenuIcon2 = New System.Windows.Forms.PictureBox()
+        Me.StngmenuIcon7 = New System.Windows.Forms.PictureBox()
+        Me.StngmenuIcon3 = New System.Windows.Forms.PictureBox()
+        Me.StngmenuIcon6 = New System.Windows.Forms.PictureBox()
+        Me.StngmenuIcon4 = New System.Windows.Forms.PictureBox()
+        Me.ShapeContainer3 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.RectangleShape2 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.Sett_TabC = New System.Windows.Forms.Panel()
         Me.StngLabel_Contributeurs = New System.Windows.Forms.Label()
         Me.Stng_Bat41 = New System.Windows.Forms.Button()
@@ -98,65 +109,30 @@ Partial Class Fenetre_Principale
         Me.StngLabel_Contribute = New System.Windows.Forms.Label()
         Me.Stng_VersionSystem = New System.Windows.Forms.Label()
         Me.Stng_ShowLicense = New System.Windows.Forms.Button()
-        Me.Sett_TabA = New System.Windows.Forms.Panel()
-        Me.BackgroundChemin = New System.Windows.Forms.TextBox()
-        Me.stng_picdemo = New System.Windows.Forms.PictureBox()
-        Me.Share_checkbox = New System.Windows.Forms.CheckBox()
-        Me.StngmenuIcon5 = New System.Windows.Forms.PictureBox()
-        Me.memo_checkbox = New System.Windows.Forms.CheckBox()
-        Me.StngmenuIcon8 = New System.Windows.Forms.PictureBox()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.StngLabel_Background = New System.Windows.Forms.Label()
-        Me.Stng_bluestart_checkbox = New System.Windows.Forms.CheckBox()
-        Me.StngLabel_Searchengine = New System.Windows.Forms.Label()
-        Me.Stng_MoteurRecherche_choose = New System.Windows.Forms.ComboBox()
-        Me.Stng_MoteurRecherche_URL = New System.Windows.Forms.TextBox()
-        Me.StngLabel_Home = New System.Windows.Forms.Label()
-        Me.Stng_HomePage_Url = New System.Windows.Forms.TextBox()
-        Me.Stng_ErreurURLHomepage = New System.Windows.Forms.Label()
-        Me.Stng_Volet_reduire = New System.Windows.Forms.CheckBox()
-        Me.StngLabel_Lock = New System.Windows.Forms.Label()
-        Me.Stng_MP = New System.Windows.Forms.TextBox()
-        Me.Stng_MP_confirm = New System.Windows.Forms.TextBox()
-        Me.Stng_MPActiv = New System.Windows.Forms.CheckBox()
-        Me.StngLabel_MPConfirm = New System.Windows.Forms.Label()
-        Me.StngLabel_MP = New System.Windows.Forms.Label()
-        Me.Stng_Volet_Mousehover_agrandir = New System.Windows.Forms.CheckBox()
-        Me.StngLabel_Interface = New System.Windows.Forms.Label()
-        Me.StngLabel_Icons = New System.Windows.Forms.Label()
-        Me.Stng_TouchUI = New System.Windows.Forms.CheckBox()
-        Me.Stng_MaximizedWindow = New System.Windows.Forms.CheckBox()
-        Me.Home_checkbox = New System.Windows.Forms.CheckBox()
-        Me.Sfight_Checkbox = New System.Windows.Forms.CheckBox()
-        Me.favo_checkbox = New System.Windows.Forms.CheckBox()
-        Me.infos_checkbox = New System.Windows.Forms.CheckBox()
-        Me.lock_checkbox = New System.Windows.Forms.CheckBox()
-        Me.fullscreen_checkbox = New System.Windows.Forms.CheckBox()
-        Me.StngmenuIcon1 = New System.Windows.Forms.PictureBox()
-        Me.StngmenuIcon2 = New System.Windows.Forms.PictureBox()
-        Me.StngmenuIcon7 = New System.Windows.Forms.PictureBox()
-        Me.StngmenuIcon3 = New System.Windows.Forms.PictureBox()
-        Me.StngmenuIcon6 = New System.Windows.Forms.PictureBox()
-        Me.StngmenuIcon4 = New System.Windows.Forms.PictureBox()
-        Me.ShapeContainer3 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.RectangleShape2 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.Sett_TabB = New System.Windows.Forms.Panel()
+        Me.StngLabel_Suggest = New System.Windows.Forms.Label()
+        Me.Stng_ResetSuggest = New System.Windows.Forms.Button()
+        Me.StngLabel_Network = New System.Windows.Forms.Label()
+        Me.StngLabel_Private = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Stng_OptionsInternet = New System.Windows.Forms.Button()
+        Me.StngLabel_Data = New System.Windows.Forms.Label()
+        Me.StngLabel_Extra = New System.Windows.Forms.Label()
+        Me.Stng_SupprHisto = New System.Windows.Forms.Button()
+        Me.Stng_SupprCacheCookies = New System.Windows.Forms.Button()
+        Me.StngLabel_NetworkInfo = New System.Windows.Forms.Label()
+        Me.StngLabel_Proxy = New System.Windows.Forms.Label()
         Me.sett_tab3 = New MetroControls.MetroHeaderButton()
         Me.sett_tab2 = New MetroControls.MetroHeaderButton()
         Me.sett_tab1 = New MetroControls.MetroHeaderButton()
         Me.Settings_Back = New System.Windows.Forms.Button()
         Me.Settings_title = New System.Windows.Forms.Label()
         Me.ABlueflap_Fight = New System.Windows.Forms.Panel()
-        Me.SrchFight_AdvanceRight = New System.Windows.Forms.TextBox()
-        Me.SrchFight_AdvanceLeft = New System.Windows.Forms.TextBox()
-        Me.SrchF_AdvanceChoice = New System.Windows.Forms.CheckBox()
         Me.SrchF_Actions = New System.Windows.Forms.ComboBox()
         Me.SrchF_Split = New System.Windows.Forms.SplitContainer()
         Me.SrchF_fighter_1 = New Awesomium.Windows.Forms.WebControl(Me.components)
         Me.SrchF_fighter_2 = New Awesomium.Windows.Forms.WebControl(Me.components)
         Me.SrchF_Fightbutton = New System.Windows.Forms.Button()
-        Me.SrchF_ChoixB = New System.Windows.Forms.ComboBox()
-        Me.SrchF_ChoixA = New System.Windows.Forms.ComboBox()
         Me.SrchF_Searchbox = New System.Windows.Forms.TextBox()
         Me.SrchF_Back = New System.Windows.Forms.Button()
         Me.ShapeContainer2 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
@@ -192,16 +168,46 @@ Partial Class Fenetre_Principale
         Me.BS_Browser = New System.Windows.Forms.Button()
         Me.Bs_Favbulle = New System.Windows.Forms.Panel()
         Me.BS_Favlist = New System.Windows.Forms.ListBox()
-        Me.BS_Date = New System.Windows.Forms.Label()
         Me.BS_SearchBlackEffect = New System.Windows.Forms.Panel()
         Me.BS_Searchbutton = New System.Windows.Forms.Button()
         Me.Bs_Searchbox = New System.Windows.Forms.TextBox()
         Me.BS_Settings = New System.Windows.Forms.Button()
         Me.BS_Optionsbulle = New System.Windows.Forms.Panel()
-        Me.BS_DateSetColor = New System.Windows.Forms.Button()
         Me.BS_ImgChoose = New System.Windows.Forms.Button()
         Me.BS_Logo = New System.Windows.Forms.PictureBox()
         Me.TabItem1 = New DevComponents.DotNetBar.TabItem(Me.components)
+        Me.AdblockFunction = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.stng_Adblock = New System.Windows.Forms.CheckBox()
+        Me.stng_Smartsuggestactif = New System.Windows.Forms.CheckBox()
+        Me.stng_nevpriv = New System.Windows.Forms.CheckBox()
+        Me.translate_checkbox = New System.Windows.Forms.CheckBox()
+        Me.BackgroundChemin = New System.Windows.Forms.TextBox()
+        Me.Share_checkbox = New System.Windows.Forms.CheckBox()
+        Me.memo_checkbox = New System.Windows.Forms.CheckBox()
+        Me.Stng_bluestart_checkbox = New System.Windows.Forms.CheckBox()
+        Me.Stng_MoteurRecherche_choose = New System.Windows.Forms.ComboBox()
+        Me.Stng_MoteurRecherche_URL = New System.Windows.Forms.TextBox()
+        Me.Stng_HomePage_Url = New System.Windows.Forms.TextBox()
+        Me.Stng_Volet_reduire = New System.Windows.Forms.CheckBox()
+        Me.Stng_MP = New System.Windows.Forms.TextBox()
+        Me.Stng_MPActiv = New System.Windows.Forms.CheckBox()
+        Me.Stng_Volet_Mousehover_agrandir = New System.Windows.Forms.CheckBox()
+        Me.Stng_TouchUI = New System.Windows.Forms.CheckBox()
+        Me.Stng_MaximizedWindow = New System.Windows.Forms.CheckBox()
+        Me.Home_checkbox = New System.Windows.Forms.CheckBox()
+        Me.Sfight_Checkbox = New System.Windows.Forms.CheckBox()
+        Me.favo_checkbox = New System.Windows.Forms.CheckBox()
+        Me.infos_checkbox = New System.Windows.Forms.CheckBox()
+        Me.lock_checkbox = New System.Windows.Forms.CheckBox()
+        Me.fullscreen_checkbox = New System.Windows.Forms.CheckBox()
+        Me.SrchFight_AdvanceRight = New System.Windows.Forms.TextBox()
+        Me.SrchFight_AdvanceLeft = New System.Windows.Forms.TextBox()
+        Me.SrchF_AdvanceChoice = New System.Windows.Forms.CheckBox()
+        Me.SrchF_ChoixB = New System.Windows.Forms.ComboBox()
+        Me.SrchF_ChoixA = New System.Windows.Forms.ComboBox()
+        Me.BS_Date = New System.Windows.Forms.Label()
+        Me.BS_DateSetColor = New System.Windows.Forms.Button()
         Me.ABlueflap_Navigateur.SuspendLayout()
         CType(Me.Notif_internet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Fav_Panel.SuspendLayout()
@@ -214,9 +220,8 @@ Partial Class Fenetre_Principale
         Me.Menua.SuspendLayout()
         Me.ABlueflap_Settings.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        Me.Sett_TabB.SuspendLayout()
-        Me.Sett_TabC.SuspendLayout()
         Me.Sett_TabA.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.stng_picdemo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StngmenuIcon5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StngmenuIcon8, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -226,6 +231,8 @@ Partial Class Fenetre_Principale
         CType(Me.StngmenuIcon3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StngmenuIcon6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StngmenuIcon4, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Sett_TabC.SuspendLayout()
+        Me.Sett_TabB.SuspendLayout()
         Me.ABlueflap_Fight.SuspendLayout()
         CType(Me.SrchF_Split, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SrchF_Split.Panel1.SuspendLayout()
@@ -275,7 +282,7 @@ Partial Class Fenetre_Principale
         Me.Web.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Web.Location = New System.Drawing.Point(160, 28)
         Me.Web.Size = New System.Drawing.Size(725, 579)
-        Me.Web.TabIndex = 7
+        Me.Web.TabIndex = 0
         '
         'Fav_Panel
         '
@@ -531,7 +538,7 @@ Partial Class Fenetre_Principale
         Me.GoButton.Location = New System.Drawing.Point(934, 5)
         Me.GoButton.Name = "GoButton"
         Me.GoButton.Size = New System.Drawing.Size(18, 18)
-        Me.GoButton.TabIndex = 3
+        Me.GoButton.TabIndex = 0
         Me.GoButton.Text = " "
         Me.GoButton.UseVisualStyleBackColor = False
         '
@@ -572,7 +579,7 @@ Partial Class Fenetre_Principale
         Me.voletlateral.BackgroundImage = CType(resources.GetObject("voletlateral.BackgroundImage"), System.Drawing.Image)
         Me.voletlateral.ContextMenuStrip = Me.Menua
         Me.voletlateral.Dock = System.Windows.Forms.DockStyle.Left
-        Me.voletlateral.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Menu_Home, Me.Menu_Back, Me.Menu_Forward, Me.Menu_Stop, Me.Menu_Refresh, Me.Menu_Fight, Me.Menu_Favos, Me.Menu_Share, Me.menu_partage, Me.Menu_Settings, Me.Menu_Lock, Me.Menu_FullScr, Me.Menu_Memo})
+        Me.voletlateral.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Menu_Home, Me.Menu_Back, Me.Menu_Forward, Me.Menu_Stop, Me.Menu_Refresh, Me.Menu_Fight, Me.Menu_Favos, Me.Menu_Share, Me.menu_partage, Me.Menu_Translate, Me.Menu_Settings, Me.Menu_Lock, Me.Menu_FullScr, Me.Menu_Memo})
         Me.voletlateral.Location = New System.Drawing.Point(0, 0)
         Me.voletlateral.Name = "voletlateral"
         Me.voletlateral.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
@@ -713,7 +720,7 @@ Partial Class Fenetre_Principale
         Me.FacebookToolStripMenuItem.Image = CType(resources.GetObject("FacebookToolStripMenuItem.Image"), System.Drawing.Image)
         Me.FacebookToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.FacebookToolStripMenuItem.Name = "FacebookToolStripMenuItem"
-        Me.FacebookToolStripMenuItem.Size = New System.Drawing.Size(152, 24)
+        Me.FacebookToolStripMenuItem.Size = New System.Drawing.Size(137, 24)
         Me.FacebookToolStripMenuItem.Text = "Facebook"
         '
         'TwitterToolStripMenuItem
@@ -721,8 +728,20 @@ Partial Class Fenetre_Principale
         Me.TwitterToolStripMenuItem.ForeColor = System.Drawing.Color.DeepSkyBlue
         Me.TwitterToolStripMenuItem.Image = CType(resources.GetObject("TwitterToolStripMenuItem.Image"), System.Drawing.Image)
         Me.TwitterToolStripMenuItem.Name = "TwitterToolStripMenuItem"
-        Me.TwitterToolStripMenuItem.Size = New System.Drawing.Size(152, 24)
+        Me.TwitterToolStripMenuItem.Size = New System.Drawing.Size(137, 24)
         Me.TwitterToolStripMenuItem.Text = "Twitter"
+        '
+        'Menu_Translate
+        '
+        Me.Menu_Translate.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Menu_Translate.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.Menu_Translate.Image = CType(resources.GetObject("Menu_Translate.Image"), System.Drawing.Image)
+        Me.Menu_Translate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Menu_Translate.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.Menu_Translate.Name = "Menu_Translate"
+        Me.Menu_Translate.Size = New System.Drawing.Size(153, 24)
+        Me.Menu_Translate.Text = "Traduire"
+        Me.Menu_Translate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Menu_Settings
         '
@@ -806,194 +825,303 @@ Partial Class Fenetre_Principale
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel3.AutoScroll = True
+        Me.Panel3.Controls.Add(Me.Sett_TabB)
         Me.Panel3.Controls.Add(Me.Sett_TabA)
         Me.Panel3.Controls.Add(Me.Sett_TabC)
-        Me.Panel3.Controls.Add(Me.Sett_TabB)
         Me.Panel3.Location = New System.Drawing.Point(0, 116)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(1117, 491)
         Me.Panel3.TabIndex = 60
         '
-        'Sett_TabB
+        'Sett_TabA
         '
-        Me.Sett_TabB.Controls.Add(Me.stng_Smartsuggestactif)
-        Me.Sett_TabB.Controls.Add(Me.StngLabel_Suggest)
-        Me.Sett_TabB.Controls.Add(Me.Stng_ResetSuggest)
-        Me.Sett_TabB.Controls.Add(Me.StngLabel_Network)
-        Me.Sett_TabB.Controls.Add(Me.stng_nevpriv)
-        Me.Sett_TabB.Controls.Add(Me.StngLabel_Private)
-        Me.Sett_TabB.Controls.Add(Me.Button1)
-        Me.Sett_TabB.Controls.Add(Me.Stng_OptionsInternet)
-        Me.Sett_TabB.Controls.Add(Me.StngLabel_Data)
-        Me.Sett_TabB.Controls.Add(Me.StngLabel_Extra)
-        Me.Sett_TabB.Controls.Add(Me.Stng_SupprHisto)
-        Me.Sett_TabB.Controls.Add(Me.Stng_SupprCacheCookies)
-        Me.Sett_TabB.Controls.Add(Me.StngLabel_NetworkInfo)
-        Me.Sett_TabB.Controls.Add(Me.StngLabel_Proxy)
-        Me.Sett_TabB.Location = New System.Drawing.Point(87, 15)
-        Me.Sett_TabB.Name = "Sett_TabB"
-        Me.Sett_TabB.Size = New System.Drawing.Size(925, 349)
-        Me.Sett_TabB.TabIndex = 58
-        Me.Sett_TabB.Visible = False
+        Me.Sett_TabA.AutoScroll = True
+        Me.Sett_TabA.Controls.Add(Me.translate_checkbox)
+        Me.Sett_TabA.Controls.Add(Me.PictureBox1)
+        Me.Sett_TabA.Controls.Add(Me.BackgroundChemin)
+        Me.Sett_TabA.Controls.Add(Me.stng_picdemo)
+        Me.Sett_TabA.Controls.Add(Me.Share_checkbox)
+        Me.Sett_TabA.Controls.Add(Me.StngmenuIcon5)
+        Me.Sett_TabA.Controls.Add(Me.memo_checkbox)
+        Me.Sett_TabA.Controls.Add(Me.StngmenuIcon8)
+        Me.Sett_TabA.Controls.Add(Me.Button2)
+        Me.Sett_TabA.Controls.Add(Me.StngLabel_Background)
+        Me.Sett_TabA.Controls.Add(Me.Stng_bluestart_checkbox)
+        Me.Sett_TabA.Controls.Add(Me.StngLabel_Searchengine)
+        Me.Sett_TabA.Controls.Add(Me.Stng_MoteurRecherche_choose)
+        Me.Sett_TabA.Controls.Add(Me.Stng_MoteurRecherche_URL)
+        Me.Sett_TabA.Controls.Add(Me.StngLabel_Home)
+        Me.Sett_TabA.Controls.Add(Me.Stng_HomePage_Url)
+        Me.Sett_TabA.Controls.Add(Me.Stng_ErreurURLHomepage)
+        Me.Sett_TabA.Controls.Add(Me.Stng_Volet_reduire)
+        Me.Sett_TabA.Controls.Add(Me.StngLabel_Lock)
+        Me.Sett_TabA.Controls.Add(Me.Stng_MP)
+        Me.Sett_TabA.Controls.Add(Me.Stng_MP_confirm)
+        Me.Sett_TabA.Controls.Add(Me.Stng_MPActiv)
+        Me.Sett_TabA.Controls.Add(Me.StngLabel_MPConfirm)
+        Me.Sett_TabA.Controls.Add(Me.StngLabel_MP)
+        Me.Sett_TabA.Controls.Add(Me.Stng_Volet_Mousehover_agrandir)
+        Me.Sett_TabA.Controls.Add(Me.StngLabel_Interface)
+        Me.Sett_TabA.Controls.Add(Me.StngLabel_Icons)
+        Me.Sett_TabA.Controls.Add(Me.Stng_TouchUI)
+        Me.Sett_TabA.Controls.Add(Me.Stng_MaximizedWindow)
+        Me.Sett_TabA.Controls.Add(Me.Home_checkbox)
+        Me.Sett_TabA.Controls.Add(Me.Sfight_Checkbox)
+        Me.Sett_TabA.Controls.Add(Me.favo_checkbox)
+        Me.Sett_TabA.Controls.Add(Me.infos_checkbox)
+        Me.Sett_TabA.Controls.Add(Me.lock_checkbox)
+        Me.Sett_TabA.Controls.Add(Me.fullscreen_checkbox)
+        Me.Sett_TabA.Controls.Add(Me.StngmenuIcon1)
+        Me.Sett_TabA.Controls.Add(Me.StngmenuIcon2)
+        Me.Sett_TabA.Controls.Add(Me.StngmenuIcon7)
+        Me.Sett_TabA.Controls.Add(Me.StngmenuIcon3)
+        Me.Sett_TabA.Controls.Add(Me.StngmenuIcon6)
+        Me.Sett_TabA.Controls.Add(Me.StngmenuIcon4)
+        Me.Sett_TabA.Controls.Add(Me.ShapeContainer3)
+        Me.Sett_TabA.Location = New System.Drawing.Point(87, 15)
+        Me.Sett_TabA.Name = "Sett_TabA"
+        Me.Sett_TabA.Size = New System.Drawing.Size(1030, 410)
+        Me.Sett_TabA.TabIndex = 57
         '
-        'stng_Smartsuggestactif
+        'PictureBox1
         '
-        Me.stng_Smartsuggestactif.AutoSize = True
-        Me.stng_Smartsuggestactif.Checked = Global.Blueflap.My.MySettings.Default.Smartsuggest
-        Me.stng_Smartsuggestactif.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Blueflap.My.MySettings.Default, "Smartsuggest", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.stng_Smartsuggestactif.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
-        Me.stng_Smartsuggestactif.Location = New System.Drawing.Point(277, 69)
-        Me.stng_Smartsuggestactif.Name = "stng_Smartsuggestactif"
-        Me.stng_Smartsuggestactif.Size = New System.Drawing.Size(61, 21)
-        Me.stng_Smartsuggestactif.TabIndex = 53
-        Me.stng_Smartsuggestactif.Text = "Activé"
-        Me.stng_Smartsuggestactif.UseVisualStyleBackColor = True
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(361, 237)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(15, 15)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox1.TabIndex = 58
+        Me.PictureBox1.TabStop = False
         '
-        'StngLabel_Suggest
+        'stng_picdemo
         '
-        Me.StngLabel_Suggest.AutoSize = True
-        Me.StngLabel_Suggest.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
-        Me.StngLabel_Suggest.Location = New System.Drawing.Point(14, 68)
-        Me.StngLabel_Suggest.Name = "StngLabel_Suggest"
-        Me.StngLabel_Suggest.Size = New System.Drawing.Size(101, 20)
-        Me.StngLabel_Suggest.TabIndex = 52
-        Me.StngLabel_Suggest.Text = "SmartSuggest"
+        Me.stng_picdemo.BackColor = System.Drawing.SystemColors.Control
+        Me.stng_picdemo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.stng_picdemo.Image = CType(resources.GetObject("stng_picdemo.Image"), System.Drawing.Image)
+        Me.stng_picdemo.Location = New System.Drawing.Point(322, 292)
+        Me.stng_picdemo.Name = "stng_picdemo"
+        Me.stng_picdemo.Size = New System.Drawing.Size(46, 33)
+        Me.stng_picdemo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.stng_picdemo.TabIndex = 55
+        Me.stng_picdemo.TabStop = False
         '
-        'Stng_ResetSuggest
+        'StngmenuIcon5
         '
-        Me.Stng_ResetSuggest.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Stng_ResetSuggest.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
-        Me.Stng_ResetSuggest.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.Stng_ResetSuggest.Location = New System.Drawing.Point(163, 61)
-        Me.Stng_ResetSuggest.Name = "Stng_ResetSuggest"
-        Me.Stng_ResetSuggest.Size = New System.Drawing.Size(104, 35)
-        Me.Stng_ResetSuggest.TabIndex = 51
-        Me.Stng_ResetSuggest.Text = "Réinitialiser"
-        Me.Stng_ResetSuggest.UseVisualStyleBackColor = True
+        Me.StngmenuIcon5.Image = CType(resources.GetObject("StngmenuIcon5.Image"), System.Drawing.Image)
+        Me.StngmenuIcon5.Location = New System.Drawing.Point(322, 237)
+        Me.StngmenuIcon5.Name = "StngmenuIcon5"
+        Me.StngmenuIcon5.Size = New System.Drawing.Size(15, 15)
+        Me.StngmenuIcon5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.StngmenuIcon5.TabIndex = 54
+        Me.StngmenuIcon5.TabStop = False
         '
-        'StngLabel_Network
+        'StngmenuIcon8
         '
-        Me.StngLabel_Network.AutoSize = True
-        Me.StngLabel_Network.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
-        Me.StngLabel_Network.Location = New System.Drawing.Point(14, 121)
-        Me.StngLabel_Network.Name = "StngLabel_Network"
-        Me.StngLabel_Network.Size = New System.Drawing.Size(56, 20)
-        Me.StngLabel_Network.TabIndex = 50
-        Me.StngLabel_Network.Text = "Réseau"
+        Me.StngmenuIcon8.Image = CType(resources.GetObject("StngmenuIcon8.Image"), System.Drawing.Image)
+        Me.StngmenuIcon8.Location = New System.Drawing.Point(473, 237)
+        Me.StngmenuIcon8.Name = "StngmenuIcon8"
+        Me.StngmenuIcon8.Size = New System.Drawing.Size(15, 15)
+        Me.StngmenuIcon8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.StngmenuIcon8.TabIndex = 52
+        Me.StngmenuIcon8.TabStop = False
         '
-        'stng_nevpriv
+        'Button2
         '
-        Me.stng_nevpriv.AutoSize = True
-        Me.stng_nevpriv.Checked = Global.Blueflap.My.MySettings.Default.navprivee
-        Me.stng_nevpriv.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Blueflap.My.MySettings.Default, "navprivee", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.stng_nevpriv.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
-        Me.stng_nevpriv.Location = New System.Drawing.Point(163, 19)
-        Me.stng_nevpriv.Name = "stng_nevpriv"
-        Me.stng_nevpriv.Size = New System.Drawing.Size(68, 21)
-        Me.stng_nevpriv.TabIndex = 49
-        Me.stng_nevpriv.Text = "Activée"
-        Me.stng_nevpriv.UseVisualStyleBackColor = True
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.Button2.Location = New System.Drawing.Point(161, 292)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(154, 35)
+        Me.Button2.TabIndex = 50
+        Me.Button2.Text = "Changer l'image"
+        Me.Button2.UseVisualStyleBackColor = True
         '
-        'StngLabel_Private
+        'StngLabel_Background
         '
-        Me.StngLabel_Private.AutoSize = True
-        Me.StngLabel_Private.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
-        Me.StngLabel_Private.Location = New System.Drawing.Point(13, 18)
-        Me.StngLabel_Private.Name = "StngLabel_Private"
-        Me.StngLabel_Private.Size = New System.Drawing.Size(124, 20)
-        Me.StngLabel_Private.TabIndex = 34
-        Me.StngLabel_Private.Text = "Navigation privée"
+        Me.StngLabel_Background.AutoSize = True
+        Me.StngLabel_Background.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
+        Me.StngLabel_Background.Location = New System.Drawing.Point(14, 299)
+        Me.StngLabel_Background.Name = "StngLabel_Background"
+        Me.StngLabel_Background.Size = New System.Drawing.Size(106, 20)
+        Me.StngLabel_Background.TabIndex = 49
+        Me.StngLabel_Background.Text = "Image de fond"
         '
-        'Button1
+        'StngLabel_Searchengine
         '
-        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Cyan
-        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Segoe UI Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.Button1.Location = New System.Drawing.Point(163, 232)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(94, 25)
-        Me.Button1.TabIndex = 48
-        Me.Button1.Text = "Signaler un bug"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.StngLabel_Searchengine.AutoSize = True
+        Me.StngLabel_Searchengine.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
+        Me.StngLabel_Searchengine.Location = New System.Drawing.Point(13, 18)
+        Me.StngLabel_Searchengine.Name = "StngLabel_Searchengine"
+        Me.StngLabel_Searchengine.Size = New System.Drawing.Size(146, 20)
+        Me.StngLabel_Searchengine.TabIndex = 2
+        Me.StngLabel_Searchengine.Text = "Moteur de recherche"
         '
-        'Stng_OptionsInternet
+        'StngLabel_Home
         '
-        Me.Stng_OptionsInternet.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Stng_OptionsInternet.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Stng_OptionsInternet.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.Stng_OptionsInternet.Location = New System.Drawing.Point(163, 114)
-        Me.Stng_OptionsInternet.Name = "Stng_OptionsInternet"
-        Me.Stng_OptionsInternet.Size = New System.Drawing.Size(154, 35)
-        Me.Stng_OptionsInternet.TabIndex = 33
-        Me.Stng_OptionsInternet.Text = "Options Internet"
-        Me.Stng_OptionsInternet.UseVisualStyleBackColor = True
+        Me.StngLabel_Home.AutoSize = True
+        Me.StngLabel_Home.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
+        Me.StngLabel_Home.Location = New System.Drawing.Point(13, 64)
+        Me.StngLabel_Home.Name = "StngLabel_Home"
+        Me.StngLabel_Home.Size = New System.Drawing.Size(102, 20)
+        Me.StngLabel_Home.TabIndex = 7
+        Me.StngLabel_Home.Text = "Page d'accueil"
         '
-        'StngLabel_Data
+        'Stng_ErreurURLHomepage
         '
-        Me.StngLabel_Data.AutoSize = True
-        Me.StngLabel_Data.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
-        Me.StngLabel_Data.Location = New System.Drawing.Point(14, 183)
-        Me.StngLabel_Data.Name = "StngLabel_Data"
-        Me.StngLabel_Data.Size = New System.Drawing.Size(66, 20)
-        Me.StngLabel_Data.TabIndex = 40
-        Me.StngLabel_Data.Text = "Données"
+        Me.Stng_ErreurURLHomepage.AutoSize = True
+        Me.Stng_ErreurURLHomepage.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Stng_ErreurURLHomepage.ForeColor = System.Drawing.Color.DarkRed
+        Me.Stng_ErreurURLHomepage.Location = New System.Drawing.Point(162, 86)
+        Me.Stng_ErreurURLHomepage.Name = "Stng_ErreurURLHomepage"
+        Me.Stng_ErreurURLHomepage.Size = New System.Drawing.Size(452, 17)
+        Me.Stng_ErreurURLHomepage.TabIndex = 9
+        Me.Stng_ErreurURLHomepage.Text = "Veuillez entrer une adresse valide (vérifiez la présence du [http://] ou [https:/" & _
+    "/] )"
+        Me.Stng_ErreurURLHomepage.Visible = False
         '
-        'StngLabel_Extra
+        'StngLabel_Lock
         '
-        Me.StngLabel_Extra.AutoSize = True
-        Me.StngLabel_Extra.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
-        Me.StngLabel_Extra.Location = New System.Drawing.Point(13, 233)
-        Me.StngLabel_Extra.Name = "StngLabel_Extra"
-        Me.StngLabel_Extra.Size = New System.Drawing.Size(48, 20)
-        Me.StngLabel_Extra.TabIndex = 46
-        Me.StngLabel_Extra.Text = "Extras"
+        Me.StngLabel_Lock.AutoSize = True
+        Me.StngLabel_Lock.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
+        Me.StngLabel_Lock.Location = New System.Drawing.Point(13, 117)
+        Me.StngLabel_Lock.Name = "StngLabel_Lock"
+        Me.StngLabel_Lock.Size = New System.Drawing.Size(86, 20)
+        Me.StngLabel_Lock.TabIndex = 11
+        Me.StngLabel_Lock.Text = "Verrouillage"
         '
-        'Stng_SupprHisto
+        'Stng_MP_confirm
         '
-        Me.Stng_SupprHisto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Stng_SupprHisto.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
-        Me.Stng_SupprHisto.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.Stng_SupprHisto.Location = New System.Drawing.Point(164, 174)
-        Me.Stng_SupprHisto.Name = "Stng_SupprHisto"
-        Me.Stng_SupprHisto.Size = New System.Drawing.Size(154, 35)
-        Me.Stng_SupprHisto.TabIndex = 39
-        Me.Stng_SupprHisto.Text = "Effacer l'historique"
-        Me.Stng_SupprHisto.UseVisualStyleBackColor = True
+        Me.Stng_MP_confirm.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
+        Me.Stng_MP_confirm.Location = New System.Drawing.Point(494, 118)
+        Me.Stng_MP_confirm.Name = "Stng_MP_confirm"
+        Me.Stng_MP_confirm.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
+        Me.Stng_MP_confirm.Size = New System.Drawing.Size(151, 25)
+        Me.Stng_MP_confirm.TabIndex = 13
         '
-        'Stng_SupprCacheCookies
+        'StngLabel_MPConfirm
         '
-        Me.Stng_SupprCacheCookies.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Stng_SupprCacheCookies.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
-        Me.Stng_SupprCacheCookies.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.Stng_SupprCacheCookies.Location = New System.Drawing.Point(323, 174)
-        Me.Stng_SupprCacheCookies.Name = "Stng_SupprCacheCookies"
-        Me.Stng_SupprCacheCookies.Size = New System.Drawing.Size(212, 35)
-        Me.Stng_SupprCacheCookies.TabIndex = 42
-        Me.Stng_SupprCacheCookies.Text = "Effacer les cookies et le cache"
-        Me.Stng_SupprCacheCookies.UseVisualStyleBackColor = True
+        Me.StngLabel_MPConfirm.AutoSize = True
+        Me.StngLabel_MPConfirm.Font = New System.Drawing.Font("Segoe UI Semilight", 8.0!)
+        Me.StngLabel_MPConfirm.Location = New System.Drawing.Point(413, 124)
+        Me.StngLabel_MPConfirm.Name = "StngLabel_MPConfirm"
+        Me.StngLabel_MPConfirm.Size = New System.Drawing.Size(75, 13)
+        Me.StngLabel_MPConfirm.TabIndex = 15
+        Me.StngLabel_MPConfirm.Text = "Retapez le MP"
         '
-        'StngLabel_NetworkInfo
+        'StngLabel_MP
         '
-        Me.StngLabel_NetworkInfo.AutoSize = True
-        Me.StngLabel_NetworkInfo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.StngLabel_NetworkInfo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.StngLabel_NetworkInfo.Location = New System.Drawing.Point(320, 130)
-        Me.StngLabel_NetworkInfo.Name = "StngLabel_NetworkInfo"
-        Me.StngLabel_NetworkInfo.Size = New System.Drawing.Size(183, 15)
-        Me.StngLabel_NetworkInfo.TabIndex = 36
-        Me.StngLabel_NetworkInfo.Text = "Cliquer sur l'onglet ""connexions"""
+        Me.StngLabel_MP.AutoSize = True
+        Me.StngLabel_MP.Font = New System.Drawing.Font("Segoe UI Semilight", 8.0!)
+        Me.StngLabel_MP.Location = New System.Drawing.Point(170, 124)
+        Me.StngLabel_MP.Name = "StngLabel_MP"
+        Me.StngLabel_MP.Size = New System.Drawing.Size(72, 13)
+        Me.StngLabel_MP.TabIndex = 16
+        Me.StngLabel_MP.Text = "Définir un MP"
         '
-        'StngLabel_Proxy
+        'StngLabel_Interface
         '
-        Me.StngLabel_Proxy.AutoSize = True
-        Me.StngLabel_Proxy.ForeColor = System.Drawing.Color.Black
-        Me.StngLabel_Proxy.Location = New System.Drawing.Point(320, 117)
-        Me.StngLabel_Proxy.Name = "StngLabel_Proxy"
-        Me.StngLabel_Proxy.Size = New System.Drawing.Size(371, 13)
-        Me.StngLabel_Proxy.TabIndex = 35
-        Me.StngLabel_Proxy.Text = "Blueflap utilise les paramètres proxy du système pour se connecter au réseau."
+        Me.StngLabel_Interface.AutoSize = True
+        Me.StngLabel_Interface.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
+        Me.StngLabel_Interface.Location = New System.Drawing.Point(14, 176)
+        Me.StngLabel_Interface.Name = "StngLabel_Interface"
+        Me.StngLabel_Interface.Size = New System.Drawing.Size(66, 20)
+        Me.StngLabel_Interface.TabIndex = 18
+        Me.StngLabel_Interface.Text = "Interface"
+        '
+        'StngLabel_Icons
+        '
+        Me.StngLabel_Icons.AutoSize = True
+        Me.StngLabel_Icons.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
+        Me.StngLabel_Icons.Location = New System.Drawing.Point(13, 232)
+        Me.StngLabel_Icons.Name = "StngLabel_Icons"
+        Me.StngLabel_Icons.Size = New System.Drawing.Size(113, 20)
+        Me.StngLabel_Icons.TabIndex = 20
+        Me.StngLabel_Icons.Text = "Icônes du menu"
+        '
+        'StngmenuIcon1
+        '
+        Me.StngmenuIcon1.Image = CType(resources.GetObject("StngmenuIcon1.Image"), System.Drawing.Image)
+        Me.StngmenuIcon1.Location = New System.Drawing.Point(174, 237)
+        Me.StngmenuIcon1.Name = "StngmenuIcon1"
+        Me.StngmenuIcon1.Size = New System.Drawing.Size(15, 15)
+        Me.StngmenuIcon1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.StngmenuIcon1.TabIndex = 27
+        Me.StngmenuIcon1.TabStop = False
+        '
+        'StngmenuIcon2
+        '
+        Me.StngmenuIcon2.Image = CType(resources.GetObject("StngmenuIcon2.Image"), System.Drawing.Image)
+        Me.StngmenuIcon2.Location = New System.Drawing.Point(211, 237)
+        Me.StngmenuIcon2.Name = "StngmenuIcon2"
+        Me.StngmenuIcon2.Size = New System.Drawing.Size(15, 15)
+        Me.StngmenuIcon2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.StngmenuIcon2.TabIndex = 28
+        Me.StngmenuIcon2.TabStop = False
+        '
+        'StngmenuIcon7
+        '
+        Me.StngmenuIcon7.Image = CType(resources.GetObject("StngmenuIcon7.Image"), System.Drawing.Image)
+        Me.StngmenuIcon7.Location = New System.Drawing.Point(436, 237)
+        Me.StngmenuIcon7.Name = "StngmenuIcon7"
+        Me.StngmenuIcon7.Size = New System.Drawing.Size(15, 15)
+        Me.StngmenuIcon7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.StngmenuIcon7.TabIndex = 32
+        Me.StngmenuIcon7.TabStop = False
+        '
+        'StngmenuIcon3
+        '
+        Me.StngmenuIcon3.Image = CType(resources.GetObject("StngmenuIcon3.Image"), System.Drawing.Image)
+        Me.StngmenuIcon3.Location = New System.Drawing.Point(248, 237)
+        Me.StngmenuIcon3.Name = "StngmenuIcon3"
+        Me.StngmenuIcon3.Size = New System.Drawing.Size(15, 15)
+        Me.StngmenuIcon3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.StngmenuIcon3.TabIndex = 29
+        Me.StngmenuIcon3.TabStop = False
+        '
+        'StngmenuIcon6
+        '
+        Me.StngmenuIcon6.Image = CType(resources.GetObject("StngmenuIcon6.Image"), System.Drawing.Image)
+        Me.StngmenuIcon6.Location = New System.Drawing.Point(398, 237)
+        Me.StngmenuIcon6.Name = "StngmenuIcon6"
+        Me.StngmenuIcon6.Size = New System.Drawing.Size(15, 15)
+        Me.StngmenuIcon6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.StngmenuIcon6.TabIndex = 31
+        Me.StngmenuIcon6.TabStop = False
+        '
+        'StngmenuIcon4
+        '
+        Me.StngmenuIcon4.Image = CType(resources.GetObject("StngmenuIcon4.Image"), System.Drawing.Image)
+        Me.StngmenuIcon4.Location = New System.Drawing.Point(285, 237)
+        Me.StngmenuIcon4.Name = "StngmenuIcon4"
+        Me.StngmenuIcon4.Size = New System.Drawing.Size(15, 15)
+        Me.StngmenuIcon4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.StngmenuIcon4.TabIndex = 30
+        Me.StngmenuIcon4.TabStop = False
+        '
+        'ShapeContainer3
+        '
+        Me.ShapeContainer3.Location = New System.Drawing.Point(0, 0)
+        Me.ShapeContainer3.Margin = New System.Windows.Forms.Padding(0)
+        Me.ShapeContainer3.Name = "ShapeContainer3"
+        Me.ShapeContainer3.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape2, Me.RectangleShape1})
+        Me.ShapeContainer3.Size = New System.Drawing.Size(1030, 410)
+        Me.ShapeContainer3.TabIndex = 44
+        Me.ShapeContainer3.TabStop = False
+        '
+        'RectangleShape2
+        '
+        Me.RectangleShape2.BorderColor = System.Drawing.SystemColors.ControlDark
+        Me.RectangleShape2.Location = New System.Drawing.Point(164, 113)
+        Me.RectangleShape2.Name = "RectangleShape2"
+        Me.RectangleShape2.Size = New System.Drawing.Size(583, 34)
+        '
+        'RectangleShape1
+        '
+        Me.RectangleShape1.BorderColor = System.Drawing.SystemColors.ControlDark
+        Me.RectangleShape1.Location = New System.Drawing.Point(164, 225)
+        Me.RectangleShape1.Name = "RectangleShape1"
+        Me.RectangleShape1.Size = New System.Drawing.Size(583, 36)
         '
         'Sett_TabC
         '
@@ -1131,9 +1259,9 @@ Partial Class Fenetre_Principale
         Me.Stng_VersionSystem.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.Stng_VersionSystem.Location = New System.Drawing.Point(160, 20)
         Me.Stng_VersionSystem.Name = "Stng_VersionSystem"
-        Me.Stng_VersionSystem.Size = New System.Drawing.Size(97, 13)
+        Me.Stng_VersionSystem.Size = New System.Drawing.Size(133, 13)
         Me.Stng_VersionSystem.TabIndex = 19
-        Me.Stng_VersionSystem.Text = "Blueflap 3.0 Beta 6"
+        Me.Stng_VersionSystem.Text = "Blueflap 3.0 DevPreview 6"
         '
         'Stng_ShowLicense
         '
@@ -1148,519 +1276,163 @@ Partial Class Fenetre_Principale
         Me.Stng_ShowLicense.Text = "Licence OpenSource"
         Me.Stng_ShowLicense.UseVisualStyleBackColor = True
         '
-        'Sett_TabA
-        '
-        Me.Sett_TabA.AutoScroll = True
-        Me.Sett_TabA.Controls.Add(Me.BackgroundChemin)
-        Me.Sett_TabA.Controls.Add(Me.stng_picdemo)
-        Me.Sett_TabA.Controls.Add(Me.Share_checkbox)
-        Me.Sett_TabA.Controls.Add(Me.StngmenuIcon5)
-        Me.Sett_TabA.Controls.Add(Me.memo_checkbox)
-        Me.Sett_TabA.Controls.Add(Me.StngmenuIcon8)
-        Me.Sett_TabA.Controls.Add(Me.Button2)
-        Me.Sett_TabA.Controls.Add(Me.StngLabel_Background)
-        Me.Sett_TabA.Controls.Add(Me.Stng_bluestart_checkbox)
-        Me.Sett_TabA.Controls.Add(Me.StngLabel_Searchengine)
-        Me.Sett_TabA.Controls.Add(Me.Stng_MoteurRecherche_choose)
-        Me.Sett_TabA.Controls.Add(Me.Stng_MoteurRecherche_URL)
-        Me.Sett_TabA.Controls.Add(Me.StngLabel_Home)
-        Me.Sett_TabA.Controls.Add(Me.Stng_HomePage_Url)
-        Me.Sett_TabA.Controls.Add(Me.Stng_ErreurURLHomepage)
-        Me.Sett_TabA.Controls.Add(Me.Stng_Volet_reduire)
-        Me.Sett_TabA.Controls.Add(Me.StngLabel_Lock)
-        Me.Sett_TabA.Controls.Add(Me.Stng_MP)
-        Me.Sett_TabA.Controls.Add(Me.Stng_MP_confirm)
-        Me.Sett_TabA.Controls.Add(Me.Stng_MPActiv)
-        Me.Sett_TabA.Controls.Add(Me.StngLabel_MPConfirm)
-        Me.Sett_TabA.Controls.Add(Me.StngLabel_MP)
-        Me.Sett_TabA.Controls.Add(Me.Stng_Volet_Mousehover_agrandir)
-        Me.Sett_TabA.Controls.Add(Me.StngLabel_Interface)
-        Me.Sett_TabA.Controls.Add(Me.StngLabel_Icons)
-        Me.Sett_TabA.Controls.Add(Me.Stng_TouchUI)
-        Me.Sett_TabA.Controls.Add(Me.Stng_MaximizedWindow)
-        Me.Sett_TabA.Controls.Add(Me.Home_checkbox)
-        Me.Sett_TabA.Controls.Add(Me.Sfight_Checkbox)
-        Me.Sett_TabA.Controls.Add(Me.favo_checkbox)
-        Me.Sett_TabA.Controls.Add(Me.infos_checkbox)
-        Me.Sett_TabA.Controls.Add(Me.lock_checkbox)
-        Me.Sett_TabA.Controls.Add(Me.fullscreen_checkbox)
-        Me.Sett_TabA.Controls.Add(Me.StngmenuIcon1)
-        Me.Sett_TabA.Controls.Add(Me.StngmenuIcon2)
-        Me.Sett_TabA.Controls.Add(Me.StngmenuIcon7)
-        Me.Sett_TabA.Controls.Add(Me.StngmenuIcon3)
-        Me.Sett_TabA.Controls.Add(Me.StngmenuIcon6)
-        Me.Sett_TabA.Controls.Add(Me.StngmenuIcon4)
-        Me.Sett_TabA.Controls.Add(Me.ShapeContainer3)
-        Me.Sett_TabA.Location = New System.Drawing.Point(87, 15)
-        Me.Sett_TabA.Name = "Sett_TabA"
-        Me.Sett_TabA.Size = New System.Drawing.Size(1030, 410)
-        Me.Sett_TabA.TabIndex = 57
-        '
-        'BackgroundChemin
-        '
-        Me.BackgroundChemin.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.BackgroundChemin.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Blueflap.My.MySettings.Default, "Cheminback", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.BackgroundChemin.Font = New System.Drawing.Font("Segoe UI Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BackgroundChemin.ForeColor = System.Drawing.Color.DarkGray
-        Me.BackgroundChemin.Location = New System.Drawing.Point(377, 304)
-        Me.BackgroundChemin.Name = "BackgroundChemin"
-        Me.BackgroundChemin.ReadOnly = True
-        Me.BackgroundChemin.Size = New System.Drawing.Size(370, 15)
-        Me.BackgroundChemin.TabIndex = 56
-        Me.BackgroundChemin.Text = Global.Blueflap.My.MySettings.Default.Cheminback
-        '
-        'stng_picdemo
-        '
-        Me.stng_picdemo.BackColor = System.Drawing.SystemColors.Control
-        Me.stng_picdemo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.stng_picdemo.Image = CType(resources.GetObject("stng_picdemo.Image"), System.Drawing.Image)
-        Me.stng_picdemo.Location = New System.Drawing.Point(322, 292)
-        Me.stng_picdemo.Name = "stng_picdemo"
-        Me.stng_picdemo.Size = New System.Drawing.Size(46, 33)
-        Me.stng_picdemo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.stng_picdemo.TabIndex = 55
-        Me.stng_picdemo.TabStop = False
-        '
-        'Share_checkbox
-        '
-        Me.Share_checkbox.AutoSize = True
-        Me.Share_checkbox.Checked = Global.Blueflap.My.MySettings.Default.h
-        Me.Share_checkbox.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.Share_checkbox.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Blueflap.My.MySettings.Default, "h", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.Share_checkbox.Location = New System.Drawing.Point(340, 238)
-        Me.Share_checkbox.Name = "Share_checkbox"
-        Me.Share_checkbox.Size = New System.Drawing.Size(15, 14)
-        Me.Share_checkbox.TabIndex = 53
-        Me.Share_checkbox.UseVisualStyleBackColor = True
-        '
-        'StngmenuIcon5
-        '
-        Me.StngmenuIcon5.Image = CType(resources.GetObject("StngmenuIcon5.Image"), System.Drawing.Image)
-        Me.StngmenuIcon5.Location = New System.Drawing.Point(322, 237)
-        Me.StngmenuIcon5.Name = "StngmenuIcon5"
-        Me.StngmenuIcon5.Size = New System.Drawing.Size(15, 15)
-        Me.StngmenuIcon5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.StngmenuIcon5.TabIndex = 54
-        Me.StngmenuIcon5.TabStop = False
-        '
-        'memo_checkbox
-        '
-        Me.memo_checkbox.AutoSize = True
-        Me.memo_checkbox.Checked = Global.Blueflap.My.MySettings.Default.g
-        Me.memo_checkbox.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.memo_checkbox.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Blueflap.My.MySettings.Default, "g", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.memo_checkbox.Location = New System.Drawing.Point(453, 238)
-        Me.memo_checkbox.Name = "memo_checkbox"
-        Me.memo_checkbox.Size = New System.Drawing.Size(15, 14)
-        Me.memo_checkbox.TabIndex = 51
-        Me.memo_checkbox.UseVisualStyleBackColor = True
-        '
-        'StngmenuIcon8
-        '
-        Me.StngmenuIcon8.Image = CType(resources.GetObject("StngmenuIcon8.Image"), System.Drawing.Image)
-        Me.StngmenuIcon8.Location = New System.Drawing.Point(436, 237)
-        Me.StngmenuIcon8.Name = "StngmenuIcon8"
-        Me.StngmenuIcon8.Size = New System.Drawing.Size(15, 15)
-        Me.StngmenuIcon8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.StngmenuIcon8.TabIndex = 52
-        Me.StngmenuIcon8.TabStop = False
-        '
-        'Button2
-        '
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.Button2.Location = New System.Drawing.Point(161, 292)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(154, 35)
-        Me.Button2.TabIndex = 50
-        Me.Button2.Text = "Changer l'image"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'StngLabel_Background
-        '
-        Me.StngLabel_Background.AutoSize = True
-        Me.StngLabel_Background.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
-        Me.StngLabel_Background.Location = New System.Drawing.Point(14, 299)
-        Me.StngLabel_Background.Name = "StngLabel_Background"
-        Me.StngLabel_Background.Size = New System.Drawing.Size(106, 20)
-        Me.StngLabel_Background.TabIndex = 49
-        Me.StngLabel_Background.Text = "Image de fond"
-        '
-        'Stng_bluestart_checkbox
-        '
-        Me.Stng_bluestart_checkbox.AutoSize = True
-        Me.Stng_bluestart_checkbox.Checked = Global.Blueflap.My.MySettings.Default.startou
-        Me.Stng_bluestart_checkbox.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Blueflap.My.MySettings.Default, "startou", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.Stng_bluestart_checkbox.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
-        Me.Stng_bluestart_checkbox.Location = New System.Drawing.Point(449, 65)
-        Me.Stng_bluestart_checkbox.Name = "Stng_bluestart_checkbox"
-        Me.Stng_bluestart_checkbox.Size = New System.Drawing.Size(119, 21)
-        Me.Stng_bluestart_checkbox.TabIndex = 44
-        Me.Stng_bluestart_checkbox.Text = "Utiliser BlueStart"
-        Me.Stng_bluestart_checkbox.UseVisualStyleBackColor = True
-        '
-        'StngLabel_Searchengine
-        '
-        Me.StngLabel_Searchengine.AutoSize = True
-        Me.StngLabel_Searchengine.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
-        Me.StngLabel_Searchengine.Location = New System.Drawing.Point(13, 18)
-        Me.StngLabel_Searchengine.Name = "StngLabel_Searchengine"
-        Me.StngLabel_Searchengine.Size = New System.Drawing.Size(146, 20)
-        Me.StngLabel_Searchengine.TabIndex = 2
-        Me.StngLabel_Searchengine.Text = "Moteur de recherche"
-        '
-        'Stng_MoteurRecherche_choose
-        '
-        Me.Stng_MoteurRecherche_choose.AutoCompleteCustomSource.AddRange(New String() {"Google", "Bing", "Yahoo", "Youtube", "DuckDuckGo", "Wikipedia"})
-        Me.Stng_MoteurRecherche_choose.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
-        Me.Stng_MoteurRecherche_choose.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
-        Me.Stng_MoteurRecherche_choose.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Blueflap.My.MySettings.Default, "NomMoteur", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.Stng_MoteurRecherche_choose.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Stng_MoteurRecherche_choose.FormattingEnabled = True
-        Me.Stng_MoteurRecherche_choose.Items.AddRange(New Object() {"Google", "Bing", "Yahoo", "Ask", "Youtube", "DuckDuckGo", "Wikipedia", "Qwant", "Github"})
-        Me.Stng_MoteurRecherche_choose.Location = New System.Drawing.Point(165, 17)
-        Me.Stng_MoteurRecherche_choose.Name = "Stng_MoteurRecherche_choose"
-        Me.Stng_MoteurRecherche_choose.Size = New System.Drawing.Size(121, 25)
-        Me.Stng_MoteurRecherche_choose.TabIndex = 3
-        Me.Stng_MoteurRecherche_choose.Text = Global.Blueflap.My.MySettings.Default.NomMoteur
-        '
-        'Stng_MoteurRecherche_URL
-        '
-        Me.Stng_MoteurRecherche_URL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Blueflap.My.MySettings.Default, "Moteur", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.Stng_MoteurRecherche_URL.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Stng_MoteurRecherche_URL.Location = New System.Drawing.Point(300, 17)
-        Me.Stng_MoteurRecherche_URL.Name = "Stng_MoteurRecherche_URL"
-        Me.Stng_MoteurRecherche_URL.Size = New System.Drawing.Size(449, 25)
-        Me.Stng_MoteurRecherche_URL.TabIndex = 4
-        Me.Stng_MoteurRecherche_URL.Text = Global.Blueflap.My.MySettings.Default.Moteur
-        '
-        'StngLabel_Home
-        '
-        Me.StngLabel_Home.AutoSize = True
-        Me.StngLabel_Home.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
-        Me.StngLabel_Home.Location = New System.Drawing.Point(13, 64)
-        Me.StngLabel_Home.Name = "StngLabel_Home"
-        Me.StngLabel_Home.Size = New System.Drawing.Size(102, 20)
-        Me.StngLabel_Home.TabIndex = 7
-        Me.StngLabel_Home.Text = "Page d'accueil"
-        '
-        'Stng_HomePage_Url
-        '
-        Me.Stng_HomePage_Url.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Blueflap.My.MySettings.Default, "home", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.Stng_HomePage_Url.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
-        Me.Stng_HomePage_Url.Location = New System.Drawing.Point(165, 63)
-        Me.Stng_HomePage_Url.Name = "Stng_HomePage_Url"
-        Me.Stng_HomePage_Url.Size = New System.Drawing.Size(278, 25)
-        Me.Stng_HomePage_Url.TabIndex = 8
-        Me.Stng_HomePage_Url.Text = Global.Blueflap.My.MySettings.Default.home
-        '
-        'Stng_ErreurURLHomepage
-        '
-        Me.Stng_ErreurURLHomepage.AutoSize = True
-        Me.Stng_ErreurURLHomepage.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Stng_ErreurURLHomepage.ForeColor = System.Drawing.Color.DarkRed
-        Me.Stng_ErreurURLHomepage.Location = New System.Drawing.Point(162, 86)
-        Me.Stng_ErreurURLHomepage.Name = "Stng_ErreurURLHomepage"
-        Me.Stng_ErreurURLHomepage.Size = New System.Drawing.Size(452, 17)
-        Me.Stng_ErreurURLHomepage.TabIndex = 9
-        Me.Stng_ErreurURLHomepage.Text = "Veuillez entrer une adresse valide (vérifiez la présence du [http://] ou [https:/" & _
-    "/] )"
-        Me.Stng_ErreurURLHomepage.Visible = False
-        '
-        'Stng_Volet_reduire
-        '
-        Me.Stng_Volet_reduire.AutoSize = True
-        Me.Stng_Volet_reduire.Checked = Global.Blueflap.My.MySettings.Default.Réduit
-        Me.Stng_Volet_reduire.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Blueflap.My.MySettings.Default, "Réduit", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.Stng_Volet_reduire.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
-        Me.Stng_Volet_reduire.Location = New System.Drawing.Point(312, 179)
-        Me.Stng_Volet_reduire.Name = "Stng_Volet_reduire"
-        Me.Stng_Volet_reduire.Size = New System.Drawing.Size(196, 19)
-        Me.Stng_Volet_reduire.TabIndex = 10
-        Me.Stng_Volet_reduire.Text = "Volet latéral réduit au démarrage"
-        Me.Stng_Volet_reduire.UseVisualStyleBackColor = True
-        '
-        'StngLabel_Lock
-        '
-        Me.StngLabel_Lock.AutoSize = True
-        Me.StngLabel_Lock.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
-        Me.StngLabel_Lock.Location = New System.Drawing.Point(13, 117)
-        Me.StngLabel_Lock.Name = "StngLabel_Lock"
-        Me.StngLabel_Lock.Size = New System.Drawing.Size(86, 20)
-        Me.StngLabel_Lock.TabIndex = 11
-        Me.StngLabel_Lock.Text = "Verrouillage"
-        '
-        'Stng_MP
-        '
-        Me.Stng_MP.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Blueflap.My.MySettings.Default, "MP", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.Stng_MP.Enabled = False
-        Me.Stng_MP.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
-        Me.Stng_MP.Location = New System.Drawing.Point(245, 118)
-        Me.Stng_MP.Name = "Stng_MP"
-        Me.Stng_MP.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
-        Me.Stng_MP.Size = New System.Drawing.Size(150, 25)
-        Me.Stng_MP.TabIndex = 12
-        Me.Stng_MP.Text = Global.Blueflap.My.MySettings.Default.MP
-        '
-        'Stng_MP_confirm
-        '
-        Me.Stng_MP_confirm.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
-        Me.Stng_MP_confirm.Location = New System.Drawing.Point(494, 118)
-        Me.Stng_MP_confirm.Name = "Stng_MP_confirm"
-        Me.Stng_MP_confirm.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
-        Me.Stng_MP_confirm.Size = New System.Drawing.Size(151, 25)
-        Me.Stng_MP_confirm.TabIndex = 13
-        '
-        'Stng_MPActiv
-        '
-        Me.Stng_MPActiv.AutoSize = True
-        Me.Stng_MPActiv.Checked = Global.Blueflap.My.MySettings.Default.Verr_def
-        Me.Stng_MPActiv.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Blueflap.My.MySettings.Default, "Verr_def", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.Stng_MPActiv.Enabled = False
-        Me.Stng_MPActiv.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
-        Me.Stng_MPActiv.Location = New System.Drawing.Point(669, 120)
-        Me.Stng_MPActiv.Name = "Stng_MPActiv"
-        Me.Stng_MPActiv.Size = New System.Drawing.Size(65, 21)
-        Me.Stng_MPActiv.TabIndex = 14
-        Me.Stng_MPActiv.Text = "Activer"
-        Me.Stng_MPActiv.UseVisualStyleBackColor = True
-        '
-        'StngLabel_MPConfirm
-        '
-        Me.StngLabel_MPConfirm.AutoSize = True
-        Me.StngLabel_MPConfirm.Font = New System.Drawing.Font("Segoe UI Semilight", 8.0!)
-        Me.StngLabel_MPConfirm.Location = New System.Drawing.Point(413, 124)
-        Me.StngLabel_MPConfirm.Name = "StngLabel_MPConfirm"
-        Me.StngLabel_MPConfirm.Size = New System.Drawing.Size(75, 13)
-        Me.StngLabel_MPConfirm.TabIndex = 15
-        Me.StngLabel_MPConfirm.Text = "Retapez le MP"
-        '
-        'StngLabel_MP
-        '
-        Me.StngLabel_MP.AutoSize = True
-        Me.StngLabel_MP.Font = New System.Drawing.Font("Segoe UI Semilight", 8.0!)
-        Me.StngLabel_MP.Location = New System.Drawing.Point(170, 124)
-        Me.StngLabel_MP.Name = "StngLabel_MP"
-        Me.StngLabel_MP.Size = New System.Drawing.Size(72, 13)
-        Me.StngLabel_MP.TabIndex = 16
-        Me.StngLabel_MP.Text = "Définir un MP"
-        '
-        'Stng_Volet_Mousehover_agrandir
-        '
-        Me.Stng_Volet_Mousehover_agrandir.AutoSize = True
-        Me.Stng_Volet_Mousehover_agrandir.Checked = Global.Blueflap.My.MySettings.Default.mousess
-        Me.Stng_Volet_Mousehover_agrandir.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Blueflap.My.MySettings.Default, "mousess", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.Stng_Volet_Mousehover_agrandir.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
-        Me.Stng_Volet_Mousehover_agrandir.Location = New System.Drawing.Point(312, 196)
-        Me.Stng_Volet_Mousehover_agrandir.Name = "Stng_Volet_Mousehover_agrandir"
-        Me.Stng_Volet_Mousehover_agrandir.Size = New System.Drawing.Size(224, 19)
-        Me.Stng_Volet_Mousehover_agrandir.TabIndex = 43
-        Me.Stng_Volet_Mousehover_agrandir.Text = "Agrandir volet au passage de la souris"
-        Me.Stng_Volet_Mousehover_agrandir.UseVisualStyleBackColor = True
-        Me.Stng_Volet_Mousehover_agrandir.Visible = False
-        '
-        'StngLabel_Interface
-        '
-        Me.StngLabel_Interface.AutoSize = True
-        Me.StngLabel_Interface.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
-        Me.StngLabel_Interface.Location = New System.Drawing.Point(14, 176)
-        Me.StngLabel_Interface.Name = "StngLabel_Interface"
-        Me.StngLabel_Interface.Size = New System.Drawing.Size(66, 20)
-        Me.StngLabel_Interface.TabIndex = 18
-        Me.StngLabel_Interface.Text = "Interface"
-        '
-        'StngLabel_Icons
-        '
-        Me.StngLabel_Icons.AutoSize = True
-        Me.StngLabel_Icons.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
-        Me.StngLabel_Icons.Location = New System.Drawing.Point(13, 232)
-        Me.StngLabel_Icons.Name = "StngLabel_Icons"
-        Me.StngLabel_Icons.Size = New System.Drawing.Size(113, 20)
-        Me.StngLabel_Icons.TabIndex = 20
-        Me.StngLabel_Icons.Text = "Icônes du menu"
-        '
-        'Stng_TouchUI
-        '
-        Me.Stng_TouchUI.AutoSize = True
-        Me.Stng_TouchUI.Checked = Global.Blueflap.My.MySettings.Default.Touchkeyboard
-        Me.Stng_TouchUI.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Blueflap.My.MySettings.Default, "Touchkeyboard", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.Stng_TouchUI.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Stng_TouchUI.Location = New System.Drawing.Point(165, 179)
-        Me.Stng_TouchUI.Name = "Stng_TouchUI"
-        Me.Stng_TouchUI.Size = New System.Drawing.Size(106, 19)
-        Me.Stng_TouchUI.TabIndex = 37
-        Me.Stng_TouchUI.Text = "Interface Tactile"
-        Me.Stng_TouchUI.UseVisualStyleBackColor = True
-        '
-        'Stng_MaximizedWindow
-        '
-        Me.Stng_MaximizedWindow.AutoSize = True
-        Me.Stng_MaximizedWindow.Checked = Global.Blueflap.My.MySettings.Default.Winstata
-        Me.Stng_MaximizedWindow.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Blueflap.My.MySettings.Default, "Winstata", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.Stng_MaximizedWindow.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
-        Me.Stng_MaximizedWindow.Location = New System.Drawing.Point(545, 179)
-        Me.Stng_MaximizedWindow.Name = "Stng_MaximizedWindow"
-        Me.Stng_MaximizedWindow.Size = New System.Drawing.Size(189, 19)
-        Me.Stng_MaximizedWindow.TabIndex = 41
-        Me.Stng_MaximizedWindow.Text = "Fenêtre agrandie au démarrage"
-        Me.Stng_MaximizedWindow.UseVisualStyleBackColor = True
-        '
-        'Home_checkbox
-        '
-        Me.Home_checkbox.AutoSize = True
-        Me.Home_checkbox.Checked = Global.Blueflap.My.MySettings.Default.a
-        Me.Home_checkbox.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.Home_checkbox.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Blueflap.My.MySettings.Default, "a", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.Home_checkbox.Location = New System.Drawing.Point(190, 238)
-        Me.Home_checkbox.Name = "Home_checkbox"
-        Me.Home_checkbox.Size = New System.Drawing.Size(15, 14)
-        Me.Home_checkbox.TabIndex = 21
-        Me.Home_checkbox.UseVisualStyleBackColor = True
-        '
-        'Sfight_Checkbox
-        '
-        Me.Sfight_Checkbox.AutoSize = True
-        Me.Sfight_Checkbox.Checked = Global.Blueflap.My.MySettings.Default.b
-        Me.Sfight_Checkbox.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.Sfight_Checkbox.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Blueflap.My.MySettings.Default, "b", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.Sfight_Checkbox.Location = New System.Drawing.Point(227, 238)
-        Me.Sfight_Checkbox.Name = "Sfight_Checkbox"
-        Me.Sfight_Checkbox.Size = New System.Drawing.Size(15, 14)
-        Me.Sfight_Checkbox.TabIndex = 22
-        Me.Sfight_Checkbox.UseVisualStyleBackColor = True
-        '
-        'favo_checkbox
-        '
-        Me.favo_checkbox.AutoSize = True
-        Me.favo_checkbox.Checked = Global.Blueflap.My.MySettings.Default.c
-        Me.favo_checkbox.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.favo_checkbox.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Blueflap.My.MySettings.Default, "c", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.favo_checkbox.Location = New System.Drawing.Point(264, 238)
-        Me.favo_checkbox.Name = "favo_checkbox"
-        Me.favo_checkbox.Size = New System.Drawing.Size(15, 14)
-        Me.favo_checkbox.TabIndex = 23
-        Me.favo_checkbox.UseVisualStyleBackColor = True
-        '
-        'infos_checkbox
-        '
-        Me.infos_checkbox.AutoSize = True
-        Me.infos_checkbox.Checked = Global.Blueflap.My.MySettings.Default.d
-        Me.infos_checkbox.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.infos_checkbox.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Blueflap.My.MySettings.Default, "d", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.infos_checkbox.Location = New System.Drawing.Point(301, 238)
-        Me.infos_checkbox.Name = "infos_checkbox"
-        Me.infos_checkbox.Size = New System.Drawing.Size(15, 14)
-        Me.infos_checkbox.TabIndex = 24
-        Me.infos_checkbox.UseVisualStyleBackColor = True
-        '
-        'lock_checkbox
-        '
-        Me.lock_checkbox.AutoSize = True
-        Me.lock_checkbox.Checked = Global.Blueflap.My.MySettings.Default.e
-        Me.lock_checkbox.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.lock_checkbox.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Blueflap.My.MySettings.Default, "e", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.lock_checkbox.Location = New System.Drawing.Point(377, 238)
-        Me.lock_checkbox.Name = "lock_checkbox"
-        Me.lock_checkbox.Size = New System.Drawing.Size(15, 14)
-        Me.lock_checkbox.TabIndex = 25
-        Me.lock_checkbox.UseVisualStyleBackColor = True
-        '
-        'fullscreen_checkbox
-        '
-        Me.fullscreen_checkbox.AutoSize = True
-        Me.fullscreen_checkbox.Checked = Global.Blueflap.My.MySettings.Default.f
-        Me.fullscreen_checkbox.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.fullscreen_checkbox.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Blueflap.My.MySettings.Default, "f", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.fullscreen_checkbox.Location = New System.Drawing.Point(415, 238)
-        Me.fullscreen_checkbox.Name = "fullscreen_checkbox"
-        Me.fullscreen_checkbox.Size = New System.Drawing.Size(15, 14)
-        Me.fullscreen_checkbox.TabIndex = 26
-        Me.fullscreen_checkbox.UseVisualStyleBackColor = True
-        '
-        'StngmenuIcon1
-        '
-        Me.StngmenuIcon1.Image = CType(resources.GetObject("StngmenuIcon1.Image"), System.Drawing.Image)
-        Me.StngmenuIcon1.Location = New System.Drawing.Point(174, 237)
-        Me.StngmenuIcon1.Name = "StngmenuIcon1"
-        Me.StngmenuIcon1.Size = New System.Drawing.Size(15, 15)
-        Me.StngmenuIcon1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.StngmenuIcon1.TabIndex = 27
-        Me.StngmenuIcon1.TabStop = False
-        '
-        'StngmenuIcon2
-        '
-        Me.StngmenuIcon2.Image = CType(resources.GetObject("StngmenuIcon2.Image"), System.Drawing.Image)
-        Me.StngmenuIcon2.Location = New System.Drawing.Point(211, 237)
-        Me.StngmenuIcon2.Name = "StngmenuIcon2"
-        Me.StngmenuIcon2.Size = New System.Drawing.Size(15, 15)
-        Me.StngmenuIcon2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.StngmenuIcon2.TabIndex = 28
-        Me.StngmenuIcon2.TabStop = False
-        '
-        'StngmenuIcon7
-        '
-        Me.StngmenuIcon7.Image = CType(resources.GetObject("StngmenuIcon7.Image"), System.Drawing.Image)
-        Me.StngmenuIcon7.Location = New System.Drawing.Point(399, 237)
-        Me.StngmenuIcon7.Name = "StngmenuIcon7"
-        Me.StngmenuIcon7.Size = New System.Drawing.Size(15, 15)
-        Me.StngmenuIcon7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.StngmenuIcon7.TabIndex = 32
-        Me.StngmenuIcon7.TabStop = False
-        '
-        'StngmenuIcon3
-        '
-        Me.StngmenuIcon3.Image = CType(resources.GetObject("StngmenuIcon3.Image"), System.Drawing.Image)
-        Me.StngmenuIcon3.Location = New System.Drawing.Point(248, 237)
-        Me.StngmenuIcon3.Name = "StngmenuIcon3"
-        Me.StngmenuIcon3.Size = New System.Drawing.Size(15, 15)
-        Me.StngmenuIcon3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.StngmenuIcon3.TabIndex = 29
-        Me.StngmenuIcon3.TabStop = False
-        '
-        'StngmenuIcon6
-        '
-        Me.StngmenuIcon6.Image = CType(resources.GetObject("StngmenuIcon6.Image"), System.Drawing.Image)
-        Me.StngmenuIcon6.Location = New System.Drawing.Point(361, 237)
-        Me.StngmenuIcon6.Name = "StngmenuIcon6"
-        Me.StngmenuIcon6.Size = New System.Drawing.Size(15, 15)
-        Me.StngmenuIcon6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.StngmenuIcon6.TabIndex = 31
-        Me.StngmenuIcon6.TabStop = False
-        '
-        'StngmenuIcon4
-        '
-        Me.StngmenuIcon4.Image = CType(resources.GetObject("StngmenuIcon4.Image"), System.Drawing.Image)
-        Me.StngmenuIcon4.Location = New System.Drawing.Point(285, 237)
-        Me.StngmenuIcon4.Name = "StngmenuIcon4"
-        Me.StngmenuIcon4.Size = New System.Drawing.Size(15, 15)
-        Me.StngmenuIcon4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.StngmenuIcon4.TabIndex = 30
-        Me.StngmenuIcon4.TabStop = False
-        '
-        'ShapeContainer3
-        '
-        Me.ShapeContainer3.Location = New System.Drawing.Point(0, 0)
-        Me.ShapeContainer3.Margin = New System.Windows.Forms.Padding(0)
-        Me.ShapeContainer3.Name = "ShapeContainer3"
-        Me.ShapeContainer3.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape2, Me.RectangleShape1})
-        Me.ShapeContainer3.Size = New System.Drawing.Size(1030, 410)
-        Me.ShapeContainer3.TabIndex = 44
-        Me.ShapeContainer3.TabStop = False
-        '
-        'RectangleShape2
-        '
-        Me.RectangleShape2.BorderColor = System.Drawing.SystemColors.ControlDark
-        Me.RectangleShape2.Location = New System.Drawing.Point(164, 113)
-        Me.RectangleShape2.Name = "RectangleShape2"
-        Me.RectangleShape2.Size = New System.Drawing.Size(583, 34)
-        '
-        'RectangleShape1
-        '
-        Me.RectangleShape1.BorderColor = System.Drawing.SystemColors.ControlDark
-        Me.RectangleShape1.Location = New System.Drawing.Point(164, 225)
-        Me.RectangleShape1.Name = "RectangleShape1"
-        Me.RectangleShape1.Size = New System.Drawing.Size(583, 36)
+        'Sett_TabB
+        '
+        Me.Sett_TabB.Controls.Add(Me.stng_Adblock)
+        Me.Sett_TabB.Controls.Add(Me.AdblockFunction)
+        Me.Sett_TabB.Controls.Add(Me.Label1)
+        Me.Sett_TabB.Controls.Add(Me.stng_Smartsuggestactif)
+        Me.Sett_TabB.Controls.Add(Me.StngLabel_Suggest)
+        Me.Sett_TabB.Controls.Add(Me.Stng_ResetSuggest)
+        Me.Sett_TabB.Controls.Add(Me.StngLabel_Network)
+        Me.Sett_TabB.Controls.Add(Me.stng_nevpriv)
+        Me.Sett_TabB.Controls.Add(Me.StngLabel_Private)
+        Me.Sett_TabB.Controls.Add(Me.Button1)
+        Me.Sett_TabB.Controls.Add(Me.Stng_OptionsInternet)
+        Me.Sett_TabB.Controls.Add(Me.StngLabel_Data)
+        Me.Sett_TabB.Controls.Add(Me.StngLabel_Extra)
+        Me.Sett_TabB.Controls.Add(Me.Stng_SupprHisto)
+        Me.Sett_TabB.Controls.Add(Me.Stng_SupprCacheCookies)
+        Me.Sett_TabB.Controls.Add(Me.StngLabel_NetworkInfo)
+        Me.Sett_TabB.Controls.Add(Me.StngLabel_Proxy)
+        Me.Sett_TabB.Location = New System.Drawing.Point(87, 15)
+        Me.Sett_TabB.Name = "Sett_TabB"
+        Me.Sett_TabB.Size = New System.Drawing.Size(925, 349)
+        Me.Sett_TabB.TabIndex = 58
+        Me.Sett_TabB.Visible = False
+        '
+        'StngLabel_Suggest
+        '
+        Me.StngLabel_Suggest.AutoSize = True
+        Me.StngLabel_Suggest.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
+        Me.StngLabel_Suggest.Location = New System.Drawing.Point(13, 114)
+        Me.StngLabel_Suggest.Name = "StngLabel_Suggest"
+        Me.StngLabel_Suggest.Size = New System.Drawing.Size(101, 20)
+        Me.StngLabel_Suggest.TabIndex = 52
+        Me.StngLabel_Suggest.Text = "SmartSuggest"
+        '
+        'Stng_ResetSuggest
+        '
+        Me.Stng_ResetSuggest.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Stng_ResetSuggest.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
+        Me.Stng_ResetSuggest.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.Stng_ResetSuggest.Location = New System.Drawing.Point(162, 107)
+        Me.Stng_ResetSuggest.Name = "Stng_ResetSuggest"
+        Me.Stng_ResetSuggest.Size = New System.Drawing.Size(104, 35)
+        Me.Stng_ResetSuggest.TabIndex = 51
+        Me.Stng_ResetSuggest.Text = "Réinitialiser"
+        Me.Stng_ResetSuggest.UseVisualStyleBackColor = True
+        '
+        'StngLabel_Network
+        '
+        Me.StngLabel_Network.AutoSize = True
+        Me.StngLabel_Network.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
+        Me.StngLabel_Network.Location = New System.Drawing.Point(14, 173)
+        Me.StngLabel_Network.Name = "StngLabel_Network"
+        Me.StngLabel_Network.Size = New System.Drawing.Size(56, 20)
+        Me.StngLabel_Network.TabIndex = 50
+        Me.StngLabel_Network.Text = "Réseau"
+        '
+        'StngLabel_Private
+        '
+        Me.StngLabel_Private.AutoSize = True
+        Me.StngLabel_Private.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
+        Me.StngLabel_Private.Location = New System.Drawing.Point(13, 18)
+        Me.StngLabel_Private.Name = "StngLabel_Private"
+        Me.StngLabel_Private.Size = New System.Drawing.Size(124, 20)
+        Me.StngLabel_Private.TabIndex = 34
+        Me.StngLabel_Private.Text = "Navigation privée"
+        '
+        'Button1
+        '
+        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Cyan
+        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Segoe UI Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.Button1.Location = New System.Drawing.Point(163, 284)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(94, 25)
+        Me.Button1.TabIndex = 48
+        Me.Button1.Text = "Signaler un bug"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Stng_OptionsInternet
+        '
+        Me.Stng_OptionsInternet.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Stng_OptionsInternet.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Stng_OptionsInternet.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.Stng_OptionsInternet.Location = New System.Drawing.Point(163, 166)
+        Me.Stng_OptionsInternet.Name = "Stng_OptionsInternet"
+        Me.Stng_OptionsInternet.Size = New System.Drawing.Size(154, 35)
+        Me.Stng_OptionsInternet.TabIndex = 33
+        Me.Stng_OptionsInternet.Text = "Options Internet"
+        Me.Stng_OptionsInternet.UseVisualStyleBackColor = True
+        '
+        'StngLabel_Data
+        '
+        Me.StngLabel_Data.AutoSize = True
+        Me.StngLabel_Data.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
+        Me.StngLabel_Data.Location = New System.Drawing.Point(14, 235)
+        Me.StngLabel_Data.Name = "StngLabel_Data"
+        Me.StngLabel_Data.Size = New System.Drawing.Size(66, 20)
+        Me.StngLabel_Data.TabIndex = 40
+        Me.StngLabel_Data.Text = "Données"
+        '
+        'StngLabel_Extra
+        '
+        Me.StngLabel_Extra.AutoSize = True
+        Me.StngLabel_Extra.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
+        Me.StngLabel_Extra.Location = New System.Drawing.Point(13, 285)
+        Me.StngLabel_Extra.Name = "StngLabel_Extra"
+        Me.StngLabel_Extra.Size = New System.Drawing.Size(48, 20)
+        Me.StngLabel_Extra.TabIndex = 46
+        Me.StngLabel_Extra.Text = "Extras"
+        '
+        'Stng_SupprHisto
+        '
+        Me.Stng_SupprHisto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Stng_SupprHisto.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
+        Me.Stng_SupprHisto.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.Stng_SupprHisto.Location = New System.Drawing.Point(164, 226)
+        Me.Stng_SupprHisto.Name = "Stng_SupprHisto"
+        Me.Stng_SupprHisto.Size = New System.Drawing.Size(154, 35)
+        Me.Stng_SupprHisto.TabIndex = 39
+        Me.Stng_SupprHisto.Text = "Effacer l'historique"
+        Me.Stng_SupprHisto.UseVisualStyleBackColor = True
+        '
+        'Stng_SupprCacheCookies
+        '
+        Me.Stng_SupprCacheCookies.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Stng_SupprCacheCookies.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
+        Me.Stng_SupprCacheCookies.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.Stng_SupprCacheCookies.Location = New System.Drawing.Point(323, 226)
+        Me.Stng_SupprCacheCookies.Name = "Stng_SupprCacheCookies"
+        Me.Stng_SupprCacheCookies.Size = New System.Drawing.Size(212, 35)
+        Me.Stng_SupprCacheCookies.TabIndex = 42
+        Me.Stng_SupprCacheCookies.Text = "Effacer les cookies et le cache"
+        Me.Stng_SupprCacheCookies.UseVisualStyleBackColor = True
+        '
+        'StngLabel_NetworkInfo
+        '
+        Me.StngLabel_NetworkInfo.AutoSize = True
+        Me.StngLabel_NetworkInfo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.StngLabel_NetworkInfo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.StngLabel_NetworkInfo.Location = New System.Drawing.Point(320, 182)
+        Me.StngLabel_NetworkInfo.Name = "StngLabel_NetworkInfo"
+        Me.StngLabel_NetworkInfo.Size = New System.Drawing.Size(183, 15)
+        Me.StngLabel_NetworkInfo.TabIndex = 36
+        Me.StngLabel_NetworkInfo.Text = "Cliquer sur l'onglet ""connexions"""
+        '
+        'StngLabel_Proxy
+        '
+        Me.StngLabel_Proxy.AutoSize = True
+        Me.StngLabel_Proxy.ForeColor = System.Drawing.Color.Black
+        Me.StngLabel_Proxy.Location = New System.Drawing.Point(320, 169)
+        Me.StngLabel_Proxy.Name = "StngLabel_Proxy"
+        Me.StngLabel_Proxy.Size = New System.Drawing.Size(371, 13)
+        Me.StngLabel_Proxy.TabIndex = 35
+        Me.StngLabel_Proxy.Text = "Blueflap utilise les paramètres proxy du système pour se connecter au réseau."
         '
         'sett_tab3
         '
@@ -1747,42 +1519,6 @@ Partial Class Fenetre_Principale
         Me.ABlueflap_Fight.Size = New System.Drawing.Size(1117, 607)
         Me.ABlueflap_Fight.TabIndex = 2
         '
-        'SrchFight_AdvanceRight
-        '
-        Me.SrchFight_AdvanceRight.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.SrchFight_AdvanceRight.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Blueflap.My.MySettings.Default, "SFAdvanceB", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.SrchFight_AdvanceRight.Location = New System.Drawing.Point(789, 30)
-        Me.SrchFight_AdvanceRight.Name = "SrchFight_AdvanceRight"
-        Me.SrchFight_AdvanceRight.Size = New System.Drawing.Size(189, 20)
-        Me.SrchFight_AdvanceRight.TabIndex = 12
-        Me.SrchFight_AdvanceRight.Text = Global.Blueflap.My.MySettings.Default.SFAdvanceB
-        Me.SrchFight_AdvanceRight.Visible = False
-        '
-        'SrchFight_AdvanceLeft
-        '
-        Me.SrchFight_AdvanceLeft.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.SrchFight_AdvanceLeft.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Blueflap.My.MySettings.Default, "SFAdvanceA", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.SrchFight_AdvanceLeft.Location = New System.Drawing.Point(789, 8)
-        Me.SrchFight_AdvanceLeft.Name = "SrchFight_AdvanceLeft"
-        Me.SrchFight_AdvanceLeft.Size = New System.Drawing.Size(189, 20)
-        Me.SrchFight_AdvanceLeft.TabIndex = 11
-        Me.SrchFight_AdvanceLeft.Text = Global.Blueflap.My.MySettings.Default.SFAdvanceA
-        Me.SrchFight_AdvanceLeft.Visible = False
-        '
-        'SrchF_AdvanceChoice
-        '
-        Me.SrchF_AdvanceChoice.AutoSize = True
-        Me.SrchF_AdvanceChoice.Checked = Global.Blueflap.My.MySettings.Default.Fightavdvanced
-        Me.SrchF_AdvanceChoice.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Blueflap.My.MySettings.Default, "Fightavdvanced", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.SrchF_AdvanceChoice.Location = New System.Drawing.Point(691, 21)
-        Me.SrchF_AdvanceChoice.Name = "SrchF_AdvanceChoice"
-        Me.SrchF_AdvanceChoice.Size = New System.Drawing.Size(92, 17)
-        Me.SrchF_AdvanceChoice.TabIndex = 10
-        Me.SrchF_AdvanceChoice.Text = "Mode avancé"
-        Me.SrchF_AdvanceChoice.UseVisualStyleBackColor = True
-        '
         'SrchF_Actions
         '
         Me.SrchF_Actions.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -1840,34 +1576,6 @@ Partial Class Fenetre_Principale
         Me.SrchF_Fightbutton.TabIndex = 8
         Me.SrchF_Fightbutton.Text = "Fight !"
         Me.SrchF_Fightbutton.UseVisualStyleBackColor = True
-        '
-        'SrchF_ChoixB
-        '
-        Me.SrchF_ChoixB.AutoCompleteCustomSource.AddRange(New String() {"Google", "Yahoo", "Bing", "DuckDuckGo"})
-        Me.SrchF_ChoixB.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
-        Me.SrchF_ChoixB.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
-        Me.SrchF_ChoixB.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Blueflap.My.MySettings.Default, "SF2", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.SrchF_ChoixB.FormattingEnabled = True
-        Me.SrchF_ChoixB.Items.AddRange(New Object() {"Google", "Yahoo", "Bing", "DuckDuckGo"})
-        Me.SrchF_ChoixB.Location = New System.Drawing.Point(564, 18)
-        Me.SrchF_ChoixB.Name = "SrchF_ChoixB"
-        Me.SrchF_ChoixB.Size = New System.Drawing.Size(121, 21)
-        Me.SrchF_ChoixB.TabIndex = 7
-        Me.SrchF_ChoixB.Text = Global.Blueflap.My.MySettings.Default.SF2
-        '
-        'SrchF_ChoixA
-        '
-        Me.SrchF_ChoixA.AutoCompleteCustomSource.AddRange(New String() {"Google", "Yahoo", "Bing", "DuckDuckGo"})
-        Me.SrchF_ChoixA.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
-        Me.SrchF_ChoixA.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
-        Me.SrchF_ChoixA.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Blueflap.My.MySettings.Default, "SF1", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.SrchF_ChoixA.FormattingEnabled = True
-        Me.SrchF_ChoixA.Items.AddRange(New Object() {"Google", "Yahoo", "Bing", "DuckDuckGo"})
-        Me.SrchF_ChoixA.Location = New System.Drawing.Point(437, 18)
-        Me.SrchF_ChoixA.Name = "SrchF_ChoixA"
-        Me.SrchF_ChoixA.Size = New System.Drawing.Size(121, 21)
-        Me.SrchF_ChoixA.TabIndex = 6
-        Me.SrchF_ChoixA.Text = Global.Blueflap.My.MySettings.Default.SF1
         '
         'SrchF_Searchbox
         '
@@ -2060,7 +1768,6 @@ Partial Class Fenetre_Principale
         Me.Infos_code_source.CharWidth = 8
         Me.Infos_code_source.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Infos_code_source.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.Infos_code_source.Font = New System.Drawing.Font("Courier New", 9.75!)
         Me.Infos_code_source.IndentBackColor = System.Drawing.SystemColors.Control
         Me.Infos_code_source.IsReplaceMode = False
         Me.Infos_code_source.Location = New System.Drawing.Point(74, 194)
@@ -2308,19 +2015,6 @@ Partial Class Fenetre_Principale
         Me.BS_Favlist.Size = New System.Drawing.Size(436, 260)
         Me.BS_Favlist.TabIndex = 0
         '
-        'BS_Date
-        '
-        Me.BS_Date.AutoSize = True
-        Me.BS_Date.BackColor = System.Drawing.Color.Transparent
-        Me.BS_Date.DataBindings.Add(New System.Windows.Forms.Binding("ForeColor", Global.Blueflap.My.MySettings.Default, "clair", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.BS_Date.Font = New System.Drawing.Font("Segoe UI Light", 27.0!)
-        Me.BS_Date.ForeColor = Global.Blueflap.My.MySettings.Default.clair
-        Me.BS_Date.Location = New System.Drawing.Point(478, 55)
-        Me.BS_Date.Name = "BS_Date"
-        Me.BS_Date.Size = New System.Drawing.Size(157, 48)
-        Me.BS_Date.TabIndex = 4
-        Me.BS_Date.Text = "Bonjour !"
-        '
         'BS_SearchBlackEffect
         '
         Me.BS_SearchBlackEffect.BackColor = System.Drawing.Color.Transparent
@@ -2383,22 +2077,6 @@ Partial Class Fenetre_Principale
         Me.BS_Optionsbulle.TabIndex = 5
         Me.BS_Optionsbulle.Visible = False
         '
-        'BS_DateSetColor
-        '
-        Me.BS_DateSetColor.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Blueflap.My.MySettings.Default, "sombre", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.BS_DateSetColor.FlatAppearance.BorderSize = 0
-        Me.BS_DateSetColor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue
-        Me.BS_DateSetColor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
-        Me.BS_DateSetColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BS_DateSetColor.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BS_DateSetColor.ForeColor = System.Drawing.Color.White
-        Me.BS_DateSetColor.Location = New System.Drawing.Point(12, 96)
-        Me.BS_DateSetColor.Name = "BS_DateSetColor"
-        Me.BS_DateSetColor.Size = New System.Drawing.Size(192, 44)
-        Me.BS_DateSetColor.TabIndex = 1
-        Me.BS_DateSetColor.Text = Global.Blueflap.My.MySettings.Default.sombre
-        Me.BS_DateSetColor.UseVisualStyleBackColor = True
-        '
         'BS_ImgChoose
         '
         Me.BS_ImgChoose.FlatAppearance.BorderSize = 0
@@ -2432,16 +2110,415 @@ Partial Class Fenetre_Principale
         Me.TabItem1.Name = "TabItem1"
         Me.TabItem1.Text = ""
         '
+        'AdblockFunction
+        '
+        Me.AdblockFunction.Location = New System.Drawing.Point(237, 61)
+        Me.AdblockFunction.Name = "AdblockFunction"
+        Me.AdblockFunction.Size = New System.Drawing.Size(100, 20)
+        Me.AdblockFunction.TabIndex = 59
+        Me.AdblockFunction.Text = resources.GetString("AdblockFunction.Text")
+        Me.AdblockFunction.Visible = False
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
+        Me.Label1.Location = New System.Drawing.Point(14, 64)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(62, 20)
+        Me.Label1.TabIndex = 54
+        Me.Label1.Text = "AdBlock"
+        '
+        'stng_Adblock
+        '
+        Me.stng_Adblock.AutoSize = True
+        Me.stng_Adblock.Checked = Global.Blueflap.My.MySettings.Default.Adblock
+        Me.stng_Adblock.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Blueflap.My.MySettings.Default, "Adblock", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.stng_Adblock.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
+        Me.stng_Adblock.Location = New System.Drawing.Point(164, 60)
+        Me.stng_Adblock.Name = "stng_Adblock"
+        Me.stng_Adblock.Size = New System.Drawing.Size(61, 21)
+        Me.stng_Adblock.TabIndex = 60
+        Me.stng_Adblock.Text = "Activé"
+        Me.stng_Adblock.UseVisualStyleBackColor = True
+        '
+        'stng_Smartsuggestactif
+        '
+        Me.stng_Smartsuggestactif.AutoSize = True
+        Me.stng_Smartsuggestactif.Checked = Global.Blueflap.My.MySettings.Default.Smartsuggest
+        Me.stng_Smartsuggestactif.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Blueflap.My.MySettings.Default, "Smartsuggest", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.stng_Smartsuggestactif.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
+        Me.stng_Smartsuggestactif.Location = New System.Drawing.Point(276, 115)
+        Me.stng_Smartsuggestactif.Name = "stng_Smartsuggestactif"
+        Me.stng_Smartsuggestactif.Size = New System.Drawing.Size(61, 21)
+        Me.stng_Smartsuggestactif.TabIndex = 53
+        Me.stng_Smartsuggestactif.Text = "Activé"
+        Me.stng_Smartsuggestactif.UseVisualStyleBackColor = True
+        '
+        'stng_nevpriv
+        '
+        Me.stng_nevpriv.AutoSize = True
+        Me.stng_nevpriv.Checked = Global.Blueflap.My.MySettings.Default.navprivee
+        Me.stng_nevpriv.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Blueflap.My.MySettings.Default, "navprivee", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.stng_nevpriv.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
+        Me.stng_nevpriv.Location = New System.Drawing.Point(163, 19)
+        Me.stng_nevpriv.Name = "stng_nevpriv"
+        Me.stng_nevpriv.Size = New System.Drawing.Size(68, 21)
+        Me.stng_nevpriv.TabIndex = 49
+        Me.stng_nevpriv.Text = "Activée"
+        Me.stng_nevpriv.UseVisualStyleBackColor = True
+        '
+        'translate_checkbox
+        '
+        Me.translate_checkbox.AutoSize = True
+        Me.translate_checkbox.Checked = Global.Blueflap.My.MySettings.Default.i
+        Me.translate_checkbox.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.translate_checkbox.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Blueflap.My.MySettings.Default, "i", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.translate_checkbox.Location = New System.Drawing.Point(377, 238)
+        Me.translate_checkbox.Name = "translate_checkbox"
+        Me.translate_checkbox.Size = New System.Drawing.Size(15, 14)
+        Me.translate_checkbox.TabIndex = 57
+        Me.translate_checkbox.UseVisualStyleBackColor = True
+        '
+        'BackgroundChemin
+        '
+        Me.BackgroundChemin.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.BackgroundChemin.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Blueflap.My.MySettings.Default, "Cheminback", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.BackgroundChemin.Font = New System.Drawing.Font("Segoe UI Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BackgroundChemin.ForeColor = System.Drawing.Color.DarkGray
+        Me.BackgroundChemin.Location = New System.Drawing.Point(377, 304)
+        Me.BackgroundChemin.Name = "BackgroundChemin"
+        Me.BackgroundChemin.ReadOnly = True
+        Me.BackgroundChemin.Size = New System.Drawing.Size(370, 15)
+        Me.BackgroundChemin.TabIndex = 56
+        Me.BackgroundChemin.Text = Global.Blueflap.My.MySettings.Default.Cheminback
+        '
+        'Share_checkbox
+        '
+        Me.Share_checkbox.AutoSize = True
+        Me.Share_checkbox.Checked = Global.Blueflap.My.MySettings.Default.h
+        Me.Share_checkbox.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.Share_checkbox.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Blueflap.My.MySettings.Default, "h", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.Share_checkbox.Location = New System.Drawing.Point(340, 238)
+        Me.Share_checkbox.Name = "Share_checkbox"
+        Me.Share_checkbox.Size = New System.Drawing.Size(15, 14)
+        Me.Share_checkbox.TabIndex = 53
+        Me.Share_checkbox.UseVisualStyleBackColor = True
+        '
+        'memo_checkbox
+        '
+        Me.memo_checkbox.AutoSize = True
+        Me.memo_checkbox.Checked = Global.Blueflap.My.MySettings.Default.g
+        Me.memo_checkbox.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.memo_checkbox.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Blueflap.My.MySettings.Default, "g", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.memo_checkbox.Location = New System.Drawing.Point(490, 238)
+        Me.memo_checkbox.Name = "memo_checkbox"
+        Me.memo_checkbox.Size = New System.Drawing.Size(15, 14)
+        Me.memo_checkbox.TabIndex = 51
+        Me.memo_checkbox.UseVisualStyleBackColor = True
+        '
+        'Stng_bluestart_checkbox
+        '
+        Me.Stng_bluestart_checkbox.AutoSize = True
+        Me.Stng_bluestart_checkbox.Checked = Global.Blueflap.My.MySettings.Default.startou
+        Me.Stng_bluestart_checkbox.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Blueflap.My.MySettings.Default, "startou", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.Stng_bluestart_checkbox.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
+        Me.Stng_bluestart_checkbox.Location = New System.Drawing.Point(449, 65)
+        Me.Stng_bluestart_checkbox.Name = "Stng_bluestart_checkbox"
+        Me.Stng_bluestart_checkbox.Size = New System.Drawing.Size(119, 21)
+        Me.Stng_bluestart_checkbox.TabIndex = 44
+        Me.Stng_bluestart_checkbox.Text = "Utiliser BlueStart"
+        Me.Stng_bluestart_checkbox.UseVisualStyleBackColor = True
+        '
+        'Stng_MoteurRecherche_choose
+        '
+        Me.Stng_MoteurRecherche_choose.AutoCompleteCustomSource.AddRange(New String() {"Google", "Bing", "Yahoo", "Youtube", "DuckDuckGo", "Wikipedia"})
+        Me.Stng_MoteurRecherche_choose.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
+        Me.Stng_MoteurRecherche_choose.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.Stng_MoteurRecherche_choose.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Blueflap.My.MySettings.Default, "NomMoteur", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.Stng_MoteurRecherche_choose.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Stng_MoteurRecherche_choose.FormattingEnabled = True
+        Me.Stng_MoteurRecherche_choose.Items.AddRange(New Object() {"Google", "Bing", "Yahoo", "Ask", "Youtube", "DuckDuckGo", "Wikipedia", "Qwant", "Github"})
+        Me.Stng_MoteurRecherche_choose.Location = New System.Drawing.Point(165, 17)
+        Me.Stng_MoteurRecherche_choose.Name = "Stng_MoteurRecherche_choose"
+        Me.Stng_MoteurRecherche_choose.Size = New System.Drawing.Size(121, 25)
+        Me.Stng_MoteurRecherche_choose.TabIndex = 3
+        Me.Stng_MoteurRecherche_choose.Text = Global.Blueflap.My.MySettings.Default.NomMoteur
+        '
+        'Stng_MoteurRecherche_URL
+        '
+        Me.Stng_MoteurRecherche_URL.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Blueflap.My.MySettings.Default, "Moteur", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.Stng_MoteurRecherche_URL.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Stng_MoteurRecherche_URL.Location = New System.Drawing.Point(300, 17)
+        Me.Stng_MoteurRecherche_URL.Name = "Stng_MoteurRecherche_URL"
+        Me.Stng_MoteurRecherche_URL.Size = New System.Drawing.Size(449, 25)
+        Me.Stng_MoteurRecherche_URL.TabIndex = 4
+        Me.Stng_MoteurRecherche_URL.Text = Global.Blueflap.My.MySettings.Default.Moteur
+        '
+        'Stng_HomePage_Url
+        '
+        Me.Stng_HomePage_Url.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Blueflap.My.MySettings.Default, "home", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.Stng_HomePage_Url.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
+        Me.Stng_HomePage_Url.Location = New System.Drawing.Point(165, 63)
+        Me.Stng_HomePage_Url.Name = "Stng_HomePage_Url"
+        Me.Stng_HomePage_Url.Size = New System.Drawing.Size(278, 25)
+        Me.Stng_HomePage_Url.TabIndex = 8
+        Me.Stng_HomePage_Url.Text = Global.Blueflap.My.MySettings.Default.home
+        '
+        'Stng_Volet_reduire
+        '
+        Me.Stng_Volet_reduire.AutoSize = True
+        Me.Stng_Volet_reduire.Checked = Global.Blueflap.My.MySettings.Default.Réduit
+        Me.Stng_Volet_reduire.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Blueflap.My.MySettings.Default, "Réduit", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.Stng_Volet_reduire.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
+        Me.Stng_Volet_reduire.Location = New System.Drawing.Point(312, 179)
+        Me.Stng_Volet_reduire.Name = "Stng_Volet_reduire"
+        Me.Stng_Volet_reduire.Size = New System.Drawing.Size(196, 19)
+        Me.Stng_Volet_reduire.TabIndex = 10
+        Me.Stng_Volet_reduire.Text = "Volet latéral réduit au démarrage"
+        Me.Stng_Volet_reduire.UseVisualStyleBackColor = True
+        '
+        'Stng_MP
+        '
+        Me.Stng_MP.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Blueflap.My.MySettings.Default, "MP", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.Stng_MP.Enabled = False
+        Me.Stng_MP.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
+        Me.Stng_MP.Location = New System.Drawing.Point(245, 118)
+        Me.Stng_MP.Name = "Stng_MP"
+        Me.Stng_MP.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
+        Me.Stng_MP.Size = New System.Drawing.Size(150, 25)
+        Me.Stng_MP.TabIndex = 12
+        Me.Stng_MP.Text = Global.Blueflap.My.MySettings.Default.MP
+        '
+        'Stng_MPActiv
+        '
+        Me.Stng_MPActiv.AutoSize = True
+        Me.Stng_MPActiv.Checked = Global.Blueflap.My.MySettings.Default.Verr_def
+        Me.Stng_MPActiv.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Blueflap.My.MySettings.Default, "Verr_def", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.Stng_MPActiv.Enabled = False
+        Me.Stng_MPActiv.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
+        Me.Stng_MPActiv.Location = New System.Drawing.Point(669, 120)
+        Me.Stng_MPActiv.Name = "Stng_MPActiv"
+        Me.Stng_MPActiv.Size = New System.Drawing.Size(65, 21)
+        Me.Stng_MPActiv.TabIndex = 14
+        Me.Stng_MPActiv.Text = "Activer"
+        Me.Stng_MPActiv.UseVisualStyleBackColor = True
+        '
+        'Stng_Volet_Mousehover_agrandir
+        '
+        Me.Stng_Volet_Mousehover_agrandir.AutoSize = True
+        Me.Stng_Volet_Mousehover_agrandir.Checked = Global.Blueflap.My.MySettings.Default.mousess
+        Me.Stng_Volet_Mousehover_agrandir.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Blueflap.My.MySettings.Default, "mousess", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.Stng_Volet_Mousehover_agrandir.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
+        Me.Stng_Volet_Mousehover_agrandir.Location = New System.Drawing.Point(312, 196)
+        Me.Stng_Volet_Mousehover_agrandir.Name = "Stng_Volet_Mousehover_agrandir"
+        Me.Stng_Volet_Mousehover_agrandir.Size = New System.Drawing.Size(224, 19)
+        Me.Stng_Volet_Mousehover_agrandir.TabIndex = 43
+        Me.Stng_Volet_Mousehover_agrandir.Text = "Agrandir volet au passage de la souris"
+        Me.Stng_Volet_Mousehover_agrandir.UseVisualStyleBackColor = True
+        Me.Stng_Volet_Mousehover_agrandir.Visible = False
+        '
+        'Stng_TouchUI
+        '
+        Me.Stng_TouchUI.AutoSize = True
+        Me.Stng_TouchUI.Checked = Global.Blueflap.My.MySettings.Default.Touchkeyboard
+        Me.Stng_TouchUI.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Blueflap.My.MySettings.Default, "Touchkeyboard", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.Stng_TouchUI.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Stng_TouchUI.Location = New System.Drawing.Point(165, 179)
+        Me.Stng_TouchUI.Name = "Stng_TouchUI"
+        Me.Stng_TouchUI.Size = New System.Drawing.Size(106, 19)
+        Me.Stng_TouchUI.TabIndex = 37
+        Me.Stng_TouchUI.Text = "Interface Tactile"
+        Me.Stng_TouchUI.UseVisualStyleBackColor = True
+        '
+        'Stng_MaximizedWindow
+        '
+        Me.Stng_MaximizedWindow.AutoSize = True
+        Me.Stng_MaximizedWindow.Checked = Global.Blueflap.My.MySettings.Default.Winstata
+        Me.Stng_MaximizedWindow.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Blueflap.My.MySettings.Default, "Winstata", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.Stng_MaximizedWindow.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
+        Me.Stng_MaximizedWindow.Location = New System.Drawing.Point(545, 179)
+        Me.Stng_MaximizedWindow.Name = "Stng_MaximizedWindow"
+        Me.Stng_MaximizedWindow.Size = New System.Drawing.Size(189, 19)
+        Me.Stng_MaximizedWindow.TabIndex = 41
+        Me.Stng_MaximizedWindow.Text = "Fenêtre agrandie au démarrage"
+        Me.Stng_MaximizedWindow.UseVisualStyleBackColor = True
+        '
+        'Home_checkbox
+        '
+        Me.Home_checkbox.AutoSize = True
+        Me.Home_checkbox.Checked = Global.Blueflap.My.MySettings.Default.a
+        Me.Home_checkbox.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.Home_checkbox.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Blueflap.My.MySettings.Default, "a", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.Home_checkbox.Location = New System.Drawing.Point(190, 238)
+        Me.Home_checkbox.Name = "Home_checkbox"
+        Me.Home_checkbox.Size = New System.Drawing.Size(15, 14)
+        Me.Home_checkbox.TabIndex = 21
+        Me.Home_checkbox.UseVisualStyleBackColor = True
+        '
+        'Sfight_Checkbox
+        '
+        Me.Sfight_Checkbox.AutoSize = True
+        Me.Sfight_Checkbox.Checked = Global.Blueflap.My.MySettings.Default.b
+        Me.Sfight_Checkbox.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.Sfight_Checkbox.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Blueflap.My.MySettings.Default, "b", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.Sfight_Checkbox.Location = New System.Drawing.Point(227, 238)
+        Me.Sfight_Checkbox.Name = "Sfight_Checkbox"
+        Me.Sfight_Checkbox.Size = New System.Drawing.Size(15, 14)
+        Me.Sfight_Checkbox.TabIndex = 22
+        Me.Sfight_Checkbox.UseVisualStyleBackColor = True
+        '
+        'favo_checkbox
+        '
+        Me.favo_checkbox.AutoSize = True
+        Me.favo_checkbox.Checked = Global.Blueflap.My.MySettings.Default.c
+        Me.favo_checkbox.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.favo_checkbox.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Blueflap.My.MySettings.Default, "c", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.favo_checkbox.Location = New System.Drawing.Point(264, 238)
+        Me.favo_checkbox.Name = "favo_checkbox"
+        Me.favo_checkbox.Size = New System.Drawing.Size(15, 14)
+        Me.favo_checkbox.TabIndex = 23
+        Me.favo_checkbox.UseVisualStyleBackColor = True
+        '
+        'infos_checkbox
+        '
+        Me.infos_checkbox.AutoSize = True
+        Me.infos_checkbox.Checked = Global.Blueflap.My.MySettings.Default.d
+        Me.infos_checkbox.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.infos_checkbox.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Blueflap.My.MySettings.Default, "d", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.infos_checkbox.Location = New System.Drawing.Point(301, 238)
+        Me.infos_checkbox.Name = "infos_checkbox"
+        Me.infos_checkbox.Size = New System.Drawing.Size(15, 14)
+        Me.infos_checkbox.TabIndex = 24
+        Me.infos_checkbox.UseVisualStyleBackColor = True
+        '
+        'lock_checkbox
+        '
+        Me.lock_checkbox.AutoSize = True
+        Me.lock_checkbox.Checked = Global.Blueflap.My.MySettings.Default.e
+        Me.lock_checkbox.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.lock_checkbox.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Blueflap.My.MySettings.Default, "e", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.lock_checkbox.Location = New System.Drawing.Point(414, 238)
+        Me.lock_checkbox.Name = "lock_checkbox"
+        Me.lock_checkbox.Size = New System.Drawing.Size(15, 14)
+        Me.lock_checkbox.TabIndex = 25
+        Me.lock_checkbox.UseVisualStyleBackColor = True
+        '
+        'fullscreen_checkbox
+        '
+        Me.fullscreen_checkbox.AutoSize = True
+        Me.fullscreen_checkbox.Checked = Global.Blueflap.My.MySettings.Default.f
+        Me.fullscreen_checkbox.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.fullscreen_checkbox.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Blueflap.My.MySettings.Default, "f", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.fullscreen_checkbox.Location = New System.Drawing.Point(452, 238)
+        Me.fullscreen_checkbox.Name = "fullscreen_checkbox"
+        Me.fullscreen_checkbox.Size = New System.Drawing.Size(15, 14)
+        Me.fullscreen_checkbox.TabIndex = 26
+        Me.fullscreen_checkbox.UseVisualStyleBackColor = True
+        '
+        'SrchFight_AdvanceRight
+        '
+        Me.SrchFight_AdvanceRight.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.SrchFight_AdvanceRight.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Blueflap.My.MySettings.Default, "SFAdvanceB", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.SrchFight_AdvanceRight.Location = New System.Drawing.Point(789, 30)
+        Me.SrchFight_AdvanceRight.Name = "SrchFight_AdvanceRight"
+        Me.SrchFight_AdvanceRight.Size = New System.Drawing.Size(189, 20)
+        Me.SrchFight_AdvanceRight.TabIndex = 12
+        Me.SrchFight_AdvanceRight.Text = Global.Blueflap.My.MySettings.Default.SFAdvanceB
+        Me.SrchFight_AdvanceRight.Visible = False
+        '
+        'SrchFight_AdvanceLeft
+        '
+        Me.SrchFight_AdvanceLeft.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.SrchFight_AdvanceLeft.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Blueflap.My.MySettings.Default, "SFAdvanceA", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.SrchFight_AdvanceLeft.Location = New System.Drawing.Point(789, 8)
+        Me.SrchFight_AdvanceLeft.Name = "SrchFight_AdvanceLeft"
+        Me.SrchFight_AdvanceLeft.Size = New System.Drawing.Size(189, 20)
+        Me.SrchFight_AdvanceLeft.TabIndex = 11
+        Me.SrchFight_AdvanceLeft.Text = Global.Blueflap.My.MySettings.Default.SFAdvanceA
+        Me.SrchFight_AdvanceLeft.Visible = False
+        '
+        'SrchF_AdvanceChoice
+        '
+        Me.SrchF_AdvanceChoice.AutoSize = True
+        Me.SrchF_AdvanceChoice.Checked = Global.Blueflap.My.MySettings.Default.Fightavdvanced
+        Me.SrchF_AdvanceChoice.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Blueflap.My.MySettings.Default, "Fightavdvanced", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.SrchF_AdvanceChoice.Location = New System.Drawing.Point(691, 21)
+        Me.SrchF_AdvanceChoice.Name = "SrchF_AdvanceChoice"
+        Me.SrchF_AdvanceChoice.Size = New System.Drawing.Size(92, 17)
+        Me.SrchF_AdvanceChoice.TabIndex = 10
+        Me.SrchF_AdvanceChoice.Text = "Mode avancé"
+        Me.SrchF_AdvanceChoice.UseVisualStyleBackColor = True
+        '
+        'SrchF_ChoixB
+        '
+        Me.SrchF_ChoixB.AutoCompleteCustomSource.AddRange(New String() {"Google", "Yahoo", "Bing", "DuckDuckGo"})
+        Me.SrchF_ChoixB.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
+        Me.SrchF_ChoixB.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.SrchF_ChoixB.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Blueflap.My.MySettings.Default, "SF2", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.SrchF_ChoixB.FormattingEnabled = True
+        Me.SrchF_ChoixB.Items.AddRange(New Object() {"Google", "Yahoo", "Bing", "DuckDuckGo"})
+        Me.SrchF_ChoixB.Location = New System.Drawing.Point(564, 18)
+        Me.SrchF_ChoixB.Name = "SrchF_ChoixB"
+        Me.SrchF_ChoixB.Size = New System.Drawing.Size(121, 21)
+        Me.SrchF_ChoixB.TabIndex = 7
+        Me.SrchF_ChoixB.Text = Global.Blueflap.My.MySettings.Default.SF2
+        '
+        'SrchF_ChoixA
+        '
+        Me.SrchF_ChoixA.AutoCompleteCustomSource.AddRange(New String() {"Google", "Yahoo", "Bing", "DuckDuckGo"})
+        Me.SrchF_ChoixA.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
+        Me.SrchF_ChoixA.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.SrchF_ChoixA.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Blueflap.My.MySettings.Default, "SF1", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.SrchF_ChoixA.FormattingEnabled = True
+        Me.SrchF_ChoixA.Items.AddRange(New Object() {"Google", "Yahoo", "Bing", "DuckDuckGo"})
+        Me.SrchF_ChoixA.Location = New System.Drawing.Point(437, 18)
+        Me.SrchF_ChoixA.Name = "SrchF_ChoixA"
+        Me.SrchF_ChoixA.Size = New System.Drawing.Size(121, 21)
+        Me.SrchF_ChoixA.TabIndex = 6
+        Me.SrchF_ChoixA.Text = Global.Blueflap.My.MySettings.Default.SF1
+        '
+        'BS_Date
+        '
+        Me.BS_Date.AutoSize = True
+        Me.BS_Date.BackColor = System.Drawing.Color.Transparent
+        Me.BS_Date.DataBindings.Add(New System.Windows.Forms.Binding("ForeColor", Global.Blueflap.My.MySettings.Default, "clair", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.BS_Date.Font = New System.Drawing.Font("Segoe UI Light", 27.0!)
+        Me.BS_Date.ForeColor = Global.Blueflap.My.MySettings.Default.clair
+        Me.BS_Date.Location = New System.Drawing.Point(478, 55)
+        Me.BS_Date.Name = "BS_Date"
+        Me.BS_Date.Size = New System.Drawing.Size(157, 48)
+        Me.BS_Date.TabIndex = 4
+        Me.BS_Date.Text = "Bonjour !"
+        '
+        'BS_DateSetColor
+        '
+        Me.BS_DateSetColor.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Blueflap.My.MySettings.Default, "sombre", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.BS_DateSetColor.FlatAppearance.BorderSize = 0
+        Me.BS_DateSetColor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue
+        Me.BS_DateSetColor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
+        Me.BS_DateSetColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BS_DateSetColor.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BS_DateSetColor.ForeColor = System.Drawing.Color.White
+        Me.BS_DateSetColor.Location = New System.Drawing.Point(12, 96)
+        Me.BS_DateSetColor.Name = "BS_DateSetColor"
+        Me.BS_DateSetColor.Size = New System.Drawing.Size(192, 44)
+        Me.BS_DateSetColor.TabIndex = 1
+        Me.BS_DateSetColor.Text = Global.Blueflap.My.MySettings.Default.sombre
+        Me.BS_DateSetColor.UseVisualStyleBackColor = True
+        '
         'Fenetre_Principale
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1117, 607)
         Me.Controls.Add(Me.ABlueflap_Settings)
+        Me.Controls.Add(Me.ABlueflap_Navigateur)
         Me.Controls.Add(Me.ABlueflap_Infos)
         Me.Controls.Add(Me.ABlueflap_Fight)
         Me.Controls.Add(Me.ABlueflap_Bluestart)
-        Me.Controls.Add(Me.ABlueflap_Navigateur)
         Me.Controls.Add(Me.ABlueflap_Verrouillage)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimumSize = New System.Drawing.Size(240, 39)
@@ -2465,12 +2542,9 @@ Partial Class Fenetre_Principale
         Me.ABlueflap_Settings.ResumeLayout(False)
         Me.ABlueflap_Settings.PerformLayout()
         Me.Panel3.ResumeLayout(False)
-        Me.Sett_TabB.ResumeLayout(False)
-        Me.Sett_TabB.PerformLayout()
-        Me.Sett_TabC.ResumeLayout(False)
-        Me.Sett_TabC.PerformLayout()
         Me.Sett_TabA.ResumeLayout(False)
         Me.Sett_TabA.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.stng_picdemo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StngmenuIcon5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StngmenuIcon8, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2480,6 +2554,10 @@ Partial Class Fenetre_Principale
         CType(Me.StngmenuIcon3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StngmenuIcon6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StngmenuIcon4, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Sett_TabC.ResumeLayout(False)
+        Me.Sett_TabC.PerformLayout()
+        Me.Sett_TabB.ResumeLayout(False)
+        Me.Sett_TabB.PerformLayout()
         Me.ABlueflap_Fight.ResumeLayout(False)
         Me.ABlueflap_Fight.PerformLayout()
         Me.SrchF_Split.Panel1.ResumeLayout(False)
@@ -2684,5 +2762,11 @@ Partial Class Fenetre_Principale
     Friend WithEvents Stng_ResetSuggest As System.Windows.Forms.Button
     Friend WithEvents StngLabel_Suggest As System.Windows.Forms.Label
     Friend WithEvents stng_Smartsuggestactif As System.Windows.Forms.CheckBox
+    Friend WithEvents Menu_Translate As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents translate_checkbox As System.Windows.Forms.CheckBox
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents AdblockFunction As System.Windows.Forms.TextBox
+    Friend WithEvents stng_Adblock As System.Windows.Forms.CheckBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 
 End Class

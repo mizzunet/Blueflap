@@ -96,7 +96,7 @@
 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Stng_MoteurRecherche_choose.SelectedIndexChanged
         If Stng_MoteurRecherche_choose.Text = "Google" Then
-            Stng_MoteurRecherche_URL.Text = "http://www.google.fr/#hl=fr&sclient=psy-ab&q="
+            Stng_MoteurRecherche_URL.Text = "http://www.google.fr/search?q="
         ElseIf Stng_MoteurRecherche_choose.Text = "Bing" Then
             Stng_MoteurRecherche_URL.Text = "http://www.bing.com/search?q="
 
@@ -345,7 +345,7 @@
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles SrchF_Fightbutton.Click
         If SrchF_AdvanceChoice.Checked = False Then
             If SrchF_ChoixA.Text = "Google" Then
-                SrchF_fighter_1.Source = New Uri("http://www.google.fr/#hl=fr&sclient=psy-ab&q=" + SrchF_Searchbox.Text)
+                SrchF_fighter_1.Source = New Uri("http://www.google.fr/search?q=" + SrchF_Searchbox.Text)
 
             ElseIf SrchF_ChoixA.Text = "Bing" Then
                 SrchF_fighter_1.Source = New Uri("http://www.bing.com/search?q=" + SrchF_Searchbox.Text)
@@ -359,7 +359,7 @@
 
 
             If SrchF_ChoixB.Text = "Google" Then
-                SrchF_fighter_2.Source = New Uri("http://www.google.fr/#hl=fr&sclient=psy-ab&q=" + SrchF_Searchbox.Text)
+                SrchF_fighter_2.Source = New Uri("http://www.google.fr/search?q=" + SrchF_Searchbox.Text)
 
             ElseIf SrchF_ChoixB.Text = "Bing" Then
                 SrchF_fighter_2.Source = New Uri("http://www.bing.com/search?q=" + SrchF_Searchbox.Text)

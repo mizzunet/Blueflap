@@ -63,6 +63,7 @@ Partial Class Fenetre_Principale
         Me.menu_partage = New System.Windows.Forms.ToolStripMenuItem()
         Me.FacebookToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TwitterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menu_Translate = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menu_Settings = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menu_Lock = New System.Windows.Forms.ToolStripMenuItem()
@@ -208,7 +209,6 @@ Partial Class Fenetre_Principale
         Me.BS_ImgChoose = New System.Windows.Forms.Button()
         Me.BS_Logo = New System.Windows.Forms.PictureBox()
         Me.TabItem1 = New DevComponents.DotNetBar.TabItem(Me.components)
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ABlueflap_Navigateur.SuspendLayout()
         CType(Me.Notif_internet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Fav_Panel.SuspendLayout()
@@ -721,7 +721,7 @@ Partial Class Fenetre_Principale
         Me.FacebookToolStripMenuItem.Image = CType(resources.GetObject("FacebookToolStripMenuItem.Image"), System.Drawing.Image)
         Me.FacebookToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.FacebookToolStripMenuItem.Name = "FacebookToolStripMenuItem"
-        Me.FacebookToolStripMenuItem.Size = New System.Drawing.Size(152, 24)
+        Me.FacebookToolStripMenuItem.Size = New System.Drawing.Size(137, 24)
         Me.FacebookToolStripMenuItem.Text = "Facebook"
         '
         'TwitterToolStripMenuItem
@@ -730,8 +730,17 @@ Partial Class Fenetre_Principale
         Me.TwitterToolStripMenuItem.Image = CType(resources.GetObject("TwitterToolStripMenuItem.Image"), System.Drawing.Image)
         Me.TwitterToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.TwitterToolStripMenuItem.Name = "TwitterToolStripMenuItem"
-        Me.TwitterToolStripMenuItem.Size = New System.Drawing.Size(152, 24)
+        Me.TwitterToolStripMenuItem.Size = New System.Drawing.Size(137, 24)
         Me.TwitterToolStripMenuItem.Text = "Twitter"
+        '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.ToolStripMenuItem1.Image = CType(resources.GetObject("ToolStripMenuItem1.Image"), System.Drawing.Image)
+        Me.ToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(137, 24)
+        Me.ToolStripMenuItem1.Text = "AddThis"
         '
         'Menu_Translate
         '
@@ -827,8 +836,8 @@ Partial Class Fenetre_Principale
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel3.AutoScroll = True
-        Me.Panel3.Controls.Add(Me.Sett_TabC)
         Me.Panel3.Controls.Add(Me.Sett_TabA)
+        Me.Panel3.Controls.Add(Me.Sett_TabC)
         Me.Panel3.Controls.Add(Me.Sett_TabB)
         Me.Panel3.Location = New System.Drawing.Point(0, 116)
         Me.Panel3.Name = "Panel3"
@@ -2140,7 +2149,6 @@ Partial Class Fenetre_Principale
         Me.Infos_code_source.CharWidth = 8
         Me.Infos_code_source.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Infos_code_source.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.Infos_code_source.Font = New System.Drawing.Font("Courier New", 9.75!)
         Me.Infos_code_source.IndentBackColor = System.Drawing.SystemColors.Control
         Me.Infos_code_source.IsReplaceMode = False
         Me.Infos_code_source.Location = New System.Drawing.Point(74, 194)
@@ -2512,22 +2520,13 @@ Partial Class Fenetre_Principale
         Me.TabItem1.Name = "TabItem1"
         Me.TabItem1.Text = ""
         '
-        'ToolStripMenuItem1
-        '
-        Me.ToolStripMenuItem1.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.ToolStripMenuItem1.Image = CType(resources.GetObject("ToolStripMenuItem1.Image"), System.Drawing.Image)
-        Me.ToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(152, 24)
-        Me.ToolStripMenuItem1.Text = "AddThis"
-        '
         'Fenetre_Principale
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1117, 607)
-        Me.Controls.Add(Me.ABlueflap_Navigateur)
         Me.Controls.Add(Me.ABlueflap_Settings)
+        Me.Controls.Add(Me.ABlueflap_Navigateur)
         Me.Controls.Add(Me.ABlueflap_Infos)
         Me.Controls.Add(Me.ABlueflap_Fight)
         Me.Controls.Add(Me.ABlueflap_Bluestart)

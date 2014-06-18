@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="Moteur" Type="System.String" Scope="User">
-      <Value Profile="(Default)">http://www.google.fr/#hl=fr&amp;sclient=psy-ab&amp;q=</Value>
+      <Value Profile="(Default)">http://www.google.fr/search?q=</Value>
     </Setting>
     <Setting Name="NomMoteur" Type="System.String" Scope="User">
       <Value Profile="(Default)">Google</Value>

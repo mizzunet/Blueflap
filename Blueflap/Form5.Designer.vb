@@ -45,22 +45,22 @@ Partial Class Form5
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.MetroControlBox1 = New MetroControls.MetroControlBox()
         Me.TabPage7 = New System.Windows.Forms.TabPage()
-        Me.TabPage8 = New System.Windows.Forms.TabPage()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.TabPage8 = New System.Windows.Forms.TabPage()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.TextBox8 = New System.Windows.Forms.TextBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.TabPage9 = New System.Windows.Forms.TabPage()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.TextBox9 = New System.Windows.Forms.TextBox()
         Me.TabPage10 = New System.Windows.Forms.TabPage()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.TextBox10 = New System.Windows.Forms.TextBox()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.MetroControlBox1 = New MetroControls.MetroControlBox()
         Me.MetroTabControl1.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -71,12 +71,12 @@ Partial Class Form5
         Me.TabPage5.SuspendLayout()
         Me.TabPage6.SuspendLayout()
         Me.TabPage7.SuspendLayout()
-        Me.TabPage8.SuspendLayout()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage8.SuspendLayout()
         Me.TabPage9.SuspendLayout()
-        Me.TabPage10.SuspendLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage10.SuspendLayout()
         Me.SuspendLayout()
         '
         'MetroTabControl1
@@ -359,21 +359,6 @@ Partial Class Form5
         Me.TextBox6.TabIndex = 7
         Me.TextBox6.Text = resources.GetString("TextBox6.Text")
         '
-        'MetroControlBox1
-        '
-        Me.MetroControlBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MetroControlBox1.BoxClose = True
-        Me.MetroControlBox1.BoxMaximize = True
-        Me.MetroControlBox1.BoxMinimize = True
-        Me.MetroControlBox1.FormHeight = Nothing
-        Me.MetroControlBox1.FormWidth = Nothing
-        Me.MetroControlBox1.Location = New System.Drawing.Point(671, 0)
-        Me.MetroControlBox1.Name = "MetroControlBox1"
-        Me.MetroControlBox1.Size = New System.Drawing.Size(88, 26)
-        Me.MetroControlBox1.TabIndex = 1
-        Me.MetroControlBox1.Text = "MetroControlBox1"
-        Me.MetroControlBox1.UseMetroForm = True
-        '
         'TabPage7
         '
         Me.TabPage7.BackColor = System.Drawing.Color.White
@@ -388,17 +373,25 @@ Partial Class Form5
         Me.TabPage7.TabIndex = 6
         Me.TabPage7.Text = "Réduire menu"
         '
-        'TabPage8
+        'PictureBox4
         '
-        Me.TabPage8.BackColor = System.Drawing.Color.White
-        Me.TabPage8.Controls.Add(Me.Label9)
-        Me.TabPage8.Controls.Add(Me.TextBox8)
-        Me.TabPage8.Location = New System.Drawing.Point(124, 4)
-        Me.TabPage8.Name = "TabPage8"
-        Me.TabPage8.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage8.Size = New System.Drawing.Size(632, 461)
-        Me.TabPage8.TabIndex = 7
-        Me.TabPage8.Text = "Personnaliser menu"
+        Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
+        Me.PictureBox4.Location = New System.Drawing.Point(14, 80)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(444, 353)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox4.TabIndex = 12
+        Me.PictureBox4.TabStop = False
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
+        Me.PictureBox3.Location = New System.Drawing.Point(232, 36)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(29, 28)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox3.TabIndex = 11
+        Me.PictureBox3.TabStop = False
         '
         'Label8
         '
@@ -423,6 +416,18 @@ Partial Class Form5
         Me.TextBox7.TabIndex = 9
         Me.TextBox7.Text = "Rien de plus simple, cliquez sur l'icône"
         '
+        'TabPage8
+        '
+        Me.TabPage8.BackColor = System.Drawing.Color.White
+        Me.TabPage8.Controls.Add(Me.Label9)
+        Me.TabPage8.Controls.Add(Me.TextBox8)
+        Me.TabPage8.Location = New System.Drawing.Point(124, 4)
+        Me.TabPage8.Name = "TabPage8"
+        Me.TabPage8.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage8.Size = New System.Drawing.Size(632, 461)
+        Me.TabPage8.TabIndex = 7
+        Me.TabPage8.Text = "Personnaliser menu"
+        '
         'Label9
         '
         Me.Label9.AutoSize = True
@@ -446,26 +451,6 @@ Partial Class Form5
         Me.TextBox8.TabIndex = 9
         Me.TextBox8.Text = resources.GetString("TextBox8.Text")
         '
-        'PictureBox3
-        '
-        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(232, 36)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(29, 28)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox3.TabIndex = 11
-        Me.PictureBox3.TabStop = False
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
-        Me.PictureBox4.Location = New System.Drawing.Point(14, 80)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(444, 353)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox4.TabIndex = 12
-        Me.PictureBox4.TabStop = False
-        '
         'TabPage9
         '
         Me.TabPage9.BackColor = System.Drawing.Color.White
@@ -478,6 +463,16 @@ Partial Class Form5
         Me.TabPage9.Size = New System.Drawing.Size(632, 461)
         Me.TabPage9.TabIndex = 8
         Me.TabPage9.Text = "Enregister/Imprimer"
+        '
+        'PictureBox5
+        '
+        Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
+        Me.PictureBox5.Location = New System.Drawing.Point(14, 78)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(408, 370)
+        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox5.TabIndex = 13
+        Me.PictureBox5.TabStop = False
         '
         'Label10
         '
@@ -538,15 +533,20 @@ Partial Class Form5
         Me.TextBox10.TabIndex = 11
         Me.TextBox10.Text = resources.GetString("TextBox10.Text")
         '
-        'PictureBox5
+        'MetroControlBox1
         '
-        Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
-        Me.PictureBox5.Location = New System.Drawing.Point(14, 78)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(408, 370)
-        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox5.TabIndex = 13
-        Me.PictureBox5.TabStop = False
+        Me.MetroControlBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MetroControlBox1.BoxClose = True
+        Me.MetroControlBox1.BoxMaximize = True
+        Me.MetroControlBox1.BoxMinimize = True
+        Me.MetroControlBox1.FormHeight = Nothing
+        Me.MetroControlBox1.FormWidth = Nothing
+        Me.MetroControlBox1.Location = New System.Drawing.Point(671, 0)
+        Me.MetroControlBox1.Name = "MetroControlBox1"
+        Me.MetroControlBox1.Size = New System.Drawing.Size(88, 26)
+        Me.MetroControlBox1.TabIndex = 1
+        Me.MetroControlBox1.Text = "MetroControlBox1"
+        Me.MetroControlBox1.UseMetroForm = True
         '
         'Form5
         '
@@ -576,15 +576,15 @@ Partial Class Form5
         Me.TabPage6.PerformLayout()
         Me.TabPage7.ResumeLayout(False)
         Me.TabPage7.PerformLayout()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage8.ResumeLayout(False)
         Me.TabPage8.PerformLayout()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage9.ResumeLayout(False)
         Me.TabPage9.PerformLayout()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage10.ResumeLayout(False)
         Me.TabPage10.PerformLayout()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

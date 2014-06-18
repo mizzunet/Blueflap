@@ -169,6 +169,12 @@
                 ABlueflap_Bluestart.Visible = True
                 ABlueflap_Bluestart.BringToFront()
             Else
+                If Stng_HomePage_Url.Text.Contains("http://") OrElse Stng_HomePage_Url.Text.Contains("https://") Then
+                    Web.Source = New Uri(Stng_HomePage_Url.Text)
+                Else
+                    Web.Source = New Uri("http://google.fr")
+                    MessageBox.Show("La page d'accueil définie dans les paramètres n'est pas valide")
+                End If
                 ABlueflap_Navigateur.BringToFront()
                 ABlueflap_Verrouillage.Visible = False
             End If
@@ -195,13 +201,6 @@
         For Each item As String In My.Settings.Historique
             Fav_Historique_List.Items.Add(item)
         Next
-
-        If Stng_HomePage_Url.Text.Contains("http://") OrElse Stng_HomePage_Url.Text.Contains("https://") Then
-            Web.Source = New Uri(Stng_HomePage_Url.Text)
-        Else
-            Web.Source = New Uri("http://google.fr")
-            MessageBox.Show("La page d'accueil définie dans les paramètres n'est pas valide")
-        End If
 
         If Stng_Volet_reduire.Checked Then
             voletlateral.Width = 27

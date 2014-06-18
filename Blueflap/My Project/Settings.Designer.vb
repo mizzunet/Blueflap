@@ -56,7 +56,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("http://www.google.fr/#hl=fr&sclient=psy-ab&q=")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("http://www.google.fr/search?q=")>  _
         Public Property Moteur() As String
             Get
                 Return CType(Me("Moteur"),String)

@@ -178,7 +178,7 @@
                 ABlueflap_Navigateur.BringToFront()
                 ABlueflap_Verrouillage.Visible = False
             End If
-        End If
+            End If
 
         For Each item As String In My.Settings.Bookmarks
             Fav_fav_List.Items.Add(item)

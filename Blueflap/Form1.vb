@@ -178,7 +178,7 @@
                 ABlueflap_Navigateur.BringToFront()
                 ABlueflap_Verrouillage.Visible = False
             End If
-            End If
+        End If
 
         For Each item As String In My.Settings.Bookmarks
             Fav_fav_List.Items.Add(item)
@@ -441,6 +441,7 @@
                 Next
             End If
         End If
+
     End Sub
     Private Sub Favoris_Norif(sender As Object, e As EventArgs) Handles Fav_fav_List.DoubleClick
         If Not String.IsNullOrWhiteSpace(Fav_fav_List.SelectedItem) Then

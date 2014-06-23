@@ -278,7 +278,7 @@ Partial Class Fenetre_Principale
         Me.Web.Location = New System.Drawing.Point(160, 84)
         Me.Web.Size = New System.Drawing.Size(725, 523)
         Me.Web.Source = New System.Uri("about:blank", System.UriKind.Absolute)
-        Me.Web.TabIndex = 0
+        Me.Web.TabIndex = 8
         '
         'Notif_add
         '
@@ -420,7 +420,7 @@ Partial Class Fenetre_Principale
         Me.Fav_Historique_List.Location = New System.Drawing.Point(0, 56)
         Me.Fav_Historique_List.Name = "Fav_Historique_List"
         Me.Fav_Historique_List.ScrollAlwaysVisible = True
-        Me.Fav_Historique_List.Size = New System.Drawing.Size(232, 525)
+        Me.Fav_Historique_List.Size = New System.Drawing.Size(232, 570)
         Me.Fav_Historique_List.TabIndex = 5
         Me.Fav_Historique_List.Visible = False
         '
@@ -431,7 +431,7 @@ Partial Class Fenetre_Principale
         Me.fav_notif_suppr.Controls.Add(Me.Fav_Cancel)
         Me.fav_notif_suppr.Controls.Add(Me.Fav_Confirm)
         Me.fav_notif_suppr.Controls.Add(Me.Fav_Notif_Text)
-        Me.fav_notif_suppr.Location = New System.Drawing.Point(0, 500)
+        Me.fav_notif_suppr.Location = New System.Drawing.Point(0, 547)
         Me.fav_notif_suppr.Name = "fav_notif_suppr"
         Me.fav_notif_suppr.Size = New System.Drawing.Size(232, 81)
         Me.fav_notif_suppr.TabIndex = 1
@@ -493,7 +493,7 @@ Partial Class Fenetre_Principale
         Me.Fav_fav_List.Location = New System.Drawing.Point(0, 56)
         Me.Fav_fav_List.Name = "Fav_fav_List"
         Me.Fav_fav_List.ScrollAlwaysVisible = True
-        Me.Fav_fav_List.Size = New System.Drawing.Size(232, 525)
+        Me.Fav_fav_List.Size = New System.Drawing.Size(232, 570)
         Me.Fav_fav_List.TabIndex = 0
         '
         'ContextMenuStrip1

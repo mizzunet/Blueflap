@@ -72,6 +72,10 @@ Partial Class Fenetre_Principale
         Me.Menu_Lock = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menu_FullScr = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menu_Memo = New System.Windows.Forms.ToolStripMenuItem()
+        Me.downloadbar = New System.Windows.Forms.Panel()
+        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.ABlueflap_Settings = New System.Windows.Forms.Panel()
         Me.Stng_Helpcenter = New MetroControls.MetroHeaderButton()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -224,6 +228,7 @@ Partial Class Fenetre_Principale
         CType(Me.Loader, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.voletlateral.SuspendLayout()
         Me.Menua.SuspendLayout()
+        Me.downloadbar.SuspendLayout()
         Me.ABlueflap_Settings.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Sett_TabC.SuspendLayout()
@@ -266,6 +271,7 @@ Partial Class Fenetre_Principale
         Me.ABlueflap_Navigateur.Controls.Add(Me.Fav_Panel)
         Me.ABlueflap_Navigateur.Controls.Add(Me.FP_AdressbarPanel)
         Me.ABlueflap_Navigateur.Controls.Add(Me.voletlateral)
+        Me.ABlueflap_Navigateur.Controls.Add(Me.downloadbar)
         Me.ABlueflap_Navigateur.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ABlueflap_Navigateur.Location = New System.Drawing.Point(0, 0)
         Me.ABlueflap_Navigateur.Name = "ABlueflap_Navigateur"
@@ -276,7 +282,7 @@ Partial Class Fenetre_Principale
         '
         Me.Web.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Web.Location = New System.Drawing.Point(160, 84)
-        Me.Web.Size = New System.Drawing.Size(725, 523)
+        Me.Web.Size = New System.Drawing.Size(725, 478)
         Me.Web.Source = New System.Uri("about:blank", System.UriKind.Absolute)
         Me.Web.TabIndex = 8
         '
@@ -374,7 +380,7 @@ Partial Class Fenetre_Principale
         Me.Fav_Panel.Dock = System.Windows.Forms.DockStyle.Right
         Me.Fav_Panel.Location = New System.Drawing.Point(885, 28)
         Me.Fav_Panel.Name = "Fav_Panel"
-        Me.Fav_Panel.Size = New System.Drawing.Size(232, 579)
+        Me.Fav_Panel.Size = New System.Drawing.Size(232, 534)
         Me.Fav_Panel.TabIndex = 5
         Me.Fav_Panel.Visible = False
         '
@@ -420,7 +426,7 @@ Partial Class Fenetre_Principale
         Me.Fav_Historique_List.Location = New System.Drawing.Point(0, 56)
         Me.Fav_Historique_List.Name = "Fav_Historique_List"
         Me.Fav_Historique_List.ScrollAlwaysVisible = True
-        Me.Fav_Historique_List.Size = New System.Drawing.Size(232, 570)
+        Me.Fav_Historique_List.Size = New System.Drawing.Size(232, 450)
         Me.Fav_Historique_List.TabIndex = 5
         Me.Fav_Historique_List.Visible = False
         '
@@ -431,7 +437,7 @@ Partial Class Fenetre_Principale
         Me.fav_notif_suppr.Controls.Add(Me.Fav_Cancel)
         Me.fav_notif_suppr.Controls.Add(Me.Fav_Confirm)
         Me.fav_notif_suppr.Controls.Add(Me.Fav_Notif_Text)
-        Me.fav_notif_suppr.Location = New System.Drawing.Point(0, 547)
+        Me.fav_notif_suppr.Location = New System.Drawing.Point(0, 453)
         Me.fav_notif_suppr.Name = "fav_notif_suppr"
         Me.fav_notif_suppr.Size = New System.Drawing.Size(232, 81)
         Me.fav_notif_suppr.TabIndex = 1
@@ -493,7 +499,7 @@ Partial Class Fenetre_Principale
         Me.Fav_fav_List.Location = New System.Drawing.Point(0, 56)
         Me.Fav_fav_List.Name = "Fav_fav_List"
         Me.Fav_fav_List.ScrollAlwaysVisible = True
-        Me.Fav_fav_List.Size = New System.Drawing.Size(232, 570)
+        Me.Fav_fav_List.Size = New System.Drawing.Size(232, 465)
         Me.Fav_fav_List.TabIndex = 0
         '
         'ContextMenuStrip1
@@ -618,7 +624,7 @@ Partial Class Fenetre_Principale
         Me.voletlateral.Location = New System.Drawing.Point(0, 0)
         Me.voletlateral.Name = "voletlateral"
         Me.voletlateral.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.voletlateral.Size = New System.Drawing.Size(160, 607)
+        Me.voletlateral.Size = New System.Drawing.Size(160, 562)
         Me.voletlateral.TabIndex = 1
         Me.voletlateral.Text = "MenuStrip1"
         '
@@ -833,6 +839,54 @@ Partial Class Fenetre_Principale
         Me.Menu_Memo.Size = New System.Drawing.Size(153, 24)
         Me.Menu_Memo.Text = "Post-It"
         Me.Menu_Memo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'downloadbar
+        '
+        Me.downloadbar.Controls.Add(Me.ProgressBar1)
+        Me.downloadbar.Controls.Add(Me.Label4)
+        Me.downloadbar.Controls.Add(Me.Label3)
+        Me.downloadbar.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.downloadbar.Location = New System.Drawing.Point(0, 562)
+        Me.downloadbar.Name = "downloadbar"
+        Me.downloadbar.Size = New System.Drawing.Size(1117, 45)
+        Me.downloadbar.TabIndex = 9
+        Me.downloadbar.Visible = False
+        '
+        'ProgressBar1
+        '
+        Me.ProgressBar1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ProgressBar1.Location = New System.Drawing.Point(0, 0)
+        Me.ProgressBar1.MarqueeAnimationSpeed = 5
+        Me.ProgressBar1.Name = "ProgressBar1"
+        Me.ProgressBar1.Size = New System.Drawing.Size(1117, 2)
+        Me.ProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee
+        Me.ProgressBar1.TabIndex = 3
+        '
+        'Label4
+        '
+        Me.Label4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI Semilight", 8.0!)
+        Me.Label4.ForeColor = System.Drawing.Color.Gray
+        Me.Label4.Location = New System.Drawing.Point(26, 23)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(61, 13)
+        Me.Label4.TabIndex = 2
+        Me.Label4.Text = "Nom fichier"
+        '
+        'Label3
+        '
+        Me.Label3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
+        Me.Label3.ForeColor = System.Drawing.Color.Black
+        Me.Label3.Location = New System.Drawing.Point(26, 9)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(68, 15)
+        Me.Label3.TabIndex = 1
+        Me.Label3.Text = "Nom fichier"
         '
         'ABlueflap_Settings
         '
@@ -2560,11 +2614,11 @@ Partial Class Fenetre_Principale
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1117, 607)
         Me.Controls.Add(Me.ABlueflap_Navigateur)
+        Me.Controls.Add(Me.ABlueflap_Bluestart)
         Me.Controls.Add(Me.ABlueflap_Settings)
         Me.Controls.Add(Me.ABlueflap_Verrouillage)
         Me.Controls.Add(Me.ABlueflap_Infos)
         Me.Controls.Add(Me.ABlueflap_Fight)
-        Me.Controls.Add(Me.ABlueflap_Bluestart)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimumSize = New System.Drawing.Size(240, 39)
         Me.Name = "Fenetre_Principale"
@@ -2587,6 +2641,8 @@ Partial Class Fenetre_Principale
         Me.voletlateral.ResumeLayout(False)
         Me.voletlateral.PerformLayout()
         Me.Menua.ResumeLayout(False)
+        Me.downloadbar.ResumeLayout(False)
+        Me.downloadbar.PerformLayout()
         Me.ABlueflap_Settings.ResumeLayout(False)
         Me.ABlueflap_Settings.PerformLayout()
         Me.Panel3.ResumeLayout(False)
@@ -2820,5 +2876,9 @@ Partial Class Fenetre_Principale
     Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox4 As System.Windows.Forms.PictureBox
     Private WithEvents Web As Awesomium.Windows.Forms.WebControl
+    Friend WithEvents downloadbar As System.Windows.Forms.Panel
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents ProgressBar1 As System.Windows.Forms.ProgressBar
 
 End Class

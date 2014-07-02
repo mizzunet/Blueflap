@@ -2,6 +2,7 @@
     Dim drag As Boolean
     Dim mousex As Integer
     Dim mousey As Integer
+    Public Shared Event DownloadBegin As Awesomium.Core.DownloadBeginEventHandler
     Private Class Bluerend : Inherits ToolStripProfessionalRenderer
         Protected Overrides Sub OnRenderMenuItemBackground(ByVal e As System.Windows.Forms.ToolStripItemRenderEventArgs)
             If e.Item.Selected Then
@@ -162,6 +163,7 @@
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         voletlateral.Renderer = New Bluerend
+        AddHandler Awesomium.Core.WebCore.DownloadBegin, AddressOf OnDownloadBegin
         If Stng_MPActiv.Checked Then
             ABlueflap_Verrouillage.BringToFront()
         Else
@@ -964,5 +966,10 @@
                 SmartAdressbox.ForeColor = Color.Black
             End If
         End If
+    End Sub
+    Private Sub OnDownloadBegin(sender As Object, e As Awesomium.Core.DownloadBeginEventArgs)
+        downloadbar.Visible = True
+        Label3.Text = e.Info.FileName
+        Label4.Text = e.Info.Url.ToString
     End Sub
 End Class

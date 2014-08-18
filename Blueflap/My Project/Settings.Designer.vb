@@ -80,7 +80,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("https://www.youtube.com/embed/ifOY1PV6Nyo?rel=0&amp;vq=hd720;&autoplay=1")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("https://www.youtube.com/embed/mYtWu8TUtIQ?rel=0&amp;vq=hd720;&autoplay=1")>  _
         Public Property home() As String
             Get
                 Return CType(Me("home"),String)
@@ -537,6 +537,78 @@ Namespace My
             End Get
             Set
                 Me("locka") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property stata() As String
+            Get
+                Return CType(Me("stata"),String)
+            End Get
+            Set
+                Me("stata") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property statb() As String
+            Get
+                Return CType(Me("statb"),String)
+            End Get
+            Set
+                Me("statb") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("off")>  _
+        Public Property Verry() As String
+            Get
+                Return CType(Me("Verry"),String)
+            End Get
+            Set
+                Me("Verry") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property verry2() As Boolean
+            Get
+                Return CType(Me("verry2"),Boolean)
+            End Get
+            Set
+                Me("verry2") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property title() As Boolean
+            Get
+                Return CType(Me("title"),Boolean)
+            End Get
+            Set
+                Me("title") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property target() As Boolean
+            Get
+                Return CType(Me("target"),Boolean)
+            End Get
+            Set
+                Me("target") = value
             End Set
         End Property
     End Class

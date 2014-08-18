@@ -9,7 +9,7 @@
       <Value Profile="(Default)">Google</Value>
     </Setting>
     <Setting Name="home" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://www.youtube.com/embed/ifOY1PV6Nyo?rel=0&amp;amp;vq=hd720;&amp;autoplay=1</Value>
+      <Value Profile="(Default)">https://www.youtube.com/embed/mYtWu8TUtIQ?rel=0&amp;amp;vq=hd720;&amp;autoplay=1</Value>
     </Setting>
     <Setting Name="Réduit" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
@@ -131,6 +131,24 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="locka" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="stata" Type="System.String" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="statb" Type="System.String" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="Verry" Type="System.String" Scope="User">
+      <Value Profile="(Default)">off</Value>
+    </Setting>
+    <Setting Name="verry2" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="title" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="target" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>

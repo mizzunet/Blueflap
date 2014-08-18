@@ -119,9 +119,13 @@
         ElseIf Stng_MoteurRecherche_choose.Text = "Github" Then
             Stng_MoteurRecherche_URL.Text = "https://github.com/search?q="
 
+        ElseIf Stng_MoteurRecherche_choose.Text = "Dreamvids" Then
+            Stng_MoteurRecherche_URL.Text = "http://dreamvids.fr/search?q="
+
         ElseIf Stng_MoteurRecherche_choose.Text = "Ask" Then
             Stng_MoteurRecherche_URL.Text = "http://fr.ask.com/web?q="
         End If
+
     End Sub
     Private Sub ActualiserToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Menu_Refresh.Click
         Web.Reload(True)
@@ -375,6 +379,7 @@
             SrchF_fighter_1.Source = New Uri(SrchFight_AdvanceLeft.Text + SrchF_Searchbox.Text)
             SrchF_fighter_2.Source = New Uri(SrchFight_AdvanceRight.Text + SrchF_Searchbox.Text)
         End If
+        stat2.Text = stat2.Text + 1
     End Sub
 
     Private Sub TextBox5_TextChanged(sender As Object, e As EventArgs) Handles SrchF_Searchbox.TextChanged
@@ -500,6 +505,9 @@
         Loader.Visible = False
         Menu_Refresh.Visible = True
         Infos_Titre.Text = Web.Title
+        If Stng_Titlebar.Checked Then
+            Me.Text = "Blueflap - " + Web.Title
+        End If
 
         If Not stng_nevpriv.Checked Then
             If Not Fav_Historique_List.Items.Contains(SmartAdressbox.Text) Then
@@ -526,6 +534,10 @@
 
         If stng_Adblock.Checked Then
             Web.Source = New Uri(AdblockFunction.Text)
+        End If
+        Stat1.Text = Stat1.Text + 1
+        If downloadbar.Visible = True Then
+            downloadbar.Visible = False
         End If
     End Sub
 
@@ -733,15 +745,18 @@
     End Sub
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
-        Process.Start("https://github.com/SimpleSoftwares/Blueflap/issues")
+        ABlueflap_Navigateur.BringToFront()
+        Web.Source = New Uri("https://github.com/SimpleSoftwares/Blueflap/issues")
     End Sub
 
     Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles stng_simpleworld.Click
-        Process.Start("http://simpleworld-website.weebly.com")
+        ABlueflap_Navigateur.BringToFront()
+        Web.Source = New Uri("http://simpleworld-website.weebly.com")
     End Sub
 
     Private Sub Button3_Click_1(sender As Object, e As EventArgs) Handles stng_github.Click
-        Process.Start("https://github.com/SimpleSoftwares/Blueflap")
+        ABlueflap_Navigateur.BringToFront()
+        Web.Source = New Uri("https://github.com/SimpleSoftwares/Blueflap")
     End Sub
     Private Sub Menu_Memo_Click(sender As Object, e As EventArgs) Handles Menu_Memo.Click
         Form4.Show()
@@ -886,15 +901,18 @@
     End Sub
 
     Private Sub Button3_Click_2(sender As Object, e As EventArgs) Handles Stng_Zyhou.Click
-        Process.Start("https://github.com/zyhou")
+        ABlueflap_Navigateur.BringToFront()
+        Web.Source = New Uri("https://github.com/zyhou")
     End Sub
 
     Private Sub Button4_Click_1(sender As Object, e As EventArgs) Handles Stng_BaptGuil.Click
-        Process.Start("https://github.com/baptisteguil")
+        ABlueflap_Navigateur.BringToFront()
+        Web.Source = New Uri("https://github.com/baptisteguil")
     End Sub
 
     Private Sub Button5_Click_1(sender As Object, e As EventArgs) Handles Stng_Bat41.Click
-        Process.Start("https://github.com/Bat41")
+        ABlueflap_Navigateur.BringToFront()
+        Web.Source = New Uri("https://github.com/Bat41")
     End Sub
     Private Sub SmartAdressbox_Leave(sender As Object, e As EventArgs) Handles SmartAdressbox.Leave
         Me.AcceptButton = Nothing
@@ -956,14 +974,16 @@
     End Sub
 
     Private Sub Awesomium_Windows_Forms_WebControl_TargetURLChanged(sender As Object, e As Awesomium.Core.UrlEventArgs) Handles Web.TargetURLChanged
-        If Web.HasTargetURL Then
-            SmartAdressbox.Text = Web.TargetURL.ToString
-        Else
-            SmartAdressbox.Text = Web.Source.ToString
-            If SmartAdressbox.Text.Contains("https://") Then
-                SmartAdressbox.ForeColor = Color.DarkGreen
+        If Not stng_target.Checked Then
+            If Web.HasTargetURL Then
+                SmartAdressbox.Text = Web.TargetURL.ToString
             Else
-                SmartAdressbox.ForeColor = Color.Black
+                SmartAdressbox.Text = Web.Source.ToString
+                If SmartAdressbox.Text.Contains("https://") Then
+                    SmartAdressbox.ForeColor = Color.DarkGreen
+                Else
+                    SmartAdressbox.ForeColor = Color.Black
+                End If
             End If
         End If
     End Sub
@@ -971,5 +991,22 @@
         downloadbar.Visible = True
         Label3.Text = e.Info.FileName
         Label4.Text = e.Info.Url.ToString
+    End Sub
+    Private Sub stng_nevpriv_CheckedChanged(sender As Object, e As EventArgs) Handles stng_nevpriv.CheckedChanged
+        If stng_nevpriv.Checked Then
+            FP_AdressbarPanel.BackColor = Color.Gainsboro
+        Else
+            FP_AdressbarPanel.BackColor = DefaultBackColor
+        End If
+    End Sub
+
+    Private Sub Button3_Click_3(sender As Object, e As EventArgs) Handles Button3.Click
+        downloadbar.Visible = False
+    End Sub
+    Private Sub Menu_Window_Click(sender As Object, e As EventArgs) Handles Menu_Window.Click
+        Dim Windy As Fenetre_Principale
+        Windy = New Fenetre_Principale
+        Call Windy.Show()
+        Windy = Nothing
     End Sub
 End Class

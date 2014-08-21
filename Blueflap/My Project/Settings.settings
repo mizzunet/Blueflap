@@ -151,5 +151,17 @@
     <Setting Name="target" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="colorr" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">SteelBlue</Value>
+    </Setting>
+    <Setting Name="colorre" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="colory" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">DeepSkyBlue</Value>
+    </Setting>
+    <Setting Name="iconcolor" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

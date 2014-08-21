@@ -611,6 +611,54 @@ Namespace My
                 Me("target") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("SteelBlue")>  _
+        Public Property colorr() As Global.System.Drawing.Color
+            Get
+                Return CType(Me("colorr"),Global.System.Drawing.Color)
+            End Get
+            Set
+                Me("colorr") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property colorre() As Boolean
+            Get
+                Return CType(Me("colorre"),Boolean)
+            End Get
+            Set
+                Me("colorre") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("DeepSkyBlue")>  _
+        Public Property colory() As Global.System.Drawing.Color
+            Get
+                Return CType(Me("colory"),Global.System.Drawing.Color)
+            End Get
+            Set
+                Me("colory") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property iconcolor() As Boolean
+            Get
+                Return CType(Me("iconcolor"),Boolean)
+            End Get
+            Set
+                Me("iconcolor") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

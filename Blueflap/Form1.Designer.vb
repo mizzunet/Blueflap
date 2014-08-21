@@ -78,10 +78,56 @@ Partial Class Fenetre_Principale
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.menutouch = New System.Windows.Forms.FlowLayoutPanel()
+        Me.menuT_Home = New System.Windows.Forms.Button()
+        Me.menuT_back = New System.Windows.Forms.Button()
+        Me.menuT_forward = New System.Windows.Forms.Button()
+        Me.menuT_close = New System.Windows.Forms.Button()
+        Me.menuT_Refresh = New System.Windows.Forms.Button()
+        Me.menuT_Page = New System.Windows.Forms.Button()
+        Me.menuT_Fight = New System.Windows.Forms.Button()
+        Me.Info = New System.Windows.Forms.Button()
+        Me.menuT_Settings = New System.Windows.Forms.Button()
+        Me.menuT_lock = New System.Windows.Forms.Button()
+        Me.menuT_fullscreen = New System.Windows.Forms.Button()
+        Me.menuT_memo = New System.Windows.Forms.Button()
+        Me.Button23 = New System.Windows.Forms.Button()
+        Me.colorline = New System.Windows.Forms.Panel()
         Me.ABlueflap_Settings = New System.Windows.Forms.Panel()
         Me.Stng_Helpcenter = New MetroControls.MetroHeaderButton()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.stat2 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Stat1 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Sett_TabC = New System.Windows.Forms.Panel()
+        Me.StngLabel_Contributeurs = New System.Windows.Forms.Label()
+        Me.Stng_Bat41 = New System.Windows.Forms.Button()
+        Me.Stng_BaptGuil = New System.Windows.Forms.Button()
+        Me.Stng_Zyhou = New System.Windows.Forms.Button()
+        Me.StngLabel_OpenSource = New System.Windows.Forms.Label()
+        Me.StngLabel_Version = New System.Windows.Forms.Label()
+        Me.stng_github = New System.Windows.Forms.Button()
+        Me.StngLabel_Devs = New System.Windows.Forms.Label()
+        Me.stng_simpleworld = New System.Windows.Forms.Button()
+        Me.StngLabel_Contribute = New System.Windows.Forms.Label()
+        Me.Stng_VersionSystem = New System.Windows.Forms.Label()
+        Me.Stng_ShowLicense = New System.Windows.Forms.Button()
         Me.Sett_TabA = New System.Windows.Forms.Panel()
+        Me.stng_grayicons = New System.Windows.Forms.CheckBox()
+        Me.Colorbox2 = New System.Windows.Forms.Panel()
+        Me.Button12 = New System.Windows.Forms.Button()
+        Me.Button11 = New System.Windows.Forms.Button()
+        Me.Button10 = New System.Windows.Forms.Button()
+        Me.Button9 = New System.Windows.Forms.Button()
+        Me.stng_colorlinecheck = New System.Windows.Forms.CheckBox()
+        Me.Button8 = New System.Windows.Forms.Button()
+        Me.Button7 = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.colorbox = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.stng_target = New System.Windows.Forms.CheckBox()
         Me.Stng_Volet_Mousehover_agrandir = New System.Windows.Forms.CheckBox()
@@ -127,6 +173,7 @@ Partial Class Fenetre_Principale
         Me.StngmenuIcon6 = New System.Windows.Forms.PictureBox()
         Me.StngmenuIcon4 = New System.Windows.Forms.PictureBox()
         Me.ShapeContainer3 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.RectangleShape4 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RectangleShape3 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RectangleShape2 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
@@ -149,23 +196,6 @@ Partial Class Fenetre_Principale
         Me.Stng_SupprCacheCookies = New System.Windows.Forms.Button()
         Me.StngLabel_NetworkInfo = New System.Windows.Forms.Label()
         Me.StngLabel_Proxy = New System.Windows.Forms.Label()
-        Me.stat2 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Stat1 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Sett_TabC = New System.Windows.Forms.Panel()
-        Me.StngLabel_Contributeurs = New System.Windows.Forms.Label()
-        Me.Stng_Bat41 = New System.Windows.Forms.Button()
-        Me.Stng_BaptGuil = New System.Windows.Forms.Button()
-        Me.Stng_Zyhou = New System.Windows.Forms.Button()
-        Me.StngLabel_OpenSource = New System.Windows.Forms.Label()
-        Me.StngLabel_Version = New System.Windows.Forms.Label()
-        Me.stng_github = New System.Windows.Forms.Button()
-        Me.StngLabel_Devs = New System.Windows.Forms.Label()
-        Me.stng_simpleworld = New System.Windows.Forms.Button()
-        Me.StngLabel_Contribute = New System.Windows.Forms.Label()
-        Me.Stng_VersionSystem = New System.Windows.Forms.Label()
-        Me.Stng_ShowLicense = New System.Windows.Forms.Button()
         Me.sett_tab3 = New MetroControls.MetroHeaderButton()
         Me.sett_tab2 = New MetroControls.MetroHeaderButton()
         Me.sett_tab1 = New MetroControls.MetroHeaderButton()
@@ -201,6 +231,19 @@ Partial Class Fenetre_Principale
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.TabItem1 = New DevComponents.DotNetBar.TabItem(Me.components)
+        Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
+        Me.ABlueflap_Infos = New System.Windows.Forms.Panel()
+        Me.Infos_progress = New System.Windows.Forms.ProgressBar()
+        Me.Infos_code_source = New FastColoredTextBoxNS.FastColoredTextBox()
+        Me.Infos_Save = New System.Windows.Forms.Button()
+        Me.Infos_Print = New System.Windows.Forms.Button()
+        Me.Infos_Loading = New System.Windows.Forms.Label()
+        Me.Infos_Loader = New System.Windows.Forms.PictureBox()
+        Me.Infos_Trident_Browser_Recup_Infos = New System.Windows.Forms.WebBrowser()
+        Me.Infos_CodeShowHide = New System.Windows.Forms.Button()
+        Me.Infos_back = New System.Windows.Forms.Button()
+        Me.Infos_Adresse = New System.Windows.Forms.Label()
+        Me.Infos_Titre = New System.Windows.Forms.Label()
         Me.ABlueflap_Bluestart = New System.Windows.Forms.Panel()
         Me.BS_Fav = New System.Windows.Forms.Button()
         Me.BS_Searchfight = New System.Windows.Forms.Button()
@@ -216,17 +259,6 @@ Partial Class Fenetre_Principale
         Me.BS_DateSetColor = New System.Windows.Forms.Button()
         Me.BS_ImgChoose = New System.Windows.Forms.Button()
         Me.BS_Logo = New System.Windows.Forms.PictureBox()
-        Me.ABlueflap_Infos = New System.Windows.Forms.Panel()
-        Me.Infos_code_source = New FastColoredTextBoxNS.FastColoredTextBox()
-        Me.Infos_Save = New System.Windows.Forms.Button()
-        Me.Infos_Print = New System.Windows.Forms.Button()
-        Me.Infos_Loading = New System.Windows.Forms.Label()
-        Me.Infos_Loader = New System.Windows.Forms.PictureBox()
-        Me.Infos_Trident_Browser_Recup_Infos = New System.Windows.Forms.WebBrowser()
-        Me.Infos_CodeShowHide = New System.Windows.Forms.Button()
-        Me.Infos_back = New System.Windows.Forms.Button()
-        Me.Infos_Adresse = New System.Windows.Forms.Label()
-        Me.Infos_Titre = New System.Windows.Forms.Label()
         Me.ABlueflap_Navigateur.SuspendLayout()
         Me.Notif_add.SuspendLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -240,8 +272,10 @@ Partial Class Fenetre_Principale
         Me.voletlateral.SuspendLayout()
         Me.Menua.SuspendLayout()
         Me.downloadbar.SuspendLayout()
+        Me.menutouch.SuspendLayout()
         Me.ABlueflap_Settings.SuspendLayout()
         Me.Panel3.SuspendLayout()
+        Me.Sett_TabC.SuspendLayout()
         Me.Sett_TabA.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.stng_picdemo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -254,7 +288,6 @@ Partial Class Fenetre_Principale
         CType(Me.StngmenuIcon6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StngmenuIcon4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Sett_TabB.SuspendLayout()
-        Me.Sett_TabC.SuspendLayout()
         Me.ABlueflap_Fight.SuspendLayout()
         CType(Me.SrchF_Split, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SrchF_Split.Panel1.SuspendLayout()
@@ -264,14 +297,14 @@ Partial Class Fenetre_Principale
         Me.Verr_BlackEffect.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
+        Me.ABlueflap_Infos.SuspendLayout()
+        CType(Me.Infos_code_source, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Infos_Loader, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ABlueflap_Bluestart.SuspendLayout()
         Me.Bs_Favbulle.SuspendLayout()
         Me.BS_SearchBlackEffect.SuspendLayout()
         Me.BS_Optionsbulle.SuspendLayout()
         CType(Me.BS_Logo, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.ABlueflap_Infos.SuspendLayout()
-        CType(Me.Infos_code_source, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Infos_Loader, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ABlueflap_Navigateur
@@ -283,6 +316,8 @@ Partial Class Fenetre_Principale
         Me.ABlueflap_Navigateur.Controls.Add(Me.FP_AdressbarPanel)
         Me.ABlueflap_Navigateur.Controls.Add(Me.voletlateral)
         Me.ABlueflap_Navigateur.Controls.Add(Me.downloadbar)
+        Me.ABlueflap_Navigateur.Controls.Add(Me.menutouch)
+        Me.ABlueflap_Navigateur.Controls.Add(Me.colorline)
         Me.ABlueflap_Navigateur.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ABlueflap_Navigateur.Location = New System.Drawing.Point(0, 0)
         Me.ABlueflap_Navigateur.Name = "ABlueflap_Navigateur"
@@ -292,8 +327,8 @@ Partial Class Fenetre_Principale
         'Web
         '
         Me.Web.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Web.Location = New System.Drawing.Point(160, 84)
-        Me.Web.Size = New System.Drawing.Size(842, 482)
+        Me.Web.Location = New System.Drawing.Point(208, 84)
+        Me.Web.Size = New System.Drawing.Size(794, 482)
         Me.Web.Source = New System.Uri("about:blank", System.UriKind.Absolute)
         Me.Web.TabIndex = 8
         '
@@ -304,15 +339,15 @@ Partial Class Fenetre_Principale
         Me.Notif_add.Controls.Add(Me.Notiff_add_OKbutton)
         Me.Notif_add.Controls.Add(Me.Notiff_add_Text)
         Me.Notif_add.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Notif_add.Location = New System.Drawing.Point(160, 56)
+        Me.Notif_add.Location = New System.Drawing.Point(208, 56)
         Me.Notif_add.Name = "Notif_add"
-        Me.Notif_add.Size = New System.Drawing.Size(842, 28)
+        Me.Notif_add.Size = New System.Drawing.Size(794, 28)
         Me.Notif_add.TabIndex = 6
         Me.Notif_add.Visible = False
         '
         'PictureBox4
         '
-        Me.PictureBox4.Image = Global.Blueflap.My.Resources.Resources.infos
+        Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
         Me.PictureBox4.Location = New System.Drawing.Point(36, 6)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(17, 17)
@@ -323,13 +358,13 @@ Partial Class Fenetre_Principale
         'Notiff_add_OKbutton
         '
         Me.Notiff_add_OKbutton.BackColor = System.Drawing.Color.Transparent
-        Me.Notiff_add_OKbutton.BackgroundImage = Global.Blueflap.My.Resources.Resources.croixe
+        Me.Notiff_add_OKbutton.BackgroundImage = CType(resources.GetObject("Notiff_add_OKbutton.BackgroundImage"), System.Drawing.Image)
         Me.Notiff_add_OKbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.Notiff_add_OKbutton.Dock = System.Windows.Forms.DockStyle.Right
         Me.Notiff_add_OKbutton.FlatAppearance.BorderSize = 0
         Me.Notiff_add_OKbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Notiff_add_OKbutton.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.Notiff_add_OKbutton.Location = New System.Drawing.Point(814, 0)
+        Me.Notiff_add_OKbutton.Location = New System.Drawing.Point(766, 0)
         Me.Notiff_add_OKbutton.Name = "Notiff_add_OKbutton"
         Me.Notiff_add_OKbutton.Size = New System.Drawing.Size(28, 28)
         Me.Notiff_add_OKbutton.TabIndex = 1
@@ -354,14 +389,14 @@ Partial Class Fenetre_Principale
         Me.Notif_internet.Controls.Add(Me.PictureBox3)
         Me.Notif_internet.Controls.Add(Me.Label2)
         Me.Notif_internet.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Notif_internet.Location = New System.Drawing.Point(160, 28)
+        Me.Notif_internet.Location = New System.Drawing.Point(208, 28)
         Me.Notif_internet.Name = "Notif_internet"
-        Me.Notif_internet.Size = New System.Drawing.Size(842, 28)
+        Me.Notif_internet.Size = New System.Drawing.Size(794, 28)
         Me.Notif_internet.TabIndex = 6
         '
         'PictureBox3
         '
-        Me.PictureBox3.Image = Global.Blueflap.My.Resources.Resources.wirelessicon
+        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
         Me.PictureBox3.Location = New System.Drawing.Point(36, 3)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(17, 17)
@@ -485,7 +520,7 @@ Partial Class Fenetre_Principale
         '
         'Fav_Close
         '
-        Me.Fav_Close.BackgroundImage = Global.Blueflap.My.Resources.Resources.close
+        Me.Fav_Close.BackgroundImage = CType(resources.GetObject("Fav_Close.BackgroundImage"), System.Drawing.Image)
         Me.Fav_Close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.Fav_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Fav_Close.ForeColor = System.Drawing.SystemColors.Control
@@ -546,16 +581,16 @@ Partial Class Fenetre_Principale
         Me.FP_AdressbarPanel.Controls.Add(Me.Menu_ShowHide_Button)
         Me.FP_AdressbarPanel.Dock = System.Windows.Forms.DockStyle.Top
         Me.FP_AdressbarPanel.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.FP_AdressbarPanel.Location = New System.Drawing.Point(160, 0)
+        Me.FP_AdressbarPanel.Location = New System.Drawing.Point(208, 0)
         Me.FP_AdressbarPanel.Name = "FP_AdressbarPanel"
-        Me.FP_AdressbarPanel.Size = New System.Drawing.Size(1074, 28)
+        Me.FP_AdressbarPanel.Size = New System.Drawing.Size(1026, 28)
         Me.FP_AdressbarPanel.TabIndex = 2
         '
         'Loader
         '
         Me.Loader.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Loader.Image = Global.Blueflap.My.Resources.Resources.Loadi
-        Me.Loader.Location = New System.Drawing.Point(1021, 10)
+        Me.Loader.Image = CType(resources.GetObject("Loader.Image"), System.Drawing.Image)
+        Me.Loader.Location = New System.Drawing.Point(973, 10)
         Me.Loader.Name = "Loader"
         Me.Loader.Size = New System.Drawing.Size(24, 8)
         Me.Loader.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -566,7 +601,7 @@ Partial Class Fenetre_Principale
         'AddFavo_Button
         '
         Me.AddFavo_Button.BackColor = System.Drawing.SystemColors.Control
-        Me.AddFavo_Button.BackgroundImage = Global.Blueflap.My.Resources.Resources.adfava
+        Me.AddFavo_Button.BackgroundImage = CType(resources.GetObject("AddFavo_Button.BackgroundImage"), System.Drawing.Image)
         Me.AddFavo_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.AddFavo_Button.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark
         Me.AddFavo_Button.FlatAppearance.BorderSize = 0
@@ -587,7 +622,7 @@ Partial Class Fenetre_Principale
         Me.GoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.GoButton.ForeColor = System.Drawing.Color.White
         Me.GoButton.Image = Global.Blueflap.My.Resources.Resources.c25
-        Me.GoButton.Location = New System.Drawing.Point(1051, 5)
+        Me.GoButton.Location = New System.Drawing.Point(1003, 5)
         Me.GoButton.Name = "GoButton"
         Me.GoButton.Size = New System.Drawing.Size(18, 18)
         Me.GoButton.TabIndex = 0
@@ -603,7 +638,7 @@ Partial Class Fenetre_Principale
         Me.SmartAdressbox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!)
         Me.SmartAdressbox.Location = New System.Drawing.Point(53, 4)
         Me.SmartAdressbox.Name = "SmartAdressbox"
-        Me.SmartAdressbox.Size = New System.Drawing.Size(1017, 20)
+        Me.SmartAdressbox.Size = New System.Drawing.Size(969, 20)
         Me.SmartAdressbox.TabIndex = 1
         Me.SmartAdressbox.Text = "about:blank"
         '
@@ -614,7 +649,7 @@ Partial Class Fenetre_Principale
         Me.Menu_ShowHide_Button.FlatAppearance.BorderSize = 0
         Me.Menu_ShowHide_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Menu_ShowHide_Button.ForeColor = System.Drawing.SystemColors.Control
-        Me.Menu_ShowHide_Button.Image = Global.Blueflap.My.Resources.Resources.bcd
+        Me.Menu_ShowHide_Button.Image = CType(resources.GetObject("Menu_ShowHide_Button.Image"), System.Drawing.Image)
         Me.Menu_ShowHide_Button.Location = New System.Drawing.Point(0, 0)
         Me.Menu_ShowHide_Button.Name = "Menu_ShowHide_Button"
         Me.Menu_ShowHide_Button.Size = New System.Drawing.Size(28, 28)
@@ -632,7 +667,7 @@ Partial Class Fenetre_Principale
         Me.voletlateral.ContextMenuStrip = Me.Menua
         Me.voletlateral.Dock = System.Windows.Forms.DockStyle.Left
         Me.voletlateral.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Menu_Home, Me.Menu_Back, Me.Menu_Forward, Me.Menu_Stop, Me.Menu_Refresh, Me.Menu_Window, Me.Menu_Fight, Me.Menu_Favos, Me.Menu_Share, Me.menu_partage, Me.Menu_Translate, Me.Menu_Settings, Me.Menu_Lock, Me.Menu_FullScr, Me.Menu_Memo})
-        Me.voletlateral.Location = New System.Drawing.Point(0, 0)
+        Me.voletlateral.Location = New System.Drawing.Point(48, 0)
         Me.voletlateral.Name = "voletlateral"
         Me.voletlateral.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
         Me.voletlateral.Size = New System.Drawing.Size(160, 566)
@@ -660,7 +695,7 @@ Partial Class Fenetre_Principale
         '
         Me.Menu_Home.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Menu_Home.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.Menu_Home.Image = Global.Blueflap.My.Resources.Resources.c21
+        Me.Menu_Home.Image = CType(resources.GetObject("Menu_Home.Image"), System.Drawing.Image)
         Me.Menu_Home.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Menu_Home.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Menu_Home.Name = "Menu_Home"
@@ -672,7 +707,7 @@ Partial Class Fenetre_Principale
         Me.Menu_Back.Enabled = False
         Me.Menu_Back.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Menu_Back.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.Menu_Back.Image = Global.Blueflap.My.Resources.Resources.c27
+        Me.Menu_Back.Image = CType(resources.GetObject("Menu_Back.Image"), System.Drawing.Image)
         Me.Menu_Back.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Menu_Back.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Menu_Back.Name = "Menu_Back"
@@ -684,7 +719,7 @@ Partial Class Fenetre_Principale
         Me.Menu_Forward.Enabled = False
         Me.Menu_Forward.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Menu_Forward.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.Menu_Forward.Image = Global.Blueflap.My.Resources.Resources.c25
+        Me.Menu_Forward.Image = CType(resources.GetObject("Menu_Forward.Image"), System.Drawing.Image)
         Me.Menu_Forward.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Menu_Forward.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Menu_Forward.Name = "Menu_Forward"
@@ -695,7 +730,7 @@ Partial Class Fenetre_Principale
         '
         Me.Menu_Stop.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Menu_Stop.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.Menu_Stop.Image = Global.Blueflap.My.Resources.Resources._stop
+        Me.Menu_Stop.Image = CType(resources.GetObject("Menu_Stop.Image"), System.Drawing.Image)
         Me.Menu_Stop.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Menu_Stop.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Menu_Stop.Name = "Menu_Stop"
@@ -708,7 +743,7 @@ Partial Class Fenetre_Principale
         '
         Me.Menu_Refresh.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Menu_Refresh.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.Menu_Refresh.Image = Global.Blueflap.My.Resources.Resources.refresh
+        Me.Menu_Refresh.Image = CType(resources.GetObject("Menu_Refresh.Image"), System.Drawing.Image)
         Me.Menu_Refresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Menu_Refresh.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Menu_Refresh.Name = "Menu_Refresh"
@@ -721,7 +756,7 @@ Partial Class Fenetre_Principale
         '
         Me.Menu_Window.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Menu_Window.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.Menu_Window.Image = Global.Blueflap.My.Resources.Resources.plus
+        Me.Menu_Window.Image = CType(resources.GetObject("Menu_Window.Image"), System.Drawing.Image)
         Me.Menu_Window.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Menu_Window.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Menu_Window.Name = "Menu_Window"
@@ -733,7 +768,7 @@ Partial Class Fenetre_Principale
         '
         Me.Menu_Fight.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Menu_Fight.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.Menu_Fight.Image = Global.Blueflap.My.Resources.Resources.c20
+        Me.Menu_Fight.Image = CType(resources.GetObject("Menu_Fight.Image"), System.Drawing.Image)
         Me.Menu_Fight.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Menu_Fight.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Menu_Fight.Name = "Menu_Fight"
@@ -746,7 +781,7 @@ Partial Class Fenetre_Principale
         '
         Me.Menu_Favos.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Menu_Favos.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.Menu_Favos.Image = Global.Blueflap.My.Resources.Resources.c12
+        Me.Menu_Favos.Image = CType(resources.GetObject("Menu_Favos.Image"), System.Drawing.Image)
         Me.Menu_Favos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Menu_Favos.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Menu_Favos.Name = "Menu_Favos"
@@ -757,7 +792,7 @@ Partial Class Fenetre_Principale
         '
         Me.Menu_Share.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Menu_Share.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.Menu_Share.Image = Global.Blueflap.My.Resources.Resources.infos
+        Me.Menu_Share.Image = CType(resources.GetObject("Menu_Share.Image"), System.Drawing.Image)
         Me.Menu_Share.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Menu_Share.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Menu_Share.Name = "Menu_Share"
@@ -771,7 +806,7 @@ Partial Class Fenetre_Principale
         Me.menu_partage.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FacebookToolStripMenuItem, Me.TwitterToolStripMenuItem, Me.ToolStripMenuItem1})
         Me.menu_partage.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.menu_partage.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.menu_partage.Image = Global.Blueflap.My.Resources.Resources.shareza
+        Me.menu_partage.Image = CType(resources.GetObject("menu_partage.Image"), System.Drawing.Image)
         Me.menu_partage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.menu_partage.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menu_partage.Name = "menu_partage"
@@ -781,7 +816,7 @@ Partial Class Fenetre_Principale
         'FacebookToolStripMenuItem
         '
         Me.FacebookToolStripMenuItem.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.FacebookToolStripMenuItem.Image = Global.Blueflap.My.Resources.Resources.facebookshare
+        Me.FacebookToolStripMenuItem.Image = CType(resources.GetObject("FacebookToolStripMenuItem.Image"), System.Drawing.Image)
         Me.FacebookToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.FacebookToolStripMenuItem.Name = "FacebookToolStripMenuItem"
         Me.FacebookToolStripMenuItem.Size = New System.Drawing.Size(137, 24)
@@ -790,7 +825,7 @@ Partial Class Fenetre_Principale
         'TwitterToolStripMenuItem
         '
         Me.TwitterToolStripMenuItem.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.TwitterToolStripMenuItem.Image = Global.Blueflap.My.Resources.Resources.twittershare
+        Me.TwitterToolStripMenuItem.Image = CType(resources.GetObject("TwitterToolStripMenuItem.Image"), System.Drawing.Image)
         Me.TwitterToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.TwitterToolStripMenuItem.Name = "TwitterToolStripMenuItem"
         Me.TwitterToolStripMenuItem.Size = New System.Drawing.Size(137, 24)
@@ -799,7 +834,7 @@ Partial Class Fenetre_Principale
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.ToolStripMenuItem1.Image = Global.Blueflap.My.Resources.Resources.addthis
+        Me.ToolStripMenuItem1.Image = CType(resources.GetObject("ToolStripMenuItem1.Image"), System.Drawing.Image)
         Me.ToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
         Me.ToolStripMenuItem1.Size = New System.Drawing.Size(137, 24)
@@ -809,7 +844,7 @@ Partial Class Fenetre_Principale
         '
         Me.Menu_Translate.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Menu_Translate.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.Menu_Translate.Image = Global.Blueflap.My.Resources.Resources.transl
+        Me.Menu_Translate.Image = CType(resources.GetObject("Menu_Translate.Image"), System.Drawing.Image)
         Me.Menu_Translate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Menu_Translate.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Menu_Translate.Name = "Menu_Translate"
@@ -821,7 +856,7 @@ Partial Class Fenetre_Principale
         '
         Me.Menu_Settings.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Menu_Settings.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.Menu_Settings.Image = Global.Blueflap.My.Resources.Resources.c16
+        Me.Menu_Settings.Image = CType(resources.GetObject("Menu_Settings.Image"), System.Drawing.Image)
         Me.Menu_Settings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Menu_Settings.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Menu_Settings.Name = "Menu_Settings"
@@ -832,7 +867,7 @@ Partial Class Fenetre_Principale
         '
         Me.Menu_Lock.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Menu_Lock.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.Menu_Lock.Image = Global.Blueflap.My.Resources.Resources.c17
+        Me.Menu_Lock.Image = CType(resources.GetObject("Menu_Lock.Image"), System.Drawing.Image)
         Me.Menu_Lock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Menu_Lock.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Menu_Lock.Name = "Menu_Lock"
@@ -843,7 +878,7 @@ Partial Class Fenetre_Principale
         '
         Me.Menu_FullScr.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Menu_FullScr.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.Menu_FullScr.Image = Global.Blueflap.My.Resources.Resources.pleinecran
+        Me.Menu_FullScr.Image = CType(resources.GetObject("Menu_FullScr.Image"), System.Drawing.Image)
         Me.Menu_FullScr.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Menu_FullScr.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Menu_FullScr.Name = "Menu_FullScr"
@@ -855,7 +890,7 @@ Partial Class Fenetre_Principale
         '
         Me.Menu_Memo.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Menu_Memo.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.Menu_Memo.Image = Global.Blueflap.My.Resources.Resources.c28
+        Me.Menu_Memo.Image = CType(resources.GetObject("Menu_Memo.Image"), System.Drawing.Image)
         Me.Menu_Memo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Menu_Memo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Menu_Memo.Name = "Menu_Memo"
@@ -870,9 +905,9 @@ Partial Class Fenetre_Principale
         Me.downloadbar.Controls.Add(Me.Label4)
         Me.downloadbar.Controls.Add(Me.Label3)
         Me.downloadbar.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.downloadbar.Location = New System.Drawing.Point(0, 566)
+        Me.downloadbar.Location = New System.Drawing.Point(48, 566)
         Me.downloadbar.Name = "downloadbar"
-        Me.downloadbar.Size = New System.Drawing.Size(1234, 45)
+        Me.downloadbar.Size = New System.Drawing.Size(1186, 45)
         Me.downloadbar.TabIndex = 9
         Me.downloadbar.Visible = False
         '
@@ -881,7 +916,7 @@ Partial Class Fenetre_Principale
         Me.Button3.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro
         Me.Button3.FlatAppearance.BorderSize = 0
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Image = Global.Blueflap.My.Resources.Resources.Sans_titre
+        Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
         Me.Button3.Location = New System.Drawing.Point(0, 2)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(23, 42)
@@ -894,7 +929,7 @@ Partial Class Fenetre_Principale
         Me.ProgressBar1.Location = New System.Drawing.Point(0, 0)
         Me.ProgressBar1.MarqueeAnimationSpeed = 5
         Me.ProgressBar1.Name = "ProgressBar1"
-        Me.ProgressBar1.Size = New System.Drawing.Size(1234, 2)
+        Me.ProgressBar1.Size = New System.Drawing.Size(1186, 2)
         Me.ProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee
         Me.ProgressBar1.TabIndex = 3
         '
@@ -923,6 +958,197 @@ Partial Class Fenetre_Principale
         Me.Label3.Size = New System.Drawing.Size(68, 15)
         Me.Label3.TabIndex = 1
         Me.Label3.Text = "Nom fichier"
+        '
+        'menutouch
+        '
+        Me.menutouch.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.menutouch.Controls.Add(Me.menuT_Home)
+        Me.menutouch.Controls.Add(Me.menuT_back)
+        Me.menutouch.Controls.Add(Me.menuT_forward)
+        Me.menutouch.Controls.Add(Me.menuT_close)
+        Me.menutouch.Controls.Add(Me.menuT_Refresh)
+        Me.menutouch.Controls.Add(Me.menuT_Page)
+        Me.menutouch.Controls.Add(Me.menuT_Fight)
+        Me.menutouch.Controls.Add(Me.Info)
+        Me.menutouch.Controls.Add(Me.menuT_Settings)
+        Me.menutouch.Controls.Add(Me.menuT_lock)
+        Me.menutouch.Controls.Add(Me.menuT_fullscreen)
+        Me.menutouch.Controls.Add(Me.menuT_memo)
+        Me.menutouch.Controls.Add(Me.Button23)
+        Me.menutouch.Dock = System.Windows.Forms.DockStyle.Left
+        Me.menutouch.Location = New System.Drawing.Point(3, 0)
+        Me.menutouch.Name = "menutouch"
+        Me.menutouch.Size = New System.Drawing.Size(45, 611)
+        Me.menutouch.TabIndex = 6
+        Me.menutouch.Visible = False
+        '
+        'menuT_Home
+        '
+        Me.menuT_Home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.menuT_Home.FlatAppearance.BorderSize = 0
+        Me.menuT_Home.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.menuT_Home.Image = CType(resources.GetObject("menuT_Home.Image"), System.Drawing.Image)
+        Me.menuT_Home.Location = New System.Drawing.Point(3, 3)
+        Me.menuT_Home.Name = "menuT_Home"
+        Me.menuT_Home.Size = New System.Drawing.Size(38, 38)
+        Me.menuT_Home.TabIndex = 25
+        Me.menuT_Home.UseVisualStyleBackColor = True
+        '
+        'menuT_back
+        '
+        Me.menuT_back.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.menuT_back.FlatAppearance.BorderSize = 0
+        Me.menuT_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.menuT_back.Image = CType(resources.GetObject("menuT_back.Image"), System.Drawing.Image)
+        Me.menuT_back.Location = New System.Drawing.Point(3, 47)
+        Me.menuT_back.Name = "menuT_back"
+        Me.menuT_back.Size = New System.Drawing.Size(38, 38)
+        Me.menuT_back.TabIndex = 26
+        Me.menuT_back.UseVisualStyleBackColor = True
+        '
+        'menuT_forward
+        '
+        Me.menuT_forward.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.menuT_forward.FlatAppearance.BorderSize = 0
+        Me.menuT_forward.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.menuT_forward.Image = Global.Blueflap.My.Resources.Resources.nexta
+        Me.menuT_forward.Location = New System.Drawing.Point(3, 91)
+        Me.menuT_forward.Name = "menuT_forward"
+        Me.menuT_forward.Size = New System.Drawing.Size(38, 38)
+        Me.menuT_forward.TabIndex = 27
+        Me.menuT_forward.UseVisualStyleBackColor = True
+        '
+        'menuT_close
+        '
+        Me.menuT_close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.menuT_close.FlatAppearance.BorderSize = 0
+        Me.menuT_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.menuT_close.Image = Global.Blueflap.My.Resources.Resources.stopa
+        Me.menuT_close.Location = New System.Drawing.Point(3, 135)
+        Me.menuT_close.Name = "menuT_close"
+        Me.menuT_close.Size = New System.Drawing.Size(38, 38)
+        Me.menuT_close.TabIndex = 28
+        Me.menuT_close.UseVisualStyleBackColor = True
+        '
+        'menuT_Refresh
+        '
+        Me.menuT_Refresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.menuT_Refresh.FlatAppearance.BorderSize = 0
+        Me.menuT_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.menuT_Refresh.Image = CType(resources.GetObject("menuT_Refresh.Image"), System.Drawing.Image)
+        Me.menuT_Refresh.Location = New System.Drawing.Point(3, 179)
+        Me.menuT_Refresh.Name = "menuT_Refresh"
+        Me.menuT_Refresh.Size = New System.Drawing.Size(38, 38)
+        Me.menuT_Refresh.TabIndex = 29
+        Me.menuT_Refresh.UseVisualStyleBackColor = True
+        '
+        'menuT_Page
+        '
+        Me.menuT_Page.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.menuT_Page.FlatAppearance.BorderSize = 0
+        Me.menuT_Page.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.menuT_Page.Image = CType(resources.GetObject("menuT_Page.Image"), System.Drawing.Image)
+        Me.menuT_Page.Location = New System.Drawing.Point(3, 223)
+        Me.menuT_Page.Name = "menuT_Page"
+        Me.menuT_Page.Size = New System.Drawing.Size(38, 38)
+        Me.menuT_Page.TabIndex = 30
+        Me.menuT_Page.UseVisualStyleBackColor = True
+        '
+        'menuT_Fight
+        '
+        Me.menuT_Fight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.menuT_Fight.FlatAppearance.BorderSize = 0
+        Me.menuT_Fight.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.menuT_Fight.Image = CType(resources.GetObject("menuT_Fight.Image"), System.Drawing.Image)
+        Me.menuT_Fight.Location = New System.Drawing.Point(3, 267)
+        Me.menuT_Fight.Name = "menuT_Fight"
+        Me.menuT_Fight.Size = New System.Drawing.Size(38, 38)
+        Me.menuT_Fight.TabIndex = 31
+        Me.menuT_Fight.UseVisualStyleBackColor = True
+        '
+        'Info
+        '
+        Me.Info.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Info.FlatAppearance.BorderSize = 0
+        Me.Info.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Info.Image = CType(resources.GetObject("Info.Image"), System.Drawing.Image)
+        Me.Info.Location = New System.Drawing.Point(3, 311)
+        Me.Info.Name = "Info"
+        Me.Info.Size = New System.Drawing.Size(38, 38)
+        Me.Info.TabIndex = 32
+        Me.Info.UseVisualStyleBackColor = True
+        '
+        'menuT_Settings
+        '
+        Me.menuT_Settings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.menuT_Settings.FlatAppearance.BorderSize = 0
+        Me.menuT_Settings.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.menuT_Settings.Image = CType(resources.GetObject("menuT_Settings.Image"), System.Drawing.Image)
+        Me.menuT_Settings.Location = New System.Drawing.Point(3, 355)
+        Me.menuT_Settings.Name = "menuT_Settings"
+        Me.menuT_Settings.Size = New System.Drawing.Size(38, 38)
+        Me.menuT_Settings.TabIndex = 33
+        Me.menuT_Settings.UseVisualStyleBackColor = True
+        '
+        'menuT_lock
+        '
+        Me.menuT_lock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.menuT_lock.FlatAppearance.BorderSize = 0
+        Me.menuT_lock.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.menuT_lock.Image = CType(resources.GetObject("menuT_lock.Image"), System.Drawing.Image)
+        Me.menuT_lock.Location = New System.Drawing.Point(3, 399)
+        Me.menuT_lock.Name = "menuT_lock"
+        Me.menuT_lock.Size = New System.Drawing.Size(38, 38)
+        Me.menuT_lock.TabIndex = 34
+        Me.menuT_lock.UseVisualStyleBackColor = True
+        '
+        'menuT_fullscreen
+        '
+        Me.menuT_fullscreen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.menuT_fullscreen.FlatAppearance.BorderSize = 0
+        Me.menuT_fullscreen.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.menuT_fullscreen.Image = CType(resources.GetObject("menuT_fullscreen.Image"), System.Drawing.Image)
+        Me.menuT_fullscreen.Location = New System.Drawing.Point(3, 443)
+        Me.menuT_fullscreen.Name = "menuT_fullscreen"
+        Me.menuT_fullscreen.Size = New System.Drawing.Size(38, 38)
+        Me.menuT_fullscreen.TabIndex = 35
+        Me.menuT_fullscreen.UseVisualStyleBackColor = True
+        '
+        'menuT_memo
+        '
+        Me.menuT_memo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.menuT_memo.FlatAppearance.BorderSize = 0
+        Me.menuT_memo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.menuT_memo.Image = CType(resources.GetObject("menuT_memo.Image"), System.Drawing.Image)
+        Me.menuT_memo.Location = New System.Drawing.Point(3, 487)
+        Me.menuT_memo.Name = "menuT_memo"
+        Me.menuT_memo.Size = New System.Drawing.Size(38, 38)
+        Me.menuT_memo.TabIndex = 37
+        Me.menuT_memo.UseVisualStyleBackColor = True
+        '
+        'Button23
+        '
+        Me.Button23.BackColor = System.Drawing.Color.Lavender
+        Me.Button23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Button23.FlatAppearance.BorderSize = 0
+        Me.Button23.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button23.ForeColor = System.Drawing.Color.Gainsboro
+        Me.Button23.Image = Global.Blueflap.My.Resources.Resources.xn
+        Me.Button23.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button23.Location = New System.Drawing.Point(3, 531)
+        Me.Button23.Name = "Button23"
+        Me.Button23.Size = New System.Drawing.Size(38, 38)
+        Me.Button23.TabIndex = 38
+        Me.Button23.UseVisualStyleBackColor = False
+        '
+        'colorline
+        '
+        Me.colorline.BackColor = System.Drawing.Color.DeepSkyBlue
+        Me.colorline.Dock = System.Windows.Forms.DockStyle.Left
+        Me.colorline.Location = New System.Drawing.Point(0, 0)
+        Me.colorline.Name = "colorline"
+        Me.colorline.Size = New System.Drawing.Size(3, 611)
+        Me.colorline.TabIndex = 10
         '
         'ABlueflap_Settings
         '
@@ -960,21 +1186,238 @@ Partial Class Fenetre_Principale
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel3.AutoScroll = True
-        Me.Panel3.Controls.Add(Me.Sett_TabA)
-        Me.Panel3.Controls.Add(Me.Sett_TabB)
         Me.Panel3.Controls.Add(Me.stat2)
         Me.Panel3.Controls.Add(Me.Label6)
         Me.Panel3.Controls.Add(Me.Stat1)
         Me.Panel3.Controls.Add(Me.Label8)
         Me.Panel3.Controls.Add(Me.Sett_TabC)
+        Me.Panel3.Controls.Add(Me.Sett_TabA)
+        Me.Panel3.Controls.Add(Me.Sett_TabB)
         Me.Panel3.Location = New System.Drawing.Point(0, 116)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(1234, 495)
         Me.Panel3.TabIndex = 60
         '
+        'stat2
+        '
+        Me.stat2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.stat2.AutoSize = True
+        Me.stat2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Blueflap.My.MySettings.Default, "statb", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.stat2.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
+        Me.stat2.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.stat2.Location = New System.Drawing.Point(74, 477)
+        Me.stat2.Name = "stat2"
+        Me.stat2.Size = New System.Drawing.Size(13, 15)
+        Me.stat2.TabIndex = 63
+        Me.stat2.Text = Global.Blueflap.My.MySettings.Default.statb
+        '
+        'Label6
+        '
+        Me.Label6.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
+        Me.Label6.ForeColor = System.Drawing.Color.Gray
+        Me.Label6.Location = New System.Drawing.Point(3, 462)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(65, 15)
+        Me.Label6.TabIndex = 60
+        Me.Label6.Text = "Pages vues"
+        '
+        'Stat1
+        '
+        Me.Stat1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Stat1.AutoSize = True
+        Me.Stat1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Blueflap.My.MySettings.Default, "stata", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.Stat1.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
+        Me.Stat1.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.Stat1.Location = New System.Drawing.Point(74, 462)
+        Me.Stat1.Name = "Stat1"
+        Me.Stat1.Size = New System.Drawing.Size(13, 15)
+        Me.Stat1.TabIndex = 62
+        Me.Stat1.Text = Global.Blueflap.My.MySettings.Default.stata
+        '
+        'Label8
+        '
+        Me.Label8.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
+        Me.Label8.ForeColor = System.Drawing.Color.Gray
+        Me.Label8.Location = New System.Drawing.Point(3, 477)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(39, 15)
+        Me.Label8.TabIndex = 61
+        Me.Label8.Text = "Fights"
+        '
+        'Sett_TabC
+        '
+        Me.Sett_TabC.Controls.Add(Me.StngLabel_Contributeurs)
+        Me.Sett_TabC.Controls.Add(Me.Stng_Bat41)
+        Me.Sett_TabC.Controls.Add(Me.Stng_BaptGuil)
+        Me.Sett_TabC.Controls.Add(Me.Stng_Zyhou)
+        Me.Sett_TabC.Controls.Add(Me.StngLabel_OpenSource)
+        Me.Sett_TabC.Controls.Add(Me.StngLabel_Version)
+        Me.Sett_TabC.Controls.Add(Me.stng_github)
+        Me.Sett_TabC.Controls.Add(Me.StngLabel_Devs)
+        Me.Sett_TabC.Controls.Add(Me.stng_simpleworld)
+        Me.Sett_TabC.Controls.Add(Me.StngLabel_Contribute)
+        Me.Sett_TabC.Controls.Add(Me.Stng_VersionSystem)
+        Me.Sett_TabC.Controls.Add(Me.Stng_ShowLicense)
+        Me.Sett_TabC.Location = New System.Drawing.Point(87, 15)
+        Me.Sett_TabC.Name = "Sett_TabC"
+        Me.Sett_TabC.Size = New System.Drawing.Size(415, 270)
+        Me.Sett_TabC.TabIndex = 59
+        Me.Sett_TabC.Visible = False
+        '
+        'StngLabel_Contributeurs
+        '
+        Me.StngLabel_Contributeurs.AutoSize = True
+        Me.StngLabel_Contributeurs.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
+        Me.StngLabel_Contributeurs.Location = New System.Drawing.Point(14, 171)
+        Me.StngLabel_Contributeurs.Name = "StngLabel_Contributeurs"
+        Me.StngLabel_Contributeurs.Size = New System.Drawing.Size(97, 20)
+        Me.StngLabel_Contributeurs.TabIndex = 58
+        Me.StngLabel_Contributeurs.Text = "Contributeurs"
+        '
+        'Stng_Bat41
+        '
+        Me.Stng_Bat41.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Stng_Bat41.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
+        Me.Stng_Bat41.ForeColor = System.Drawing.Color.DarkGray
+        Me.Stng_Bat41.Location = New System.Drawing.Point(270, 164)
+        Me.Stng_Bat41.Name = "Stng_Bat41"
+        Me.Stng_Bat41.Size = New System.Drawing.Size(57, 35)
+        Me.Stng_Bat41.TabIndex = 57
+        Me.Stng_Bat41.Text = "Bat41"
+        Me.Stng_Bat41.UseVisualStyleBackColor = True
+        '
+        'Stng_BaptGuil
+        '
+        Me.Stng_BaptGuil.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Stng_BaptGuil.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
+        Me.Stng_BaptGuil.ForeColor = System.Drawing.Color.DarkGray
+        Me.Stng_BaptGuil.Location = New System.Drawing.Point(164, 164)
+        Me.Stng_BaptGuil.Name = "Stng_BaptGuil"
+        Me.Stng_BaptGuil.Size = New System.Drawing.Size(100, 35)
+        Me.Stng_BaptGuil.TabIndex = 56
+        Me.Stng_BaptGuil.Text = "Baptisteguil "
+        Me.Stng_BaptGuil.UseVisualStyleBackColor = True
+        '
+        'Stng_Zyhou
+        '
+        Me.Stng_Zyhou.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Stng_Zyhou.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
+        Me.Stng_Zyhou.ForeColor = System.Drawing.Color.DarkGray
+        Me.Stng_Zyhou.Location = New System.Drawing.Point(333, 164)
+        Me.Stng_Zyhou.Name = "Stng_Zyhou"
+        Me.Stng_Zyhou.Size = New System.Drawing.Size(73, 35)
+        Me.Stng_Zyhou.TabIndex = 55
+        Me.Stng_Zyhou.Text = "Zyhou"
+        Me.Stng_Zyhou.UseVisualStyleBackColor = True
+        '
+        'StngLabel_OpenSource
+        '
+        Me.StngLabel_OpenSource.AutoSize = True
+        Me.StngLabel_OpenSource.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
+        Me.StngLabel_OpenSource.Location = New System.Drawing.Point(14, 222)
+        Me.StngLabel_OpenSource.Name = "StngLabel_OpenSource"
+        Me.StngLabel_OpenSource.Size = New System.Drawing.Size(90, 20)
+        Me.StngLabel_OpenSource.TabIndex = 54
+        Me.StngLabel_OpenSource.Text = "OpenSource"
+        '
+        'StngLabel_Version
+        '
+        Me.StngLabel_Version.AutoSize = True
+        Me.StngLabel_Version.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
+        Me.StngLabel_Version.Location = New System.Drawing.Point(14, 18)
+        Me.StngLabel_Version.Name = "StngLabel_Version"
+        Me.StngLabel_Version.Size = New System.Drawing.Size(56, 20)
+        Me.StngLabel_Version.TabIndex = 53
+        Me.StngLabel_Version.Text = "Version"
+        '
+        'stng_github
+        '
+        Me.stng_github.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.stng_github.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
+        Me.stng_github.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.stng_github.Location = New System.Drawing.Point(164, 114)
+        Me.stng_github.Name = "stng_github"
+        Me.stng_github.Size = New System.Drawing.Size(154, 35)
+        Me.stng_github.TabIndex = 52
+        Me.stng_github.Text = "GitHub"
+        Me.stng_github.UseVisualStyleBackColor = True
+        '
+        'StngLabel_Devs
+        '
+        Me.StngLabel_Devs.AutoSize = True
+        Me.StngLabel_Devs.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
+        Me.StngLabel_Devs.Location = New System.Drawing.Point(14, 68)
+        Me.StngLabel_Devs.Name = "StngLabel_Devs"
+        Me.StngLabel_Devs.Size = New System.Drawing.Size(40, 20)
+        Me.StngLabel_Devs.TabIndex = 49
+        Me.StngLabel_Devs.Text = "Devs"
+        '
+        'stng_simpleworld
+        '
+        Me.stng_simpleworld.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.stng_simpleworld.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
+        Me.stng_simpleworld.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.stng_simpleworld.Location = New System.Drawing.Point(163, 61)
+        Me.stng_simpleworld.Name = "stng_simpleworld"
+        Me.stng_simpleworld.Size = New System.Drawing.Size(154, 35)
+        Me.stng_simpleworld.TabIndex = 50
+        Me.stng_simpleworld.Text = "Simpleworld"
+        Me.stng_simpleworld.UseVisualStyleBackColor = True
+        '
+        'StngLabel_Contribute
+        '
+        Me.StngLabel_Contribute.AutoSize = True
+        Me.StngLabel_Contribute.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
+        Me.StngLabel_Contribute.Location = New System.Drawing.Point(14, 121)
+        Me.StngLabel_Contribute.Name = "StngLabel_Contribute"
+        Me.StngLabel_Contribute.Size = New System.Drawing.Size(78, 20)
+        Me.StngLabel_Contribute.TabIndex = 51
+        Me.StngLabel_Contribute.Text = "Contribuer"
+        '
+        'Stng_VersionSystem
+        '
+        Me.Stng_VersionSystem.AutoSize = True
+        Me.Stng_VersionSystem.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Stng_VersionSystem.Location = New System.Drawing.Point(160, 20)
+        Me.Stng_VersionSystem.Name = "Stng_VersionSystem"
+        Me.Stng_VersionSystem.Size = New System.Drawing.Size(95, 13)
+        Me.Stng_VersionSystem.TabIndex = 19
+        Me.Stng_VersionSystem.Text = "Blueflap 3.1.1 - FR"
+        '
+        'Stng_ShowLicense
+        '
+        Me.Stng_ShowLicense.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Stng_ShowLicense.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Stng_ShowLicense.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Stng_ShowLicense.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.Stng_ShowLicense.Location = New System.Drawing.Point(164, 219)
+        Me.Stng_ShowLicense.Name = "Stng_ShowLicense"
+        Me.Stng_ShowLicense.Size = New System.Drawing.Size(151, 33)
+        Me.Stng_ShowLicense.TabIndex = 47
+        Me.Stng_ShowLicense.Text = "Licence OpenSource"
+        Me.Stng_ShowLicense.UseVisualStyleBackColor = True
+        '
         'Sett_TabA
         '
         Me.Sett_TabA.AutoScroll = True
+        Me.Sett_TabA.Controls.Add(Me.stng_grayicons)
+        Me.Sett_TabA.Controls.Add(Me.Colorbox2)
+        Me.Sett_TabA.Controls.Add(Me.Button12)
+        Me.Sett_TabA.Controls.Add(Me.Button11)
+        Me.Sett_TabA.Controls.Add(Me.Button10)
+        Me.Sett_TabA.Controls.Add(Me.Button9)
+        Me.Sett_TabA.Controls.Add(Me.stng_colorlinecheck)
+        Me.Sett_TabA.Controls.Add(Me.Button8)
+        Me.Sett_TabA.Controls.Add(Me.Button7)
+        Me.Sett_TabA.Controls.Add(Me.Button6)
+        Me.Sett_TabA.Controls.Add(Me.Button5)
+        Me.Sett_TabA.Controls.Add(Me.Label10)
+        Me.Sett_TabA.Controls.Add(Me.Button4)
+        Me.Sett_TabA.Controls.Add(Me.colorbox)
         Me.Sett_TabA.Controls.Add(Me.Label5)
         Me.Sett_TabA.Controls.Add(Me.stng_target)
         Me.Sett_TabA.Controls.Add(Me.Stng_Volet_Mousehover_agrandir)
@@ -1022,8 +1465,190 @@ Partial Class Fenetre_Principale
         Me.Sett_TabA.Controls.Add(Me.ShapeContainer3)
         Me.Sett_TabA.Location = New System.Drawing.Point(87, 15)
         Me.Sett_TabA.Name = "Sett_TabA"
-        Me.Sett_TabA.Size = New System.Drawing.Size(761, 396)
+        Me.Sett_TabA.Size = New System.Drawing.Size(761, 429)
         Me.Sett_TabA.TabIndex = 57
+        '
+        'stng_grayicons
+        '
+        Me.stng_grayicons.AutoSize = True
+        Me.stng_grayicons.Checked = Global.Blueflap.My.MySettings.Default.iconcolor
+        Me.stng_grayicons.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Blueflap.My.MySettings.Default, "iconcolor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.stng_grayicons.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
+        Me.stng_grayicons.Location = New System.Drawing.Point(613, 397)
+        Me.stng_grayicons.Name = "stng_grayicons"
+        Me.stng_grayicons.Size = New System.Drawing.Size(92, 19)
+        Me.stng_grayicons.TabIndex = 74
+        Me.stng_grayicons.Text = "Icônes grises"
+        Me.stng_grayicons.UseVisualStyleBackColor = True
+        '
+        'Colorbox2
+        '
+        Me.Colorbox2.BackColor = Global.Blueflap.My.MySettings.Default.colory
+        Me.Colorbox2.DataBindings.Add(New System.Windows.Forms.Binding("BackColor", Global.Blueflap.My.MySettings.Default, "colory", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.Colorbox2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Colorbox2.Location = New System.Drawing.Point(420, 406)
+        Me.Colorbox2.Name = "Colorbox2"
+        Me.Colorbox2.Size = New System.Drawing.Size(72, 3)
+        Me.Colorbox2.TabIndex = 63
+        '
+        'Button12
+        '
+        Me.Button12.BackColor = System.Drawing.Color.DarkGray
+        Me.Button12.FlatAppearance.BorderSize = 0
+        Me.Button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button12.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button12.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.Button12.Location = New System.Drawing.Point(381, 394)
+        Me.Button12.Name = "Button12"
+        Me.Button12.Size = New System.Drawing.Size(20, 20)
+        Me.Button12.TabIndex = 73
+        Me.Button12.Text = " "
+        Me.Button12.UseVisualStyleBackColor = False
+        '
+        'Button11
+        '
+        Me.Button11.BackColor = System.Drawing.Color.Tomato
+        Me.Button11.FlatAppearance.BorderSize = 0
+        Me.Button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button11.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button11.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.Button11.Location = New System.Drawing.Point(355, 394)
+        Me.Button11.Name = "Button11"
+        Me.Button11.Size = New System.Drawing.Size(20, 20)
+        Me.Button11.TabIndex = 72
+        Me.Button11.Text = " "
+        Me.Button11.UseVisualStyleBackColor = False
+        '
+        'Button10
+        '
+        Me.Button10.BackColor = System.Drawing.Color.Orange
+        Me.Button10.FlatAppearance.BorderSize = 0
+        Me.Button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button10.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button10.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.Button10.Location = New System.Drawing.Point(329, 394)
+        Me.Button10.Name = "Button10"
+        Me.Button10.Size = New System.Drawing.Size(20, 20)
+        Me.Button10.TabIndex = 71
+        Me.Button10.Text = " "
+        Me.Button10.UseVisualStyleBackColor = False
+        '
+        'Button9
+        '
+        Me.Button9.BackColor = System.Drawing.Color.DarkViolet
+        Me.Button9.FlatAppearance.BorderSize = 0
+        Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button9.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button9.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.Button9.Location = New System.Drawing.Point(225, 394)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Size = New System.Drawing.Size(20, 20)
+        Me.Button9.TabIndex = 70
+        Me.Button9.Text = " "
+        Me.Button9.UseVisualStyleBackColor = False
+        '
+        'stng_colorlinecheck
+        '
+        Me.stng_colorlinecheck.AutoSize = True
+        Me.stng_colorlinecheck.Checked = Global.Blueflap.My.MySettings.Default.colorre
+        Me.stng_colorlinecheck.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Blueflap.My.MySettings.Default, "colorre", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.stng_colorlinecheck.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
+        Me.stng_colorlinecheck.Location = New System.Drawing.Point(502, 397)
+        Me.stng_colorlinecheck.Name = "stng_colorlinecheck"
+        Me.stng_colorlinecheck.Size = New System.Drawing.Size(96, 19)
+        Me.stng_colorlinecheck.TabIndex = 69
+        Me.stng_colorlinecheck.Text = "Ligne colorée"
+        Me.stng_colorlinecheck.UseVisualStyleBackColor = True
+        '
+        'Button8
+        '
+        Me.Button8.BackColor = System.Drawing.Color.DeepPink
+        Me.Button8.FlatAppearance.BorderSize = 0
+        Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button8.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button8.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.Button8.Location = New System.Drawing.Point(251, 394)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Size = New System.Drawing.Size(20, 20)
+        Me.Button8.TabIndex = 68
+        Me.Button8.Text = " "
+        Me.Button8.UseVisualStyleBackColor = False
+        '
+        'Button7
+        '
+        Me.Button7.BackColor = System.Drawing.Color.GreenYellow
+        Me.Button7.FlatAppearance.BorderSize = 0
+        Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button7.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button7.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.Button7.Location = New System.Drawing.Point(277, 394)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(20, 20)
+        Me.Button7.TabIndex = 67
+        Me.Button7.Text = " "
+        Me.Button7.UseVisualStyleBackColor = False
+        '
+        'Button6
+        '
+        Me.Button6.BackColor = System.Drawing.Color.DeepSkyBlue
+        Me.Button6.FlatAppearance.BorderSize = 0
+        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button6.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button6.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.Button6.Location = New System.Drawing.Point(173, 394)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(20, 20)
+        Me.Button6.TabIndex = 66
+        Me.Button6.Text = " "
+        Me.Button6.UseVisualStyleBackColor = False
+        '
+        'Button5
+        '
+        Me.Button5.BackColor = System.Drawing.Color.Gold
+        Me.Button5.FlatAppearance.BorderSize = 0
+        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button5.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button5.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.Button5.Location = New System.Drawing.Point(199, 394)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(20, 20)
+        Me.Button5.TabIndex = 65
+        Me.Button5.Text = " "
+        Me.Button5.UseVisualStyleBackColor = False
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
+        Me.Label10.Location = New System.Drawing.Point(15, 394)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(54, 20)
+        Me.Label10.TabIndex = 64
+        Me.Label10.Text = "Thème"
+        '
+        'Button4
+        '
+        Me.Button4.BackColor = System.Drawing.Color.DarkRed
+        Me.Button4.FlatAppearance.BorderSize = 0
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.Button4.Location = New System.Drawing.Point(303, 394)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(20, 20)
+        Me.Button4.TabIndex = 63
+        Me.Button4.Text = " "
+        Me.Button4.UseVisualStyleBackColor = False
+        '
+        'colorbox
+        '
+        Me.colorbox.BackColor = Global.Blueflap.My.MySettings.Default.colorr
+        Me.colorbox.DataBindings.Add(New System.Windows.Forms.Binding("BackColor", Global.Blueflap.My.MySettings.Default, "colorr", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.colorbox.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.colorbox.Location = New System.Drawing.Point(420, 403)
+        Me.colorbox.Name = "colorbox"
+        Me.colorbox.Size = New System.Drawing.Size(72, 3)
+        Me.colorbox.TabIndex = 62
         '
         'Label5
         '
@@ -1090,7 +1715,7 @@ Partial Class Fenetre_Principale
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.Blueflap.My.Resources.Resources.transl
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(363, 253)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(15, 15)
@@ -1114,9 +1739,9 @@ Partial Class Fenetre_Principale
         'stng_picdemo
         '
         Me.stng_picdemo.BackColor = System.Drawing.SystemColors.Control
-        Me.stng_picdemo.BackgroundImage = Global.Blueflap.My.Resources.Resources.roundback
+        Me.stng_picdemo.BackgroundImage = CType(resources.GetObject("stng_picdemo.BackgroundImage"), System.Drawing.Image)
         Me.stng_picdemo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.stng_picdemo.Image = Global.Blueflap.My.Resources.Resources.round
+        Me.stng_picdemo.Image = CType(resources.GetObject("stng_picdemo.Image"), System.Drawing.Image)
         Me.stng_picdemo.Location = New System.Drawing.Point(327, 337)
         Me.stng_picdemo.Name = "stng_picdemo"
         Me.stng_picdemo.Size = New System.Drawing.Size(46, 33)
@@ -1138,7 +1763,7 @@ Partial Class Fenetre_Principale
         '
         'StngmenuIcon5
         '
-        Me.StngmenuIcon5.Image = Global.Blueflap.My.Resources.Resources.shareza
+        Me.StngmenuIcon5.Image = CType(resources.GetObject("StngmenuIcon5.Image"), System.Drawing.Image)
         Me.StngmenuIcon5.Location = New System.Drawing.Point(324, 253)
         Me.StngmenuIcon5.Name = "StngmenuIcon5"
         Me.StngmenuIcon5.Size = New System.Drawing.Size(15, 15)
@@ -1160,7 +1785,7 @@ Partial Class Fenetre_Principale
         '
         'StngmenuIcon8
         '
-        Me.StngmenuIcon8.Image = Global.Blueflap.My.Resources.Resources.c28
+        Me.StngmenuIcon8.Image = CType(resources.GetObject("StngmenuIcon8.Image"), System.Drawing.Image)
         Me.StngmenuIcon8.Location = New System.Drawing.Point(475, 253)
         Me.StngmenuIcon8.Name = "StngmenuIcon8"
         Me.StngmenuIcon8.Size = New System.Drawing.Size(15, 15)
@@ -1472,7 +2097,7 @@ Partial Class Fenetre_Principale
         '
         'StngmenuIcon1
         '
-        Me.StngmenuIcon1.Image = Global.Blueflap.My.Resources.Resources.c21
+        Me.StngmenuIcon1.Image = CType(resources.GetObject("StngmenuIcon1.Image"), System.Drawing.Image)
         Me.StngmenuIcon1.Location = New System.Drawing.Point(176, 253)
         Me.StngmenuIcon1.Name = "StngmenuIcon1"
         Me.StngmenuIcon1.Size = New System.Drawing.Size(15, 15)
@@ -1482,7 +2107,7 @@ Partial Class Fenetre_Principale
         '
         'StngmenuIcon2
         '
-        Me.StngmenuIcon2.Image = Global.Blueflap.My.Resources.Resources.c20
+        Me.StngmenuIcon2.Image = CType(resources.GetObject("StngmenuIcon2.Image"), System.Drawing.Image)
         Me.StngmenuIcon2.Location = New System.Drawing.Point(213, 253)
         Me.StngmenuIcon2.Name = "StngmenuIcon2"
         Me.StngmenuIcon2.Size = New System.Drawing.Size(15, 15)
@@ -1492,7 +2117,7 @@ Partial Class Fenetre_Principale
         '
         'StngmenuIcon7
         '
-        Me.StngmenuIcon7.Image = Global.Blueflap.My.Resources.Resources.pleinecran
+        Me.StngmenuIcon7.Image = CType(resources.GetObject("StngmenuIcon7.Image"), System.Drawing.Image)
         Me.StngmenuIcon7.Location = New System.Drawing.Point(438, 253)
         Me.StngmenuIcon7.Name = "StngmenuIcon7"
         Me.StngmenuIcon7.Size = New System.Drawing.Size(15, 15)
@@ -1502,7 +2127,7 @@ Partial Class Fenetre_Principale
         '
         'StngmenuIcon3
         '
-        Me.StngmenuIcon3.Image = Global.Blueflap.My.Resources.Resources.c12
+        Me.StngmenuIcon3.Image = CType(resources.GetObject("StngmenuIcon3.Image"), System.Drawing.Image)
         Me.StngmenuIcon3.Location = New System.Drawing.Point(250, 253)
         Me.StngmenuIcon3.Name = "StngmenuIcon3"
         Me.StngmenuIcon3.Size = New System.Drawing.Size(15, 15)
@@ -1512,7 +2137,7 @@ Partial Class Fenetre_Principale
         '
         'StngmenuIcon6
         '
-        Me.StngmenuIcon6.Image = Global.Blueflap.My.Resources.Resources.c17
+        Me.StngmenuIcon6.Image = CType(resources.GetObject("StngmenuIcon6.Image"), System.Drawing.Image)
         Me.StngmenuIcon6.Location = New System.Drawing.Point(400, 253)
         Me.StngmenuIcon6.Name = "StngmenuIcon6"
         Me.StngmenuIcon6.Size = New System.Drawing.Size(15, 15)
@@ -1522,7 +2147,7 @@ Partial Class Fenetre_Principale
         '
         'StngmenuIcon4
         '
-        Me.StngmenuIcon4.Image = Global.Blueflap.My.Resources.Resources.infos
+        Me.StngmenuIcon4.Image = CType(resources.GetObject("StngmenuIcon4.Image"), System.Drawing.Image)
         Me.StngmenuIcon4.Location = New System.Drawing.Point(287, 253)
         Me.StngmenuIcon4.Name = "StngmenuIcon4"
         Me.StngmenuIcon4.Size = New System.Drawing.Size(17, 17)
@@ -1535,10 +2160,18 @@ Partial Class Fenetre_Principale
         Me.ShapeContainer3.Location = New System.Drawing.Point(0, 0)
         Me.ShapeContainer3.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer3.Name = "ShapeContainer3"
-        Me.ShapeContainer3.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape3, Me.RectangleShape2, Me.RectangleShape1})
-        Me.ShapeContainer3.Size = New System.Drawing.Size(761, 396)
+        Me.ShapeContainer3.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape4, Me.RectangleShape3, Me.RectangleShape2, Me.RectangleShape1})
+        Me.ShapeContainer3.Size = New System.Drawing.Size(761, 429)
         Me.ShapeContainer3.TabIndex = 44
         Me.ShapeContainer3.TabStop = False
+        '
+        'RectangleShape4
+        '
+        Me.RectangleShape4.BorderColor = System.Drawing.Color.LightGray
+        Me.RectangleShape4.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash
+        Me.RectangleShape4.Location = New System.Drawing.Point(164, 386)
+        Me.RectangleShape4.Name = "RectangleShape4"
+        Me.RectangleShape4.Size = New System.Drawing.Size(583, 36)
         '
         'RectangleShape3
         '
@@ -1794,209 +2427,6 @@ Partial Class Fenetre_Principale
         Me.StngLabel_Proxy.TabIndex = 35
         Me.StngLabel_Proxy.Text = "Blueflap utilise les paramètres proxy du système pour se connecter au réseau."
         '
-        'stat2
-        '
-        Me.stat2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.stat2.AutoSize = True
-        Me.stat2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Blueflap.My.MySettings.Default, "statb", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.stat2.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
-        Me.stat2.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.stat2.Location = New System.Drawing.Point(74, 477)
-        Me.stat2.Name = "stat2"
-        Me.stat2.Size = New System.Drawing.Size(13, 15)
-        Me.stat2.TabIndex = 63
-        Me.stat2.Text = Global.Blueflap.My.MySettings.Default.statb
-        '
-        'Label6
-        '
-        Me.Label6.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
-        Me.Label6.ForeColor = System.Drawing.Color.Gray
-        Me.Label6.Location = New System.Drawing.Point(3, 462)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(65, 15)
-        Me.Label6.TabIndex = 60
-        Me.Label6.Text = "Pages vues"
-        '
-        'Stat1
-        '
-        Me.Stat1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Stat1.AutoSize = True
-        Me.Stat1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Blueflap.My.MySettings.Default, "stata", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.Stat1.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
-        Me.Stat1.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.Stat1.Location = New System.Drawing.Point(74, 462)
-        Me.Stat1.Name = "Stat1"
-        Me.Stat1.Size = New System.Drawing.Size(13, 15)
-        Me.Stat1.TabIndex = 62
-        Me.Stat1.Text = Global.Blueflap.My.MySettings.Default.stata
-        '
-        'Label8
-        '
-        Me.Label8.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
-        Me.Label8.ForeColor = System.Drawing.Color.Gray
-        Me.Label8.Location = New System.Drawing.Point(3, 477)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(39, 15)
-        Me.Label8.TabIndex = 61
-        Me.Label8.Text = "Fights"
-        '
-        'Sett_TabC
-        '
-        Me.Sett_TabC.Controls.Add(Me.StngLabel_Contributeurs)
-        Me.Sett_TabC.Controls.Add(Me.Stng_Bat41)
-        Me.Sett_TabC.Controls.Add(Me.Stng_BaptGuil)
-        Me.Sett_TabC.Controls.Add(Me.Stng_Zyhou)
-        Me.Sett_TabC.Controls.Add(Me.StngLabel_OpenSource)
-        Me.Sett_TabC.Controls.Add(Me.StngLabel_Version)
-        Me.Sett_TabC.Controls.Add(Me.stng_github)
-        Me.Sett_TabC.Controls.Add(Me.StngLabel_Devs)
-        Me.Sett_TabC.Controls.Add(Me.stng_simpleworld)
-        Me.Sett_TabC.Controls.Add(Me.StngLabel_Contribute)
-        Me.Sett_TabC.Controls.Add(Me.Stng_VersionSystem)
-        Me.Sett_TabC.Controls.Add(Me.Stng_ShowLicense)
-        Me.Sett_TabC.Location = New System.Drawing.Point(87, 15)
-        Me.Sett_TabC.Name = "Sett_TabC"
-        Me.Sett_TabC.Size = New System.Drawing.Size(443, 278)
-        Me.Sett_TabC.TabIndex = 59
-        Me.Sett_TabC.Visible = False
-        '
-        'StngLabel_Contributeurs
-        '
-        Me.StngLabel_Contributeurs.AutoSize = True
-        Me.StngLabel_Contributeurs.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
-        Me.StngLabel_Contributeurs.Location = New System.Drawing.Point(14, 171)
-        Me.StngLabel_Contributeurs.Name = "StngLabel_Contributeurs"
-        Me.StngLabel_Contributeurs.Size = New System.Drawing.Size(97, 20)
-        Me.StngLabel_Contributeurs.TabIndex = 58
-        Me.StngLabel_Contributeurs.Text = "Contributeurs"
-        '
-        'Stng_Bat41
-        '
-        Me.Stng_Bat41.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Stng_Bat41.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
-        Me.Stng_Bat41.ForeColor = System.Drawing.Color.DarkGray
-        Me.Stng_Bat41.Location = New System.Drawing.Point(270, 164)
-        Me.Stng_Bat41.Name = "Stng_Bat41"
-        Me.Stng_Bat41.Size = New System.Drawing.Size(57, 35)
-        Me.Stng_Bat41.TabIndex = 57
-        Me.Stng_Bat41.Text = "Bat41"
-        Me.Stng_Bat41.UseVisualStyleBackColor = True
-        '
-        'Stng_BaptGuil
-        '
-        Me.Stng_BaptGuil.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Stng_BaptGuil.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
-        Me.Stng_BaptGuil.ForeColor = System.Drawing.Color.DarkGray
-        Me.Stng_BaptGuil.Location = New System.Drawing.Point(164, 164)
-        Me.Stng_BaptGuil.Name = "Stng_BaptGuil"
-        Me.Stng_BaptGuil.Size = New System.Drawing.Size(100, 35)
-        Me.Stng_BaptGuil.TabIndex = 56
-        Me.Stng_BaptGuil.Text = "Baptisteguil "
-        Me.Stng_BaptGuil.UseVisualStyleBackColor = True
-        '
-        'Stng_Zyhou
-        '
-        Me.Stng_Zyhou.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Stng_Zyhou.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
-        Me.Stng_Zyhou.ForeColor = System.Drawing.Color.DarkGray
-        Me.Stng_Zyhou.Location = New System.Drawing.Point(333, 164)
-        Me.Stng_Zyhou.Name = "Stng_Zyhou"
-        Me.Stng_Zyhou.Size = New System.Drawing.Size(73, 35)
-        Me.Stng_Zyhou.TabIndex = 55
-        Me.Stng_Zyhou.Text = "Zyhou"
-        Me.Stng_Zyhou.UseVisualStyleBackColor = True
-        '
-        'StngLabel_OpenSource
-        '
-        Me.StngLabel_OpenSource.AutoSize = True
-        Me.StngLabel_OpenSource.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
-        Me.StngLabel_OpenSource.Location = New System.Drawing.Point(14, 222)
-        Me.StngLabel_OpenSource.Name = "StngLabel_OpenSource"
-        Me.StngLabel_OpenSource.Size = New System.Drawing.Size(90, 20)
-        Me.StngLabel_OpenSource.TabIndex = 54
-        Me.StngLabel_OpenSource.Text = "OpenSource"
-        '
-        'StngLabel_Version
-        '
-        Me.StngLabel_Version.AutoSize = True
-        Me.StngLabel_Version.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
-        Me.StngLabel_Version.Location = New System.Drawing.Point(14, 18)
-        Me.StngLabel_Version.Name = "StngLabel_Version"
-        Me.StngLabel_Version.Size = New System.Drawing.Size(56, 20)
-        Me.StngLabel_Version.TabIndex = 53
-        Me.StngLabel_Version.Text = "Version"
-        '
-        'stng_github
-        '
-        Me.stng_github.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.stng_github.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
-        Me.stng_github.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.stng_github.Location = New System.Drawing.Point(164, 114)
-        Me.stng_github.Name = "stng_github"
-        Me.stng_github.Size = New System.Drawing.Size(154, 35)
-        Me.stng_github.TabIndex = 52
-        Me.stng_github.Text = "GitHub"
-        Me.stng_github.UseVisualStyleBackColor = True
-        '
-        'StngLabel_Devs
-        '
-        Me.StngLabel_Devs.AutoSize = True
-        Me.StngLabel_Devs.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
-        Me.StngLabel_Devs.Location = New System.Drawing.Point(14, 68)
-        Me.StngLabel_Devs.Name = "StngLabel_Devs"
-        Me.StngLabel_Devs.Size = New System.Drawing.Size(40, 20)
-        Me.StngLabel_Devs.TabIndex = 49
-        Me.StngLabel_Devs.Text = "Devs"
-        '
-        'stng_simpleworld
-        '
-        Me.stng_simpleworld.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.stng_simpleworld.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
-        Me.stng_simpleworld.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.stng_simpleworld.Location = New System.Drawing.Point(163, 61)
-        Me.stng_simpleworld.Name = "stng_simpleworld"
-        Me.stng_simpleworld.Size = New System.Drawing.Size(154, 35)
-        Me.stng_simpleworld.TabIndex = 50
-        Me.stng_simpleworld.Text = "Simpleworld"
-        Me.stng_simpleworld.UseVisualStyleBackColor = True
-        '
-        'StngLabel_Contribute
-        '
-        Me.StngLabel_Contribute.AutoSize = True
-        Me.StngLabel_Contribute.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
-        Me.StngLabel_Contribute.Location = New System.Drawing.Point(14, 121)
-        Me.StngLabel_Contribute.Name = "StngLabel_Contribute"
-        Me.StngLabel_Contribute.Size = New System.Drawing.Size(78, 20)
-        Me.StngLabel_Contribute.TabIndex = 51
-        Me.StngLabel_Contribute.Text = "Contribuer"
-        '
-        'Stng_VersionSystem
-        '
-        Me.Stng_VersionSystem.AutoSize = True
-        Me.Stng_VersionSystem.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Stng_VersionSystem.Location = New System.Drawing.Point(160, 20)
-        Me.Stng_VersionSystem.Name = "Stng_VersionSystem"
-        Me.Stng_VersionSystem.Size = New System.Drawing.Size(86, 13)
-        Me.Stng_VersionSystem.TabIndex = 19
-        Me.Stng_VersionSystem.Text = "Blueflap 3.1 - FR"
-        '
-        'Stng_ShowLicense
-        '
-        Me.Stng_ShowLicense.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Stng_ShowLicense.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Stng_ShowLicense.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Stng_ShowLicense.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.Stng_ShowLicense.Location = New System.Drawing.Point(164, 219)
-        Me.Stng_ShowLicense.Name = "Stng_ShowLicense"
-        Me.Stng_ShowLicense.Size = New System.Drawing.Size(151, 33)
-        Me.Stng_ShowLicense.TabIndex = 47
-        Me.Stng_ShowLicense.Text = "Licence OpenSource"
-        Me.Stng_ShowLicense.UseVisualStyleBackColor = True
-        '
         'sett_tab3
         '
         Me.sett_tab3.Checked = True
@@ -2044,7 +2474,7 @@ Partial Class Fenetre_Principale
         Me.Settings_Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Settings_Back.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Settings_Back.ForeColor = System.Drawing.SystemColors.Control
-        Me.Settings_Back.Image = Global.Blueflap.My.Resources.Resources.retour
+        Me.Settings_Back.Image = CType(resources.GetObject("Settings_Back.Image"), System.Drawing.Image)
         Me.Settings_Back.Location = New System.Drawing.Point(21, 46)
         Me.Settings_Back.Name = "Settings_Back"
         Me.Settings_Back.Size = New System.Drawing.Size(46, 46)
@@ -2393,226 +2823,10 @@ Partial Class Fenetre_Principale
         Me.TabItem1.Name = "TabItem1"
         Me.TabItem1.Text = ""
         '
-        'ABlueflap_Bluestart
-        '
-        Me.ABlueflap_Bluestart.BackColor = System.Drawing.SystemColors.Control
-        Me.ABlueflap_Bluestart.BackgroundImage = Global.Blueflap.My.Resources.Resources.Degrade
-        Me.ABlueflap_Bluestart.Controls.Add(Me.BS_Fav)
-        Me.ABlueflap_Bluestart.Controls.Add(Me.BS_Searchfight)
-        Me.ABlueflap_Bluestart.Controls.Add(Me.BS_Browser)
-        Me.ABlueflap_Bluestart.Controls.Add(Me.Bs_Favbulle)
-        Me.ABlueflap_Bluestart.Controls.Add(Me.BS_Date)
-        Me.ABlueflap_Bluestart.Controls.Add(Me.BS_SearchBlackEffect)
-        Me.ABlueflap_Bluestart.Controls.Add(Me.BS_Settings)
-        Me.ABlueflap_Bluestart.Controls.Add(Me.BS_Optionsbulle)
-        Me.ABlueflap_Bluestart.Controls.Add(Me.BS_Logo)
-        Me.ABlueflap_Bluestart.DataBindings.Add(New System.Windows.Forms.Binding("Tag", Global.Blueflap.My.MySettings.Default, "Hey", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.ABlueflap_Bluestart.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ABlueflap_Bluestart.Location = New System.Drawing.Point(0, 0)
-        Me.ABlueflap_Bluestart.Name = "ABlueflap_Bluestart"
-        Me.ABlueflap_Bluestart.Size = New System.Drawing.Size(1234, 611)
-        Me.ABlueflap_Bluestart.TabIndex = 5
-        Me.ABlueflap_Bluestart.Tag = Global.Blueflap.My.MySettings.Default.Hey
-        Me.ABlueflap_Bluestart.Visible = False
-        '
-        'BS_Fav
-        '
-        Me.BS_Fav.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.BS_Fav.BackColor = System.Drawing.Color.Transparent
-        Me.BS_Fav.BackgroundImage = Global.Blueflap.My.Resources.Resources.lwq
-        Me.BS_Fav.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.BS_Fav.FlatAppearance.BorderSize = 0
-        Me.BS_Fav.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
-        Me.BS_Fav.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.BS_Fav.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BS_Fav.Location = New System.Drawing.Point(95, 545)
-        Me.BS_Fav.Name = "BS_Fav"
-        Me.BS_Fav.Size = New System.Drawing.Size(54, 54)
-        Me.BS_Fav.TabIndex = 0
-        Me.BS_Fav.UseVisualStyleBackColor = False
-        '
-        'BS_Searchfight
-        '
-        Me.BS_Searchfight.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.BS_Searchfight.BackColor = System.Drawing.Color.Transparent
-        Me.BS_Searchfight.BackgroundImage = Global.Blueflap.My.Resources.Resources.ijsx
-        Me.BS_Searchfight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.BS_Searchfight.FlatAppearance.BorderSize = 0
-        Me.BS_Searchfight.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
-        Me.BS_Searchfight.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.BS_Searchfight.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BS_Searchfight.Location = New System.Drawing.Point(161, 545)
-        Me.BS_Searchfight.Name = "BS_Searchfight"
-        Me.BS_Searchfight.Size = New System.Drawing.Size(54, 54)
-        Me.BS_Searchfight.TabIndex = 9
-        Me.BS_Searchfight.UseVisualStyleBackColor = False
-        '
-        'BS_Browser
-        '
-        Me.BS_Browser.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.BS_Browser.BackColor = System.Drawing.Color.Transparent
-        Me.BS_Browser.BackgroundImage = Global.Blueflap.My.Resources.Resources.lao
-        Me.BS_Browser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.BS_Browser.FlatAppearance.BorderSize = 0
-        Me.BS_Browser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
-        Me.BS_Browser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.BS_Browser.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BS_Browser.Location = New System.Drawing.Point(29, 545)
-        Me.BS_Browser.Name = "BS_Browser"
-        Me.BS_Browser.Size = New System.Drawing.Size(54, 54)
-        Me.BS_Browser.TabIndex = 8
-        Me.BS_Browser.UseVisualStyleBackColor = False
-        '
-        'Bs_Favbulle
-        '
-        Me.Bs_Favbulle.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Bs_Favbulle.BackColor = System.Drawing.Color.Transparent
-        Me.Bs_Favbulle.BackgroundImage = Global.Blueflap.My.Resources.Resources.backfavs
-        Me.Bs_Favbulle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.Bs_Favbulle.Controls.Add(Me.BS_Favlist)
-        Me.Bs_Favbulle.Location = New System.Drawing.Point(28, 252)
-        Me.Bs_Favbulle.Name = "Bs_Favbulle"
-        Me.Bs_Favbulle.Size = New System.Drawing.Size(446, 302)
-        Me.Bs_Favbulle.TabIndex = 7
-        Me.Bs_Favbulle.Visible = False
-        '
-        'BS_Favlist
-        '
-        Me.BS_Favlist.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BS_Favlist.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.BS_Favlist.Font = New System.Drawing.Font("Segoe UI Semilight", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BS_Favlist.FormattingEnabled = True
-        Me.BS_Favlist.ItemHeight = 20
-        Me.BS_Favlist.Location = New System.Drawing.Point(8, 3)
-        Me.BS_Favlist.Name = "BS_Favlist"
-        Me.BS_Favlist.Size = New System.Drawing.Size(432, 260)
-        Me.BS_Favlist.TabIndex = 0
-        '
-        'BS_Date
-        '
-        Me.BS_Date.AutoSize = True
-        Me.BS_Date.BackColor = System.Drawing.Color.Transparent
-        Me.BS_Date.DataBindings.Add(New System.Windows.Forms.Binding("ForeColor", Global.Blueflap.My.MySettings.Default, "clair", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.BS_Date.Font = New System.Drawing.Font("Segoe UI Light", 27.0!)
-        Me.BS_Date.ForeColor = Global.Blueflap.My.MySettings.Default.clair
-        Me.BS_Date.Location = New System.Drawing.Point(478, 55)
-        Me.BS_Date.Name = "BS_Date"
-        Me.BS_Date.Size = New System.Drawing.Size(157, 48)
-        Me.BS_Date.TabIndex = 4
-        Me.BS_Date.Text = "Bonjour !"
-        '
-        'BS_SearchBlackEffect
-        '
-        Me.BS_SearchBlackEffect.BackColor = System.Drawing.Color.Transparent
-        Me.BS_SearchBlackEffect.BackgroundImage = Global.Blueflap.My.Resources.Resources.champrecherche
-        Me.BS_SearchBlackEffect.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.BS_SearchBlackEffect.Controls.Add(Me.BS_Searchbutton)
-        Me.BS_SearchBlackEffect.Controls.Add(Me.Bs_Searchbox)
-        Me.BS_SearchBlackEffect.Location = New System.Drawing.Point(346, 318)
-        Me.BS_SearchBlackEffect.Name = "BS_SearchBlackEffect"
-        Me.BS_SearchBlackEffect.Size = New System.Drawing.Size(426, 73)
-        Me.BS_SearchBlackEffect.TabIndex = 6
-        '
-        'BS_Searchbutton
-        '
-        Me.BS_Searchbutton.BackColor = System.Drawing.Color.White
-        Me.BS_Searchbutton.BackgroundImage = Global.Blueflap.My.Resources.Resources.loupez
-        Me.BS_Searchbutton.FlatAppearance.BorderSize = 0
-        Me.BS_Searchbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BS_Searchbutton.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BS_Searchbutton.ForeColor = System.Drawing.Color.White
-        Me.BS_Searchbutton.Location = New System.Drawing.Point(372, 17)
-        Me.BS_Searchbutton.Name = "BS_Searchbutton"
-        Me.BS_Searchbutton.Size = New System.Drawing.Size(38, 38)
-        Me.BS_Searchbutton.TabIndex = 1
-        Me.BS_Searchbutton.UseVisualStyleBackColor = False
-        '
-        'Bs_Searchbox
-        '
-        Me.Bs_Searchbox.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.Bs_Searchbox.Font = New System.Drawing.Font("Segoe UI Semilight", 24.25!)
-        Me.Bs_Searchbox.Location = New System.Drawing.Point(22, 13)
-        Me.Bs_Searchbox.Name = "Bs_Searchbox"
-        Me.Bs_Searchbox.Size = New System.Drawing.Size(344, 44)
-        Me.Bs_Searchbox.TabIndex = 0
-        '
-        'BS_Settings
-        '
-        Me.BS_Settings.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BS_Settings.BackColor = System.Drawing.Color.Transparent
-        Me.BS_Settings.BackgroundImage = Global.Blueflap.My.Resources.Resources.dee
-        Me.BS_Settings.FlatAppearance.BorderSize = 0
-        Me.BS_Settings.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Cyan
-        Me.BS_Settings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
-        Me.BS_Settings.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BS_Settings.Location = New System.Drawing.Point(1193, 4)
-        Me.BS_Settings.Name = "BS_Settings"
-        Me.BS_Settings.Size = New System.Drawing.Size(37, 37)
-        Me.BS_Settings.TabIndex = 0
-        Me.BS_Settings.UseVisualStyleBackColor = False
-        '
-        'BS_Optionsbulle
-        '
-        Me.BS_Optionsbulle.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BS_Optionsbulle.BackColor = System.Drawing.Color.Transparent
-        Me.BS_Optionsbulle.BackgroundImage = Global.Blueflap.My.Resources.Resources.hello
-        Me.BS_Optionsbulle.Controls.Add(Me.BS_DateSetColor)
-        Me.BS_Optionsbulle.Controls.Add(Me.BS_ImgChoose)
-        Me.BS_Optionsbulle.Location = New System.Drawing.Point(1008, 37)
-        Me.BS_Optionsbulle.Name = "BS_Optionsbulle"
-        Me.BS_Optionsbulle.Size = New System.Drawing.Size(220, 160)
-        Me.BS_Optionsbulle.TabIndex = 5
-        Me.BS_Optionsbulle.Visible = False
-        '
-        'BS_DateSetColor
-        '
-        Me.BS_DateSetColor.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Blueflap.My.MySettings.Default, "sombre", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.BS_DateSetColor.FlatAppearance.BorderSize = 0
-        Me.BS_DateSetColor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue
-        Me.BS_DateSetColor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
-        Me.BS_DateSetColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BS_DateSetColor.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BS_DateSetColor.ForeColor = System.Drawing.Color.White
-        Me.BS_DateSetColor.Location = New System.Drawing.Point(12, 96)
-        Me.BS_DateSetColor.Name = "BS_DateSetColor"
-        Me.BS_DateSetColor.Size = New System.Drawing.Size(192, 44)
-        Me.BS_DateSetColor.TabIndex = 1
-        Me.BS_DateSetColor.Text = Global.Blueflap.My.MySettings.Default.sombre
-        Me.BS_DateSetColor.UseVisualStyleBackColor = True
-        '
-        'BS_ImgChoose
-        '
-        Me.BS_ImgChoose.FlatAppearance.BorderSize = 0
-        Me.BS_ImgChoose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue
-        Me.BS_ImgChoose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
-        Me.BS_ImgChoose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BS_ImgChoose.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BS_ImgChoose.ForeColor = System.Drawing.Color.White
-        Me.BS_ImgChoose.Location = New System.Drawing.Point(12, 42)
-        Me.BS_ImgChoose.Name = "BS_ImgChoose"
-        Me.BS_ImgChoose.Size = New System.Drawing.Size(192, 44)
-        Me.BS_ImgChoose.TabIndex = 0
-        Me.BS_ImgChoose.Text = "Choisir une image"
-        Me.BS_ImgChoose.UseVisualStyleBackColor = True
-        '
-        'BS_Logo
-        '
-        Me.BS_Logo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BS_Logo.BackColor = System.Drawing.Color.Transparent
-        Me.BS_Logo.Image = Global.Blueflap.My.Resources.Resources.fond
-        Me.BS_Logo.Location = New System.Drawing.Point(12, 140)
-        Me.BS_Logo.Name = "BS_Logo"
-        Me.BS_Logo.Size = New System.Drawing.Size(1226, 139)
-        Me.BS_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.BS_Logo.TabIndex = 1
-        Me.BS_Logo.TabStop = False
-        '
         'ABlueflap_Infos
         '
-        Me.ABlueflap_Infos.BackgroundImage = Global.Blueflap.My.Resources.Resources.backlop
+        Me.ABlueflap_Infos.BackgroundImage = CType(resources.GetObject("ABlueflap_Infos.BackgroundImage"), System.Drawing.Image)
+        Me.ABlueflap_Infos.Controls.Add(Me.Infos_progress)
         Me.ABlueflap_Infos.Controls.Add(Me.Infos_code_source)
         Me.ABlueflap_Infos.Controls.Add(Me.Infos_Save)
         Me.ABlueflap_Infos.Controls.Add(Me.Infos_Print)
@@ -2630,6 +2844,15 @@ Partial Class Fenetre_Principale
         Me.ABlueflap_Infos.Size = New System.Drawing.Size(1234, 611)
         Me.ABlueflap_Infos.TabIndex = 4
         '
+        'Infos_progress
+        '
+        Me.Infos_progress.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Infos_progress.Location = New System.Drawing.Point(945, 175)
+        Me.Infos_progress.Name = "Infos_progress"
+        Me.Infos_progress.Size = New System.Drawing.Size(90, 2)
+        Me.Infos_progress.TabIndex = 16
+        Me.Infos_progress.Visible = False
+        '
         'Infos_code_source
         '
         Me.Infos_code_source.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
@@ -2642,7 +2865,6 @@ Partial Class Fenetre_Principale
         Me.Infos_code_source.CharWidth = 8
         Me.Infos_code_source.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Infos_code_source.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.Infos_code_source.Font = New System.Drawing.Font("Courier New", 9.75!)
         Me.Infos_code_source.IndentBackColor = System.Drawing.SystemColors.Control
         Me.Infos_code_source.IsReplaceMode = False
         Me.Infos_code_source.LineNumberColor = System.Drawing.Color.DeepSkyBlue
@@ -2661,7 +2883,7 @@ Partial Class Fenetre_Principale
         '
         Me.Infos_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Infos_Save.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Infos_Save.Image = Global.Blueflap.My.Resources.Resources.savoi
+        Me.Infos_Save.Image = CType(resources.GetObject("Infos_Save.Image"), System.Drawing.Image)
         Me.Infos_Save.Location = New System.Drawing.Point(110, 144)
         Me.Infos_Save.Name = "Infos_Save"
         Me.Infos_Save.Size = New System.Drawing.Size(44, 44)
@@ -2674,7 +2896,7 @@ Partial Class Fenetre_Principale
         '
         Me.Infos_Print.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Infos_Print.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Infos_Print.Image = Global.Blueflap.My.Resources.Resources.printoi
+        Me.Infos_Print.Image = CType(resources.GetObject("Infos_Print.Image"), System.Drawing.Image)
         Me.Infos_Print.Location = New System.Drawing.Point(63, 144)
         Me.Infos_Print.Name = "Infos_Print"
         Me.Infos_Print.Size = New System.Drawing.Size(45, 45)
@@ -2724,7 +2946,7 @@ Partial Class Fenetre_Principale
         '
         Me.Infos_CodeShowHide.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Infos_CodeShowHide.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Infos_CodeShowHide.Image = Global.Blueflap.My.Resources.Resources.seeoi
+        Me.Infos_CodeShowHide.Image = CType(resources.GetObject("Infos_CodeShowHide.Image"), System.Drawing.Image)
         Me.Infos_CodeShowHide.Location = New System.Drawing.Point(160, 144)
         Me.Infos_CodeShowHide.Name = "Infos_CodeShowHide"
         Me.Infos_CodeShowHide.Size = New System.Drawing.Size(45, 45)
@@ -2737,7 +2959,7 @@ Partial Class Fenetre_Principale
         Me.Infos_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Infos_back.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Infos_back.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.Infos_back.Image = Global.Blueflap.My.Resources.Resources.Backbluea
+        Me.Infos_back.Image = CType(resources.GetObject("Infos_back.Image"), System.Drawing.Image)
         Me.Infos_back.Location = New System.Drawing.Point(12, 57)
         Me.Infos_back.Name = "Infos_back"
         Me.Infos_back.Size = New System.Drawing.Size(46, 46)
@@ -2769,6 +2991,223 @@ Partial Class Fenetre_Principale
         Me.Infos_Titre.TabIndex = 7
         Me.Infos_Titre.Text = "[Titre]"
         '
+        'ABlueflap_Bluestart
+        '
+        Me.ABlueflap_Bluestart.BackColor = System.Drawing.SystemColors.Control
+        Me.ABlueflap_Bluestart.BackgroundImage = CType(resources.GetObject("ABlueflap_Bluestart.BackgroundImage"), System.Drawing.Image)
+        Me.ABlueflap_Bluestart.Controls.Add(Me.BS_Fav)
+        Me.ABlueflap_Bluestart.Controls.Add(Me.BS_Searchfight)
+        Me.ABlueflap_Bluestart.Controls.Add(Me.BS_Browser)
+        Me.ABlueflap_Bluestart.Controls.Add(Me.Bs_Favbulle)
+        Me.ABlueflap_Bluestart.Controls.Add(Me.BS_Date)
+        Me.ABlueflap_Bluestart.Controls.Add(Me.BS_SearchBlackEffect)
+        Me.ABlueflap_Bluestart.Controls.Add(Me.BS_Settings)
+        Me.ABlueflap_Bluestart.Controls.Add(Me.BS_Optionsbulle)
+        Me.ABlueflap_Bluestart.Controls.Add(Me.BS_Logo)
+        Me.ABlueflap_Bluestart.DataBindings.Add(New System.Windows.Forms.Binding("Tag", Global.Blueflap.My.MySettings.Default, "Hey", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.ABlueflap_Bluestart.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ABlueflap_Bluestart.Location = New System.Drawing.Point(0, 0)
+        Me.ABlueflap_Bluestart.Name = "ABlueflap_Bluestart"
+        Me.ABlueflap_Bluestart.Size = New System.Drawing.Size(1234, 611)
+        Me.ABlueflap_Bluestart.TabIndex = 5
+        Me.ABlueflap_Bluestart.Tag = Global.Blueflap.My.MySettings.Default.Hey
+        Me.ABlueflap_Bluestart.Visible = False
+        '
+        'BS_Fav
+        '
+        Me.BS_Fav.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.BS_Fav.BackColor = System.Drawing.Color.Transparent
+        Me.BS_Fav.BackgroundImage = CType(resources.GetObject("BS_Fav.BackgroundImage"), System.Drawing.Image)
+        Me.BS_Fav.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.BS_Fav.FlatAppearance.BorderSize = 0
+        Me.BS_Fav.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.BS_Fav.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.BS_Fav.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BS_Fav.Location = New System.Drawing.Point(95, 545)
+        Me.BS_Fav.Name = "BS_Fav"
+        Me.BS_Fav.Size = New System.Drawing.Size(54, 54)
+        Me.BS_Fav.TabIndex = 0
+        Me.BS_Fav.UseVisualStyleBackColor = False
+        '
+        'BS_Searchfight
+        '
+        Me.BS_Searchfight.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.BS_Searchfight.BackColor = System.Drawing.Color.Transparent
+        Me.BS_Searchfight.BackgroundImage = CType(resources.GetObject("BS_Searchfight.BackgroundImage"), System.Drawing.Image)
+        Me.BS_Searchfight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.BS_Searchfight.FlatAppearance.BorderSize = 0
+        Me.BS_Searchfight.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.BS_Searchfight.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.BS_Searchfight.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BS_Searchfight.Location = New System.Drawing.Point(161, 545)
+        Me.BS_Searchfight.Name = "BS_Searchfight"
+        Me.BS_Searchfight.Size = New System.Drawing.Size(54, 54)
+        Me.BS_Searchfight.TabIndex = 9
+        Me.BS_Searchfight.UseVisualStyleBackColor = False
+        '
+        'BS_Browser
+        '
+        Me.BS_Browser.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.BS_Browser.BackColor = System.Drawing.Color.Transparent
+        Me.BS_Browser.BackgroundImage = CType(resources.GetObject("BS_Browser.BackgroundImage"), System.Drawing.Image)
+        Me.BS_Browser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.BS_Browser.FlatAppearance.BorderSize = 0
+        Me.BS_Browser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.BS_Browser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.BS_Browser.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BS_Browser.Location = New System.Drawing.Point(29, 545)
+        Me.BS_Browser.Name = "BS_Browser"
+        Me.BS_Browser.Size = New System.Drawing.Size(54, 54)
+        Me.BS_Browser.TabIndex = 8
+        Me.BS_Browser.UseVisualStyleBackColor = False
+        '
+        'Bs_Favbulle
+        '
+        Me.Bs_Favbulle.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Bs_Favbulle.BackColor = System.Drawing.Color.Transparent
+        Me.Bs_Favbulle.BackgroundImage = CType(resources.GetObject("Bs_Favbulle.BackgroundImage"), System.Drawing.Image)
+        Me.Bs_Favbulle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.Bs_Favbulle.Controls.Add(Me.BS_Favlist)
+        Me.Bs_Favbulle.Location = New System.Drawing.Point(28, 252)
+        Me.Bs_Favbulle.Name = "Bs_Favbulle"
+        Me.Bs_Favbulle.Size = New System.Drawing.Size(446, 302)
+        Me.Bs_Favbulle.TabIndex = 7
+        Me.Bs_Favbulle.Visible = False
+        '
+        'BS_Favlist
+        '
+        Me.BS_Favlist.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BS_Favlist.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.BS_Favlist.Font = New System.Drawing.Font("Segoe UI Semilight", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BS_Favlist.FormattingEnabled = True
+        Me.BS_Favlist.ItemHeight = 20
+        Me.BS_Favlist.Location = New System.Drawing.Point(8, 3)
+        Me.BS_Favlist.Name = "BS_Favlist"
+        Me.BS_Favlist.Size = New System.Drawing.Size(432, 260)
+        Me.BS_Favlist.TabIndex = 0
+        '
+        'BS_Date
+        '
+        Me.BS_Date.AutoSize = True
+        Me.BS_Date.BackColor = System.Drawing.Color.Transparent
+        Me.BS_Date.DataBindings.Add(New System.Windows.Forms.Binding("ForeColor", Global.Blueflap.My.MySettings.Default, "clair", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.BS_Date.Font = New System.Drawing.Font("Segoe UI Light", 27.0!)
+        Me.BS_Date.ForeColor = Global.Blueflap.My.MySettings.Default.clair
+        Me.BS_Date.Location = New System.Drawing.Point(478, 55)
+        Me.BS_Date.Name = "BS_Date"
+        Me.BS_Date.Size = New System.Drawing.Size(157, 48)
+        Me.BS_Date.TabIndex = 4
+        Me.BS_Date.Text = "Bonjour !"
+        '
+        'BS_SearchBlackEffect
+        '
+        Me.BS_SearchBlackEffect.BackColor = System.Drawing.Color.Transparent
+        Me.BS_SearchBlackEffect.BackgroundImage = CType(resources.GetObject("BS_SearchBlackEffect.BackgroundImage"), System.Drawing.Image)
+        Me.BS_SearchBlackEffect.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.BS_SearchBlackEffect.Controls.Add(Me.BS_Searchbutton)
+        Me.BS_SearchBlackEffect.Controls.Add(Me.Bs_Searchbox)
+        Me.BS_SearchBlackEffect.Location = New System.Drawing.Point(346, 318)
+        Me.BS_SearchBlackEffect.Name = "BS_SearchBlackEffect"
+        Me.BS_SearchBlackEffect.Size = New System.Drawing.Size(426, 73)
+        Me.BS_SearchBlackEffect.TabIndex = 6
+        '
+        'BS_Searchbutton
+        '
+        Me.BS_Searchbutton.BackColor = System.Drawing.Color.White
+        Me.BS_Searchbutton.BackgroundImage = CType(resources.GetObject("BS_Searchbutton.BackgroundImage"), System.Drawing.Image)
+        Me.BS_Searchbutton.FlatAppearance.BorderSize = 0
+        Me.BS_Searchbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BS_Searchbutton.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BS_Searchbutton.ForeColor = System.Drawing.Color.White
+        Me.BS_Searchbutton.Location = New System.Drawing.Point(372, 17)
+        Me.BS_Searchbutton.Name = "BS_Searchbutton"
+        Me.BS_Searchbutton.Size = New System.Drawing.Size(38, 38)
+        Me.BS_Searchbutton.TabIndex = 1
+        Me.BS_Searchbutton.UseVisualStyleBackColor = False
+        '
+        'Bs_Searchbox
+        '
+        Me.Bs_Searchbox.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Bs_Searchbox.Font = New System.Drawing.Font("Segoe UI Semilight", 24.25!)
+        Me.Bs_Searchbox.Location = New System.Drawing.Point(22, 13)
+        Me.Bs_Searchbox.Name = "Bs_Searchbox"
+        Me.Bs_Searchbox.Size = New System.Drawing.Size(344, 44)
+        Me.Bs_Searchbox.TabIndex = 0
+        '
+        'BS_Settings
+        '
+        Me.BS_Settings.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BS_Settings.BackColor = System.Drawing.Color.Transparent
+        Me.BS_Settings.BackgroundImage = CType(resources.GetObject("BS_Settings.BackgroundImage"), System.Drawing.Image)
+        Me.BS_Settings.FlatAppearance.BorderSize = 0
+        Me.BS_Settings.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Cyan
+        Me.BS_Settings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
+        Me.BS_Settings.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BS_Settings.Location = New System.Drawing.Point(1193, 4)
+        Me.BS_Settings.Name = "BS_Settings"
+        Me.BS_Settings.Size = New System.Drawing.Size(37, 37)
+        Me.BS_Settings.TabIndex = 0
+        Me.BS_Settings.UseVisualStyleBackColor = False
+        '
+        'BS_Optionsbulle
+        '
+        Me.BS_Optionsbulle.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BS_Optionsbulle.BackColor = System.Drawing.Color.Transparent
+        Me.BS_Optionsbulle.BackgroundImage = CType(resources.GetObject("BS_Optionsbulle.BackgroundImage"), System.Drawing.Image)
+        Me.BS_Optionsbulle.Controls.Add(Me.BS_DateSetColor)
+        Me.BS_Optionsbulle.Controls.Add(Me.BS_ImgChoose)
+        Me.BS_Optionsbulle.Location = New System.Drawing.Point(1008, 37)
+        Me.BS_Optionsbulle.Name = "BS_Optionsbulle"
+        Me.BS_Optionsbulle.Size = New System.Drawing.Size(220, 160)
+        Me.BS_Optionsbulle.TabIndex = 5
+        Me.BS_Optionsbulle.Visible = False
+        '
+        'BS_DateSetColor
+        '
+        Me.BS_DateSetColor.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Blueflap.My.MySettings.Default, "sombre", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.BS_DateSetColor.FlatAppearance.BorderSize = 0
+        Me.BS_DateSetColor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue
+        Me.BS_DateSetColor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
+        Me.BS_DateSetColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BS_DateSetColor.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BS_DateSetColor.ForeColor = System.Drawing.Color.White
+        Me.BS_DateSetColor.Location = New System.Drawing.Point(12, 96)
+        Me.BS_DateSetColor.Name = "BS_DateSetColor"
+        Me.BS_DateSetColor.Size = New System.Drawing.Size(192, 44)
+        Me.BS_DateSetColor.TabIndex = 1
+        Me.BS_DateSetColor.Text = Global.Blueflap.My.MySettings.Default.sombre
+        Me.BS_DateSetColor.UseVisualStyleBackColor = True
+        '
+        'BS_ImgChoose
+        '
+        Me.BS_ImgChoose.FlatAppearance.BorderSize = 0
+        Me.BS_ImgChoose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue
+        Me.BS_ImgChoose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
+        Me.BS_ImgChoose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BS_ImgChoose.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BS_ImgChoose.ForeColor = System.Drawing.Color.White
+        Me.BS_ImgChoose.Location = New System.Drawing.Point(12, 42)
+        Me.BS_ImgChoose.Name = "BS_ImgChoose"
+        Me.BS_ImgChoose.Size = New System.Drawing.Size(192, 44)
+        Me.BS_ImgChoose.TabIndex = 0
+        Me.BS_ImgChoose.Text = "Choisir une image"
+        Me.BS_ImgChoose.UseVisualStyleBackColor = True
+        '
+        'BS_Logo
+        '
+        Me.BS_Logo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BS_Logo.BackColor = System.Drawing.Color.Transparent
+        Me.BS_Logo.Image = CType(resources.GetObject("BS_Logo.Image"), System.Drawing.Image)
+        Me.BS_Logo.Location = New System.Drawing.Point(12, 140)
+        Me.BS_Logo.Name = "BS_Logo"
+        Me.BS_Logo.Size = New System.Drawing.Size(1226, 139)
+        Me.BS_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.BS_Logo.TabIndex = 1
+        Me.BS_Logo.TabStop = False
+        '
         'Fenetre_Principale
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2776,10 +3215,10 @@ Partial Class Fenetre_Principale
         Me.ClientSize = New System.Drawing.Size(1234, 611)
         Me.Controls.Add(Me.ABlueflap_Settings)
         Me.Controls.Add(Me.ABlueflap_Navigateur)
+        Me.Controls.Add(Me.ABlueflap_Infos)
         Me.Controls.Add(Me.ABlueflap_Bluestart)
         Me.Controls.Add(Me.ABlueflap_Verrouillage)
         Me.Controls.Add(Me.ABlueflap_Fight)
-        Me.Controls.Add(Me.ABlueflap_Infos)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimumSize = New System.Drawing.Size(240, 39)
         Me.Name = "Fenetre_Principale"
@@ -2804,10 +3243,13 @@ Partial Class Fenetre_Principale
         Me.Menua.ResumeLayout(False)
         Me.downloadbar.ResumeLayout(False)
         Me.downloadbar.PerformLayout()
+        Me.menutouch.ResumeLayout(False)
         Me.ABlueflap_Settings.ResumeLayout(False)
         Me.ABlueflap_Settings.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        Me.Sett_TabC.ResumeLayout(False)
+        Me.Sett_TabC.PerformLayout()
         Me.Sett_TabA.ResumeLayout(False)
         Me.Sett_TabA.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2822,8 +3264,6 @@ Partial Class Fenetre_Principale
         CType(Me.StngmenuIcon4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Sett_TabB.ResumeLayout(False)
         Me.Sett_TabB.PerformLayout()
-        Me.Sett_TabC.ResumeLayout(False)
-        Me.Sett_TabC.PerformLayout()
         Me.ABlueflap_Fight.ResumeLayout(False)
         Me.ABlueflap_Fight.PerformLayout()
         Me.SrchF_Split.Panel1.ResumeLayout(False)
@@ -2836,6 +3276,10 @@ Partial Class Fenetre_Principale
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        Me.ABlueflap_Infos.ResumeLayout(False)
+        Me.ABlueflap_Infos.PerformLayout()
+        CType(Me.Infos_code_source, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Infos_Loader, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ABlueflap_Bluestart.ResumeLayout(False)
         Me.ABlueflap_Bluestart.PerformLayout()
         Me.Bs_Favbulle.ResumeLayout(False)
@@ -2843,10 +3287,6 @@ Partial Class Fenetre_Principale
         Me.BS_SearchBlackEffect.PerformLayout()
         Me.BS_Optionsbulle.ResumeLayout(False)
         CType(Me.BS_Logo, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ABlueflap_Infos.ResumeLayout(False)
-        Me.ABlueflap_Infos.PerformLayout()
-        CType(Me.Infos_code_source, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Infos_Loader, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -3053,5 +3493,37 @@ Partial Class Fenetre_Principale
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents RectangleShape3 As Microsoft.VisualBasic.PowerPacks.RectangleShape
     Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents Infos_progress As System.Windows.Forms.ProgressBar
+    Friend WithEvents colorline As System.Windows.Forms.Panel
+    Friend WithEvents Button4 As System.Windows.Forms.Button
+    Friend WithEvents colorbox As System.Windows.Forms.Panel
+    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents Button8 As System.Windows.Forms.Button
+    Friend WithEvents Button7 As System.Windows.Forms.Button
+    Friend WithEvents Button6 As System.Windows.Forms.Button
+    Friend WithEvents Button5 As System.Windows.Forms.Button
+    Friend WithEvents ColorDialog1 As System.Windows.Forms.ColorDialog
+    Friend WithEvents stng_colorlinecheck As System.Windows.Forms.CheckBox
+    Friend WithEvents RectangleShape4 As Microsoft.VisualBasic.PowerPacks.RectangleShape
+    Friend WithEvents Button9 As System.Windows.Forms.Button
+    Friend WithEvents Button10 As System.Windows.Forms.Button
+    Friend WithEvents Button11 As System.Windows.Forms.Button
+    Friend WithEvents Button12 As System.Windows.Forms.Button
+    Friend WithEvents Colorbox2 As System.Windows.Forms.Panel
+    Friend WithEvents stng_grayicons As System.Windows.Forms.CheckBox
+    Friend WithEvents menutouch As System.Windows.Forms.FlowLayoutPanel
+    Friend WithEvents menuT_Home As System.Windows.Forms.Button
+    Friend WithEvents menuT_back As System.Windows.Forms.Button
+    Friend WithEvents menuT_forward As System.Windows.Forms.Button
+    Friend WithEvents menuT_close As System.Windows.Forms.Button
+    Friend WithEvents menuT_Refresh As System.Windows.Forms.Button
+    Friend WithEvents menuT_Page As System.Windows.Forms.Button
+    Friend WithEvents menuT_Fight As System.Windows.Forms.Button
+    Friend WithEvents Info As System.Windows.Forms.Button
+    Friend WithEvents menuT_Settings As System.Windows.Forms.Button
+    Friend WithEvents menuT_lock As System.Windows.Forms.Button
+    Friend WithEvents menuT_fullscreen As System.Windows.Forms.Button
+    Friend WithEvents menuT_memo As System.Windows.Forms.Button
+    Friend WithEvents Button23 As System.Windows.Forms.Button
 
 End Class

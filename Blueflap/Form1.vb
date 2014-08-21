@@ -11,31 +11,47 @@
                     'Element du menu Blueflap au passage de la souris
                     e.Graphics.FillRectangle(Brushes.Transparent, rc)
                     e.Graphics.DrawRectangle(Pens.WhiteSmoke, 1, 0, rc.Width + 1, rc.Height - 1)
-                    e.Item.ForeColor = Color.SteelBlue
+                    e.Item.ForeColor = Fenetre_Principale.colorbox.BackColor
                 Else
                     Dim rc As New Rectangle(New System.Drawing.Point(19, 0), New System.Drawing.Size(2, 25))
                     'Element du menu Blueflap au passage de la souris
                     e.Graphics.FillRectangle(Brushes.DeepSkyBlue, rc)
                     e.Graphics.DrawRectangle(Pens.Transparent, 1, 0, rc.Width - 1, rc.Height - 1)
-                    e.Item.ForeColor = Color.SteelBlue
+                    e.Item.ForeColor = Fenetre_Principale.colorbox.BackColor
                 End If
             Else
                 Dim rc As New Rectangle(Point.Empty, e.Item.Size)
                 'Element du menu Blueflap au repos
                 e.Graphics.FillRectangle(Brushes.Transparent, rc)
-                e.Item.ForeColor = Color.DeepSkyBlue
+                e.Item.ForeColor = Fenetre_Principale.Colorbox2.BackColor
             End If
         End Sub
     End Class
     Private Sub MenuBoutton_Click(sender As Object, e As EventArgs) Handles Menu_ShowHide_Button.Click
-        If voletlateral.Width = 27 Then
-            voletlateral.Width = 160
-            voletlateral.BackColor = Color.White
-            voletlateral.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow
+        If Not Stng_TouchUI.Checked Then
+            If voletlateral.Width = 27 Then
+                voletlateral.Width = 160
+                voletlateral.BackColor = Color.White
+                voletlateral.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow
+            Else
+                voletlateral.LayoutStyle = ToolStripLayoutStyle.Table
+                voletlateral.Width = 27
+                If stng_grayicons.Checked Then
+                    voletlateral.BackColor = Color.WhiteSmoke
+                Else
+                    voletlateral.BackColor = Color.Black
+                End If
+            End If
         Else
-            voletlateral.LayoutStyle = ToolStripLayoutStyle.Table
-            voletlateral.Width = 27
-            voletlateral.BackColor = Color.Black
+            If voletlateral.Visible Then
+                voletlateral.Visible = False
+                Menu_ShowHide_Button.Image = Blueflap.My.Resources.Resources.fleche
+            Else
+                voletlateral.Visible = True
+                Menu_ShowHide_Button.Image = Blueflap.My.Resources.Resources.flechi
+                voletlateral.Width = 160
+                voletlateral.BackColor = Color.WhiteSmoke
+            End If
         End If
     End Sub
 
@@ -168,6 +184,7 @@
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         voletlateral.Renderer = New Bluerend
         AddHandler Awesomium.Core.WebCore.DownloadBegin, AddressOf OnDownloadBegin
+
         If Stng_MPActiv.Checked Then
             ABlueflap_Verrouillage.BringToFront()
         Else
@@ -184,6 +201,10 @@
                 ABlueflap_Navigateur.BringToFront()
                 ABlueflap_Verrouillage.Visible = False
             End If
+        End If
+
+        If Stat1.Text = "0" Then
+            Stng_bluestart_checkbox.Checked = True
         End If
 
         For Each item As String In My.Settings.Bookmarks
@@ -210,7 +231,11 @@
 
         If Stng_Volet_reduire.Checked Then
             voletlateral.Width = 27
-            voletlateral.BackColor = Color.Black
+            If stng_grayicons.Checked Then
+                voletlateral.BackColor = Color.WhiteSmoke
+            Else
+                voletlateral.BackColor = Color.Black
+            End If
             voletlateral.LayoutStyle = ToolStripLayoutStyle.Table
         Else
             voletlateral.Width = 160
@@ -245,6 +270,15 @@
                 stng_picdemo.BackgroundImage = Image.FromFile(BackgroundChemin.Text)
             End If
         End If
+
+        If stng_colorlinecheck.Checked Then
+            colorline.Visible = True
+        Else
+            colorline.Visible = False
+        End If
+        Grayicons()
+        colorline.BackColor = colorbox.BackColor
+        Touchmode()
     End Sub
 
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles Stng_HomePage_Url.TextChanged
@@ -272,7 +306,11 @@
     Private Sub Volet_settings_CheckedChanged(sender As Object, e As EventArgs) Handles Stng_Volet_reduire.CheckedChanged
         If Stng_Volet_reduire.Checked Then
             voletlateral.Width = 27
-            voletlateral.BackColor = Color.Black
+            If stng_grayicons.Checked Then
+                voletlateral.BackColor = Color.WhiteSmoke
+            Else
+                voletlateral.BackColor = Color.Black
+            End If
             Stng_Volet_Mousehover_agrandir.Visible = True
             voletlateral.LayoutStyle = ToolStripLayoutStyle.Table
         Else
@@ -405,6 +443,7 @@
         Infos_Loader.Visible = False
         Infos_Loading.Visible = False
         Infos_Save.Visible = True
+        Infos_progress.Visible = False
         Infos_Print.Visible = True
         If stng_nevpriv.Checked = True Then
             Web.WebSession.ClearCookies()
@@ -413,6 +452,7 @@
     Private Sub Infoload_Navigating(sender As Object, e As WebBrowserNavigatingEventArgs) Handles Infos_Trident_Browser_Recup_Infos.Navigating
         Infos_Loader.Visible = True
         Infos_Loading.Visible = True
+        Infos_progress.Visible = True
         Infos_Save.Visible = False
         Infos_Print.Visible = False
     End Sub
@@ -551,51 +591,38 @@
     Private Sub Button13_Click_1(sender As Object, e As EventArgs) Handles Stng_OptionsInternet.Click
         Process.Start("inetcpl.cpl")
     End Sub
-
-    Private Sub CheckBox2_CheckedChanged(sender As Object, e As EventArgs) Handles Stng_TouchUI.CheckedChanged
-        If Stng_TouchUI.Checked = True Then
-            Form3.Show()
-            Menu_Home.Font = New Font("Segoe UI Light", 16)
-            Menu_Back.Font = New Font("Segoe UI Light", 16)
-            Menu_Forward.Font = New Font("Segoe UI Light", 16)
-            Menu_Stop.Font = New Font("Segoe UI Light", 16)
-            Menu_Refresh.Font = New Font("Segoe UI Light", 16)
-            Menu_Fight.Font = New Font("Segoe UI Light", 16)
-            Menu_Settings.Font = New Font("Segoe UI Light", 16)
-            Menu_Share.Font = New Font("Segoe UI Light", 16)
-            menu_partage.Font = New Font("Segoe UI Light", 16)
-            Menu_Favos.Font = New Font("Segoe UI Light", 16)
-            Menu_Lock.Font = New Font("Segoe UI Light", 16)
-            Menu_FullScr.Font = New Font("Segoe UI Light", 16)
-            Menu_Memo.Font = New Font("Segoe UI Light", 16)
-            Menu_Translate.Font = New Font("Segoe UI Light", 16)
-            SmartAdressbox.Font = New Font("Segoe UI Light", 13)
+    Private Sub Touchmode()
+        If Stng_TouchUI.Checked Then
+            menutouch.Visible = True
+            voletlateral.Visible = False
+            SmartAdressbox.Font = New Font("Arial bold", 15.25)
             FP_AdressbarPanel.Height = 40
-            AddFavo_Button.Height = 31
             GoButton.Height = 29
             Menu_ShowHide_Button.Height = 38
+            Menu_ShowHide_Button.Width = 35
+            AddFavo_Button.Height = 31
+            AddFavo_Button.BackgroundImage = Blueflap.My.Resources.Resources.plsu
+            Menu_ShowHide_Button.Image = Blueflap.My.Resources.Resources.fleche
+            GoButton.Image = Blueflap.My.Resources.Resources.flache
+            Loader.Top = 16
         Else
-            Form3.Close()
-            Menu_Home.Font = New Font("Segoe UI Light", 11)
-            Menu_Back.Font = New Font("Segoe UI Light", 11)
-            Menu_Forward.Font = New Font("Segoe UI Light", 11)
-            Menu_Stop.Font = New Font("Segoe UI Light", 11)
-            Menu_Refresh.Font = New Font("Segoe UI Light", 11)
-            Menu_Fight.Font = New Font("Segoe UI Light", 11)
-            Menu_Settings.Font = New Font("Segoe UI Light", 11)
-            Menu_Share.Font = New Font("Segoe UI Light", 11)
-            menu_partage.Font = New Font("Segoe UI Light", 11)
-            Menu_Favos.Font = New Font("Segoe UI Light", 11)
-            Menu_Lock.Font = New Font("Segoe UI Light", 11)
-            Menu_FullScr.Font = New Font("Segoe UI Light", 11)
-            Menu_Memo.Font = New Font("Segoe UI Light", 11)
-            Menu_Translate.Font = New Font("Segoe UI Light", 11)
+            menutouch.Visible = False
+            voletlateral.Visible = True
             SmartAdressbox.Font = New Font("Microsoft Sans Serif", 8)
             FP_AdressbarPanel.Height = 27
-            AddFavo_Button.Height = 20
             GoButton.Height = 18
             Menu_ShowHide_Button.Height = 27
+            Menu_ShowHide_Button.Width = 27
+            AddFavo_Button.Height = 20
+            AddFavo_Button.Width = 20
+            AddFavo_Button.BackgroundImage = Blueflap.My.Resources.Resources.adfava
+            Menu_ShowHide_Button.Image = Blueflap.My.Resources.Resources.bcd
+            GoButton.Image = Blueflap.My.Resources.Resources.c25
+            Loader.Top = 10
         End If
+    End Sub
+    Private Sub CheckBox2_CheckedChanged(sender As Object, e As EventArgs) Handles Stng_TouchUI.CheckedChanged
+        Touchmode()
     End Sub
 
     Private Sub Verrouillage_MouseMove(sender As Object, e As MouseEventArgs) Handles ABlueflap_Verrouillage.MouseMove
@@ -646,7 +673,11 @@
     Private Sub volet_MouseLeave(sender As Object, e As EventArgs) Handles voletlateral.MouseLeave
         If Stng_Volet_reduire.Checked AndAlso Stng_Volet_Mousehover_agrandir.Checked Then
             voletlateral.Width = 27
-            voletlateral.BackColor = Color.Black
+            If stng_grayicons.Checked Then
+                voletlateral.BackColor = Color.WhiteSmoke
+            Else
+                voletlateral.BackColor = Color.Black
+            End If
             voletlateral.LayoutStyle = ToolStripLayoutStyle.Table
         End If
     End Sub
@@ -1008,5 +1039,163 @@
         Windy = New Fenetre_Principale
         Call Windy.Show()
         Windy = Nothing
+    End Sub
+
+    Private Sub Infos_Trident_Browser_Recup_Infos_ProgressChanged(sender As Object, e As WebBrowserProgressChangedEventArgs) Handles Infos_Trident_Browser_Recup_Infos.ProgressChanged
+        Dim Progress As Integer = e.CurrentProgress
+        Dim ProgressMax As Integer = e.MaximumProgress
+        Dim Pourcent As Short
+
+        If ProgressMax <> 0 Then
+            On Error Resume Next
+            Infos_progress.Maximum = ProgressMax
+            If Not Progress < 0 Then
+                Infos_progress.Value = Progress
+            End If
+            Pourcent = Fix((Progress / ProgressMax) * 100)
+            If Pourcent > 100 Then
+                Pourcent = 100
+            End If
+        Else
+            Infos_progress.Value = 0
+        End If
+    End Sub
+
+    Private Sub Button4_Click_2(sender As Object, e As EventArgs) Handles Button4.Click
+        colorbox.BackColor = Color.Red
+        Colorbox2.BackColor = Color.DarkRed
+        colorline.BackColor = Color.DarkRed
+    End Sub
+
+    Private Sub Button5_Click_2(sender As Object, e As EventArgs) Handles Button5.Click
+        colorbox.BackColor = Color.Goldenrod
+        Colorbox2.BackColor = Color.Gold
+        colorline.BackColor = Color.Gold
+    End Sub
+
+    Private Sub Button6_Click_2(sender As Object, e As EventArgs) Handles Button6.Click
+        colorbox.BackColor = Color.SteelBlue
+        Colorbox2.BackColor = Color.DeepSkyBlue
+        colorline.BackColor = Color.SteelBlue
+    End Sub
+
+    Private Sub Button7_Click_1(sender As Object, e As EventArgs) Handles Button7.Click
+        colorbox.BackColor = Color.YellowGreen
+        Colorbox2.BackColor = Color.ForestGreen
+        colorline.BackColor = Color.YellowGreen
+    End Sub
+
+    Private Sub Button8_Click_1(sender As Object, e As EventArgs) Handles Button8.Click
+        colorbox.BackColor = Color.DeepPink
+        Colorbox2.BackColor = Color.MediumVioletRed
+        colorline.BackColor = Color.DeepPink
+    End Sub
+
+    Private Sub CheckBox1_CheckedChanged_1(sender As Object, e As EventArgs) Handles stng_colorlinecheck.CheckedChanged
+        If stng_colorlinecheck.Checked Then
+            colorline.Visible = True
+        Else
+            colorline.Visible = False
+        End If
+    End Sub
+
+    Private Sub Button9_Click_2(sender As Object, e As EventArgs) Handles Button9.Click
+        colorbox.BackColor = Color.DarkViolet
+        Colorbox2.BackColor = Color.Violet
+        colorline.BackColor = Color.DarkViolet
+    End Sub
+
+    Private Sub Button10_Click_1(sender As Object, e As EventArgs) Handles Button10.Click
+        colorbox.BackColor = Color.DarkGoldenrod
+        Colorbox2.BackColor = Color.Orange
+        colorline.BackColor = Color.DarkGoldenrod
+    End Sub
+
+    Private Sub Button11_Click_1(sender As Object, e As EventArgs) Handles Button11.Click
+        colorbox.BackColor = Color.Chocolate
+        Colorbox2.BackColor = Color.Tomato
+        colorline.BackColor = Color.Chocolate
+    End Sub
+
+    Private Sub Button12_Click_1(sender As Object, e As EventArgs) Handles Button12.Click
+        colorbox.BackColor = Color.DarkSlateGray
+        Colorbox2.BackColor = Color.DarkGray
+        colorline.BackColor = Color.DarkSlateGray
+    End Sub
+    Private Sub CheckBox2_CheckedChanged_2(sender As Object, e As EventArgs) Handles stng_grayicons.CheckedChanged
+        Grayicons()
+    End Sub
+    Private Sub Grayicons()
+        If stng_grayicons.Checked Then
+            Menu_Home.Image = Blueflap.My.Resources.Resources.a13
+            Menu_Back.Image = Blueflap.My.Resources.Resources.a15
+            Menu_Forward.Image = Blueflap.My.Resources.Resources.a14
+            Menu_FullScr.Image = Blueflap.My.Resources.Resources.a7
+            Menu_Favos.Image = Blueflap.My.Resources.Resources.a9
+            Menu_Memo.Image = Blueflap.My.Resources.Resources.a16
+            menu_partage.Image = Blueflap.My.Resources.Resources.a4
+            Menu_Refresh.Image = Blueflap.My.Resources.Resources.a1
+            Menu_Settings.Image = Blueflap.My.Resources.Resources.a10
+            Menu_Share.Image = Blueflap.My.Resources.Resources.a18
+            Menu_Lock.Image = Blueflap.My.Resources.Resources.a11
+            Menu_Stop.Image = Blueflap.My.Resources.Resources.a2
+            Menu_Translate.Image = Blueflap.My.Resources.Resources.a3
+            Menu_Window.Image = Blueflap.My.Resources.Resources.a19
+            FacebookToolStripMenuItem.Image = Blueflap.My.Resources.Resources.a6
+            TwitterToolStripMenuItem.Image = Blueflap.My.Resources.Resources.a8
+            ToolStripMenuItem1.Image = Blueflap.My.Resources.Resources.a5
+            Menu_Fight.Image = Blueflap.My.Resources.Resources.a12
+        Else
+            Menu_Home.Image = Blueflap.My.Resources.Resources.c21
+            Menu_Back.Image = Blueflap.My.Resources.Resources.c27
+            Menu_Forward.Image = Blueflap.My.Resources.Resources.c25
+            Menu_FullScr.Image = Blueflap.My.Resources.Resources.pleinecran
+            Menu_Favos.Image = Blueflap.My.Resources.Resources.c12
+            Menu_Memo.Image = Blueflap.My.Resources.Resources.c28
+            menu_partage.Image = Blueflap.My.Resources.Resources.shareza
+            Menu_Refresh.Image = Blueflap.My.Resources.Resources.refresh
+            Menu_Settings.Image = Blueflap.My.Resources.Resources.c16
+            Menu_Share.Image = Blueflap.My.Resources.Resources.infos
+            Menu_Lock.Image = Blueflap.My.Resources.Resources.c17
+            Menu_Stop.Image = Blueflap.My.Resources.Resources.stopy
+            Menu_Translate.Image = Blueflap.My.Resources.Resources.transl
+            Menu_Window.Image = Blueflap.My.Resources.Resources.plus
+            FacebookToolStripMenuItem.Image = Blueflap.My.Resources.Resources.facebookshare
+            TwitterToolStripMenuItem.Image = Blueflap.My.Resources.Resources.twittershare
+            ToolStripMenuItem1.Image = Blueflap.My.Resources.Resources.addthis
+            Menu_Fight.Image = Blueflap.My.Resources.Resources.c20
+        End If
+    End Sub
+
+    Private Sub SmartAdressbox_Click(sender As Object, e As EventArgs) Handles SmartAdressbox.Click
+        SmartAdressbox.SelectAll()
+    End Sub
+
+    Private Sub Button13_Click_2(sender As Object, e As EventArgs)
+        If Stng_bluestart_checkbox.Checked = True Then
+            ABlueflap_Bluestart.Visible = True
+            ABlueflap_Bluestart.BringToFront()
+        Else
+            If Stng_HomePage_Url.Text.Contains("http://") OrElse Stng_HomePage_Url.Text.Contains("https://") Then
+                Web.Source = New Uri(Stng_HomePage_Url.Text)
+            Else
+                Web.Source = New Uri("http://google.fr")
+                MessageBox.Show("La page d'accueil définie dans les paramètres n'est pas valide")
+            End If
+        End If
+    End Sub
+
+    Private Sub Button23_Click(sender As Object, e As EventArgs) Handles Button23.Click
+        Process.Start("osk")
+    End Sub
+
+    Private Sub menuT_Settings_Click(sender As Object, e As EventArgs) Handles menuT_Settings.Click
+        ABlueflap_Settings.BringToFront()
+
+        If Stng_MP_confirm.Text.Equals(Stng_MP.Text) OrElse String.IsNullOrWhiteSpace(Stng_MP.Text) Then
+            Stng_MP.Enabled = True
+        Else
+            Stng_MP.Enabled = False
+        End If
     End Sub
 End Class

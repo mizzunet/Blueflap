@@ -29,7 +29,7 @@
     <PublisherName>SimpleWorld</PublisherName>
     <SuiteName>Blueflap 3.x</SuiteName>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>432</ApplicationRevision>
+    <ApplicationRevision>433</ApplicationRevision>
     <ApplicationVersion>3.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -250,6 +250,49 @@
   <ItemGroup>
     <Content Include="blueflap.ico" />
     <Content Include="blueflap3.ico" />
+    <None Include="Resources\flache.png" />
+    <None Include="Resources\flach.png" />
+    <None Include="Resources\plsu.png" />
+    <None Include="Resources\flechi.png" />
+    <None Include="Resources\fleche.png" />
+    <None Include="Resources\xn.png" />
+    <None Include="Resources\keyboard1.png" />
+    <None Include="Resources\pls.png" />
+    <None Include="Resources\fuls.png" />
+    <None Include="Resources\memo.png" />
+    <None Include="Resources\full.png" />
+    <None Include="Resources\verr.png" />
+    <None Include="Resources\ke.png" />
+    <None Include="Resources\keyboard.png" />
+    <None Include="Resources\setting.png" />
+    <None Include="Resources\infos1.png" />
+    <None Include="Resources\fightt.png" />
+    <None Include="Resources\refresh1.png" />
+    <None Include="Resources\plus1.png" />
+    <None Include="Resources\stop1.png" />
+    <None Include="Resources\next.png" />
+    <None Include="Resources\back.png" />
+    <None Include="Resources\home1.png" />
+    <None Include="Resources\home.png" />
+    <None Include="Resources\a19.png" />
+    <None Include="Resources\a18.png" />
+    <None Include="Resources\a9.png" />
+    <None Include="Resources\a10.png" />
+    <None Include="Resources\a11.png" />
+    <None Include="Resources\a12.png" />
+    <None Include="Resources\a13.png" />
+    <None Include="Resources\a14.png" />
+    <None Include="Resources\a15.png" />
+    <None Include="Resources\a16.png" />
+    <None Include="Resources\a17.png" />
+    <None Include="Resources\a2.png" />
+    <None Include="Resources\a3.png" />
+    <None Include="Resources\a4.png" />
+    <None Include="Resources\a5.png" />
+    <None Include="Resources\a6.png" />
+    <None Include="Resources\a7.png" />
+    <None Include="Resources\a1.png" />
+    <None Include="Resources\a8.png" />
     <None Include="Resources\loupez.png" />
     <None Include="Resources\fond.png" />
     <None Include="Resources\loupe.png" />

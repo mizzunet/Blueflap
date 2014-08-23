@@ -28,31 +28,21 @@
         End Sub
     End Class
     Private Sub MenuBoutton_Click(sender As Object, e As EventArgs) Handles Menu_ShowHide_Button.Click
-        If Not Stng_TouchUI.Checked Then
-            If voletlateral.Width = 27 Then
-                voletlateral.Width = 160
-                voletlateral.BackColor = Color.White
-                voletlateral.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow
-            Else
-                voletlateral.LayoutStyle = ToolStripLayoutStyle.Table
-                voletlateral.Width = 27
-                If stng_grayicons.Checked Then
-                    voletlateral.BackColor = Color.WhiteSmoke
-                Else
-                    voletlateral.BackColor = Color.Black
-                End If
-            End If
+
+        If voletlateral.Width = 27 Then
+            voletlateral.Width = 160
+            voletlateral.BackColor = Color.White
+            voletlateral.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow
         Else
-            If voletlateral.Visible Then
-                voletlateral.Visible = False
-                Menu_ShowHide_Button.Image = Blueflap.My.Resources.Resources.fleche
-            Else
-                voletlateral.Visible = True
-                Menu_ShowHide_Button.Image = Blueflap.My.Resources.Resources.flechi
-                voletlateral.Width = 160
+            voletlateral.LayoutStyle = ToolStripLayoutStyle.Table
+            voletlateral.Width = 27
+            If stng_grayicons.Checked Then
                 voletlateral.BackColor = Color.WhiteSmoke
+            Else
+                voletlateral.BackColor = Color.Black
             End If
         End If
+
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles GoButton.Click
@@ -92,20 +82,28 @@
             Stng_MP.Enabled = False
         End If
     End Sub
+    Private Sub ElementsMenu()
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Settings_Back.Click
-        ABlueflap_Navigateur.BringToFront()
-
+        menuT_Home.Visible = Home_checkbox.Checked
         Menu_Home.Visible = Home_checkbox.Checked
+        menuT_Fight.Visible = Sfight_Checkbox.Checked
         Menu_Fight.Visible = Sfight_Checkbox.Checked
         Menu_Favos.Visible = favo_checkbox.Checked
+        menut_Info.Visible = infos_checkbox.Checked
         Menu_Share.Visible = infos_checkbox.Checked
         Menu_Translate.Visible = translate_checkbox.Checked
         menu_partage.Visible = Share_checkbox.Checked
+        menuT_lock.Visible = lock_checkbox.Checked
         Menu_Lock.Visible = lock_checkbox.Checked
+        menuT_fullscreen.Visible = fullscreen_checkbox.Checked
         Menu_FullScr.Visible = fullscreen_checkbox.Checked
+        menuT_memo.Visible = memo_checkbox.Checked
         Menu_Memo.Visible = memo_checkbox.Checked
+    End Sub
 
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Settings_Back.Click
+        ABlueflap_Navigateur.BringToFront()
+        ElementsMenu()
         If Stng_Volet_Mousehover_agrandir.Visible = False Then
             Stng_Volet_Mousehover_agrandir.Checked = False
         End If
@@ -152,6 +150,7 @@
         Menu_Refresh.Visible = True
         Menu_Stop.Visible = False
         Loader.Visible = False
+        Adressboxtouch.BackgroundImage = Blueflap.My.Resources.Resources.back1
     End Sub
 
     Private Sub PrécédentToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Menu_Back.Click
@@ -166,15 +165,20 @@
         Dim webSource As String = Web.Source.ToString()
 
         SmartAdressbox.Text = webSource
+        touchbox.Text = webSource
         Infos_Adresse.Text = webSource
         If Fav_fav_List.Items.Contains(webSource) Then
             AddFavo_Button.BackColor = Color.Azure
+            Addfavtouch.BackColor = Color.MidnightBlue
         Else
             AddFavo_Button.BackColor = Color.White
+            Addfavtouch.BackColor = Color.Gray
         End If
 
         Menu_Back.Enabled = Web.CanGoBack
+        menuT_back.Visible = Web.CanGoBack
         Menu_Forward.Enabled = Web.CanGoForward
+        menuT_forward.Visible = Web.CanGoForward
         Notif_internet.Visible = Not My.Computer.Network.IsAvailable
 
         Dim html As String = Web.ExecuteJavascriptWithResult("document.getElementsByTagName('html')[0].innerHTML")
@@ -245,15 +249,7 @@
 
         Notif_internet.Visible = Not My.Computer.Network.IsAvailable
 
-        Menu_Home.Visible = Home_checkbox.Checked
-        Menu_Fight.Visible = Sfight_Checkbox.Checked
-        Menu_Favos.Visible = favo_checkbox.Checked
-        Menu_Share.Visible = infos_checkbox.Checked
-        menu_partage.Visible = Share_checkbox.Checked
-        Menu_Lock.Visible = lock_checkbox.Checked
-        Menu_FullScr.Visible = fullscreen_checkbox.Checked
-        Menu_Memo.Visible = memo_checkbox.Checked
-        Menu_Translate.Visible = translate_checkbox.Checked
+        ElementsMenu()
 
 
         BS_SearchBlackEffect.Left = (Me.Width - BS_SearchBlackEffect.Width) / 2
@@ -288,8 +284,7 @@
             Stng_ErreurURLHomepage.Visible = True
         End If
     End Sub
-
-    Private Sub ToolStripMenuItem5_Click(sender As Object, e As EventArgs) Handles Menu_Home.Click
+    Private Sub Pageaccueil()
         If Stng_bluestart_checkbox.Checked = True Then
             ABlueflap_Bluestart.Visible = True
             ABlueflap_Bluestart.BringToFront()
@@ -301,6 +296,9 @@
                 MessageBox.Show("La page d'accueil définie dans les paramètres n'est pas valide")
             End If
         End If
+    End Sub
+    Private Sub ToolStripMenuItem5_Click(sender As Object, e As EventArgs) Handles Menu_Home.Click
+        Pageaccueil()
     End Sub
 
     Private Sub Volet_settings_CheckedChanged(sender As Object, e As EventArgs) Handles Stng_Volet_reduire.CheckedChanged
@@ -321,8 +319,7 @@
             Stng_Volet_Mousehover_agrandir.Visible = False
         End If
     End Sub
-
-    Private Sub FullScreenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Menu_FullScr.Click
+    Private Sub Pleinecran()
         If Me.FormBorderStyle = Windows.Forms.FormBorderStyle.Sizable Then
             Me.FormBorderStyle = Windows.Forms.FormBorderStyle.None
             Me.WindowState = FormWindowState.Normal
@@ -333,6 +330,9 @@
             Me.WindowState = FormWindowState.Normal
             Menu_FullScr.Text = "Plein écran"
         End If
+    End Sub
+    Private Sub FullScreenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Menu_FullScr.Click
+        Pleinecran()
     End Sub
 
     Private Sub TextBox3_TextChanged(sender As Object, e As EventArgs) Handles Stng_MP_confirm.TextChanged
@@ -464,8 +464,7 @@
     Private Sub Save_Click(sender As Object, e As EventArgs) Handles Infos_Save.Click
         Infos_Trident_Browser_Recup_Infos.ShowSaveAsDialog()
     End Sub
-
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles AddFavo_Button.Click
+    Private Sub Ajouterfavoris()
         Notif_add.Visible = True
         If Fav_fav_List.Items.Contains(Web.Source.ToString) Then
             Notiff_add_Text.Text = "Page déjà dans vos favoris"
@@ -476,6 +475,7 @@
                 Fav_fav_List.Items.Add(Item)
             Next
             AddFavo_Button.BackColor = Color.Azure
+            Addfavtouch.BackColor = Color.MidnightBlue
             Notiff_add_Text.Text = "Page ajoutée aux favoris"
         End If
 
@@ -488,7 +488,9 @@
                 Next
             End If
         End If
-
+    End Sub
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles AddFavo_Button.Click
+        Ajouterfavoris()
     End Sub
     Private Sub Favoris_Norif(sender As Object, e As EventArgs) Handles Fav_fav_List.DoubleClick
         If Not String.IsNullOrWhiteSpace(Fav_fav_List.SelectedItem) Then
@@ -536,14 +538,20 @@
     End Sub
     Private Sub Awesomium_Windows_Forms_WebControl_Navig(sender As Object, e As Awesomium.Core.UrlEventArgs) Handles Web.LoadingFrame
         Menu_Stop.Visible = True
+        menuT_close.Visible = True
         Loader.Visible = True
+        Adressboxtouch.BackgroundImage = Blueflap.My.Resources.Resources.loada
         Menu_Refresh.Visible = False
+        menuT_Refresh.Visible = False
     End Sub
 
     Private Sub Awesomium_Windows_Forms_WebControl_LoadingFrameComplete(sender As Object, e As Awesomium.Core.FrameEventArgs) Handles Web.LoadingFrameComplete
         Menu_Stop.Visible = False
+        menuT_close.Visible = False
         Loader.Visible = False
+        Adressboxtouch.BackgroundImage = Blueflap.My.Resources.Resources.back1
         Menu_Refresh.Visible = True
+        menuT_Refresh.Visible = True
         Infos_Titre.Text = Web.Title
         If Stng_Titlebar.Checked Then
             Me.Text = "Blueflap - " + Web.Title
@@ -568,8 +576,16 @@
 
         If SmartAdressbox.Text.Contains("https://") Then
             SmartAdressbox.ForeColor = Color.DarkGreen
+            touchbox.ForeColor = Color.DarkGreen
         Else
             SmartAdressbox.ForeColor = Color.Black
+            touchbox.ForeColor = Color.DarkGray
+        End If
+
+        If touchbox.Text.Contains("https://") Then
+            touchbox.ForeColor = Color.DarkGreen
+        Else
+            touchbox.ForeColor = Color.DarkGray
         End If
 
         If stng_Adblock.Checked Then
@@ -595,30 +611,15 @@
         If Stng_TouchUI.Checked Then
             menutouch.Visible = True
             voletlateral.Visible = False
-            SmartAdressbox.Font = New Font("Arial bold", 15.25)
-            FP_AdressbarPanel.Height = 40
-            GoButton.Height = 29
-            Menu_ShowHide_Button.Height = 38
-            Menu_ShowHide_Button.Width = 35
-            AddFavo_Button.Height = 31
-            AddFavo_Button.BackgroundImage = Blueflap.My.Resources.Resources.plsu
-            Menu_ShowHide_Button.Image = Blueflap.My.Resources.Resources.fleche
-            GoButton.Image = Blueflap.My.Resources.Resources.flache
-            Loader.Top = 16
+            Adressboxtouch.Visible = True
+            FP_AdressbarPanel.Visible = False
         Else
             menutouch.Visible = False
             voletlateral.Visible = True
-            SmartAdressbox.Font = New Font("Microsoft Sans Serif", 8)
-            FP_AdressbarPanel.Height = 27
-            GoButton.Height = 18
-            Menu_ShowHide_Button.Height = 27
-            Menu_ShowHide_Button.Width = 27
-            AddFavo_Button.Height = 20
-            AddFavo_Button.Width = 20
-            AddFavo_Button.BackgroundImage = Blueflap.My.Resources.Resources.adfava
-            Menu_ShowHide_Button.Image = Blueflap.My.Resources.Resources.bcd
-            GoButton.Image = Blueflap.My.Resources.Resources.c25
-            Loader.Top = 10
+            Adressboxtouch.Visible = False
+            FP_AdressbarPanel.Visible = True
+            voletlateral.SendToBack()
+            colorline.SendToBack()
         End If
     End Sub
     Private Sub CheckBox2_CheckedChanged(sender As Object, e As EventArgs) Handles Stng_TouchUI.CheckedChanged
@@ -1008,12 +1009,16 @@
         If Not stng_target.Checked Then
             If Web.HasTargetURL Then
                 SmartAdressbox.Text = Web.TargetURL.ToString
+                touchbox.Text = Web.TargetURL.ToString
             Else
                 SmartAdressbox.Text = Web.Source.ToString
+                touchbox.Text = Web.Source.ToString
                 If SmartAdressbox.Text.Contains("https://") Then
                     SmartAdressbox.ForeColor = Color.DarkGreen
+                    touchbox.ForeColor = Color.DarkGreen
                 Else
                     SmartAdressbox.ForeColor = Color.Black
+                    touchbox.ForeColor = Color.DarkGray
                 End If
             End If
         End If
@@ -1170,21 +1175,6 @@
     Private Sub SmartAdressbox_Click(sender As Object, e As EventArgs) Handles SmartAdressbox.Click
         SmartAdressbox.SelectAll()
     End Sub
-
-    Private Sub Button13_Click_2(sender As Object, e As EventArgs)
-        If Stng_bluestart_checkbox.Checked = True Then
-            ABlueflap_Bluestart.Visible = True
-            ABlueflap_Bluestart.BringToFront()
-        Else
-            If Stng_HomePage_Url.Text.Contains("http://") OrElse Stng_HomePage_Url.Text.Contains("https://") Then
-                Web.Source = New Uri(Stng_HomePage_Url.Text)
-            Else
-                Web.Source = New Uri("http://google.fr")
-                MessageBox.Show("La page d'accueil définie dans les paramètres n'est pas valide")
-            End If
-        End If
-    End Sub
-
     Private Sub Button23_Click(sender As Object, e As EventArgs) Handles Button23.Click
         Process.Start("osk")
     End Sub
@@ -1197,5 +1187,112 @@
         Else
             Stng_MP.Enabled = False
         End If
+    End Sub
+
+    Private Sub menuT_Home_Click(sender As Object, e As EventArgs) Handles menuT_Home.Click
+        Pageaccueil()
+    End Sub
+
+    Private Sub menuT_back_Click(sender As Object, e As EventArgs) Handles menuT_back.Click
+        Web.GoBack()
+    End Sub
+
+    Private Sub menuT_forward_Click(sender As Object, e As EventArgs) Handles menuT_forward.Click
+        Web.GoForward()
+    End Sub
+
+    Private Sub menuT_close_Click(sender As Object, e As EventArgs) Handles menuT_close.Click
+        Web.Stop()
+        Menu_Refresh.Visible = True
+        Menu_Stop.Visible = False
+        Adressboxtouch.BackgroundImage = Blueflap.My.Resources.Resources.back1
+    End Sub
+
+    Private Sub menuT_Refresh_Click(sender As Object, e As EventArgs) Handles menuT_Refresh.Click
+        Web.Reload(True)
+    End Sub
+
+    Private Sub menuT_Page_Click(sender As Object, e As EventArgs) Handles menuT_Page.Click
+        Dim Windy As Fenetre_Principale
+        Windy = New Fenetre_Principale
+        Call Windy.Show()
+        Windy = Nothing
+    End Sub
+
+    Private Sub menuT_Fight_Click(sender As Object, e As EventArgs) Handles menuT_Fight.Click
+        ABlueflap_Fight.BringToFront()
+    End Sub
+
+    Private Sub Info_Click(sender As Object, e As EventArgs) Handles menut_Info.Click
+        ABlueflap_Infos.BringToFront()
+        Infos_Trident_Browser_Recup_Infos.Navigate(Web.Source)
+    End Sub
+
+    Private Sub menuT_lock_Click(sender As Object, e As EventArgs) Handles menuT_lock.Click
+        Form2.Show()
+    End Sub
+
+    Private Sub menuT_fullscreen_Click(sender As Object, e As EventArgs) Handles menuT_fullscreen.Click
+        Pleinecran()
+    End Sub
+
+
+    Private Sub menuT_memo_Click(sender As Object, e As EventArgs) Handles menuT_memo.Click
+        Form4.Show()
+    End Sub
+
+    Private Sub Button13_Click_2(sender As Object, e As EventArgs) Handles Button13.Click
+        If voletlateral.Visible Then
+            voletlateral.Visible = False
+        Else
+            voletlateral.Visible = True
+            voletlateral.Width = 160
+            voletlateral.BackColor = Color.WhiteSmoke
+        End If
+    End Sub
+
+    Private Sub Addfavtouch_Click(sender As Object, e As EventArgs) Handles Addfavtouch.Click
+        Ajouterfavoris()
+    End Sub
+
+    Private Sub Button14_Click_1(sender As Object, e As EventArgs) Handles Gotouchbutt.Click
+        Dim textArray = touchbox.Text.Split(" ")
+        If (touchbox.Text.Contains(".") = True And touchbox.Text.Contains(" ") = False And touchbox.Text.Contains(" .") = False And touchbox.Text.Contains(". ") = False) Or textArray(0).Contains(":/") = True Or textArray(0).Contains(":\") Then
+            If touchbox.Text.Contains("http://") OrElse touchbox.Text.Contains("https://") Then
+                Web.Source = New Uri(touchbox.Text)
+            Else
+                Web.Source = New Uri("http://" + touchbox.Text)
+            End If
+        Else
+
+            If Stng_MoteurRecherche_URL.Text.Contains("http://") OrElse Stng_MoteurRecherche_URL.Text.Contains("https://") Then
+                Web.Source = New Uri(Stng_MoteurRecherche_URL.Text + touchbox.Text)
+            Else
+                MessageBox.Show("Veuillez vérifier les paramètres du moteur de recherche")
+            End If
+
+        End If
+    End Sub
+
+    Private Sub touchbox_TextChanged(sender As Object, e As EventArgs) Handles touchbox.TextChanged
+        Me.AcceptButton = Gotouchbutt
+        If Web.IsLoading = True Then
+            touchbox.ForeColor = Color.DarkGray
+        Else
+            Dim textArray = touchbox.Text.Split(" ")
+            If (touchbox.Text.Contains(".") = True And touchbox.Text.Contains(" ") = False And touchbox.Text.Contains(" .") = False And touchbox.Text.Contains(". ") = False) Or textArray(0).Contains(":/") = True Or textArray(0).Contains(":\") Then
+                touchbox.ForeColor = Color.DodgerBlue
+            Else
+                touchbox.ForeColor = Color.DarkGray
+            End If
+        End If
+    End Sub
+
+    Private Sub touchbox_Leave(sender As Object, e As EventArgs) Handles touchbox.Leave
+        Me.AcceptButton = Nothing
+    End Sub
+
+    Private Sub touchbox_Click(sender As Object, e As EventArgs) Handles touchbox.Click
+        touchbox.SelectAll()
     End Sub
 End Class

@@ -46,6 +46,11 @@ Partial Class Fenetre_Principale
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.SupprimerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AccéderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Adressboxtouch = New System.Windows.Forms.Panel()
+        Me.touchbox = New System.Windows.Forms.TextBox()
+        Me.Addfavtouch = New System.Windows.Forms.Button()
+        Me.Gotouchbutt = New System.Windows.Forms.Button()
+        Me.Button13 = New System.Windows.Forms.Button()
         Me.FP_AdressbarPanel = New System.Windows.Forms.Panel()
         Me.Loader = New System.Windows.Forms.PictureBox()
         Me.AddFavo_Button = New System.Windows.Forms.Button()
@@ -86,7 +91,7 @@ Partial Class Fenetre_Principale
         Me.menuT_Refresh = New System.Windows.Forms.Button()
         Me.menuT_Page = New System.Windows.Forms.Button()
         Me.menuT_Fight = New System.Windows.Forms.Button()
-        Me.Info = New System.Windows.Forms.Button()
+        Me.menut_Info = New System.Windows.Forms.Button()
         Me.menuT_Settings = New System.Windows.Forms.Button()
         Me.menuT_lock = New System.Windows.Forms.Button()
         Me.menuT_fullscreen = New System.Windows.Forms.Button()
@@ -267,6 +272,7 @@ Partial Class Fenetre_Principale
         Me.Fav_Panel.SuspendLayout()
         Me.fav_notif_suppr.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
+        Me.Adressboxtouch.SuspendLayout()
         Me.FP_AdressbarPanel.SuspendLayout()
         CType(Me.Loader, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.voletlateral.SuspendLayout()
@@ -313,6 +319,7 @@ Partial Class Fenetre_Principale
         Me.ABlueflap_Navigateur.Controls.Add(Me.Notif_add)
         Me.ABlueflap_Navigateur.Controls.Add(Me.Notif_internet)
         Me.ABlueflap_Navigateur.Controls.Add(Me.Fav_Panel)
+        Me.ABlueflap_Navigateur.Controls.Add(Me.Adressboxtouch)
         Me.ABlueflap_Navigateur.Controls.Add(Me.FP_AdressbarPanel)
         Me.ABlueflap_Navigateur.Controls.Add(Me.voletlateral)
         Me.ABlueflap_Navigateur.Controls.Add(Me.downloadbar)
@@ -327,8 +334,8 @@ Partial Class Fenetre_Principale
         'Web
         '
         Me.Web.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Web.Location = New System.Drawing.Point(208, 84)
-        Me.Web.Size = New System.Drawing.Size(794, 482)
+        Me.Web.Location = New System.Drawing.Point(208, 127)
+        Me.Web.Size = New System.Drawing.Size(794, 439)
         Me.Web.Source = New System.Uri("about:blank", System.UriKind.Absolute)
         Me.Web.TabIndex = 8
         '
@@ -339,7 +346,7 @@ Partial Class Fenetre_Principale
         Me.Notif_add.Controls.Add(Me.Notiff_add_OKbutton)
         Me.Notif_add.Controls.Add(Me.Notiff_add_Text)
         Me.Notif_add.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Notif_add.Location = New System.Drawing.Point(208, 56)
+        Me.Notif_add.Location = New System.Drawing.Point(208, 99)
         Me.Notif_add.Name = "Notif_add"
         Me.Notif_add.Size = New System.Drawing.Size(794, 28)
         Me.Notif_add.TabIndex = 6
@@ -389,7 +396,7 @@ Partial Class Fenetre_Principale
         Me.Notif_internet.Controls.Add(Me.PictureBox3)
         Me.Notif_internet.Controls.Add(Me.Label2)
         Me.Notif_internet.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Notif_internet.Location = New System.Drawing.Point(208, 28)
+        Me.Notif_internet.Location = New System.Drawing.Point(208, 71)
         Me.Notif_internet.Name = "Notif_internet"
         Me.Notif_internet.Size = New System.Drawing.Size(794, 28)
         Me.Notif_internet.TabIndex = 6
@@ -424,9 +431,9 @@ Partial Class Fenetre_Principale
         Me.Fav_Panel.Controls.Add(Me.Fav_Close)
         Me.Fav_Panel.Controls.Add(Me.Fav_fav_List)
         Me.Fav_Panel.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Fav_Panel.Location = New System.Drawing.Point(1002, 28)
+        Me.Fav_Panel.Location = New System.Drawing.Point(1002, 71)
         Me.Fav_Panel.Name = "Fav_Panel"
-        Me.Fav_Panel.Size = New System.Drawing.Size(232, 538)
+        Me.Fav_Panel.Size = New System.Drawing.Size(232, 495)
         Me.Fav_Panel.TabIndex = 5
         Me.Fav_Panel.Visible = False
         '
@@ -472,7 +479,7 @@ Partial Class Fenetre_Principale
         Me.Fav_Historique_List.Location = New System.Drawing.Point(0, 56)
         Me.Fav_Historique_List.Name = "Fav_Historique_List"
         Me.Fav_Historique_List.ScrollAlwaysVisible = True
-        Me.Fav_Historique_List.Size = New System.Drawing.Size(232, 480)
+        Me.Fav_Historique_List.Size = New System.Drawing.Size(232, 435)
         Me.Fav_Historique_List.TabIndex = 5
         Me.Fav_Historique_List.Visible = False
         '
@@ -483,7 +490,7 @@ Partial Class Fenetre_Principale
         Me.fav_notif_suppr.Controls.Add(Me.Fav_Cancel)
         Me.fav_notif_suppr.Controls.Add(Me.Fav_Confirm)
         Me.fav_notif_suppr.Controls.Add(Me.Fav_Notif_Text)
-        Me.fav_notif_suppr.Location = New System.Drawing.Point(0, 457)
+        Me.fav_notif_suppr.Location = New System.Drawing.Point(0, 414)
         Me.fav_notif_suppr.Name = "fav_notif_suppr"
         Me.fav_notif_suppr.Size = New System.Drawing.Size(232, 81)
         Me.fav_notif_suppr.TabIndex = 1
@@ -545,7 +552,7 @@ Partial Class Fenetre_Principale
         Me.Fav_fav_List.Location = New System.Drawing.Point(0, 56)
         Me.Fav_fav_List.Name = "Fav_fav_List"
         Me.Fav_fav_List.ScrollAlwaysVisible = True
-        Me.Fav_fav_List.Size = New System.Drawing.Size(232, 480)
+        Me.Fav_fav_List.Size = New System.Drawing.Size(232, 435)
         Me.Fav_fav_List.TabIndex = 0
         '
         'ContextMenuStrip1
@@ -570,6 +577,73 @@ Partial Class Fenetre_Principale
         Me.AccéderToolStripMenuItem.Name = "AccéderToolStripMenuItem"
         Me.AccéderToolStripMenuItem.Size = New System.Drawing.Size(131, 24)
         Me.AccéderToolStripMenuItem.Text = "Accéder"
+        '
+        'Adressboxtouch
+        '
+        Me.Adressboxtouch.BackColor = System.Drawing.Color.White
+        Me.Adressboxtouch.BackgroundImage = Global.Blueflap.My.Resources.Resources.back1
+        Me.Adressboxtouch.Controls.Add(Me.touchbox)
+        Me.Adressboxtouch.Controls.Add(Me.Addfavtouch)
+        Me.Adressboxtouch.Controls.Add(Me.Gotouchbutt)
+        Me.Adressboxtouch.Controls.Add(Me.Button13)
+        Me.Adressboxtouch.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Adressboxtouch.Location = New System.Drawing.Point(208, 28)
+        Me.Adressboxtouch.Name = "Adressboxtouch"
+        Me.Adressboxtouch.Size = New System.Drawing.Size(1026, 43)
+        Me.Adressboxtouch.TabIndex = 11
+        '
+        'touchbox
+        '
+        Me.touchbox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.touchbox.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.touchbox.Font = New System.Drawing.Font("Calibri Light", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.touchbox.ForeColor = System.Drawing.Color.DarkGray
+        Me.touchbox.Location = New System.Drawing.Point(92, 6)
+        Me.touchbox.Name = "touchbox"
+        Me.touchbox.Size = New System.Drawing.Size(885, 30)
+        Me.touchbox.TabIndex = 3
+        Me.touchbox.Text = "http://url.com"
+        '
+        'Addfavtouch
+        '
+        Me.Addfavtouch.BackColor = System.Drawing.Color.Gray
+        Me.Addfavtouch.BackgroundImage = Global.Blueflap.My.Resources.Resources.addafavo1
+        Me.Addfavtouch.FlatAppearance.BorderSize = 0
+        Me.Addfavtouch.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Addfavtouch.ForeColor = System.Drawing.Color.Gray
+        Me.Addfavtouch.Location = New System.Drawing.Point(43, 0)
+        Me.Addfavtouch.Name = "Addfavtouch"
+        Me.Addfavtouch.Size = New System.Drawing.Size(43, 47)
+        Me.Addfavtouch.TabIndex = 2
+        Me.Addfavtouch.UseVisualStyleBackColor = False
+        '
+        'Gotouchbutt
+        '
+        Me.Gotouchbutt.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Gotouchbutt.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Gotouchbutt.BackgroundImage = Global.Blueflap.My.Resources.Resources.flaicj
+        Me.Gotouchbutt.FlatAppearance.BorderSize = 0
+        Me.Gotouchbutt.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Gotouchbutt.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Gotouchbutt.Location = New System.Drawing.Point(983, 0)
+        Me.Gotouchbutt.Name = "Gotouchbutt"
+        Me.Gotouchbutt.Size = New System.Drawing.Size(43, 47)
+        Me.Gotouchbutt.TabIndex = 1
+        Me.Gotouchbutt.UseVisualStyleBackColor = False
+        '
+        'Button13
+        '
+        Me.Button13.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.Button13.BackgroundImage = Global.Blueflap.My.Resources.Resources.menubig
+        Me.Button13.FlatAppearance.BorderSize = 0
+        Me.Button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button13.ForeColor = System.Drawing.SystemColors.ControlLight
+        Me.Button13.Location = New System.Drawing.Point(0, 0)
+        Me.Button13.Name = "Button13"
+        Me.Button13.Size = New System.Drawing.Size(43, 47)
+        Me.Button13.TabIndex = 0
+        Me.Button13.UseVisualStyleBackColor = False
         '
         'FP_AdressbarPanel
         '
@@ -969,7 +1043,7 @@ Partial Class Fenetre_Principale
         Me.menutouch.Controls.Add(Me.menuT_Refresh)
         Me.menutouch.Controls.Add(Me.menuT_Page)
         Me.menutouch.Controls.Add(Me.menuT_Fight)
-        Me.menutouch.Controls.Add(Me.Info)
+        Me.menutouch.Controls.Add(Me.menut_Info)
         Me.menutouch.Controls.Add(Me.menuT_Settings)
         Me.menutouch.Controls.Add(Me.menuT_lock)
         Me.menutouch.Controls.Add(Me.menuT_fullscreen)
@@ -987,6 +1061,7 @@ Partial Class Fenetre_Principale
         Me.menuT_Home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.menuT_Home.FlatAppearance.BorderSize = 0
         Me.menuT_Home.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.menuT_Home.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.menuT_Home.Image = CType(resources.GetObject("menuT_Home.Image"), System.Drawing.Image)
         Me.menuT_Home.Location = New System.Drawing.Point(3, 3)
         Me.menuT_Home.Name = "menuT_Home"
@@ -999,42 +1074,49 @@ Partial Class Fenetre_Principale
         Me.menuT_back.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.menuT_back.FlatAppearance.BorderSize = 0
         Me.menuT_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.menuT_back.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.menuT_back.Image = CType(resources.GetObject("menuT_back.Image"), System.Drawing.Image)
         Me.menuT_back.Location = New System.Drawing.Point(3, 47)
         Me.menuT_back.Name = "menuT_back"
         Me.menuT_back.Size = New System.Drawing.Size(38, 38)
         Me.menuT_back.TabIndex = 26
         Me.menuT_back.UseVisualStyleBackColor = True
+        Me.menuT_back.Visible = False
         '
         'menuT_forward
         '
         Me.menuT_forward.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.menuT_forward.FlatAppearance.BorderSize = 0
         Me.menuT_forward.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.menuT_forward.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.menuT_forward.Image = Global.Blueflap.My.Resources.Resources.nexta
         Me.menuT_forward.Location = New System.Drawing.Point(3, 91)
         Me.menuT_forward.Name = "menuT_forward"
         Me.menuT_forward.Size = New System.Drawing.Size(38, 38)
         Me.menuT_forward.TabIndex = 27
         Me.menuT_forward.UseVisualStyleBackColor = True
+        Me.menuT_forward.Visible = False
         '
         'menuT_close
         '
         Me.menuT_close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.menuT_close.FlatAppearance.BorderSize = 0
         Me.menuT_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.menuT_close.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.menuT_close.Image = Global.Blueflap.My.Resources.Resources.stopa
         Me.menuT_close.Location = New System.Drawing.Point(3, 135)
         Me.menuT_close.Name = "menuT_close"
         Me.menuT_close.Size = New System.Drawing.Size(38, 38)
         Me.menuT_close.TabIndex = 28
         Me.menuT_close.UseVisualStyleBackColor = True
+        Me.menuT_close.Visible = False
         '
         'menuT_Refresh
         '
         Me.menuT_Refresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.menuT_Refresh.FlatAppearance.BorderSize = 0
         Me.menuT_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.menuT_Refresh.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.menuT_Refresh.Image = CType(resources.GetObject("menuT_Refresh.Image"), System.Drawing.Image)
         Me.menuT_Refresh.Location = New System.Drawing.Point(3, 179)
         Me.menuT_Refresh.Name = "menuT_Refresh"
@@ -1047,6 +1129,7 @@ Partial Class Fenetre_Principale
         Me.menuT_Page.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.menuT_Page.FlatAppearance.BorderSize = 0
         Me.menuT_Page.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.menuT_Page.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.menuT_Page.Image = CType(resources.GetObject("menuT_Page.Image"), System.Drawing.Image)
         Me.menuT_Page.Location = New System.Drawing.Point(3, 223)
         Me.menuT_Page.Name = "menuT_Page"
@@ -1059,6 +1142,7 @@ Partial Class Fenetre_Principale
         Me.menuT_Fight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.menuT_Fight.FlatAppearance.BorderSize = 0
         Me.menuT_Fight.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.menuT_Fight.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.menuT_Fight.Image = CType(resources.GetObject("menuT_Fight.Image"), System.Drawing.Image)
         Me.menuT_Fight.Location = New System.Drawing.Point(3, 267)
         Me.menuT_Fight.Name = "menuT_Fight"
@@ -1066,23 +1150,25 @@ Partial Class Fenetre_Principale
         Me.menuT_Fight.TabIndex = 31
         Me.menuT_Fight.UseVisualStyleBackColor = True
         '
-        'Info
+        'menut_Info
         '
-        Me.Info.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Info.FlatAppearance.BorderSize = 0
-        Me.Info.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Info.Image = CType(resources.GetObject("Info.Image"), System.Drawing.Image)
-        Me.Info.Location = New System.Drawing.Point(3, 311)
-        Me.Info.Name = "Info"
-        Me.Info.Size = New System.Drawing.Size(38, 38)
-        Me.Info.TabIndex = 32
-        Me.Info.UseVisualStyleBackColor = True
+        Me.menut_Info.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.menut_Info.FlatAppearance.BorderSize = 0
+        Me.menut_Info.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.menut_Info.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.menut_Info.Image = CType(resources.GetObject("menut_Info.Image"), System.Drawing.Image)
+        Me.menut_Info.Location = New System.Drawing.Point(3, 311)
+        Me.menut_Info.Name = "menut_Info"
+        Me.menut_Info.Size = New System.Drawing.Size(38, 38)
+        Me.menut_Info.TabIndex = 32
+        Me.menut_Info.UseVisualStyleBackColor = True
         '
         'menuT_Settings
         '
         Me.menuT_Settings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.menuT_Settings.FlatAppearance.BorderSize = 0
         Me.menuT_Settings.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.menuT_Settings.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.menuT_Settings.Image = CType(resources.GetObject("menuT_Settings.Image"), System.Drawing.Image)
         Me.menuT_Settings.Location = New System.Drawing.Point(3, 355)
         Me.menuT_Settings.Name = "menuT_Settings"
@@ -1095,6 +1181,7 @@ Partial Class Fenetre_Principale
         Me.menuT_lock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.menuT_lock.FlatAppearance.BorderSize = 0
         Me.menuT_lock.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.menuT_lock.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.menuT_lock.Image = CType(resources.GetObject("menuT_lock.Image"), System.Drawing.Image)
         Me.menuT_lock.Location = New System.Drawing.Point(3, 399)
         Me.menuT_lock.Name = "menuT_lock"
@@ -1107,6 +1194,7 @@ Partial Class Fenetre_Principale
         Me.menuT_fullscreen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.menuT_fullscreen.FlatAppearance.BorderSize = 0
         Me.menuT_fullscreen.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.menuT_fullscreen.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.menuT_fullscreen.Image = CType(resources.GetObject("menuT_fullscreen.Image"), System.Drawing.Image)
         Me.menuT_fullscreen.Location = New System.Drawing.Point(3, 443)
         Me.menuT_fullscreen.Name = "menuT_fullscreen"
@@ -1119,6 +1207,7 @@ Partial Class Fenetre_Principale
         Me.menuT_memo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.menuT_memo.FlatAppearance.BorderSize = 0
         Me.menuT_memo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.menuT_memo.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.menuT_memo.Image = CType(resources.GetObject("menuT_memo.Image"), System.Drawing.Image)
         Me.menuT_memo.Location = New System.Drawing.Point(3, 487)
         Me.menuT_memo.Name = "menuT_memo"
@@ -1132,7 +1221,7 @@ Partial Class Fenetre_Principale
         Me.Button23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.Button23.FlatAppearance.BorderSize = 0
         Me.Button23.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button23.ForeColor = System.Drawing.Color.Gainsboro
+        Me.Button23.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.Button23.Image = Global.Blueflap.My.Resources.Resources.xn
         Me.Button23.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button23.Location = New System.Drawing.Point(3, 531)
@@ -2865,6 +2954,7 @@ Partial Class Fenetre_Principale
         Me.Infos_code_source.CharWidth = 8
         Me.Infos_code_source.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Infos_code_source.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.Infos_code_source.Font = New System.Drawing.Font("Courier New", 9.75!)
         Me.Infos_code_source.IndentBackColor = System.Drawing.SystemColors.Control
         Me.Infos_code_source.IsReplaceMode = False
         Me.Infos_code_source.LineNumberColor = System.Drawing.Color.DeepSkyBlue
@@ -3213,8 +3303,8 @@ Partial Class Fenetre_Principale
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1234, 611)
-        Me.Controls.Add(Me.ABlueflap_Settings)
         Me.Controls.Add(Me.ABlueflap_Navigateur)
+        Me.Controls.Add(Me.ABlueflap_Settings)
         Me.Controls.Add(Me.ABlueflap_Infos)
         Me.Controls.Add(Me.ABlueflap_Bluestart)
         Me.Controls.Add(Me.ABlueflap_Verrouillage)
@@ -3235,6 +3325,8 @@ Partial Class Fenetre_Principale
         Me.fav_notif_suppr.ResumeLayout(False)
         Me.fav_notif_suppr.PerformLayout()
         Me.ContextMenuStrip1.ResumeLayout(False)
+        Me.Adressboxtouch.ResumeLayout(False)
+        Me.Adressboxtouch.PerformLayout()
         Me.FP_AdressbarPanel.ResumeLayout(False)
         Me.FP_AdressbarPanel.PerformLayout()
         CType(Me.Loader, System.ComponentModel.ISupportInitialize).EndInit()
@@ -3519,11 +3611,16 @@ Partial Class Fenetre_Principale
     Friend WithEvents menuT_Refresh As System.Windows.Forms.Button
     Friend WithEvents menuT_Page As System.Windows.Forms.Button
     Friend WithEvents menuT_Fight As System.Windows.Forms.Button
-    Friend WithEvents Info As System.Windows.Forms.Button
+    Friend WithEvents menut_Info As System.Windows.Forms.Button
     Friend WithEvents menuT_Settings As System.Windows.Forms.Button
     Friend WithEvents menuT_lock As System.Windows.Forms.Button
     Friend WithEvents menuT_fullscreen As System.Windows.Forms.Button
     Friend WithEvents menuT_memo As System.Windows.Forms.Button
     Friend WithEvents Button23 As System.Windows.Forms.Button
+    Friend WithEvents Adressboxtouch As System.Windows.Forms.Panel
+    Friend WithEvents Button13 As System.Windows.Forms.Button
+    Friend WithEvents Gotouchbutt As System.Windows.Forms.Button
+    Friend WithEvents Addfavtouch As System.Windows.Forms.Button
+    Friend WithEvents touchbox As System.Windows.Forms.TextBox
 
 End Class

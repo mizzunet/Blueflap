@@ -29,8 +29,8 @@
     <PublisherName>SimpleWorld</PublisherName>
     <SuiteName>Blueflap 3.x</SuiteName>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>433</ApplicationRevision>
-    <ApplicationVersion>3.0.0.%2a</ApplicationVersion>
+    <ApplicationRevision>434</ApplicationRevision>
+    <ApplicationVersion>3.1.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -171,12 +171,6 @@
     <Compile Include="Form2.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form3.Designer.vb">
-      <DependentUpon>Form3.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form3.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Form4.Designer.vb">
       <DependentUpon>Form4.vb</DependentUpon>
     </Compile>
@@ -215,9 +209,6 @@
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
-      <DependentUpon>Form3.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form4.resx">
       <DependentUpon>Form4.vb</DependentUpon>
     </EmbeddedResource>
@@ -250,6 +241,14 @@
   <ItemGroup>
     <Content Include="blueflap.ico" />
     <Content Include="blueflap3.ico" />
+    <None Include="Resources\loada.gif" />
+    <None Include="Resources\addafavo1.png" />
+    <None Include="Resources\addafavo.png" />
+    <None Include="Resources\menubig.png" />
+    <None Include="Resources\flaicj.png" />
+    <None Include="Resources\heys.png" />
+    <None Include="Resources\back1.png" />
+    <None Include="Resources\hey.png" />
     <None Include="Resources\flache.png" />
     <None Include="Resources\flach.png" />
     <None Include="Resources\plsu.png" />

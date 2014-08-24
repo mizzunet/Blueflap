@@ -43,9 +43,6 @@ Partial Class Fenetre_Principale
         Me.Fav_Notif_Text = New System.Windows.Forms.Label()
         Me.Fav_Close = New System.Windows.Forms.Button()
         Me.Fav_fav_List = New System.Windows.Forms.ListBox()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.SupprimerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AccéderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Adressboxtouch = New System.Windows.Forms.Panel()
         Me.touchbox = New System.Windows.Forms.TextBox()
         Me.Addfavtouch = New System.Windows.Forms.Button()
@@ -264,6 +261,8 @@ Partial Class Fenetre_Principale
         Me.BS_DateSetColor = New System.Windows.Forms.Button()
         Me.BS_ImgChoose = New System.Windows.Forms.Button()
         Me.BS_Logo = New System.Windows.Forms.PictureBox()
+        Me.Touchcontext = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.BlaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ABlueflap_Navigateur.SuspendLayout()
         Me.Notif_add.SuspendLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -271,7 +270,6 @@ Partial Class Fenetre_Principale
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Fav_Panel.SuspendLayout()
         Me.fav_notif_suppr.SuspendLayout()
-        Me.ContextMenuStrip1.SuspendLayout()
         Me.Adressboxtouch.SuspendLayout()
         Me.FP_AdressbarPanel.SuspendLayout()
         CType(Me.Loader, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -311,6 +309,7 @@ Partial Class Fenetre_Principale
         Me.BS_SearchBlackEffect.SuspendLayout()
         Me.BS_Optionsbulle.SuspendLayout()
         CType(Me.BS_Logo, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Touchcontext.SuspendLayout()
         Me.SuspendLayout()
         '
         'ABlueflap_Navigateur
@@ -544,7 +543,6 @@ Partial Class Fenetre_Principale
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Fav_fav_List.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.Fav_fav_List.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.Fav_fav_List.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Fav_fav_List.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Fav_fav_List.FormattingEnabled = True
         Me.Fav_fav_List.HorizontalScrollbar = True
@@ -554,29 +552,6 @@ Partial Class Fenetre_Principale
         Me.Fav_fav_List.ScrollAlwaysVisible = True
         Me.Fav_fav_List.Size = New System.Drawing.Size(232, 435)
         Me.Fav_fav_List.TabIndex = 0
-        '
-        'ContextMenuStrip1
-        '
-        Me.ContextMenuStrip1.BackColor = System.Drawing.Color.White
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SupprimerToolStripMenuItem, Me.AccéderToolStripMenuItem})
-        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(132, 52)
-        '
-        'SupprimerToolStripMenuItem
-        '
-        Me.SupprimerToolStripMenuItem.Image = CType(resources.GetObject("SupprimerToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.SupprimerToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.SupprimerToolStripMenuItem.Name = "SupprimerToolStripMenuItem"
-        Me.SupprimerToolStripMenuItem.Size = New System.Drawing.Size(131, 24)
-        Me.SupprimerToolStripMenuItem.Text = "Supprimer"
-        '
-        'AccéderToolStripMenuItem
-        '
-        Me.AccéderToolStripMenuItem.Image = CType(resources.GetObject("AccéderToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.AccéderToolStripMenuItem.Name = "AccéderToolStripMenuItem"
-        Me.AccéderToolStripMenuItem.Size = New System.Drawing.Size(131, 24)
-        Me.AccéderToolStripMenuItem.Text = "Accéder"
         '
         'Adressboxtouch
         '
@@ -2932,6 +2907,7 @@ Partial Class Fenetre_Principale
         Me.ABlueflap_Infos.Name = "ABlueflap_Infos"
         Me.ABlueflap_Infos.Size = New System.Drawing.Size(1234, 611)
         Me.ABlueflap_Infos.TabIndex = 4
+        Me.ABlueflap_Infos.Visible = False
         '
         'Infos_progress
         '
@@ -2947,7 +2923,7 @@ Partial Class Fenetre_Principale
         Me.Infos_code_source.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Infos_code_source.AutoScrollMinSize = New System.Drawing.Size(98, 14)
+        Me.Infos_code_source.AutoScrollMinSize = New System.Drawing.Size(123, 14)
         Me.Infos_code_source.BackBrush = Nothing
         Me.Infos_code_source.BackColor = System.Drawing.SystemColors.Control
         Me.Infos_code_source.CharHeight = 14
@@ -3298,14 +3274,26 @@ Partial Class Fenetre_Principale
         Me.BS_Logo.TabIndex = 1
         Me.BS_Logo.TabStop = False
         '
+        'Touchcontext
+        '
+        Me.Touchcontext.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BlaToolStripMenuItem})
+        Me.Touchcontext.Name = "Touchcontext"
+        Me.Touchcontext.Size = New System.Drawing.Size(91, 26)
+        '
+        'BlaToolStripMenuItem
+        '
+        Me.BlaToolStripMenuItem.Name = "BlaToolStripMenuItem"
+        Me.BlaToolStripMenuItem.Size = New System.Drawing.Size(90, 22)
+        Me.BlaToolStripMenuItem.Text = "Bla"
+        '
         'Fenetre_Principale
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1234, 611)
         Me.Controls.Add(Me.ABlueflap_Navigateur)
-        Me.Controls.Add(Me.ABlueflap_Settings)
         Me.Controls.Add(Me.ABlueflap_Infos)
+        Me.Controls.Add(Me.ABlueflap_Settings)
         Me.Controls.Add(Me.ABlueflap_Bluestart)
         Me.Controls.Add(Me.ABlueflap_Verrouillage)
         Me.Controls.Add(Me.ABlueflap_Fight)
@@ -3324,7 +3312,6 @@ Partial Class Fenetre_Principale
         Me.Fav_Panel.ResumeLayout(False)
         Me.fav_notif_suppr.ResumeLayout(False)
         Me.fav_notif_suppr.PerformLayout()
-        Me.ContextMenuStrip1.ResumeLayout(False)
         Me.Adressboxtouch.ResumeLayout(False)
         Me.Adressboxtouch.PerformLayout()
         Me.FP_AdressbarPanel.ResumeLayout(False)
@@ -3379,6 +3366,7 @@ Partial Class Fenetre_Principale
         Me.BS_SearchBlackEffect.PerformLayout()
         Me.BS_Optionsbulle.ResumeLayout(False)
         CType(Me.BS_Logo, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Touchcontext.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -3528,9 +3516,6 @@ Partial Class Fenetre_Principale
     Friend WithEvents Stng_Helpcenter As MetroControls.MetroHeaderButton
     Friend WithEvents Fav_Favtab As MetroControls.MetroHeaderButton
     Friend WithEvents Fav_Histotab As MetroControls.MetroHeaderButton
-    Friend WithEvents ContextMenuStrip1 As System.Windows.Forms.ContextMenuStrip
-    Friend WithEvents SupprimerToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents AccéderToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents StngLabel_Background As System.Windows.Forms.Label
     Friend WithEvents StngLabel_OpenSource As System.Windows.Forms.Label
@@ -3622,5 +3607,7 @@ Partial Class Fenetre_Principale
     Friend WithEvents Gotouchbutt As System.Windows.Forms.Button
     Friend WithEvents Addfavtouch As System.Windows.Forms.Button
     Friend WithEvents touchbox As System.Windows.Forms.TextBox
+    Friend WithEvents Touchcontext As System.Windows.Forms.ContextMenuStrip
+    Friend WithEvents BlaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

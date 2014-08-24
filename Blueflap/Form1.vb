@@ -353,11 +353,13 @@
 
     Private Sub ToolStripMenuItem4_Click(sender As Object, e As EventArgs) Handles Menu_Share.Click
         ABlueflap_Infos.BringToFront()
+        ABlueflap_Infos.Visible = True
         Infos_Trident_Browser_Recup_Infos.Navigate(Web.Source)
     End Sub
 
     Private Sub Back_info_Click(sender As Object, e As EventArgs) Handles Infos_back.Click
         ABlueflap_Navigateur.BringToFront()
+        ABlueflap_Infos.Visible = False
         Infos_Trident_Browser_Recup_Infos.Navigate("about:blank")
     End Sub
 
@@ -501,11 +503,11 @@
     Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Fav_Cancel.Click
         fav_notif_suppr.Visible = False
     End Sub
-    Private Sub SupprimerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SupprimerToolStripMenuItem.Click
+    Private Sub SupprimerToolStripMenuItem_Click(sender As Object, e As EventArgs)
         fav_notif_suppr.Visible = True
     End Sub
 
-    Private Sub AccéderToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AccéderToolStripMenuItem.Click
+    Private Sub AccéderToolStripMenuItem_Click(sender As Object, e As EventArgs)
         If Not String.IsNullOrWhiteSpace(Fav_fav_List.SelectedItem) Then
             Web.Source = New Uri(Fav_fav_List.SelectedItem)
         End If
@@ -613,6 +615,16 @@
             voletlateral.Visible = False
             Adressboxtouch.Visible = True
             FP_AdressbarPanel.Visible = False
+            Menu_Home.Visible = False
+            Menu_Window.Visible = False
+            Menu_Back.Visible = False
+            Menu_Forward.Visible = False
+            Menu_Fight.Visible = False
+            Menu_Share.Visible = False
+            Menu_Lock.Visible = False
+            Menu_FullScr.Visible = False
+            Menu_Memo.Visible = False
+            Menu_Settings.Visible = False
         Else
             menutouch.Visible = False
             voletlateral.Visible = True
@@ -620,6 +632,11 @@
             FP_AdressbarPanel.Visible = True
             voletlateral.SendToBack()
             colorline.SendToBack()
+            ElementsMenu()
+            Menu_Window.Visible = True
+            Menu_Back.Visible = True
+            Menu_Forward.Visible = True
+            Menu_Settings.Visible = True
         End If
     End Sub
     Private Sub CheckBox2_CheckedChanged(sender As Object, e As EventArgs) Handles Stng_TouchUI.CheckedChanged
@@ -918,6 +935,7 @@
 
     Private Sub FacebookToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FacebookToolStripMenuItem.Click
         ABlueflap_Infos.BringToFront()
+        ABlueflap_Infos.Visible = True
         Infos_code_source.Visible = False
         Infos_Share.Visible = True
         Infos_Share.Source = New Uri("https://www.facebook.com/sharer/sharer.php?u=" + SmartAdressbox.Text)
@@ -926,6 +944,7 @@
 
     Private Sub TwitterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TwitterToolStripMenuItem.Click
         ABlueflap_Infos.BringToFront()
+        ABlueflap_Infos.Visible = True
         Infos_code_source.Visible = False
         Infos_Share.Visible = True
         Infos_Share.Source = New Uri("https://twitter.com/home?status=@BlueflapBrowser%20cette%20page%20est%20fantastique%20!%20" + SmartAdressbox.Text)
@@ -1225,6 +1244,7 @@
 
     Private Sub Info_Click(sender As Object, e As EventArgs) Handles menut_Info.Click
         ABlueflap_Infos.BringToFront()
+        ABlueflap_Infos.Visible = True
         Infos_Trident_Browser_Recup_Infos.Navigate(Web.Source)
     End Sub
 
@@ -1248,6 +1268,16 @@
             voletlateral.Visible = True
             voletlateral.Width = 160
             voletlateral.BackColor = Color.WhiteSmoke
+            Menu_Home.Visible = False
+            Menu_Window.Visible = False
+            Menu_Back.Visible = False
+            Menu_Forward.Visible = False
+            Menu_Fight.Visible = False
+            Menu_Share.Visible = False
+            Menu_Lock.Visible = False
+            Menu_FullScr.Visible = False
+            Menu_Memo.Visible = False
+            Menu_Settings.Visible = False
         End If
     End Sub
 

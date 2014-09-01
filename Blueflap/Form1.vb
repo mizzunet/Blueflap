@@ -30,19 +30,35 @@
     Private Sub MenuBoutton_Click(sender As Object, e As EventArgs) Handles Menu_ShowHide_Button.Click
 
         If voletlateral.Width = 27 Then
-            voletlateral.Width = 160
             voletlateral.BackColor = Color.White
             voletlateral.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow
+            If stng_anim.Checked Then
+                voletlateral.Width = 60
+                Do Until voletlateral.Width = 160
+                    voletlateral.Width += 10
+                Loop
+            Else
+                voletlateral.Width = 160
+            End If
+
         Else
             voletlateral.LayoutStyle = ToolStripLayoutStyle.Table
-            voletlateral.Width = 27
             If stng_grayicons.Checked Then
                 voletlateral.BackColor = Color.WhiteSmoke
             Else
                 voletlateral.BackColor = Color.Black
             End If
-        End If
-
+            If stng_anim.Checked Then
+                voletlateral.Width = 110
+                Do Until voletlateral.Width = 30
+                    voletlateral.Width -= 10
+                Loop
+                voletlateral.Width = 27
+            Else
+                voletlateral.Width = 27
+            End If
+            End If
+            voletlateral.Refresh()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles GoButton.Click
@@ -59,6 +75,9 @@
             If SmartAdressbox.Text.Contains("http://") OrElse SmartAdressbox.Text.Contains("https://") Then
                 Web.Source = New Uri(SmartAdressbox.Text)
             Else
+                Dim Caract As String
+                Caract = SmartAdressbox.Text
+                Caract = Caract.Replace("+", "%2B")
                 Web.Source = New Uri("http://" + SmartAdressbox.Text)
             End If
         Else
@@ -99,6 +118,7 @@
         Menu_FullScr.Visible = fullscreen_checkbox.Checked
         menuT_memo.Visible = memo_checkbox.Checked
         Menu_Memo.Visible = memo_checkbox.Checked
+        Button23.Visible = stng_clavi.Checked
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Settings_Back.Click
@@ -467,7 +487,6 @@
         Infos_Trident_Browser_Recup_Infos.ShowSaveAsDialog()
     End Sub
     Private Sub Ajouterfavoris()
-        Notif_add.Visible = True
         If Fav_fav_List.Items.Contains(Web.Source.ToString) Then
             Notiff_add_Text.Text = "Page déjà dans vos favoris"
         Else
@@ -490,6 +509,17 @@
                 Next
             End If
         End If
+        Notif_add.Visible = True
+        If stng_anim.Checked Then
+            Dim i As Integer
+            For i = 18 To 28
+                Notif_add.Height = i
+                Application.DoEvents()
+                System.Threading.Thread.Sleep(0.1)
+            Next
+        End If
+        Timer1.Enabled = True
+
     End Sub
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles AddFavo_Button.Click
         Ajouterfavoris()
@@ -503,11 +533,11 @@
     Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Fav_Cancel.Click
         fav_notif_suppr.Visible = False
     End Sub
-    Private Sub SupprimerToolStripMenuItem_Click(sender As Object, e As EventArgs)
+    Private Sub SupprimerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SupprimerToolStripMenuItem.Click
         fav_notif_suppr.Visible = True
     End Sub
 
-    Private Sub AccéderToolStripMenuItem_Click(sender As Object, e As EventArgs)
+    Private Sub AccéderToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AccéderToolStripMenuItem.Click
         If Not String.IsNullOrWhiteSpace(Fav_fav_List.SelectedItem) Then
             Web.Source = New Uri(Fav_fav_List.SelectedItem)
         End If
@@ -524,11 +554,28 @@
 
     Private Sub ToolStripMenuItem9_Click(sender As Object, e As EventArgs) Handles Menu_Favos.Click
         Fav_Panel.Visible = Not Fav_Panel.Visible
+        If stng_anim.Checked Then
+            Dim i As Integer
+            For i = 225 To 232
+                Fav_Panel.Width = i
+                Application.DoEvents()
+                System.Threading.Thread.Sleep(0.1)
+            Next
+            Fav_Panel.Refresh()
+        End If
     End Sub
 
     Private Sub Notif_add_Click(sender As Object, e As EventArgs) Handles Notif_add.Click
         Fav_Panel.Visible = True
         Notif_add.Visible = False
+        If stng_anim.Checked Then
+            Dim i As Integer
+            For i = 225 To 232
+                Fav_Panel.Width = i
+                Application.DoEvents()
+                System.Threading.Thread.Sleep(0.1)
+            Next
+        End If
     End Sub
 
     Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Notiff_add_OKbutton.Click
@@ -625,6 +672,8 @@
             Menu_FullScr.Visible = False
             Menu_Memo.Visible = False
             Menu_Settings.Visible = False
+            Button23.Visible = False
+            stng_clavi.Enabled = True
         Else
             menutouch.Visible = False
             voletlateral.Visible = True
@@ -637,6 +686,7 @@
             Menu_Back.Visible = True
             Menu_Forward.Visible = True
             Menu_Settings.Visible = True
+            stng_clavi.Enabled = False
         End If
     End Sub
     Private Sub CheckBox2_CheckedChanged(sender As Object, e As EventArgs) Handles Stng_TouchUI.CheckedChanged
@@ -1261,12 +1311,18 @@
         Form4.Show()
     End Sub
 
-    Private Sub Button13_Click_2(sender As Object, e As EventArgs) Handles Button13.Click
+    Private Sub Button13_Click_2(sender As Object, e As EventArgs) Handles touchbox_menubut.Click
         If voletlateral.Visible Then
+            If stng_anim.Checked Then
+                voletlateral.Width = 80
+                Do Until voletlateral.Width = 0
+                    voletlateral.Width -= 20
+                Loop
+            End If
             voletlateral.Visible = False
-        Else
-            voletlateral.Visible = True
             voletlateral.Width = 160
+
+        Else
             voletlateral.BackColor = Color.WhiteSmoke
             Menu_Home.Visible = False
             Menu_Window.Visible = False
@@ -1278,6 +1334,16 @@
             Menu_FullScr.Visible = False
             Menu_Memo.Visible = False
             Menu_Settings.Visible = False
+
+            voletlateral.Visible = True
+            If stng_anim.Checked Then
+                Dim i As Integer
+                For i = 153 To 160
+                    voletlateral.Width = i
+                    Application.DoEvents()
+                    System.Threading.Thread.Sleep(0.1)
+                Next
+            End If
         End If
     End Sub
 
@@ -1324,5 +1390,99 @@
 
     Private Sub touchbox_Click(sender As Object, e As EventArgs) Handles touchbox.Click
         touchbox.SelectAll()
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        If stng_anim.Checked Then
+            Notif_add.Height = 28
+            Do Until Notif_add.Height = 0
+                Notif_add.Height -= 1
+            Loop
+        End If
+        Notif_add.Visible = False
+        Timer1.Enabled = False
+        Notif_add.Height = 28
+    End Sub
+
+    Private Sub Button13_Click_3(sender As Object, e As EventArgs) Handles Button13.Click
+        Stng_Titlebar.Checked = True
+        stng_anim.Checked = True
+        Stng_MaximizedWindow.Checked = True
+        Stng_Volet_reduire.Checked = True
+        Sfight_Checkbox.Checked = False
+        Share_checkbox.Checked = False
+        translate_checkbox.Checked = False
+        lock_checkbox.Checked = False
+        memo_checkbox.Checked = False
+        Stng_HomePage_Url.Text = "http://google.fr"
+        Stng_MoteurRecherche_choose.Text = "Google"
+        Stng_MoteurRecherche_URL.Text = "http://www.google.fr/search?q="
+        Home_checkbox.Checked = True
+        favo_checkbox.Checked = True
+        infos_checkbox.Checked = True
+        stng_nevpriv.Checked = True
+        Stng_TouchUI.Checked = False
+        stng_colorlinecheck.Checked = False
+        stng_grayicons.Checked = True
+        voletlateral.BackColor = Color.WhiteSmoke
+        Stng_bluestart_checkbox.Checked = False
+        stng_target.Checked = False
+        fullscreen_checkbox.Checked = True
+        stng_nevpriv.Checked = False
+    End Sub
+
+    Private Sub Button14_Click_2(sender As Object, e As EventArgs) Handles Button14.Click
+        colorbox.BackColor = Color.DarkSlateGray
+        Colorbox2.BackColor = Color.DarkGray
+        colorline.BackColor = Color.DarkSlateGray
+        voletlateral.BackColor = Color.WhiteSmoke
+        colorline.SendToBack()
+        Stng_Titlebar.Checked = True
+        stng_anim.Checked = False
+        Stng_MaximizedWindow.Checked = True
+        Stng_Volet_reduire.Checked = True
+        Sfight_Checkbox.Checked = False
+        Share_checkbox.Checked = False
+        translate_checkbox.Checked = True
+        lock_checkbox.Checked = True
+        memo_checkbox.Checked = False
+        stng_colorlinecheck.Checked = True
+        stng_grayicons.Checked = True
+        Stng_bluestart_checkbox.Checked = True
+        stng_target.Checked = False
+        Home_checkbox.Checked = True
+        favo_checkbox.Checked = True
+        infos_checkbox.Checked = True
+        stng_nevpriv.Checked = True
+        Stng_TouchUI.Checked = False
+    End Sub
+
+    Private Sub Button15_Click_1(sender As Object, e As EventArgs) Handles Button15.Click
+        colorbox.BackColor = Color.YellowGreen
+        Colorbox2.BackColor = Color.ForestGreen
+        colorline.BackColor = Color.YellowGreen
+        voletlateral.BackColor = Color.WhiteSmoke
+        colorline.SendToBack()
+        Stng_Titlebar.Checked = True
+        stng_anim.Checked = True
+        Stng_MaximizedWindow.Checked = True
+        Stng_Volet_reduire.Checked = False
+        Sfight_Checkbox.Checked = True
+        Share_checkbox.Checked = True
+        translate_checkbox.Checked = True
+        lock_checkbox.Checked = True
+        memo_checkbox.Checked = True
+        stng_colorlinecheck.Checked = True
+        stng_grayicons.Checked = True
+        Stng_bluestart_checkbox.Checked = True
+        stng_target.Checked = False
+        Home_checkbox.Checked = True
+        favo_checkbox.Checked = True
+        infos_checkbox.Checked = True
+        stng_nevpriv.Checked = False
+        Stng_TouchUI.Checked = True
+        Button23.Visible = True
+        stng_clavi.Enabled = True
+        stng_clavi.Checked = True
     End Sub
 End Class

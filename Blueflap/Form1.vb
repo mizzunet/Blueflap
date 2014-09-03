@@ -1,4 +1,9 @@
-﻿Public Class Fenetre_Principale
+﻿'  Blueflap a été codé par Simpleworld et vous est proposé sous license GPLV2. Avis au forkeurs, merci de laisser ce message par respect et reconnaissance au developpeur initital.
+'  Nous espérons que Blueflap vous servira de support pour vos projets les plus fous.
+'
+'  Cordialement. Simpleworld
+'  -------------------------------------------------------------------------------------
+Public Class Fenetre_Principale
     Dim drag As Boolean
     Dim mousex As Integer
     Dim mousey As Integer
@@ -29,10 +34,10 @@
     End Class
     Private Sub MenuBoutton_Click(sender As Object, e As EventArgs) Handles Menu_ShowHide_Button.Click
 
-        If voletlateral.Width = 27 Then
+        If voletlateral.Width = 27 Then 'Quand le volet latéral est en position réduite > Agrandir le volet
             voletlateral.BackColor = Color.White
             voletlateral.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow
-            If stng_anim.Checked Then
+            If stng_anim.Checked Then 'Si les animations sont activées
                 voletlateral.Width = 60
                 Do Until voletlateral.Width = 160
                     voletlateral.Width += 10
@@ -41,14 +46,14 @@
                 voletlateral.Width = 160
             End If
 
-        Else
+        Else 'Sinon réduire le volet
             voletlateral.LayoutStyle = ToolStripLayoutStyle.Table
             If stng_grayicons.Checked Then
                 voletlateral.BackColor = Color.WhiteSmoke
             Else
                 voletlateral.BackColor = Color.Black
             End If
-            If stng_anim.Checked Then
+            If stng_anim.Checked Then 'Si les animations sont activées
                 voletlateral.Width = 110
                 Do Until voletlateral.Width = 30
                     voletlateral.Width -= 10
@@ -57,12 +62,13 @@
             Else
                 voletlateral.Width = 27
             End If
-            End If
-            voletlateral.Refresh()
+        End If
+        voletlateral.Refresh()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles GoButton.Click
-        If stng_Smartsuggestactif.Checked Then
+
+        If stng_Smartsuggestactif.Checked Then 'Si SmartSuggest est actif, ajoute le mot-clé dans les suggestions
             My.Settings.Smartcoll.Add(SmartAdressbox.Text)
             SmartAdressbox.AutoCompleteCustomSource.Clear()
             For Each Item As String In My.Settings.Smartcoll
@@ -71,6 +77,7 @@
         End If
 
         Dim textArray = SmartAdressbox.Text.Split(" ")
+        'Blueflap va déterminer si il s'agit d'une URL ou d'un mot-clé
         If (SmartAdressbox.Text.Contains(".") = True And SmartAdressbox.Text.Contains(" ") = False And SmartAdressbox.Text.Contains(" .") = False And SmartAdressbox.Text.Contains(". ") = False) Or textArray(0).Contains(":/") = True Or textArray(0).Contains(":\") Then
             If SmartAdressbox.Text.Contains("http://") OrElse SmartAdressbox.Text.Contains("https://") Then
                 Web.Source = New Uri(SmartAdressbox.Text)
@@ -81,7 +88,7 @@
                 Web.Source = New Uri("http://" + SmartAdressbox.Text)
             End If
         Else
-
+            'Si c'est un mot-clé, vérification de la validité du moteur de recherche
             If Stng_MoteurRecherche_URL.Text.Contains("http://") OrElse Stng_MoteurRecherche_URL.Text.Contains("https://") Then
                 Web.Source = New Uri(Stng_MoteurRecherche_URL.Text + SmartAdressbox.Text)
             Else
@@ -93,7 +100,7 @@
     End Sub
 
     Private Sub ToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles Menu_Settings.Click
-        ABlueflap_Settings.BringToFront()
+        ABlueflap_Settings.BringToFront() 'Affiche les paramètres
 
         If Stng_MP_confirm.Text.Equals(Stng_MP.Text) OrElse String.IsNullOrWhiteSpace(Stng_MP.Text) Then
             Stng_MP.Enabled = True
@@ -102,7 +109,7 @@
         End If
     End Sub
     Private Sub ElementsMenu()
-
+        'Détermine la visibilité des éléments du menu
         menuT_Home.Visible = Home_checkbox.Checked
         Menu_Home.Visible = Home_checkbox.Checked
         menuT_Fight.Visible = Sfight_Checkbox.Checked
@@ -120,8 +127,8 @@
         Menu_Memo.Visible = memo_checkbox.Checked
         Button23.Visible = stng_clavi.Checked
     End Sub
-
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Settings_Back.Click
+        'Permet de quitter les paramètres
         ABlueflap_Navigateur.BringToFront()
         ElementsMenu()
         If Stng_Volet_Mousehover_agrandir.Visible = False Then
@@ -130,6 +137,7 @@
     End Sub
 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Stng_MoteurRecherche_choose.SelectedIndexChanged
+        'Changement de moteur de recherche
         If Stng_MoteurRecherche_choose.Text = "Google" Then
             Stng_MoteurRecherche_URL.Text = "http://www.google.fr/search?q="
         ElseIf Stng_MoteurRecherche_choose.Text = "Bing" Then
@@ -162,10 +170,11 @@
 
     End Sub
     Private Sub ActualiserToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Menu_Refresh.Click
-        Web.Reload(True)
+        Web.Reload(True) 'Recharge la page
     End Sub
 
     Private Sub ArrêterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Menu_Stop.Click
+        'Arrête le chargement de la page
         Web.Stop()
         Menu_Refresh.Visible = True
         Menu_Stop.Visible = False
@@ -174,19 +183,21 @@
     End Sub
 
     Private Sub PrécédentToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Menu_Back.Click
-        Web.GoBack()
+        Web.GoBack() 'Précédent
     End Sub
 
     Private Sub SuivantToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Menu_Forward.Click
-        Web.GoForward()
+        Web.GoForward() 'Suivant
     End Sub
 
     Private Sub Awesomium_Windows_Forms_WebControl_DocumentReady(sender As Object, e As Awesomium.Core.UrlEventArgs) Handles Web.DocumentReady
+        'Quand le chargement de la page Web est terminé
         Dim webSource As String = Web.Source.ToString()
-
         SmartAdressbox.Text = webSource
         touchbox.Text = webSource
         Infos_Adresse.Text = webSource
+
+        'Blueflap va déterminer si la page est déjà présente dans les favoris
         If Fav_fav_List.Items.Contains(webSource) Then
             AddFavo_Button.BackColor = Color.Azure
             Addfavtouch.BackColor = Color.MidnightBlue
@@ -195,27 +206,35 @@
             Addfavtouch.BackColor = Color.Gray
         End If
 
+        'Blueflap règle l'affichage des icônes précedent/suivant (interface normale et tactile)
         Menu_Back.Enabled = Web.CanGoBack
         menuT_back.Visible = Web.CanGoBack
         Menu_Forward.Enabled = Web.CanGoForward
         menuT_forward.Visible = Web.CanGoForward
         Notif_internet.Visible = Not My.Computer.Network.IsAvailable
 
+        'Le code source de la page est importé sur la page "infos"
         Dim html As String = Web.ExecuteJavascriptWithResult("document.getElementsByTagName('html')[0].innerHTML")
         Infos_code_source.Text = html
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        voletlateral.Renderer = New Bluerend
+        'Au démarrage de Blueflap
+
+        voletlateral.Renderer = New Bluerend 'Affiche le style défini en début de code dans le menu
+
         AddHandler Awesomium.Core.WebCore.DownloadBegin, AddressOf OnDownloadBegin
 
-        If Stng_MPActiv.Checked Then
+        'Blueflap détermine le comportement à adopter au démarrage...
+        If Stng_MPActiv.Checked Then '...doit-il afficher la page de deverrouillage ?
+            Form3.Show()
             ABlueflap_Verrouillage.BringToFront()
         Else
-            If Stng_bluestart_checkbox.Checked Then
+            If Stng_bluestart_checkbox.Checked Then '... doit-il afficher Bluestart ?
+                Form3.Show()
                 ABlueflap_Bluestart.Visible = True
                 ABlueflap_Bluestart.BringToFront()
-            Else
+            Else '...doit-il naviguer vers la page d'accueil ?
                 If Stng_HomePage_Url.Text.Contains("http://") OrElse Stng_HomePage_Url.Text.Contains("https://") Then
                     Web.Source = New Uri(Stng_HomePage_Url.Text)
                 Else
@@ -227,10 +246,12 @@
             End If
         End If
 
+        'Permet d'afficher une page web lors du premier lancement de Blueflap puis de définir Bluestart en page d'accueil
         If Stat1.Text = "0" Then
             Stng_bluestart_checkbox.Checked = True
         End If
 
+        'Bueflap retrouve les favoris enregistrés
         For Each item As String In My.Settings.Bookmarks
             Fav_fav_List.Items.Add(item)
             BS_Favlist.Items.Add(item)
@@ -253,6 +274,7 @@
             Fav_Historique_List.Items.Add(item)
         Next
 
+        'Détermine si le volet est réduit au démarrage
         If Stng_Volet_reduire.Checked Then
             voletlateral.Width = 27
             If stng_grayicons.Checked Then
@@ -267,11 +289,11 @@
             voletlateral.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow
         End If
 
-        Notif_internet.Visible = Not My.Computer.Network.IsAvailable
+        Notif_internet.Visible = Not My.Computer.Network.IsAvailable 'Détermine si internet est connecté
 
-        ElementsMenu()
+        ElementsMenu() 'Affiche/masque les icônes du menu selon les paramètres de l'utilisateur
 
-
+        'Charge Bluestart
         BS_SearchBlackEffect.Left = (Me.Width - BS_SearchBlackEffect.Width) / 2
         BS_Date.Text = System.DateTime.Now.ToString("dddd dd MMMM yyyy")
         BS_Date.Left = (Me.Width - BS_Date.Width) / 2
@@ -287,6 +309,7 @@
             End If
         End If
 
+        'Applique le thème choisi par l'utilisateur
         If stng_colorlinecheck.Checked Then
             colorline.Visible = True
         Else
@@ -295,9 +318,11 @@
         Grayicons()
         colorline.BackColor = colorbox.BackColor
         Touchmode()
+
     End Sub
 
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles Stng_HomePage_Url.TextChanged
+        'Détermine si la page d'accueil tapée est valide
         If Stng_HomePage_Url.Text.Contains("http://") OrElse Stng_HomePage_Url.Text.Contains("https://") Then
             Stng_ErreurURLHomepage.Visible = False
         Else
@@ -305,6 +330,7 @@
         End If
     End Sub
     Private Sub Pageaccueil()
+        'Quel comportement adopter lors du clic sur le bouton "accueil"
         If Stng_bluestart_checkbox.Checked = True Then
             ABlueflap_Bluestart.Visible = True
             ABlueflap_Bluestart.BringToFront()
@@ -322,6 +348,7 @@
     End Sub
 
     Private Sub Volet_settings_CheckedChanged(sender As Object, e As EventArgs) Handles Stng_Volet_reduire.CheckedChanged
+        'Option pour réduire le volet au démarrage de Blueflap
         If Stng_Volet_reduire.Checked Then
             voletlateral.Width = 27
             If stng_grayicons.Checked Then
@@ -356,6 +383,7 @@
     End Sub
 
     Private Sub TextBox3_TextChanged(sender As Object, e As EventArgs) Handles Stng_MP_confirm.TextChanged
+        'confirmation du mot de passe dans les paramètres
         If Stng_MP_confirm.Text.Equals(Stng_MP.Text) Then
             Stng_MPActiv.Enabled = True
             Stng_MP.Enabled = True
@@ -368,22 +396,26 @@
     End Sub
 
     Private Sub ToolStripMenuItem8_Click(sender As Object, e As EventArgs) Handles Menu_Lock.Click
+        'affiche la fenêtre de demande de mot de passe
         Form2.Show()
     End Sub
 
     Private Sub ToolStripMenuItem4_Click(sender As Object, e As EventArgs) Handles Menu_Share.Click
+        'Affiche les informations d'une page
         ABlueflap_Infos.BringToFront()
         ABlueflap_Infos.Visible = True
-        Infos_Trident_Browser_Recup_Infos.Navigate(Web.Source)
+        Infos_Trident_Browser_Recup_Infos.Navigate(Web.Source) 'Moteur Awesomium ne permet pas de récupérer toutes les infos
     End Sub
 
     Private Sub Back_info_Click(sender As Object, e As EventArgs) Handles Infos_back.Click
+        'Retour sur le navigateur (depuis les informations de la page)
         ABlueflap_Navigateur.BringToFront()
         ABlueflap_Infos.Visible = False
-        Infos_Trident_Browser_Recup_Infos.Navigate("about:blank")
+        Infos_Trident_Browser_Recup_Infos.Navigate("about:blank") 'permet d'éviter certains problèmes
     End Sub
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Verr_AcceptButt.Click
+        'Verification du mot de passe sur l'écran verrouillé
         If Verr_Textbox.Text.Equals(Stng_MP.Text) Then
             ABlueflap_Navigateur.BringToFront()
             ABlueflap_Verrouillage.Visible = False
@@ -393,6 +425,7 @@
 
     End Sub
     Private Sub CheckBox3_CheckedChanged(sender As Object, e As EventArgs) Handles Stng_Volet_Mousehover_agrandir.CheckedChanged
+        'Agrandir le volet au passage de la souris
         If Stng_Volet_Mousehover_agrandir.Checked Then
             voletlateral.BringToFront()
         Else
@@ -400,14 +433,17 @@
         End If
     End Sub
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles SrchF_Back.Click
+        'Retour au navigateur (depuis SearchFight)
         ABlueflap_Navigateur.BringToFront()
     End Sub
 
     Private Sub ToolStripMenuItem6_Click(sender As Object, e As EventArgs) Handles Menu_Fight.Click
+        'Afficher Searchfight
         ABlueflap_Fight.BringToFront()
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles SrchF_Fightbutton.Click
+        'Lancer un Fight
         If SrchF_AdvanceChoice.Checked = False Then
             If SrchF_ChoixA.Text = "Google" Then
                 SrchF_fighter_1.Source = New Uri("http://www.google.fr/search?q=" + SrchF_Searchbox.Text)
@@ -439,16 +475,18 @@
             SrchF_fighter_1.Source = New Uri(SrchFight_AdvanceLeft.Text + SrchF_Searchbox.Text)
             SrchF_fighter_2.Source = New Uri(SrchFight_AdvanceRight.Text + SrchF_Searchbox.Text)
         End If
-        stat2.Text = stat2.Text + 1
+        stat2.Text = stat2.Text + 1 'met à jour les statistiques présentes dans les paramètres
     End Sub
 
     Private Sub TextBox5_TextChanged(sender As Object, e As EventArgs) Handles SrchF_Searchbox.TextChanged
+        'Permet de lancer le combat par appui sur la touche entrée
         Me.AcceptButton = SrchF_Fightbutton
     End Sub
     Private Sub TextBox5_Leave(sender As Object, e As EventArgs) Handles SrchF_Searchbox.Leave
         Me.AcceptButton = Nothing
     End Sub
     Private Sub TextBox4_TextChanged(sender As Object, e As EventArgs) Handles Verr_Textbox.TextChanged
+        'Textbox de l'écran de verrouillage
         Me.AcceptButton = Verr_AcceptButt
         Verr_WrongMp.Visible = False
     End Sub
@@ -457,11 +495,13 @@
     End Sub
 
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Infos_CodeShowHide.Click
+        'Afficher/masquer le code source dans la page infos
         Infos_Share.Visible = False
         Infos_code_source.Visible = Not Infos_code_source.Visible
     End Sub
 
     Private Sub WebBrowser1_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles Infos_Trident_Browser_Recup_Infos.DocumentCompleted
+        'Moteur Trident de la page "info" à récupéré toutes les infos
         Infos_Loader.Visible = False
         Infos_Loading.Visible = False
         Infos_Save.Visible = True
@@ -472,6 +512,7 @@
         End If
     End Sub
     Private Sub Infoload_Navigating(sender As Object, e As WebBrowserNavigatingEventArgs) Handles Infos_Trident_Browser_Recup_Infos.Navigating
+        'Moteur trident en train de récupérer les infos
         Infos_Loader.Visible = True
         Infos_Loading.Visible = True
         Infos_progress.Visible = True
@@ -480,13 +521,16 @@
     End Sub
 
     Private Sub Print_Click(sender As Object, e As EventArgs) Handles Infos_Print.Click
+        'Imprimer
         Infos_Trident_Browser_Recup_Infos.ShowPrintPreviewDialog()
     End Sub
 
     Private Sub Save_Click(sender As Object, e As EventArgs) Handles Infos_Save.Click
+        'Enregistrer
         Infos_Trident_Browser_Recup_Infos.ShowSaveAsDialog()
     End Sub
     Private Sub Ajouterfavoris()
+        'Ajouter un favoris
         If Fav_fav_List.Items.Contains(Web.Source.ToString) Then
             Notiff_add_Text.Text = "Page déjà dans vos favoris"
         Else
@@ -509,7 +553,7 @@
                 Next
             End If
         End If
-        Notif_add.Visible = True
+        Notif_add.Visible = True 'Affiche une notification
         If stng_anim.Checked Then
             Dim i As Integer
             For i = 18 To 28
@@ -518,32 +562,38 @@
                 System.Threading.Thread.Sleep(0.1)
             Next
         End If
-        Timer1.Enabled = True
+        Timer1.Enabled = True 'Permet de masquer la notification après un certain temps
 
     End Sub
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles AddFavo_Button.Click
+        'Ajouter un favoris
         Ajouterfavoris()
     End Sub
     Private Sub Favoris_Norif(sender As Object, e As EventArgs) Handles Fav_fav_List.DoubleClick
+        'Naviguer vers l'URL du favoris
         If Not String.IsNullOrWhiteSpace(Fav_fav_List.SelectedItem) Then
             Web.Source = New Uri(Fav_fav_List.SelectedItem)
         End If
     End Sub
 
     Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Fav_Cancel.Click
+        'Annuler suppression d'un favoris
         fav_notif_suppr.Visible = False
     End Sub
     Private Sub SupprimerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SupprimerToolStripMenuItem.Click
+        'Supprimer un favoris
         fav_notif_suppr.Visible = True
     End Sub
 
     Private Sub AccéderToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AccéderToolStripMenuItem.Click
+        'Naviguer vers l'URL du favoris via menu déroulant
         If Not String.IsNullOrWhiteSpace(Fav_fav_List.SelectedItem) Then
             Web.Source = New Uri(Fav_fav_List.SelectedItem)
         End If
     End Sub
 
     Private Sub Button9_Click_1(sender As Object, e As EventArgs) Handles Fav_Confirm.Click
+        'Confirme la suppression du favoris
         My.Settings.Bookmarks.Remove(Fav_fav_List.SelectedItem)
         Fav_fav_List.Items.Clear()
         For Each Item As String In My.Settings.Bookmarks
@@ -553,6 +603,7 @@
     End Sub
 
     Private Sub ToolStripMenuItem9_Click(sender As Object, e As EventArgs) Handles Menu_Favos.Click
+        'Affiche le menu des favoris
         Fav_Panel.Visible = Not Fav_Panel.Visible
         If stng_anim.Checked Then
             Dim i As Integer
@@ -566,6 +617,7 @@
     End Sub
 
     Private Sub Notif_add_Click(sender As Object, e As EventArgs) Handles Notif_add.Click
+        'Clic sur notification d'ajout d'un favoris
         Fav_Panel.Visible = True
         Notif_add.Visible = False
         If stng_anim.Checked Then
@@ -579,13 +631,16 @@
     End Sub
 
     Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Notiff_add_OKbutton.Click
+        'Ferme notification d'ajout d'un favoris
         Notif_add.Visible = False
     End Sub
 
     Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Fav_Close.Click
+        'Ferme volet des favoris
         Fav_Panel.Visible = False
     End Sub
     Private Sub Awesomium_Windows_Forms_WebControl_Navig(sender As Object, e As Awesomium.Core.UrlEventArgs) Handles Web.LoadingFrame
+        'Blueflap est en train de charger une page
         Menu_Stop.Visible = True
         menuT_close.Visible = True
         Loader.Visible = True

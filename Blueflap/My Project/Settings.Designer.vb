@@ -80,7 +80,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("https://www.youtube.com/embed/mYtWu8TUtIQ?rel=0&amp;vq=hd720;&autoplay=1")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("http://personnalisa.bl.ee/Bienvenue.html")>  _
         Public Property home() As String
             Get
                 Return CType(Me("home"),String)
@@ -672,14 +672,14 @@ Namespace My
             End Set
         End Property
         
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        <Global.System.Configuration.UserScopedSettingAttribute(), _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")> _
         Public Property aniiim() As Boolean
             Get
-                Return CType(Me("aniiim"),Boolean)
+                Return CType(Me("aniiim"), Boolean)
             End Get
-            Set
+            Set(value As Boolean)
                 Me("aniiim") = value
             End Set
         End Property

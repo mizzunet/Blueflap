@@ -63,6 +63,16 @@ Namespace My.Resources
         '''<summary>
         '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property _37loua7() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("37loua7", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property a1() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("a1", resourceCulture)
@@ -326,6 +336,16 @@ Namespace My.Resources
         Friend ReadOnly Property backfavs() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("backfavs", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property backflich() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("backflich", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -756,6 +776,16 @@ Namespace My.Resources
         Friend ReadOnly Property Loadi() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Loadi", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property loadou() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("loadou", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

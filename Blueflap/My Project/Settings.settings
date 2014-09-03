@@ -9,7 +9,7 @@
       <Value Profile="(Default)">Google</Value>
     </Setting>
     <Setting Name="home" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://www.youtube.com/embed/mYtWu8TUtIQ?rel=0&amp;amp;vq=hd720;&amp;autoplay=1</Value>
+      <Value Profile="(Default)">http://personnalisa.bl.ee/Bienvenue.html</Value>
     </Setting>
     <Setting Name="Réduit" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>

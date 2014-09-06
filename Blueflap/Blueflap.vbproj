@@ -250,6 +250,9 @@
   <ItemGroup>
     <Content Include="blueflap.ico" />
     <Content Include="blueflap3.ico" />
+    <None Include="Resources\devlogo.png" />
+    <None Include="Resources\pic1.png" />
+    <None Include="Resources\pic.png" />
     <None Include="Resources\37loua7.GIF" />
     <None Include="Resources\loadou.GIF" />
     <None Include="Resources\backflich.png" />

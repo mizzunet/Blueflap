@@ -1540,4 +1540,31 @@ Public Class Fenetre_Principale
         stng_clavi.Enabled = True
         stng_clavi.Checked = True
     End Sub
+
+    Private Sub Button16_Click_1(sender As Object, e As EventArgs) Handles Button16.Click
+        ABlueflap_Update.SendToBack()
+    End Sub
+    Private Sub Button17_Click_1(sender As Object, e As EventArgs) Handles Button17.Click
+        WebBrowser1.Navigate("http://personnalisa.bl.ee/Version.html")
+    End Sub
+
+    Private Sub Button18_Click_1(sender As Object, e As EventArgs) Handles Button18.Click
+        ABlueflap_Update.BringToFront()
+        Update_currentver.Text = Stng_VersionSystem.Text
+    End Sub
+
+    Private Sub WebBrowser1_DocumentCompleted_1(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser1.DocumentCompleted
+        If WebBrowser1.DocumentTitle.Contains("Blueflap") Then
+            Update_lastversion.Text = WebBrowser1.DocumentTitle
+        End If
+        If My.Computer.Network.IsAvailable Then
+            If WebBrowser1.DocumentTitle = Stng_VersionSystem.Text Then
+                Update_state.Text = "Blueflap est à jour"
+            Else
+                WebBrowser1.Navigate("http://personnalisa.bl.ee/Redirect.html")
+            End If
+        Else
+            MessageBox.Show("Impossible d'accéder au serveur de mise à jour")
+        End If
+    End Sub
 End Class

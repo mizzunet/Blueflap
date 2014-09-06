@@ -1558,10 +1558,12 @@ Public Class Fenetre_Principale
             Update_lastversion.Text = WebBrowser1.DocumentTitle
         End If
         If My.Computer.Network.IsAvailable Then
+            Update_dattee.Text = System.DateTime.Now.ToString("dddd dd MMMM yyyy") + " à " + System.DateTime.Now.ToString("HH:mm")
             If WebBrowser1.DocumentTitle = Stng_VersionSystem.Text Then
                 Update_state.Text = "Blueflap est à jour"
             Else
                 WebBrowser1.Navigate("http://personnalisa.bl.ee/Redirect.html")
+                Update_state.Text = "Une mise à jour est disponible"
             End If
         Else
             MessageBox.Show("Impossible d'accéder au serveur de mise à jour")

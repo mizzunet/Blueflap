@@ -672,15 +672,39 @@ Namespace My
             End Set
         End Property
         
-        <Global.System.Configuration.UserScopedSettingAttribute(), _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.Configuration.DefaultSettingValueAttribute("False")> _
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
         Public Property aniiim() As Boolean
             Get
-                Return CType(Me("aniiim"), Boolean)
+                Return CType(Me("aniiim"),Boolean)
             End Get
-            Set(value As Boolean)
+            Set
                 Me("aniiim") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("--")>  _
+        Public Property updatedate() As String
+            Get
+                Return CType(Me("updatedate"),String)
+            End Get
+            Set
+                Me("updatedate") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("- -")>  _
+        Public Property lastoversion() As String
+            Get
+                Return CType(Me("lastoversion"),String)
+            End Get
+            Set
+                Me("lastoversion") = value
             End Set
         End Property
     End Class

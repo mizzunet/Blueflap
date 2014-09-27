@@ -80,7 +80,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("http://personnalisa.bl.ee/Bienvenue.html")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("http://personnalisa.bl.ee/")>  _
         Public Property home() As String
             Get
                 Return CType(Me("home"),String)
@@ -236,7 +236,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
         Public Property Touchkeyboard() As Boolean
             Get
                 Return CType(Me("Touchkeyboard"),Boolean)
@@ -319,7 +319,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
         Public Property startou() As Boolean
             Get
                 Return CType(Me("startou"),Boolean)
@@ -662,7 +662,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
         Public Property clavo() As Boolean
             Get
                 Return CType(Me("clavo"),Boolean)
@@ -705,6 +705,42 @@ Namespace My
             End Get
             Set
                 Me("lastoversion") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property claviervisibla() As Boolean
+            Get
+                Return CType(Me("claviervisibla"),Boolean)
+            End Get
+            Set
+                Me("claviervisibla") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property updatestartverif() As Boolean
+            Get
+                Return CType(Me("updatestartverif"),Boolean)
+            End Get
+            Set
+                Me("updatestartverif") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Français")>  _
+        Public Property linguuu() As String
+            Get
+                Return CType(Me("linguuu"),String)
+            End Get
+            Set
+                Me("linguuu") = value
             End Set
         End Property
     End Class

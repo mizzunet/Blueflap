@@ -35,7 +35,7 @@ Partial Class Licence
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.ReadOnly = True
         Me.TextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TextBox1.Size = New System.Drawing.Size(396, 258)
+        Me.TextBox1.Size = New System.Drawing.Size(382, 434)
         Me.TextBox1.TabIndex = 0
         Me.TextBox1.Text = resources.GetString("TextBox1.Text")
         '
@@ -43,7 +43,7 @@ Partial Class Licence
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(414, 276)
+        Me.ClientSize = New System.Drawing.Size(400, 452)
         Me.Controls.Add(Me.TextBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False

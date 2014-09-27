@@ -15,4 +15,10 @@
         Fenetre_Principale.ABlueflap_Verrouillage.BringToFront()
         Me.Close()
     End Sub
+
+    Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If My.Settings.linguuu = "English" Then
+            Label1.Text = "Please enter your password to lock Blueflap"
+        End If
+    End Sub
 End Class

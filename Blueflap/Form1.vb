@@ -82,19 +82,29 @@ Public Class Fenetre_Principale
             If SmartAdressbox.Text.Contains("http://") OrElse SmartAdressbox.Text.Contains("https://") Then
                 Web.Source = New Uri(SmartAdressbox.Text)
             Else
-                Dim Caract As String
-                Caract = SmartAdressbox.Text
-                Caract = Caract.Replace("+", "%2B")
-                Web.Source = New Uri("http://" + SmartAdressbox.Text)
+                If SmartAdressbox.Text.Contains("blueflap://") Then
+                    If SmartAdressbox.Text = "blueflap://settings" Then
+                        ABlueflap_Settings.BringToFront()
+                    ElseIf SmartAdressbox.Text = "blueflap://searchfight" Then
+                        ABlueflap_Fight.BringToFront()
+                    ElseIf touchbox.Text = "blueflap://update" Then
+                        ABlueflap_Update.BringToFront()
+                    End If
+                Else
+                    Dim Caract As String
+                    Caract = SmartAdressbox.Text
+                    Caract = Caract.Replace("+", "%2B")
+                    Web.Source = New Uri("http://" + SmartAdressbox.Text)
+                End If
             End If
         Else
+
             'Si c'est un mot-clé, vérification de la validité du moteur de recherche
             If Stng_MoteurRecherche_URL.Text.Contains("http://") OrElse Stng_MoteurRecherche_URL.Text.Contains("https://") Then
                 Web.Source = New Uri(Stng_MoteurRecherche_URL.Text + SmartAdressbox.Text)
             Else
                 MessageBox.Show("Veuillez vérifier les paramètres du moteur de recherche")
             End If
-
         End If
 
     End Sub
@@ -125,11 +135,11 @@ Public Class Fenetre_Principale
         Menu_FullScr.Visible = fullscreen_checkbox.Checked
         menuT_memo.Visible = memo_checkbox.Checked
         Menu_Memo.Visible = memo_checkbox.Checked
-        Button23.Visible = stng_clavi.Checked
+        menuT_clavier.Visible = stng_clavi.Checked
     End Sub
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Settings_Back.Click
         'Permet de quitter les paramètres
-        ABlueflap_Navigateur.BringToFront()
+        ABlueflap_Settings.SendToBack()
         ElementsMenu()
         If Stng_Volet_Mousehover_agrandir.Visible = False Then
             Stng_Volet_Mousehover_agrandir.Checked = False
@@ -180,6 +190,9 @@ Public Class Fenetre_Principale
         Menu_Stop.Visible = False
         Loader.Visible = False
         Adressboxtouch.BackgroundImage = Blueflap.My.Resources.Resources.back1
+        If Adressboxtouch.Height = 20 OrElse Adressboxtouch.Height = 10 Then
+            Adressboxtouch.BackColor = Color.LightGray
+        End If
     End Sub
 
     Private Sub PrécédentToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Menu_Back.Click
@@ -220,18 +233,18 @@ Public Class Fenetre_Principale
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Au démarrage de Blueflap
-
+        If Linguabut.Text = "English" Then
+            Lingua()
+        End If
         voletlateral.Renderer = New Bluerend 'Affiche le style défini en début de code dans le menu
 
         AddHandler Awesomium.Core.WebCore.DownloadBegin, AddressOf OnDownloadBegin
 
         'Blueflap détermine le comportement à adopter au démarrage...
         If Stng_MPActiv.Checked Then '...doit-il afficher la page de deverrouillage ?
-            Form3.Show()
             ABlueflap_Verrouillage.BringToFront()
         Else
             If Stng_bluestart_checkbox.Checked Then '... doit-il afficher Bluestart ?
-                Form3.Show()
                 ABlueflap_Bluestart.Visible = True
                 ABlueflap_Bluestart.BringToFront()
             Else '...doit-il naviguer vers la page d'accueil ?
@@ -248,7 +261,8 @@ Public Class Fenetre_Principale
 
         'Permet d'afficher une page web lors du premier lancement de Blueflap puis de définir Bluestart en page d'accueil
         If Stat1.Text = "0" Then
-            Stng_bluestart_checkbox.Checked = True
+            ABlueflap_Welcome.BringToFront()
+            ABlueflap_Welcome.Visible = True
         End If
 
         'Bueflap retrouve les favoris enregistrés
@@ -319,8 +333,14 @@ Public Class Fenetre_Principale
         colorline.BackColor = colorbox.BackColor
         Touchmode()
 
-    End Sub
+        If Update_startverif.Checked Then
+            WebBrowser1.Navigate("http://personnalisa.bl.ee/Version.html")
+            Update_currentver.Text = Stng_VersionSystem.Text
+        End If
 
+        menuT_clavier.Visible = stng_clavi.Checked
+
+    End Sub
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles Stng_HomePage_Url.TextChanged
         'Détermine si la page d'accueil tapée est valide
         If Stng_HomePage_Url.Text.Contains("http://") OrElse Stng_HomePage_Url.Text.Contains("https://") Then
@@ -532,7 +552,13 @@ Public Class Fenetre_Principale
     Private Sub Ajouterfavoris()
         'Ajouter un favoris
         If Fav_fav_List.Items.Contains(Web.Source.ToString) Then
-            Notiff_add_Text.Text = "Page déjà dans vos favoris"
+            If My.Settings.linguuu = "English" Then
+                Notiff_add_Text.Text = "This page is already in your bookmarks list"
+            Else
+                Notiff_add_Text.Text = "Page déjà dans vos favoris"
+            End If
+
+
         Else
             My.Settings.Bookmarks.Add(Web.Source.ToString)
             Fav_fav_List.Items.Clear()
@@ -541,9 +567,13 @@ Public Class Fenetre_Principale
             Next
             AddFavo_Button.BackColor = Color.Azure
             Addfavtouch.BackColor = Color.MidnightBlue
-            Notiff_add_Text.Text = "Page ajoutée aux favoris"
-        End If
 
+            If My.Settings.linguuu = "English" Then
+                Notiff_add_Text.Text = "This page has been added to your bookmarks list"
+            Else
+                Notiff_add_Text.Text = "Page ajoutée aux favoris"
+            End If
+        End If
         If stng_Smartsuggestactif.Checked Then
             If Not SmartAdressbox.AutoCompleteCustomSource.Contains(Web.Source.ToString) Then
                 My.Settings.Smartcoll.Add(Web.Source.ToString)
@@ -647,21 +677,28 @@ Public Class Fenetre_Principale
         Adressboxtouch.BackgroundImage = Blueflap.My.Resources.Resources.loada
         Menu_Refresh.Visible = False
         menuT_Refresh.Visible = False
+        If Adressboxtouch.Height = 20 OrElse Adressboxtouch.Height = 5 Then
+            Adressboxtouch.BackColor = Color.LightSkyBlue
+        End If
     End Sub
 
     Private Sub Awesomium_Windows_Forms_WebControl_LoadingFrameComplete(sender As Object, e As Awesomium.Core.FrameEventArgs) Handles Web.LoadingFrameComplete
+        'Page chargée
         Menu_Stop.Visible = False
         menuT_close.Visible = False
         Loader.Visible = False
         Adressboxtouch.BackgroundImage = Blueflap.My.Resources.Resources.back1
+        If Adressboxtouch.Height = 20 OrElse Adressboxtouch.Height = 5 Then
+            Adressboxtouch.BackColor = Color.LightGray
+        End If
         Menu_Refresh.Visible = True
         menuT_Refresh.Visible = True
         Infos_Titre.Text = Web.Title
-        If Stng_Titlebar.Checked Then
+        If Stng_Titlebar.Checked Then 'Affiche le nom de la page dans la barre de titre
             Me.Text = "Blueflap - " + Web.Title
         End If
 
-        If Not stng_nevpriv.Checked Then
+        If Not stng_nevpriv.Checked Then 'Ajoute le site à l'historique
             If Not Fav_Historique_List.Items.Contains(SmartAdressbox.Text) Then
                 My.Settings.Historique.Add(SmartAdressbox.Text)
                 Fav_Historique_List.Items.Clear()
@@ -669,7 +706,7 @@ Public Class Fenetre_Principale
                     Fav_Historique_List.Items.Add(Item)
                 Next
             End If
-            If stng_Smartsuggestactif.Checked Then
+            If stng_Smartsuggestactif.Checked Then ' Ajoute à Smart Suggest
                 My.Settings.Smartcoll.Add(Web.Source.ToString)
                 SmartAdressbox.AutoCompleteCustomSource.Clear()
                 For Each Item As String In My.Settings.Smartcoll
@@ -704,16 +741,16 @@ Public Class Fenetre_Principale
     Private Sub Awesomium_Windows_Forms_WebControl_Crashed(sender As Object, e As Awesomium.Core.CrashedEventArgs) Handles Web.Crashed
         MessageBox.Show("Une erreur est survenue, actualisez la page")
     End Sub
-
-    Private Sub Button13_Click(sender As Object, e As EventArgs)
-        Process.Start("inetcpl.cpl")
-    End Sub
     Private Sub Button13_Click_1(sender As Object, e As EventArgs) Handles Stng_OptionsInternet.Click
+        'Affiche les options internet
         Process.Start("inetcpl.cpl")
     End Sub
     Private Sub Touchmode()
+        'Affiche l'interface Moderne
         If Stng_TouchUI.Checked Then
             menutouch.Visible = True
+            menutouch.SendToBack()
+            colorline.SendToBack()
             voletlateral.Visible = False
             Adressboxtouch.Visible = True
             FP_AdressbarPanel.Visible = False
@@ -727,8 +764,7 @@ Public Class Fenetre_Principale
             Menu_FullScr.Visible = False
             Menu_Memo.Visible = False
             Menu_Settings.Visible = False
-            Button23.Visible = False
-            stng_clavi.Enabled = True
+            menuT_clavier.Visible = False
         Else
             menutouch.Visible = False
             voletlateral.Visible = True
@@ -741,7 +777,6 @@ Public Class Fenetre_Principale
             Menu_Back.Visible = True
             Menu_Forward.Visible = True
             Menu_Settings.Visible = True
-            stng_clavi.Enabled = False
         End If
     End Sub
     Private Sub CheckBox2_CheckedChanged(sender As Object, e As EventArgs) Handles Stng_TouchUI.CheckedChanged
@@ -749,15 +784,18 @@ Public Class Fenetre_Principale
     End Sub
 
     Private Sub Verrouillage_MouseMove(sender As Object, e As MouseEventArgs) Handles ABlueflap_Verrouillage.MouseMove
+        'Met à jour date et heure dans l'écran de verrouillage
         Verr_Time.Text = System.DateTime.Now.ToString("HH:mm")
         Verr_Date.Text = System.DateTime.Now.ToString("dddd dd MMMM yyyy")
     End Sub
     Private Sub Button14_Click(sender As Object, e As EventArgs) Handles Stng_SupprHisto.Click
+        'Efface l'historique
         My.Settings.Historique.Clear()
         Fav_Historique_List.Items.Clear()
     End Sub
 
     Private Sub Histor_Click(sender As Object, e As EventArgs) Handles Fav_Historique_List.Click
+        'Navigue en cliquant sur item historique
         If Not String.IsNullOrWhiteSpace(Fav_Historique_List.SelectedItem) Then
             Web.Source = New Uri(Fav_Historique_List.SelectedItem)
         End If
@@ -858,10 +896,19 @@ Public Class Fenetre_Principale
     Private Sub Button17_Click(sender As Object, e As EventArgs) Handles BS_DateSetColor.Click
         If BS_Date.ForeColor = Color.White Then
             BS_Date.ForeColor = Color.Black
-            BS_DateSetColor.Text = "Date : Claire"
+            If My.Settings.linguuu = "English" Then
+                BS_DateSetColor.Text = "Date : White"
+            Else
+                BS_DateSetColor.Text = "Date : Claire"
+            End If
+
         Else
             BS_Date.ForeColor = Color.White
-            BS_DateSetColor.Text = "Date : Sombre"
+            If My.Settings.linguuu = "English" Then
+                BS_DateSetColor.Text = "Date : Black"
+            Else
+                BS_DateSetColor.Text = "Date : Sombre"
+            End If
         End If
     End Sub
     Private Sub Flop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles BS_Favlist.Click
@@ -898,7 +945,7 @@ Public Class Fenetre_Principale
         Licence.Show()
     End Sub
 
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles stngbutt_bug.Click
         ABlueflap_Navigateur.BringToFront()
         Web.Source = New Uri("https://github.com/SimpleSoftwares/Blueflap/issues")
     End Sub
@@ -989,7 +1036,7 @@ Public Class Fenetre_Principale
     End Sub
 
     Private Sub MetroHeaderButton1_Click(sender As Object, e As EventArgs) Handles Stng_Helpcenter.MouseEnter
-        Stng_Helpcenter.ForeColor = Color.DeepSkyBlue
+        Stng_Helpcenter.ForeColor = Color.DodgerBlue
     End Sub
     Private Sub MetroHeaderButton1_Sortie(sender As Object, e As EventArgs) Handles Stng_Helpcenter.MouseLeave
         Stng_Helpcenter.ForeColor = Color.SkyBlue
@@ -1234,19 +1281,19 @@ Public Class Fenetre_Principale
         colorline.BackColor = Color.DarkViolet
     End Sub
 
-    Private Sub Button10_Click_1(sender As Object, e As EventArgs) Handles Button10.Click
+    Private Sub Button10_Click_1(sender As Object, e As EventArgs) Handles stngcolor_orange.Click
         colorbox.BackColor = Color.DarkGoldenrod
         Colorbox2.BackColor = Color.Orange
         colorline.BackColor = Color.DarkGoldenrod
     End Sub
 
-    Private Sub Button11_Click_1(sender As Object, e As EventArgs) Handles Button11.Click
+    Private Sub Button11_Click_1(sender As Object, e As EventArgs) Handles stngcolor_Rouge.Click
         colorbox.BackColor = Color.Chocolate
         Colorbox2.BackColor = Color.Tomato
         colorline.BackColor = Color.Chocolate
     End Sub
 
-    Private Sub Button12_Click_1(sender As Object, e As EventArgs) Handles Button12.Click
+    Private Sub Button12_Click_1(sender As Object, e As EventArgs) Handles stngcolor_gris.Click
         colorbox.BackColor = Color.DarkSlateGray
         Colorbox2.BackColor = Color.DarkGray
         colorline.BackColor = Color.DarkSlateGray
@@ -1299,13 +1346,12 @@ Public Class Fenetre_Principale
     Private Sub SmartAdressbox_Click(sender As Object, e As EventArgs) Handles SmartAdressbox.Click
         SmartAdressbox.SelectAll()
     End Sub
-    Private Sub Button23_Click(sender As Object, e As EventArgs) Handles Button23.Click
+    Private Sub Button23_Click(sender As Object, e As EventArgs) Handles menuT_clavier.Click
         Process.Start("osk")
     End Sub
 
     Private Sub menuT_Settings_Click(sender As Object, e As EventArgs) Handles menuT_Settings.Click
         ABlueflap_Settings.BringToFront()
-
         If Stng_MP_confirm.Text.Equals(Stng_MP.Text) OrElse String.IsNullOrWhiteSpace(Stng_MP.Text) Then
             Stng_MP.Enabled = True
         Else
@@ -1330,6 +1376,9 @@ Public Class Fenetre_Principale
         Menu_Refresh.Visible = True
         Menu_Stop.Visible = False
         Adressboxtouch.BackgroundImage = Blueflap.My.Resources.Resources.back1
+        If Adressboxtouch.Height = 20 OrElse Adressboxtouch.Height = 5 Then
+            Adressboxtouch.BackColor = Color.LightGray
+        End If
     End Sub
 
     Private Sub menuT_Refresh_Click(sender As Object, e As EventArgs) Handles menuT_Refresh.Click
@@ -1412,7 +1461,18 @@ Public Class Fenetre_Principale
             If touchbox.Text.Contains("http://") OrElse touchbox.Text.Contains("https://") Then
                 Web.Source = New Uri(touchbox.Text)
             Else
-                Web.Source = New Uri("http://" + touchbox.Text)
+
+                If touchbox.Text.Contains("blueflap://") Then
+                    If touchbox.Text = "blueflap://settings" Then
+                        ABlueflap_Settings.BringToFront()
+                    ElseIf touchbox.Text = "blueflap://searchfight" Then
+                        ABlueflap_Fight.BringToFront()
+                    ElseIf touchbox.Text = "blueflap://update" Then
+                        ABlueflap_Update.BringToFront()
+                    End If
+                Else
+                    Web.Source = New Uri("http://" + touchbox.Text)
+                End If
             End If
         Else
 
@@ -1536,8 +1596,7 @@ Public Class Fenetre_Principale
         infos_checkbox.Checked = True
         stng_nevpriv.Checked = False
         Stng_TouchUI.Checked = True
-        Button23.Visible = True
-        stng_clavi.Enabled = True
+        menuT_clavier.Visible = True
         stng_clavi.Checked = True
     End Sub
 
@@ -1564,9 +1623,282 @@ Public Class Fenetre_Principale
             Else
                 WebBrowser1.Navigate("http://personnalisa.bl.ee/Redirect.html")
                 Update_state.Text = "Une mise à jour est disponible"
+                Update_notice.Visible = True
+                ABlueflap_Update.BringToFront()
             End If
         Else
             MessageBox.Show("Impossible d'accéder au serveur de mise à jour")
         End If
+    End Sub
+
+    Private Sub Button1_Click_2(sender As Object, e As EventArgs) Handles Button1.Click
+        ABlueflap_Navigateur.BringToFront()
+        Web.Source = New Uri("http://zestedesavoir.com/membres/voir/florian6973/")
+    End Sub
+
+    Private Sub SrchF_ChoixA_Enter(sender As Object, e As EventArgs) Handles SrchF_ChoixA.Enter
+        SrchF_ChoixA.BackColor = Color.White
+    End Sub
+    Private Sub SrchF_ChoixB_Enter(sender As Object, e As EventArgs) Handles SrchF_ChoixB.Enter
+        SrchF_ChoixB.BackColor = Color.White
+    End Sub
+    Private Sub SrchF_ChoixA_Leav(sender As Object, e As EventArgs) Handles SrchF_ChoixA.Leave
+        SrchF_ChoixA.BackColor = Color.WhiteSmoke
+    End Sub
+    Private Sub SrchF_ChoixB_Leav(sender As Object, e As EventArgs) Handles SrchF_ChoixB.Leave
+        SrchF_ChoixB.BackColor = Color.WhiteSmoke
+    End Sub
+
+    Private Sub Adressboxtouch_Click(sender As Object, e As EventArgs) Handles Adressboxtouch.Click
+        If Adressboxtouch.Height = 20 Then
+            Do Until Adressboxtouch.Height = 40
+                Adressboxtouch.Height += 1
+            Loop
+            Adressboxtouch.Height = 43
+            Adressboxtouch.BackColor = Color.White
+            touchbox.BackColor = Color.White
+            touchbox.Visible = True
+            Adressboxtouch.Cursor = Cursors.Default
+        End If
+    End Sub
+    Private Sub Agrandir()
+        If Adressboxtouch.Height = 5 Then
+            Do Until Adressboxtouch.Height = 20
+                Adressboxtouch.Height += 1
+            Loop
+            Adressboxtouch.Cursor = Cursors.PanSouth()
+        End If
+    End Sub
+    Private Sub Reduire()
+        If Adressboxtouch.Height = 20 Then
+            Do Until Adressboxtouch.Height = 5
+                Adressboxtouch.Height -= 1
+            Loop
+            Adressboxtouch.Cursor = Cursors.Default
+        End If
+    End Sub
+    Private Sub Adressboxtouch_MouseEnter(sender As Object, e As EventArgs) Handles Adressboxtouch.MouseEnter
+        Agrandir()
+    End Sub
+
+    Private Sub Adressboxtouch_MouseLeave(sender As Object, e As EventArgs) Handles Adressboxtouch.MouseLeave
+        Reduire()
+    End Sub
+
+    Private Sub SToolStripMenuItem_Click(sender As Object, e As EventArgs)
+        If Adressboxtouch.Height = 43 Then
+            Adressboxtouch.Height = 40
+            Do Until Adressboxtouch.Height = 5
+                Adressboxtouch.Height -= 1
+            Loop
+            Adressboxtouch.BackColor = Color.LightGray
+            touchbox.BackColor = Color.LightGray
+            touchbox.Visible = False
+        End If
+    End Sub
+
+    Private Sub Addfavtouch_MouseEnter(sender As Object, e As EventArgs) Handles Addfavtouch.MouseEnter
+        Agrandir()
+        Adressboxtouch.Cursor = Cursors.Default
+    End Sub
+
+    Private Sub Addfavtouch_MouseLeave(sender As Object, e As EventArgs) Handles Addfavtouch.MouseLeave
+        Reduire()
+    End Sub
+
+    Private Sub touchbox_menubut_MouseEnter(sender As Object, e As EventArgs) Handles touchbox_menubut.MouseEnter
+        Agrandir()
+        Adressboxtouch.Cursor = Cursors.Default
+    End Sub
+
+    Private Sub touchbox_menubut_MouseLeave(sender As Object, e As EventArgs) Handles touchbox_menubut.MouseLeave
+        Reduire()
+    End Sub
+
+    Private Sub ReduireToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReduireToolStripMenuItem.Click
+        If Adressboxtouch.Height = 43 Then
+            Adressboxtouch.Height = 40
+            Do Until Adressboxtouch.Height = 5
+                Adressboxtouch.Height -= 1
+            Loop
+            Adressboxtouch.BackColor = Color.LightGray
+            touchbox.BackColor = Color.LightGray
+            touchbox.Visible = False
+        End If
+    End Sub
+
+    Private Sub InterfaceClassiqueToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InterfaceClassiqueToolStripMenuItem.Click
+        If Stng_TouchUI.Checked Then
+            Stng_TouchUI.Checked = False
+            GrandesIcônesToolStripMenuItem.Checked = False
+            InterfaceClassiqueToolStripMenuItem.Checked = False
+        Else
+            Stng_TouchUI.Checked = True
+            GrandesIcônesToolStripMenuItem.Checked = True
+            InterfaceClassiqueToolStripMenuItem.Checked = True
+        End If
+    End Sub
+    Private Sub GrandesIcônesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GrandesIcônesToolStripMenuItem.Click
+        If Stng_TouchUI.Checked Then
+            Stng_TouchUI.Checked = False
+            GrandesIcônesToolStripMenuItem.Checked = False
+            InterfaceClassiqueToolStripMenuItem.Checked = False
+        Else
+            Stng_TouchUI.Checked = True
+            GrandesIcônesToolStripMenuItem.Checked = True
+            InterfaceClassiqueToolStripMenuItem.Checked = True
+        End If
+    End Sub
+
+    Private Sub MetroHeaderButton1_MouseEnter(sender As Object, e As EventArgs) Handles MetroHeaderButton1.MouseEnter
+        MetroHeaderButton1.ForeColor = Color.DodgerBlue
+    End Sub
+
+    Private Sub MetroHeaderButton1_MouseLeave(sender As Object, e As EventArgs) Handles MetroHeaderButton1.MouseLeave
+        MetroHeaderButton1.ForeColor = Color.SkyBlue
+    End Sub
+
+    Private Sub MetroHeaderButton1_Click_2(sender As Object, e As EventArgs) Handles MetroHeaderButton1.Click
+        ABlueflap_Update.BringToFront()
+        Update_currentver.Text = Stng_VersionSystem.Text
+    End Sub
+
+    Private Sub Button10_Click_2(sender As Object, e As EventArgs) Handles Button10.Click
+        If Button12.Text = "English" Then
+            Lingua()
+            My.Settings.linguuu = "English"
+        End If
+        Web.Source = New Uri("http://personnalisa.bl.ee/Bienvenue.html")
+        ABlueflap_Navigateur.BringToFront()
+        ABlueflap_Welcome.Visible = False
+    End Sub
+
+    Private Sub Button11_Click_2(sender As Object, e As EventArgs) Handles Button11.Click
+        Stat1.Text = 0
+    End Sub
+    Private Sub Lingua()
+        Menu_Home.Text = "Home"
+        Menu_FullScr.Text = "Full Screen"
+        Menu_Lock.Text = "Password Lock"
+        menu_partage.Text = "Share"
+        Menu_Refresh.Text = "Refresh"
+        Menu_Settings.Text = "Settings"
+        Menu_Forward.Text = "Forward"
+        Menu_Back.Text = "Back"
+        Menu_Favos.Text = "Bookmarks"
+        Menu_Stop.Text = "Stop"
+        Menu_Translate.Text = "Translate"
+        Menu_Window.Text = "New Page"
+        Tooltip_volettouch.SetToolTip(Me.menuT_Home, "Home")
+        Tooltip_volettouch.SetToolTip(Me.menuT_forward, "Forward")
+        Tooltip_volettouch.SetToolTip(Me.menuT_back, "Back")
+        Tooltip_volettouch.SetToolTip(Me.menuT_clavier, "Keyboard")
+        Tooltip_volettouch.SetToolTip(Me.menuT_fullscreen, "Full screen")
+        Tooltip_volettouch.SetToolTip(Me.menuT_close, "Stop")
+        Tooltip_volettouch.SetToolTip(Me.menuT_Refresh, "Refresh")
+        Tooltip_volettouch.SetToolTip(Me.menuT_Page, "New Page")
+        Tooltip_volettouch.SetToolTip(Me.menuT_Settings, "Settings")
+        Tooltip_volettouch.SetToolTip(Me.menuT_lock, "Password Lock")
+        Tooltip_volettouch.SetToolTip(Me.touchbox_menubut, "Show more")
+        Tooltip_volettouch.SetToolTip(Me.menut_Info, "Informations")
+        Fav_Favtab.Text = "Bookmrks"
+        Fav_Histotab.Text = "History"
+        Fav_Notif_Text.Text = "Delete this bookmark ?"
+        Fav_Confirm.Text = "Yes"
+        Fav_Cancel.Text = "Cancel"
+        Label2.Text = "Please check your internet connection"
+        SupprimerToolStripMenuItem.Text = "Delete"
+        AccéderToolStripMenuItem.Text = "Go"
+        Settings_title.Text = "Settings"
+        StngLabel_Searchengine.Text = "Search Engine"
+        StngLabel_Background.Text = "Wallpaper"
+        StngLabel_Contribute.Text = "Contribute"
+        StngLabel_Data.Text = "Data"
+        StngLabel_Home.Text = "Homepage"
+        StngLabel_Icons.Text = "Menu Icons"
+        StngLabel_Lock.Text = "Password Lock"
+        Stng_bluestart_checkbox.Text = "Use Bluestart"
+        StngLabel_MP.Text = "Password"
+        StngLabel_MPConfirm.Text = "Confirmation"
+        Stng_MPActiv.Text = "Active"
+        Stng_TouchUI.Text = "Large Icons"
+        Stng_Titlebar.Text = "Dynamic titlebar"
+        Stng_MaximizedWindow.Text = "Maximize on startup"
+        Stng_Volet_reduire.Text = "Minimize the menu on startup"
+        Stng_Volet_Mousehover_agrandir.Text = "Maximize the menu on mousehover"
+        stng_clavi.Text = "Virtual Keyboard"
+        Label5.Text = "Target Links"
+        stng_target.Text = "Disable"
+        Button2.Text = "Browse"
+        sett_tab1.Text = "Customize"
+        sett_tab1.Refresh()
+        sett_tab2.Text = "Advanced options"
+        sett_tab2.Refresh()
+        sett_tab3.Text = "About Blueflap"
+        sett_tab3.Refresh()
+        Label10.Text = "Theme"
+        stng_colorlinecheck.Text = "Colored line"
+        stng_grayicons.Text = "Gray icons"
+        StngLabel_Private.Text = "Private Browsing"
+        StngLabel_Network.Text = "Network"
+        StngLabel_Proxy.Text = "Blueflap uses your computer's system proxy to connect to the network"
+        StngLabel_NetworkInfo.Text = "Connections tab"
+        stng_nevpriv.Text = "Active"
+        stng_Adblock.Text = "Active"
+        stng_Smartsuggestactif.Text = "Active"
+        Stng_ResetSuggest.Text = "Reset"
+        Stng_OptionsInternet.Text = "Internet options"
+        Stng_SupprHisto.Text = "Clear history"
+        Stng_SupprCacheCookies.Text = "Clear cookies/cache"
+        stngbutt_bug.Text = "Report a bug"
+        StngLabel_Contributeurs.Text = "Contributors"
+        Update_startverif.Text = "Check for updates on startup"
+        ReduireToolStripMenuItem.Text = "Minimize Adressbox"
+        InterfaceClassiqueToolStripMenuItem.Text = "Large icons"
+        ToolStripMenuItem2.Text = "Report a bug"
+        GrandesIcônesToolStripMenuItem.Text = "Large icons"
+        ToolTip_System.SetToolTip(Me.AddFavo_Button, "Add a bookmarks")
+        ToolTip_System.SetToolTip(Me.Menu_ShowHide_Button, "Maximize or Minimize the menu")
+        Infos_Loading.Text = "Loading..."
+        Label7.Text = "Blueflap has been locked"
+        Verr_WrongMp.Text = "This is not the good password"
+        Button17.Text = "Check for new updates"
+        BS_DateSetColor.Text = "Date : Black"
+        BS_ImgChoose.Text = "Change wallpaper"
+        Tooltip_BS.SetToolTip(Me.BS_Settings, "Bluestart settings")
+        Tooltip_BS.SetToolTip(Me.BS_ImgChoose, "Change Bluestart's background image")
+        Tooltip_BS.SetToolTip(Me.BS_Browser, "Browser")
+        Tooltip_BS.SetToolTip(Me.BS_Fav, "Bookmarks")
+    End Sub
+    Private Sub Button12_Click_2(sender As Object, e As EventArgs) Handles Linguabut.Click
+        If Linguabut.Text = "Français" Then
+            Linguabut.Text = "English"
+            Lingua()
+        Else
+            Linguabut.Text = "Français"
+            MessageBox.Show("Veuillez fermer puis réouvrir Blueflap pour terminer cette action")
+        End If
+    End Sub
+
+    Private Sub Button12_Click_3(sender As Object, e As EventArgs) Handles Button12.Click
+        If Button12.Text = "Français" Then
+            Button12.Text = "English"
+            Label17.Text = "Welcome on Blueflap"
+            Button20.Text = "Open settings"
+            Button10.Text = "Finish"
+        Else
+            Button12.Text = "Français"
+            Label17.Text = "Bienvenue sur Blueflap"
+            Button20.Text = "Afficher les paramètres"
+            Button10.Text = "Terminer"
+        End If
+    End Sub
+
+    Private Sub Button19_Click_1(sender As Object, e As EventArgs) Handles Button19.Click
+        Form5.Show()
+    End Sub
+
+    Private Sub Button20_Click_2(sender As Object, e As EventArgs) Handles Button20.Click
+        ABlueflap_Settings.BringToFront()
     End Sub
 End Class

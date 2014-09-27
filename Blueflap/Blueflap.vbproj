@@ -171,12 +171,6 @@
     <Compile Include="Form2.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form3.Designer.vb">
-      <DependentUpon>Form3.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form3.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Form4.Designer.vb">
       <DependentUpon>Form4.vb</DependentUpon>
     </Compile>
@@ -215,9 +209,6 @@
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
-      <DependentUpon>Form3.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form4.resx">
       <DependentUpon>Form4.vb</DependentUpon>
     </EmbeddedResource>
@@ -250,6 +241,20 @@
   <ItemGroup>
     <Content Include="blueflap.ico" />
     <Content Include="blueflap3.ico" />
+    <None Include="Resources\flechounette.png" />
+    <None Include="Resources\backgroooustart.png" />
+    <None Include="Resources\bsbf.png" />
+    <None Include="Resources\bsfight.png" />
+    <None Include="Resources\bsfav.png" />
+    <None Include="Resources\dedcdcdc.png" />
+    <None Include="Resources\dccddcdccddc.png" />
+    <None Include="Resources\ombretrduc1.png" />
+    <None Include="Resources\ombretrduc.png" />
+    <None Include="Resources\ombretruc.png" />
+    <None Include="Resources\filiblu1.png" />
+    <None Include="Resources\filiblu.png" />
+    <None Include="Resources\lightnindgg.png" />
+    <None Include="Resources\lightningg.png" />
     <None Include="Resources\devlogo.png" />
     <None Include="Resources\pic1.png" />
     <None Include="Resources\pic.png" />

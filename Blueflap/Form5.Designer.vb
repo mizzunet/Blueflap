@@ -61,6 +61,10 @@ Partial Class Form5
         Me.Label11 = New System.Windows.Forms.Label()
         Me.TextBox10 = New System.Windows.Forms.TextBox()
         Me.MetroControlBox1 = New MetroControls.MetroControlBox()
+        Me.TabPage11 = New System.Windows.Forms.TabPage()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.TextBox11 = New System.Windows.Forms.TextBox()
+        Me.TextBox12 = New System.Windows.Forms.TextBox()
         Me.MetroTabControl1.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -77,6 +81,7 @@ Partial Class Form5
         Me.TabPage9.SuspendLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage10.SuspendLayout()
+        Me.TabPage11.SuspendLayout()
         Me.SuspendLayout()
         '
         'MetroTabControl1
@@ -93,6 +98,7 @@ Partial Class Form5
         Me.MetroTabControl1.Controls.Add(Me.TabPage8)
         Me.MetroTabControl1.Controls.Add(Me.TabPage9)
         Me.MetroTabControl1.Controls.Add(Me.TabPage10)
+        Me.MetroTabControl1.Controls.Add(Me.TabPage11)
         Me.MetroTabControl1.DoAnimation = False
         Me.MetroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.MetroTabControl1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
@@ -111,7 +117,7 @@ Partial Class Form5
         Me.MetroTabControl1.SelectedTabColor1 = System.Drawing.Color.FromArgb(CType(CType(62, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(181, Byte), Integer))
         Me.MetroTabControl1.SelectedTabColor2 = System.Drawing.Color.FromArgb(CType(CType(62, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(181, Byte), Integer))
         Me.MetroTabControl1.SelectedTabColor3 = System.Drawing.Color.FromArgb(CType(CType(62, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(181, Byte), Integer))
-        Me.MetroTabControl1.Size = New System.Drawing.Size(760, 469)
+        Me.MetroTabControl1.Size = New System.Drawing.Size(760, 489)
         Me.MetroTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
         Me.MetroTabControl1.Speed = 9
         Me.MetroTabControl1.TabIndex = 0
@@ -125,7 +131,7 @@ Partial Class Form5
         Me.TabPage3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.TabPage3.Location = New System.Drawing.Point(124, 4)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(632, 461)
+        Me.TabPage3.Size = New System.Drawing.Size(632, 481)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "HELP CENTER"
         '
@@ -171,7 +177,7 @@ Partial Class Form5
         Me.TabPage1.Location = New System.Drawing.Point(124, 4)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(632, 461)
+        Me.TabPage1.Size = New System.Drawing.Size(632, 481)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Supprimer un favoris"
         '
@@ -217,7 +223,7 @@ Partial Class Form5
         Me.TabPage2.Location = New System.Drawing.Point(124, 4)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(632, 461)
+        Me.TabPage2.Size = New System.Drawing.Size(632, 481)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Afficher l'historique"
         '
@@ -252,7 +258,7 @@ Partial Class Form5
         Me.TabPage4.Location = New System.Drawing.Point(124, 4)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(632, 461)
+        Me.TabPage4.Size = New System.Drawing.Size(632, 481)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Image de fond"
         '
@@ -287,7 +293,7 @@ Partial Class Form5
         Me.TabPage5.Location = New System.Drawing.Point(124, 4)
         Me.TabPage5.Name = "TabPage5"
         Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage5.Size = New System.Drawing.Size(632, 461)
+        Me.TabPage5.Size = New System.Drawing.Size(632, 481)
         Me.TabPage5.TabIndex = 4
         Me.TabPage5.Text = "Bluestart"
         '
@@ -322,7 +328,7 @@ Partial Class Form5
         Me.TabPage6.Controls.Add(Me.TextBox6)
         Me.TabPage6.Location = New System.Drawing.Point(124, 4)
         Me.TabPage6.Name = "TabPage6"
-        Me.TabPage6.Size = New System.Drawing.Size(632, 461)
+        Me.TabPage6.Size = New System.Drawing.Size(632, 481)
         Me.TabPage6.TabIndex = 5
         Me.TabPage6.Text = "SmartSuggest"
         '
@@ -369,7 +375,7 @@ Partial Class Form5
         Me.TabPage7.Location = New System.Drawing.Point(124, 4)
         Me.TabPage7.Name = "TabPage7"
         Me.TabPage7.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage7.Size = New System.Drawing.Size(632, 461)
+        Me.TabPage7.Size = New System.Drawing.Size(632, 481)
         Me.TabPage7.TabIndex = 6
         Me.TabPage7.Text = "Réduire menu"
         '
@@ -424,7 +430,7 @@ Partial Class Form5
         Me.TabPage8.Location = New System.Drawing.Point(124, 4)
         Me.TabPage8.Name = "TabPage8"
         Me.TabPage8.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage8.Size = New System.Drawing.Size(632, 461)
+        Me.TabPage8.Size = New System.Drawing.Size(632, 481)
         Me.TabPage8.TabIndex = 7
         Me.TabPage8.Text = "Personnaliser menu"
         '
@@ -460,7 +466,7 @@ Partial Class Form5
         Me.TabPage9.Location = New System.Drawing.Point(124, 4)
         Me.TabPage9.Name = "TabPage9"
         Me.TabPage9.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage9.Size = New System.Drawing.Size(632, 461)
+        Me.TabPage9.Size = New System.Drawing.Size(632, 481)
         Me.TabPage9.TabIndex = 8
         Me.TabPage9.Text = "Enregister/Imprimer"
         '
@@ -506,7 +512,7 @@ Partial Class Form5
         Me.TabPage10.Location = New System.Drawing.Point(124, 4)
         Me.TabPage10.Name = "TabPage10"
         Me.TabPage10.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage10.Size = New System.Drawing.Size(632, 461)
+        Me.TabPage10.Size = New System.Drawing.Size(632, 481)
         Me.TabPage10.TabIndex = 9
         Me.TabPage10.Text = "Enregistrer memo"
         '
@@ -548,16 +554,67 @@ Partial Class Form5
         Me.MetroControlBox1.Text = "MetroControlBox1"
         Me.MetroControlBox1.UseMetroForm = True
         '
+        'TabPage11
+        '
+        Me.TabPage11.BackColor = System.Drawing.Color.White
+        Me.TabPage11.Controls.Add(Me.TextBox12)
+        Me.TabPage11.Controls.Add(Me.Label12)
+        Me.TabPage11.Controls.Add(Me.TextBox11)
+        Me.TabPage11.Location = New System.Drawing.Point(124, 4)
+        Me.TabPage11.Name = "TabPage11"
+        Me.TabPage11.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage11.Size = New System.Drawing.Size(632, 481)
+        Me.TabPage11.TabIndex = 10
+        Me.TabPage11.Text = "Raccourcis clavier"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Segoe UI", 11.0!)
+        Me.Label12.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.Label12.Location = New System.Drawing.Point(6, 5)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(126, 20)
+        Me.Label12.TabIndex = 14
+        Me.Label12.Text = "Raccourcis clavier"
+        '
+        'TextBox11
+        '
+        Me.TextBox11.BackColor = System.Drawing.Color.White
+        Me.TextBox11.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox11.Location = New System.Drawing.Point(10, 56)
+        Me.TextBox11.Multiline = True
+        Me.TextBox11.Name = "TextBox11"
+        Me.TextBox11.ReadOnly = True
+        Me.TextBox11.Size = New System.Drawing.Size(65, 370)
+        Me.TextBox11.TabIndex = 13
+        Me.TextBox11.Text = "ctrl+O" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ctrl+maj+F" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ctrl+M" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ctrl+N" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ctrl+B" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ctrl+I" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ctrl+L" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "F11" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "F5"
+        Me.TextBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'TextBox12
+        '
+        Me.TextBox12.BackColor = System.Drawing.Color.White
+        Me.TextBox12.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox12.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.TextBox12.Location = New System.Drawing.Point(81, 56)
+        Me.TextBox12.Multiline = True
+        Me.TextBox12.Name = "TextBox12"
+        Me.TextBox12.ReadOnly = True
+        Me.TextBox12.Size = New System.Drawing.Size(246, 330)
+        Me.TextBox12.TabIndex = 15
+        Me.TextBox12.Text = "Options" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Search Fight" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Memo" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Nouvelle fenêtre" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Favoris" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Afficher les informations" & _
+    " de la page" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Verrouiller" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Plein écran" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Recharger la page"
+        '
         'Form5
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(760, 469)
+        Me.ClientSize = New System.Drawing.Size(760, 489)
         Me.ControlBox = False
         Me.Controls.Add(Me.MetroControlBox1)
         Me.Controls.Add(Me.MetroTabControl1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MinimumSize = New System.Drawing.Size(776, 485)
+        Me.MinimumSize = New System.Drawing.Size(776, 505)
         Me.Name = "Form5"
         Me.MetroTabControl1.ResumeLayout(False)
         Me.TabPage3.ResumeLayout(False)
@@ -585,6 +642,8 @@ Partial Class Form5
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage10.ResumeLayout(False)
         Me.TabPage10.PerformLayout()
+        Me.TabPage11.ResumeLayout(False)
+        Me.TabPage11.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -626,4 +685,8 @@ Partial Class Form5
     Friend WithEvents TabPage10 As System.Windows.Forms.TabPage
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents TextBox10 As System.Windows.Forms.TextBox
+    Friend WithEvents TabPage11 As System.Windows.Forms.TabPage
+    Friend WithEvents Label12 As System.Windows.Forms.Label
+    Friend WithEvents TextBox11 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox12 As System.Windows.Forms.TextBox
 End Class

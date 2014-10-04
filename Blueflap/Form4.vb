@@ -19,4 +19,14 @@
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Close()
     End Sub
+
+    Private Sub Content_TextChanged(sender As Object, e As EventArgs) Handles Content.MouseLeave
+        Dim azert As String
+        azert = Content.Text
+        Dim s As String
+        s = azert.ToString
+        s = s.Replace("+", "%2B")
+
+        Content.Text = s
+    End Sub
 End Class

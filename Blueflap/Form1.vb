@@ -91,9 +91,6 @@ Public Class Fenetre_Principale
                         ABlueflap_Update.BringToFront()
                     End If
                 Else
-                    Dim Caract As String
-                    Caract = SmartAdressbox.Text
-                    Caract = Caract.Replace("+", "%2B")
                     Web.Source = New Uri("http://" + SmartAdressbox.Text)
                 End If
             End If
@@ -101,7 +98,13 @@ Public Class Fenetre_Principale
 
             'Si c'est un mot-clé, vérification de la validité du moteur de recherche
             If Stng_MoteurRecherche_URL.Text.Contains("http://") OrElse Stng_MoteurRecherche_URL.Text.Contains("https://") Then
-                Web.Source = New Uri(Stng_MoteurRecherche_URL.Text + SmartAdressbox.Text)
+                Dim azert As String
+                azert = SmartAdressbox.Text
+                Dim s As String
+                s = azert.ToString
+                s = s.Replace("+", "%2B")
+
+                Web.Source = New Uri(Stng_MoteurRecherche_URL.Text + s)
             Else
                 MessageBox.Show("Veuillez vérifier les paramètres du moteur de recherche")
             End If
@@ -870,7 +873,12 @@ Public Class Fenetre_Principale
 
     Private Sub Button15_Click(sender As Object, e As EventArgs) Handles BS_Searchbutton.Click
         If Stng_MoteurRecherche_URL.Text.Contains("http://") OrElse Stng_MoteurRecherche_URL.Text.Contains("https://") Then
-            Web.Source = New Uri(Stng_MoteurRecherche_URL.Text + Bs_Searchbox.Text)
+            Dim azert As String
+            azert = Bs_Searchbox.Text
+            Dim s As String
+            s = azert.ToString
+            s = s.Replace("+", "%2B")
+            Web.Source = New Uri(Stng_MoteurRecherche_URL.Text + s)
         Else
             MessageBox.Show("Veuillez vérifier les paramètres du moteur de recherche")
         End If
@@ -1240,12 +1248,12 @@ Public Class Fenetre_Principale
     Private Sub Button4_Click_2(sender As Object, e As EventArgs) Handles Button4.Click
         colorbox.BackColor = Color.Red
         Colorbox2.BackColor = Color.DarkRed
-        colorline.BackColor = Color.DarkRed
+        colorline.BackColor = Color.Red
     End Sub
 
     Private Sub Button5_Click_2(sender As Object, e As EventArgs) Handles Button5.Click
-        colorbox.BackColor = Color.Goldenrod
-        Colorbox2.BackColor = Color.Gold
+        colorbox.BackColor = Color.Gold
+        Colorbox2.BackColor = Color.Goldenrod
         colorline.BackColor = Color.Gold
     End Sub
 
@@ -1477,7 +1485,12 @@ Public Class Fenetre_Principale
         Else
 
             If Stng_MoteurRecherche_URL.Text.Contains("http://") OrElse Stng_MoteurRecherche_URL.Text.Contains("https://") Then
-                Web.Source = New Uri(Stng_MoteurRecherche_URL.Text + touchbox.Text)
+                Dim azert As String
+                azert = touchbox.Text
+                Dim s As String
+                s = azert.ToString
+                s = s.Replace("+", "%2B")
+                Web.Source = New Uri(Stng_MoteurRecherche_URL.Text + s)
             Else
                 MessageBox.Show("Veuillez vérifier les paramètres du moteur de recherche")
             End If

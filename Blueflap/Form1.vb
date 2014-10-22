@@ -87,8 +87,23 @@ Public Class Fenetre_Principale
                         ABlueflap_Settings.BringToFront()
                     ElseIf SmartAdressbox.Text = "blueflap://searchfight" Then
                         ABlueflap_Fight.BringToFront()
-                    ElseIf touchbox.Text = "blueflap://update" Then
+                    ElseIf SmartAdressbox.Text = "blueflap://update" Then
                         ABlueflap_Update.BringToFront()
+                    ElseIf SmartAdressbox.Text = "blueflap://reset:stats" Then
+                        Stat1.Text = 0
+                        stat2.Text = 0
+                        messageboxe.Show()
+                        messageboxe.BackColor = Color.CornflowerBlue
+                        If My.Settings.linguuu = "English" Then
+                            messageboxe.Titre.Text = "Settings"
+                            messageboxe.Text.Text = "Stat has been reset"
+                        Else
+                            messageboxe.Titre.Text = "Paramètres"
+                            messageboxe.Text.Text = "Les statistiques ont été remises à zero"
+                        End If
+                        messageboxe.Smiley.Text = ";)"
+                    ElseIf SmartAdressbox.Text = "blueflap://reset:settings" Then
+                        Reinitialisation()
                     End If
                 Else
                     Web.Source = New Uri("http://" + SmartAdressbox.Text)
@@ -106,7 +121,16 @@ Public Class Fenetre_Principale
 
                 Web.Source = New Uri(Stng_MoteurRecherche_URL.Text + s)
             Else
-                MessageBox.Show("Veuillez vérifier les paramètres du moteur de recherche")
+                messageboxe.Show()
+                messageboxe.BackColor = Color.LightCoral
+                If My.Settings.linguuu = "English" Then
+                    messageboxe.Titre.Text = "Error"
+                    messageboxe.Text.Text = "Something is wrong with the search engine"
+                Else
+                    messageboxe.Titre.Text = "Erreur"
+                    messageboxe.Text.Text = "Veuillez vérifier les paramètres du moteur de recherche"
+                End If
+                messageboxe.Smiley.Text = ":("
             End If
         End If
 
@@ -255,7 +279,18 @@ Public Class Fenetre_Principale
                     Web.Source = New Uri(Stng_HomePage_Url.Text)
                 Else
                     Web.Source = New Uri("http://google.fr")
-                    MessageBox.Show("La page d'accueil définie dans les paramètres n'est pas valide")
+                    messageboxe.Show()
+                    messageboxe.BackColor = Color.LightCoral
+
+                    If My.Settings.linguuu = "English" Then
+                        messageboxe.Titre.Text = "Settings"
+                        messageboxe.Text.Text = "Something is wrong with the homepage"
+                    Else
+                        messageboxe.Titre.Text = "Paramètres"
+                        messageboxe.Text.Text = "La page d'accueil définie dans les paramètres n'est pas valide"
+                    End If
+
+                    messageboxe.Smiley.Text = ":("
                 End If
                 ABlueflap_Navigateur.BringToFront()
                 ABlueflap_Verrouillage.Visible = False
@@ -362,7 +397,17 @@ Public Class Fenetre_Principale
                 Web.Source = New Uri(Stng_HomePage_Url.Text)
             Else
                 Web.Source = New Uri("http://google.fr")
-                MessageBox.Show("La page d'accueil définie dans les paramètres n'est pas valide")
+
+                messageboxe.Show()
+                messageboxe.BackColor = Color.LightCoral
+                If My.Settings.linguuu = "English" Then
+                    messageboxe.Titre.Text = "Settings"
+                    messageboxe.Text.Text = "Something is wrong with the homepage"
+                Else
+                    messageboxe.Titre.Text = "Paramètres"
+                    messageboxe.Text.Text = "La page d'accueil définie dans les paramètres n'est pas valide"
+                End If
+                messageboxe.Smiley.Text = ":("
             End If
         End If
     End Sub
@@ -742,7 +787,16 @@ Public Class Fenetre_Principale
     End Sub
 
     Private Sub Awesomium_Windows_Forms_WebControl_Crashed(sender As Object, e As Awesomium.Core.CrashedEventArgs) Handles Web.Crashed
-        MessageBox.Show("Une erreur est survenue, actualisez la page")
+        messageboxe.Show()
+        messageboxe.BackColor = Color.LightCoral
+        If My.Settings.linguuu = "English" Then
+            messageboxe.Titre.Text = "Error"
+            messageboxe.Text.Text = "Please refresh the page"
+        Else
+            messageboxe.Titre.Text = "Erreur"
+            messageboxe.Text.Text = "Une erreur est survenue, actualisez la page"
+        End If
+        messageboxe.Smiley.Text = ":("
     End Sub
     Private Sub Button13_Click_1(sender As Object, e As EventArgs) Handles Stng_OptionsInternet.Click
         'Affiche les options internet
@@ -880,7 +934,16 @@ Public Class Fenetre_Principale
             s = s.Replace("+", "%2B")
             Web.Source = New Uri(Stng_MoteurRecherche_URL.Text + s)
         Else
-            MessageBox.Show("Veuillez vérifier les paramètres du moteur de recherche")
+            messageboxe.Show()
+            messageboxe.BackColor = Color.LightCoral
+            If My.Settings.linguuu = "English" Then
+                messageboxe.Titre.Text = "Error"
+                messageboxe.Text.Text = "Something is wrong with the search engine"
+            Else
+                messageboxe.Titre.Text = "Erreur"
+                messageboxe.Text.Text = "Veuillez vérifier les paramètres du moteur de recherche"
+            End If
+            messageboxe.Smiley.Text = ":("
         End If
         ABlueflap_Navigateur.BringToFront()
         ABlueflap_Bluestart.Visible = False
@@ -1477,6 +1540,21 @@ Public Class Fenetre_Principale
                         ABlueflap_Fight.BringToFront()
                     ElseIf touchbox.Text = "blueflap://update" Then
                         ABlueflap_Update.BringToFront()
+                    ElseIf touchbox.Text = "blueflap://reset:stats" Then
+                        Stat1.Text = 0
+                        stat2.Text = 0
+                        messageboxe.Show()
+                        messageboxe.BackColor = Color.CornflowerBlue
+                        If My.Settings.linguuu = "English" Then
+                            messageboxe.Titre.Text = "Settings"
+                            messageboxe.Text.Text = "Stat has been reset"
+                        Else
+                            messageboxe.Titre.Text = "Paramètres"
+                            messageboxe.Text.Text = "Les statistiques ont été remises à zero"
+                        End If
+                        messageboxe.Smiley.Text = ";)"
+                    ElseIf touchbox.Text = "blueflap://reset:settings" Then
+                        Reinitialisation()
                     End If
                 Else
                     Web.Source = New Uri("http://" + touchbox.Text)
@@ -1492,7 +1570,16 @@ Public Class Fenetre_Principale
                 s = s.Replace("+", "%2B")
                 Web.Source = New Uri(Stng_MoteurRecherche_URL.Text + s)
             Else
-                MessageBox.Show("Veuillez vérifier les paramètres du moteur de recherche")
+                messageboxe.Show()
+                messageboxe.BackColor = Color.LightCoral
+                If My.Settings.linguuu = "English" Then
+                    messageboxe.Titre.Text = "Error"
+                    messageboxe.Text.Text = "Something is wrong with the search engine"
+                Else
+                    messageboxe.Titre.Text = "Erreur"
+                    messageboxe.Text.Text = "Veuillez vérifier les paramètres du moteur de recherche"
+                End If
+                messageboxe.Smiley.Text = ":("
             End If
 
         End If
@@ -1640,7 +1727,16 @@ Public Class Fenetre_Principale
                 ABlueflap_Update.BringToFront()
             End If
         Else
-            MessageBox.Show("Impossible d'accéder au serveur de mise à jour")
+            messageboxe.Show()
+            messageboxe.BackColor = Color.LightCoral
+            If My.Settings.linguuu = "English" Then
+                messageboxe.Titre.Text = "Blueflap Update"
+                messageboxe.Text.Text = "Unable to access the server"
+            Else
+                messageboxe.Titre.Text = "Blueflap Update"
+                messageboxe.Text.Text = "Impossible d'accéder au serveur de mise à jour"
+            End If
+            messageboxe.Smiley.Text = ":("
         End If
     End Sub
 
@@ -1785,10 +1881,6 @@ Public Class Fenetre_Principale
         ABlueflap_Navigateur.BringToFront()
         ABlueflap_Welcome.Visible = False
     End Sub
-
-    Private Sub Button11_Click_2(sender As Object, e As EventArgs) Handles Button11.Click
-        Stat1.Text = 0
-    End Sub
     Private Sub Lingua()
         Menu_Home.Text = "Home"
         Menu_FullScr.Text = "Full Screen"
@@ -1873,7 +1965,7 @@ Public Class Fenetre_Principale
         ToolTip_System.SetToolTip(Me.AddFavo_Button, "Add a bookmarks")
         ToolTip_System.SetToolTip(Me.Menu_ShowHide_Button, "Maximize or Minimize the menu")
         Infos_Loading.Text = "Loading..."
-        Label7.Text = "Blueflap has been locked"
+        Label7.Text = " BF has been locked"
         Verr_WrongMp.Text = "This is not the good password"
         Button17.Text = "Check for new updates"
         BS_DateSetColor.Text = "Date : Black"
@@ -1882,6 +1974,7 @@ Public Class Fenetre_Principale
         Tooltip_BS.SetToolTip(Me.BS_ImgChoose, "Change Bluestart's background image")
         Tooltip_BS.SetToolTip(Me.BS_Browser, "Browser")
         Tooltip_BS.SetToolTip(Me.BS_Fav, "Bookmarks")
+        Label6.Text = "Pages"
     End Sub
     Private Sub Button12_Click_2(sender As Object, e As EventArgs) Handles Linguabut.Click
         If Linguabut.Text = "Français" Then
@@ -1889,7 +1982,11 @@ Public Class Fenetre_Principale
             Lingua()
         Else
             Linguabut.Text = "Français"
-            MessageBox.Show("Veuillez fermer puis réouvrir Blueflap pour terminer cette action")
+            messageboxe.Show()
+            messageboxe.BackColor = Color.LimeGreen
+            messageboxe.Titre.Text = "Changement de langue"
+            messageboxe.Text.Text = "Veuillez fermer puis réouvrir Blueflap pour terminer cette action"
+            messageboxe.Smiley.Text = ":)"
         End If
     End Sub
 
@@ -1913,5 +2010,42 @@ Public Class Fenetre_Principale
 
     Private Sub Button20_Click_2(sender As Object, e As EventArgs) Handles Button20.Click
         ABlueflap_Settings.BringToFront()
+    End Sub
+    Private Sub Reinitialisation()
+        Stng_MoteurRecherche_choose.Text = "Google"
+        Stng_MoteurRecherche_URL.Text = "http://www.google.fr/search?q="
+        Stng_HomePage_Url.Text = "http://personnalisa.bl.ee"
+        Stng_bluestart_checkbox.Checked = True
+        Stng_TouchUI.Checked = True
+        Stng_Titlebar.Checked = True
+        Stng_MaximizedWindow.Checked = False
+        stng_anim.Checked = True
+        Stng_Volet_reduire.Checked = False
+        Stng_Volet_Mousehover_agrandir.Checked = False
+        stng_target.Checked = False
+        stng_colorlinecheck.Checked = False
+        stng_grayicons.Checked = False
+        colorbox.BackColor = Color.SteelBlue
+        Colorbox2.BackColor = Color.DeepSkyBlue
+        colorline.BackColor = Color.SteelBlue
+        Sfight_Checkbox.Checked = True
+        Share_checkbox.Checked = True
+        translate_checkbox.Checked = True
+        lock_checkbox.Checked = True
+        memo_checkbox.Checked = True
+        Stng_bluestart_checkbox.Checked = True
+        Home_checkbox.Checked = True
+        favo_checkbox.Checked = True
+        infos_checkbox.Checked = True
+        stng_nevpriv.Checked = False
+        messageboxe.Show()
+        messageboxe.BackColor = Color.CornflowerBlue
+        messageboxe.Titre.Text = "Paramètres"
+        messageboxe.Text.Text = "Les paramètres de Blueflap ont été réinitialisés"
+        messageboxe.Smiley.Text = ";)"
+    End Sub
+
+    Private Sub Panel2_Click(sender As Object, e As EventArgs) Handles Panel2.Click
+        Verr_Textbox.Select()
     End Sub
 End Class

@@ -743,6 +743,56 @@ Namespace My
                 Me("linguuu") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property themoi() As String
+            Get
+                Return CType(Me("themoi"),String)
+            End Get
+            Set
+                Me("themoi") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Settingshidethem() As Boolean
+            Get
+                Return CType(Me("Settingshidethem"),Boolean)
+            End Get
+            Set
+                Me("Settingshidethem") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Control")>  _
+        Public Property menucolorr() As Global.System.Drawing.Color
+            Get
+                Return CType(Me("menucolorr"),Global.System.Drawing.Color)
+            End Get
+            Set
+                Me("menucolorr") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(), _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.Configuration.DefaultSettingValueAttribute("<?xml version=""1.0"" encoding=""utf-16""?>" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "<ArrayOfString xmlns:xsi=""http://www.w3." & _
+            "org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "  <s" & _
+            "tring>C:\Users\Sâm\Desktop\Exemple.bfx</string>" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "</ArrayOfString>")> _
+        Public Property BlueExts() As Global.System.Collections.Specialized.StringCollection
+            Get
+                Return CType(Me("BlueExts"), Global.System.Collections.Specialized.StringCollection)
+            End Get
+            Set(value As Global.System.Collections.Specialized.StringCollection)
+                Me("BlueExts") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

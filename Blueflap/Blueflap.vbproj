@@ -29,8 +29,8 @@
     <PublisherName>SimpleWorld</PublisherName>
     <SuiteName>Blueflap 3.x</SuiteName>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>435</ApplicationRevision>
-    <ApplicationVersion>3.2.0.%2a</ApplicationVersion>
+    <ApplicationRevision>436</ApplicationRevision>
+    <ApplicationVersion>3.2.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -116,6 +116,9 @@
     <Reference Include="Awesomium.Windows.Forms, Version=1.7.4.2, Culture=neutral, PublicKeyToken=9bd24830fbe304a0, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Awesomium Technologies LLC\Awesomium SDK\1.7.4.2\wrappers\Awesomium.NET\Assemblies\Awesomium.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="BlueExt">
+      <HintPath>..\DLL\BlueExt.dll</HintPath>
     </Reference>
     <Reference Include="DevComponents.DotNetBar2">
       <HintPath>..\..\..\..\Visual Studio 2010\DevComponents.DotNetBar2.dll</HintPath>
@@ -250,6 +253,17 @@
   <ItemGroup>
     <Content Include="blueflap.ico" />
     <Content Include="blueflap3.ico" />
+    <None Include="Resources\a21.png" />
+    <None Include="Resources\a20.png" />
+    <None Include="Resources\jump.png" />
+    <None Include="Resources\flachelock.png" />
+    <None Include="Resources\splitter.png" />
+    <None Include="Resources\yesbut.png" />
+    <None Include="Resources\nobut.png" />
+    <None Include="Resources\bibo.png" />
+    <None Include="Resources\bibos.png" />
+    <None Include="Resources\windowtest.png" />
+    <None Include="Resources\demoshow.png" />
     <None Include="Resources\blou1.png" />
     <None Include="Resources\blou.png" />
     <None Include="Resources\msgboxsettings.png" />

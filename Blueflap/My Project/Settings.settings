@@ -184,5 +184,20 @@
     <Setting Name="linguuu" Type="System.String" Scope="User">
       <Value Profile="(Default)">Français</Value>
     </Setting>
+    <Setting Name="themoi" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Settingshidethem" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="menucolorr" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Control</Value>
+    </Setting>
+    <Setting Name="BlueExts" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;C:\Users\Sâm\Desktop\Exemple.bfx&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
